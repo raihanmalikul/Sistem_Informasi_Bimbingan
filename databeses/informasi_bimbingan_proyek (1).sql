@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2022 at 06:05 AM
+-- Generation Time: Jan 08, 2022 at 10:34 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -64,7 +64,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `role_id`, `user_id`, `data_id`, `name_ds`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas`, `password`, `date_created`) VALUES
 (14, 3, 'Razor01', 1, NULL, 'aldo', '1193005', 'raihan', '1193025', 'D3 Teknik Informatika 2c', '$2y$10$VsSLMUkRe2HKWwVnRdL3OOMA8K9VpFCpCxiJypoGl5.S3O.0FNWKS', 1641112954),
 (15, 3, 'Ilham01', 2, NULL, 'ilham', '1193019', 'azmi', '1193020', 'D3 Teknik Informatika 2A', '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637),
-(17, 2, 'dosen', 3, 'Siti', NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637);
+(17, 2, 'dosen', 3, 'Siti', NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637),
+(18, 1, 'cordinator', 4, 'Abdul', NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637);
 
 -- --------------------------------------------------------
 
@@ -155,7 +156,7 @@ ALTER TABLE `berkas_bimbingan`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `user_data`

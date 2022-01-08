@@ -9,54 +9,60 @@
              </button>
              <div class="collapse navbar-collapse" id="navbarNav">
                  <ul class="navbar-nav flex-column">
-                     <li class="nav-divider">
-                         Menu
-                     </li>
-                     <li class="nav-item ">
-                         <a class="nav-link" href="dashboard.html" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
-                     </li>
-                     <li class="nav-item ">
-                         <a class="nav-link" href="pedoman.html" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-info"></i>Pedoman <span class="badge badge-success">6</span></a>
-                     </li>
-                     <li class="nav-item ">
-                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>Form Pengumpulan</a>
-                         <div id="submenu-4" class="collapse submenu">
-                             <ul class="nav flex-column">
-                                 <li class="nav-item">
-                                     <a class="nav-link" href="proposal.html">Form Proposal</a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a class="nav-link" href="laporan.html">Form Laporan</a>
-                                 </li>
-                             </ul>
-                         </div>
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-laptop"></i>Bimbingan</a>
-                         <div id="submenu-3" class="collapse submenu">
-                             <ul class="nav flex-column">
-                                 <li class="nav-item">
-                                     <a class="nav-link" href="infopembimbing.html">Informasi Pembimbing Proyek</a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a class="nav-link" href="presensibimbingan.html">Presensi Bimbingan Proyek</a>
-                                 </li>
-                             </ul>
-                         </div>
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-cog"></i>Setting<span class="badge badge-secondary"></span></a>
-                         <div id="submenu-7" class="collapse submenu">
-                             <ul class="nav flex-column">
-                                 <li class="nav-item">
-                                     <a class="nav-link" href="user.html">User</a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a class="nav-link" href="akun.html">Akun</a>
-                                 </li>
-                             </ul>
-                         </div>
-                     </li>
+
+                     <!-- quwry menu -->
+                     <?php
+                        $role_id = $this->session->userdata('role_id');
+                        $queryMenu = "SELECT user_menu . id , menu  
+                                           FROM  user_menu JOIN user_access_menu  
+                                             ON  user_menu . id = user_access_menu . menu_id 
+                                          WHERE  user_access_menu . role_id  = $role_id
+                                       ORDER BY  user_access_menu . menu_id ASC
+                                       ";
+                        $menu = $this->db->query($queryMenu)->result_Array();
+                        ?>
+
+                     <!-- looping menu -->
+                     <?php foreach ($menu as $m) :  ?>
+                         <li class="nav-item ">
+                             <div class="sidebar-heading">
+                                 <?= $m['menu'];  ?>
+                             </div>
+
+
+                             <hr class="sidebar-divider">
+                             <?php
+                                $menuId = $m['id'];
+                                $querySubMenu = "SELECT *
+                                                FROM user_sub_menu JOIN user_menu 
+                                                  ON user_sub_menu . menu_id  = user_menu . id
+                                               WHERE user_sub_menu . menu_id = $menuId
+                                                 AND user_sub_menu . is_active = 1
+                                               ";
+                                $subMenu = $this->db->query($querySubMenu)->result_Array();
+                                ?>
+
+                             <?php foreach ($subMenu as $sm) : ?>
+
+
+                                 <!-- <div class="submenu"> -->
+                                 <ul class="nav flex-column">
+                                     <li class="nav-item">
+                                         <a class="nav-link" href="<?= base_url($sm['url']); ?>">
+                                             <i class="<?= $sm['icon']; ?>"></i>
+                                             <spam><?= $sm['title']; ?></spam>
+                                         </a>
+
+                                     </li>
+                                 </ul>
+                                 <!-- </div> -->
+                         </li>
+
+                         <!-- tutup -->
+                     <?php endforeach; ?>
+                 <?php endforeach; ?>
+
+
                  </ul>
              </div>
          </nav>

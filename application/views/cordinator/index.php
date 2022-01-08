@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <center>
                                 <h2>
-                                    Selamat datang Mahasiswa di Sistem Informasi Bimbingan Proyek
+                                    Selamat datang Cordinator di Sistem Informasi Bimbingan Proyek
                             </center>
                         </div>
                     </div>

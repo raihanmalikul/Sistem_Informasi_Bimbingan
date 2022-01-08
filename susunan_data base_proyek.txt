@@ -1,0 +1,65 @@
+menu mahasiswa
+dashboardX
+buku pedoman
+templet laporan
+bimbingan
+form Pengumpulan (bisa di nonaktifkan)
+surat izin sidang (bisa di nonaktifkan)
+setting
+
+menu dosen
+dashboard
+bimbingan
+surat izin sidang
+Penilayan
+setting
+
+menu cordinator
+dashboard
+pedoman
+templet laporan
+form Pengumpulan
+pembimbing
+data master
+setting
+
+
+menu
+1.dashboard (3)
+  -Home (3)
+
+2.pedoman (2) 
+  -Buku pedoman (2)
+
+
+
+3.templet laporan (2) 
+  -Templet Laporan Proyek(2)
+
+4.bimbingan (2)
+  -informasi bimbingan proyek (2)
+  -persensi bimbingan proyek (2)
+
+5.form Pengumpulan (2) 
+  -proposal(2)
+  -laporan(2)
+
+6.izin sidang (2) 
+  -Surat izin sidang(2)
+
+7.pembimbing (1)
+  -informasi dosen pembimbing
+  -Pembagian pembimbing
+
+8.penilayan (1)
+  form penilayanX
+
+9.data master (1) 
+  -Proposal
+  -laporan
+  -persensi bimbingan
+  -nilai mahasiswa
+
+10.setting (3) 
+  -My Profile (3)
+  -Edit Profile (3)
