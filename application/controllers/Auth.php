@@ -46,15 +46,15 @@ class Auth extends CI_Controller
                     redirect('mahasiswa');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+                $this->session->set_flashdata('message', '
                 Wrong Password!
-                </div>');
+                ');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message', '
             This User id has not registration !
-            </div>');
+            ');
             redirect('auth');
         }
     }
@@ -68,7 +68,9 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('npm_mhs_2', 'Npm_mhs_2', 'required|trim');
         $this->form_validation->set_rules('kelas', 'Kelas', 'required|trim');
         $this->form_validation->set_rules('katagori_proyek', 'Katagori_proyek', 'required|trim');
-        $this->form_validation->set_rules('user_id', 'User_id', 'required|trim');
+        $this->form_validation->set_rules('user_id', 'User_id', 'required|trim|is_unique[user.user_id]', [
+            'is_unique' => 'User id sudah ada !'
+        ]);
         $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]', [
             'min_length' => 'password too short !'
         ]);
@@ -109,13 +111,18 @@ class Auth extends CI_Controller
         }
     }
 
+    public function blocked()
+    {
+        echo 'access forbidden';
+    }
+
     public function logout()
     {
         $this->session->unset_userdata('user_id');
         $this->session->unset_userdata('role_id');
-        $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+        $this->session->set_flashdata('message', '
             You have been logged out!
-            </div>');
+            ');
         redirect('auth');
     }
 }

@@ -41,7 +41,6 @@
                     <div class="form-group">
                         <select class="form-control" id="katagori_proyek" name="katagori_proyek">
                             <option disabled selected value>Kategori Proyek</option>
-                            <option value="Proyek 1">Proyek 1</option>
                             <option value="Proyek 2">Proyek 2</option>
                         </select>
                         <?= form_error('katagori_proyek', '<small class="text-danger pl-3">', '</small>'); ?>
