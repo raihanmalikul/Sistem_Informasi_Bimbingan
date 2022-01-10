@@ -46,15 +46,17 @@ class Auth extends CI_Controller
                     redirect('mahasiswa');
                 }
             } else {
-                $this->session->set_flashdata('message', '
+                $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
                 Wrong Password!
-                ');
+                </div>');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '
+            $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             This User id has not registration !
-            ');
+            </div>');
             redirect('auth');
         }
     }
@@ -120,9 +122,10 @@ class Auth extends CI_Controller
     {
         $this->session->unset_userdata('user_id');
         $this->session->unset_userdata('role_id');
-        $this->session->set_flashdata('message', '
+        $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
             You have been logged out!
-            ');
+            </div>');
         redirect('auth');
     }
 }
