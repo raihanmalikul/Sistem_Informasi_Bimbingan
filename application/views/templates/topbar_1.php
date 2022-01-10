@@ -15,7 +15,7 @@ $role = $this->db->get_where('user_role', ['id' => $role_id])->row_array();
 
 
                 <li class="nav-item dropdown nav-user">
-                    <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url('assets/') ?>images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle mr-3"><?= $user['name_ds']  ?></a>
+                    <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url('assets/') ?>images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle mr-3"><?= $user['name_dos']  ?></a>
                     <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                         <div class="nav-user-info">
                             <h5 class="mb-0 text-white nav-user-name"><?= $role['role'];  ?></h5>
