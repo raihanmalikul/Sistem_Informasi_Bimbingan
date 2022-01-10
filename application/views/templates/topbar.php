@@ -20,7 +20,7 @@ $role = $this->db->get_where('user_role', ['id' => $role_id])->row_array();
                         <div class="nav-user-info">
                             <h5 class="mb-0 text-white nav-user-name"><?= $role['role'];  ?></h5>
                         </div>
-                        <a class="dropdown-item" href="<?= base_url('mhs_my_profile') ?>"><i class="far fa-fw fa-user mr-2"></i>Profile</a>
+                        <a class="dropdown-item" href="<?= base_url('mahasiswa/my_profile') ?>"><i class="far fa-fw fa-user mr-2"></i>Profile</a>
                         <a class="dropdown-item" href="<?= base_url('auth/logout') ?>"><i class="fas fa-power-off mr-2"></i>Logout</a>
                     </div>
                 </li>
