@@ -1,3 +1,13 @@
+Catatatan 
+kita harus buat id cordinator dan id mahasiswa
+
+
+
+
+
+
+
+
 menu mahasiswa
 dashboardX
 buku pedoman
