@@ -8,7 +8,7 @@
          <div class="row">
              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                  <div class="page-header">
-                     <h2 class="pageheader-title">Profil dosen</h2>
+                     <h2 class="pageheader-title">Profil Dosen</h2>
                      <hr>
                  </div>
              </div>
@@ -19,11 +19,11 @@
          <div class="row">
              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                  <div class="card">
-                     <h5 class="card-header">Data Mahasiswa</h5>
+                     <h5 class="card-header">Data Dosen</h5>
                      <div class="card-body">
                          <form action="#" id="basicform" data-parsley-validate="">
                              <div class="form-group">
-                                 <label for="inputUserName">Nama Mahasiswa 1</label>
+                                 <label for="inputUserName">Nama Lengkap</label>
                                  <div class="input-group-prepend">
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-user"></i>
@@ -32,7 +32,7 @@
                                  </div>
                              </div>
                              <div class="form-group">
-                                 <label for="inputNPM">NPM</label>
+                                 <label for="inputNPM">NIK</label>
                                  <div class="input-group-prepend">
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-id-badge"></i>
@@ -41,30 +41,12 @@
                                  </div>
                              </div>
                              <div class="form-group">
-                                 <label for="inputUserName">Nama Mahasiswa 2</label>
+                                 <label for="inputUserName">Email</label>
                                  <div class="input-group-prepend">
                                      <span class="input-group-text" id="inputGroupPrepend">
-                                         <i class="fas fa-fw fa-user"></i>
+                                         <i class="fas fa-fw fa-at"></i>
                                      </span>
                                      <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
-                                 </div>
-                             </div>
-                             <div class="form-group">
-                                 <label for="inputNPM">NPM</label>
-                                 <div class="input-group-prepend">
-                                     <span class="input-group-text" id="inputGroupPrepend">
-                                         <i class="fas fa-fw fa-id-badge"></i>
-                                     </span>
-                                     <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
-                                 </div>
-                             </div>
-                             <div class="form-group">
-                                 <label for="inputKelas">Kelas</label>
-                                 <div class="input-group-prepend">
-                                     <span class="input-group-text" id="inputGroupPrepend">
-                                         <i class="fas fa-fw fa-id-card"></i>
-                                     </span>
-                                     <input id="inputKelas" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
                                  </div>
                              </div>
                              <div class="row">
@@ -89,7 +71,7 @@
                              <div class="modal-body">
                                  <form>
                                      <div class="form-group">
-                                         <label for="inputUserName">Nama Mahasiswa 1</label>
+                                         <label for="inputUserName">Nama Lengkap</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-user"></i>
@@ -98,7 +80,7 @@
                                          </div>
                                      </div>
                                      <div class="form-group">
-                                         <label for="inputNPM">NPM</label>
+                                         <label for="inputNPM">NIK</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-id-badge"></i>
@@ -107,30 +89,12 @@
                                          </div>
                                      </div>
                                      <div class="form-group">
-                                         <label for="inputUserName">Nama Mahasiswa 2</label>
+                                         <label for="inputUserName">Email</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
-                                                 <i class="fas fa-fw fa-user"></i>
+                                                 <i class="fas fa-fw fa-at"></i>
                                              </span>
                                              <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
-                                         </div>
-                                     </div>
-                                     <div class="form-group">
-                                         <label for="inputNPM">NPM</label>
-                                         <div class="input-group-prepend">
-                                             <span class="input-group-text" id="inputGroupPrepend">
-                                                 <i class="fas fa-fw fa-id-badge"></i>
-                                             </span>
-                                             <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
-                                         </div>
-                                     </div>
-                                     <div class="form-group">
-                                         <label for="inputKelas">Kelas</label>
-                                         <div class="input-group-prepend">
-                                             <span class="input-group-text" id="inputGroupPrepend">
-                                                 <i class="fas fa-fw fa-id-card"></i>
-                                             </span>
-                                             <input id="inputKelas" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
                                          </div>
                                      </div>
                                  </form>
