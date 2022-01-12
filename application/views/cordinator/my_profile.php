@@ -28,7 +28,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-user"></i>
                                      </span>
-                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $user['name_cor']; ?>">
                                  </div>
                              </div>
                              <div class="form-group">
@@ -37,7 +37,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-id-badge"></i>
                                      </span>
-                                     <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                     <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $user['user_id']; ?>">
                                  </div>
                              </div>
                              <div class="form-group">
@@ -46,7 +46,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-at"></i>
                                      </span>
-                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $user['email_cor']; ?>">
                                  </div>
                              </div>
                              <div class="row">
@@ -76,7 +76,7 @@
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-user"></i>
                                              </span>
-                                             <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                             <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['name_cor']; ?>">
                                          </div>
                                      </div>
                                      <div class="form-group">
@@ -85,7 +85,7 @@
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-id-badge"></i>
                                              </span>
-                                             <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                             <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['user_id']; ?>">
                                          </div>
                                      </div>
                                      <div class="form-group">
@@ -94,7 +94,7 @@
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-at"></i>
                                              </span>
-                                             <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                             <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['email_cor']; ?>">
                                          </div>
                                      </div>
                                  </form>

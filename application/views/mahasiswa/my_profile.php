@@ -28,7 +28,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-user"></i>
                                      </span>
-                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                     <input id="inputUserName" type="text" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['name_mhs_1']; ?>">
                                  </div>
                              </div>
                              <div class="form-group">
@@ -37,7 +37,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-id-badge"></i>
                                      </span>
-                                     <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                     <input id="inputNPM" type="text" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['npm_mhs_1']; ?>">
                                  </div>
                              </div>
                              <div class="form-group">
@@ -46,7 +46,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-user"></i>
                                      </span>
-                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                     <input id="inputUserName" type="text" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['name_mhs_2']; ?>">
                                  </div>
                              </div>
                              <div class="form-group">
@@ -55,7 +55,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-id-badge"></i>
                                      </span>
-                                     <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                     <input id="inputNPM" type="text" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['npm_mhs_2']; ?>">
                                  </div>
                              </div>
                              <div class="form-group">
@@ -64,13 +64,13 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-id-card"></i>
                                      </span>
-                                     <input id="inputKelas" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                     <input id="inputKelas" type="text" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['kelas']; ?>">
                                  </div>
                              </div>
                              <div class="row">
                                  <div class="col-sm-6 pl-0">
                                      <p class="text-center">
-                                         <button type="button" class="btn btn-space btn-primary" data-toggle="modal" data-target="#tambahModal">Ubah Profil</button>
+                                         <button type="submit" class="btn btn-space btn-primary" data-toggle="modal" data-target="#tambahModal">Ubah Profil</button>
                                      </p>
                                  </div>
                              </div>
@@ -94,50 +94,50 @@
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-user"></i>
                                              </span>
-                                             <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                             <input id="inputUserName" type="text" name="name_mhs_1" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['name_mhs_1']; ?>">
                                          </div>
                                      </div>
-                                     <div class="form-group">
+                                     <div class=" form-group">
                                          <label for="inputNPM">NPM</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-id-badge"></i>
                                              </span>
-                                             <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                             <input id="inputNPM" type="text" name="npm_mhs_1" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['npm_mhs_1']; ?>">
                                          </div>
                                      </div>
-                                     <div class="form-group">
+                                     <div class=" form-group">
                                          <label for="inputUserName">Nama Mahasiswa 2</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-user"></i>
                                              </span>
-                                             <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                             <input id="inputUserName" type="text" name="name_mhs_2" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['name_mhs_2']; ?>">
                                          </div>
                                      </div>
-                                     <div class="form-group">
+                                     <div class=" form-group">
                                          <label for="inputNPM">NPM</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-id-badge"></i>
                                              </span>
-                                             <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                             <input id="inputNPM" type="text" name="npm_mhs_2" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['npm_mhs_2']; ?>">
                                          </div>
                                      </div>
-                                     <div class="form-group">
+                                     <div class=" form-group">
                                          <label for="inputKelas">Kelas</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-id-card"></i>
                                              </span>
-                                             <input id="inputKelas" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                             <input id="inputKelas" type="text" name="kelas" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['kelas']; ?>">
                                          </div>
                                      </div>
                                  </form>
                              </div>
-                             <div class="modal-footer">
+                             <div class=" modal-footer">
                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                 <button type="button" class="btn btn-primary">Simpan</button>
+                                 <button type="submit" class="btn btn-primary">Simpan</button>
                              </div>
                          </div>
                      </div>

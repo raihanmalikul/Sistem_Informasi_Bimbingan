@@ -26,6 +26,8 @@
                                  <th scope="col">No</th>
                                  <th scope="col">NPM</th>
                                  <th scope="col">Nama</th>
+                                 <th scope="col">NPM</th>
+                                 <th scope="col">Nama</th>
                                  <th scope="col">Kelas</th>
                                  <th scope="col">Judul Proyek</th>
                                  <th scope="col">Dosen Pembimbing</th>
@@ -33,10 +35,12 @@
                          </thead>
                          <tbody>
                              <tr>
-                                 <th scope="row">-</th>
-                                 <td>-</td>
-                                 <td>-</td>
-                                 <td>-</td>
+                                 <th scope="row">1</th>
+                                 <td><?= $user['npm_mhs_1']; ?></td>
+                                 <td><?= $user['name_mhs_1']; ?></td>
+                                 <td><?= $user['npm_mhs_2']; ?></td>
+                                 <td><?= $user['name_mhs_2']; ?></td>
+                                 <td><?= $user['kelas']; ?></td>
                                  <td>-</td>
                                  <td>-</td>
                              </tr>
