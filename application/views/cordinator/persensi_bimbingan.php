@@ -39,7 +39,7 @@
                                 <td></td>
                                 <td></td>
                                 <td width="100">
-                                    <a href="detailpresensi.html" class="btn btn-primary btn-xs">Lihat Detail</a>
+                                    <a href="<?= base_url('cordinator/detailpresensi') ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                 </td>
                             </tr>
                         </tbody>

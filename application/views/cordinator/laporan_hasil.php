@@ -54,7 +54,7 @@
                                     <td></td>
                                     <td></td>
                                     <td width="100">
-                                        <a href="detailproposal.html" class="btn btn-primary btn-xs">Lihat Detail</a>
+                                        <a href="<?= base_url('cordinator/detaillaporan') ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                     </td>
                                 </tr>
                                 <tr>
