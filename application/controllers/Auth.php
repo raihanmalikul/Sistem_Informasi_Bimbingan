@@ -102,10 +102,15 @@ class Auth extends CI_Controller
             ];
             $data2 = [
                 'katagori_proyek' => $this->input->post('katagori_proyek', true),
-                'data_id' => $i
+                'data_id' => $i,
+                'berkas_bimbingan_id' => $i
+            ];
+            $data3 = [
+                'berkas_bimbingan_id' => $i
             ];
             $this->db->insert('user', $data1);
             $this->db->insert('user_data', $data2);
+            $this->db->insert('berkas_bimbingan', $data3);
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
             Congratulation! your account has been created. Please Login
             </div>');
