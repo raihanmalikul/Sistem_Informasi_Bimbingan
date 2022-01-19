@@ -32,10 +32,6 @@
                                  <td>Batas Waktu</td>
                                  <td>-</td>
                              </tr>
-                             <tr>
-                                 <td>Waktu Tersisa</td>
-                                 <td>-</td>
-                             </tr>
                      </table>
                      <hr>
                      <div class="form-group row">

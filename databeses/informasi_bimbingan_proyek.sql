@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Jan 2022 pada 04.34
--- Versi server: 10.4.21-MariaDB
--- Versi PHP: 7.3.31
+-- Generation Time: Jan 19, 2022 at 09:05 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,13 +20,11 @@ SET time_zone = "+00:00";
 --
 -- Database: `informasi_bimbingan_proyek`
 --
-CREATE DATABASE IF NOT EXISTS `informasi_bimbingan_proyek` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `informasi_bimbingan_proyek`;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `berkas_bimbingan`
+-- Table structure for table `berkas_bimbingan`
 --
 
 CREATE TABLE `berkas_bimbingan` (
@@ -38,10 +36,18 @@ CREATE TABLE `berkas_bimbingan` (
   `paraf_dosen` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `berkas_bimbingan`
+--
+
+INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `jam`, `materi`, `paraf_dosen`) VALUES
+(1, 6, '0000-00-00', '00:00:00', '', ''),
+(2, 7, '0000-00-00', '00:00:00', '', '');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -56,24 +62,29 @@ CREATE TABLE `user` (
   `npm_mhs_2` varchar(128) DEFAULT NULL,
   `kelas` varchar(128) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
-  `date_created` int(11) NOT NULL
+  `date_created` int(11) NOT NULL,
+  `name_cor` varchar(128) DEFAULT NULL,
+  `email_ds` varchar(128) DEFAULT NULL,
+  `email_cor` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `role_id`, `user_id`, `data_id`, `name_ds`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas`, `password`, `date_created`) VALUES
-(14, 3, 'Razor01', 1, NULL, 'aldo', '1193005', 'raihan', '1193025', 'D3 Teknik Informatika 2c', '$2y$10$VsSLMUkRe2HKWwVnRdL3OOMA8K9VpFCpCxiJypoGl5.S3O.0FNWKS', 1641112954),
-(15, 3, 'Ilham01', 2, NULL, 'ilham', '1193019', 'azmi', '1193020', 'D3 Teknik Informatika 2A', '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637),
-(17, 2, 'dosen', 3, 'iwan', NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637),
-(18, 1, 'cordinator', 4, 'Admin', NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637),
-(19, 3, 'ferdx', 5, NULL, 'Muhammad Ilham Ferdiansyah', '1193019', 'Muhammad Raihan Nur Azmii', '1193020', 'D3 Teknik Informatika 2c', '$2y$10$gOTObg4rBlKsiPa85NlK6.I.bjnxfYAC6X29QWPKjFlflRLHpqbum', 1641783718);
+INSERT INTO `user` (`id`, `role_id`, `user_id`, `data_id`, `name_ds`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas`, `password`, `date_created`, `name_cor`, `email_ds`, `email_cor`) VALUES
+(14, 3, 'Razor01', 1, NULL, 'aldo', '1193005', 'raihan', '1193025', 'D3 Teknik Informatika 2c', '$2y$10$VsSLMUkRe2HKWwVnRdL3OOMA8K9VpFCpCxiJypoGl5.S3O.0FNWKS', 1641112954, NULL, NULL, NULL),
+(15, 3, 'Ilham01', 2, NULL, 'ilham', '1193019', 'azmi', '1193020', 'D3 Teknik Informatika 2A', '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637, NULL, NULL, NULL),
+(17, 2, '104.79.072', 3, 'Widia Resdiana, S.S., M.Pd.', NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637, NULL, 'widiaresdiana@poltekpos.ac.id', NULL),
+(18, 1, '105.76.082', 4, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637, 'Iwan Setiawan, ST., M.T.', NULL, 'iwansetiawan@poltekpos.ac.id '),
+(19, 3, 'ferdx', 5, NULL, 'Muhammad Ilham Ferdiansyah', '1193019', 'Muhammad Raihan Nur Azmii', '1193020', 'D3 Teknik Informatika 2c', '$2y$10$gOTObg4rBlKsiPa85NlK6.I.bjnxfYAC6X29QWPKjFlflRLHpqbum', 1641783718, NULL, NULL, NULL),
+(23, 3, 'RSssaa', 6, NULL, 'adadj', '424242', 'xjzcbjcb', '11131324', 'D3 Teknik Informatika 2b', '$2y$10$mqDb18UHoOy/wFCF67iVsukXet7Qfi2pZgrGHnOvpXxCxOIRQTWte', 1642163607, NULL, NULL, NULL),
+(24, 3, 'aldo01', 7, NULL, 'raihan malikul', '1193025', 'Aldo', '1193025', 'D3 Teknik Informatika 2b', '$2y$10$kHZlfnF0XHKgwXhSL.54fed4UkqIk89Hpoet5J9DQxU8ECcFaBwv2', 1642215858, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_access_menu`
+-- Table structure for table `user_access_menu`
 --
 
 CREATE TABLE `user_access_menu` (
@@ -83,20 +94,20 @@ CREATE TABLE `user_access_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user_access_menu`
+-- Dumping data for table `user_access_menu`
 --
 
 INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (1, 1, 1),
-(2, 1, 4),
-(3, 1, 6),
+(2, 1, 0),
+(3, 1, 0),
 (5, 1, 14),
 (6, 1, 16),
 (7, 1, 17),
 (8, 2, 2),
 (9, 2, 8),
 (10, 2, 12),
-(11, 2, 15),
+(11, 2, 0),
 (12, 2, 18),
 (13, 3, 3),
 (14, 3, 5),
@@ -109,7 +120,7 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_data`
+-- Table structure for table `user_data`
 --
 
 CREATE TABLE `user_data` (
@@ -121,23 +132,30 @@ CREATE TABLE `user_data` (
   `laporan_proyek` varchar(128) DEFAULT NULL,
   `berkas_bimbingan_id` varchar(128) DEFAULT NULL,
   `surat_izin_sidang` varchar(128) DEFAULT NULL,
-  `data_id` int(11) NOT NULL
+  `tanda_tangan_digital` varchar(128) DEFAULT NULL,
+  `tanggal_pengumpulan` date DEFAULT NULL,
+  `data_id` int(11) NOT NULL,
+  `cor_id` int(11) DEFAULT NULL,
+  `dos_id` int(11) DEFAULT NULL,
+  `mhs_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user_data`
+-- Dumping data for table `user_data`
 --
 
-INSERT INTO `user_data` (`id`, `judul_proyek`, `katagori_proyek`, `dosen_pembimbing`, `proposal_proyek`, `laporan_proyek`, `berkas_bimbingan_id`, `surat_izin_sidang`, `data_id`) VALUES
-(14, NULL, 'Proyek 2', NULL, NULL, NULL, NULL, NULL, 1),
-(15, NULL, 'Proyek 1', NULL, NULL, NULL, NULL, NULL, 2),
-(16, NULL, 'Proyek 1', NULL, NULL, NULL, NULL, NULL, 3),
-(17, NULL, 'Proyek 2', NULL, NULL, NULL, NULL, NULL, 5);
+INSERT INTO `user_data` (`id`, `judul_proyek`, `katagori_proyek`, `dosen_pembimbing`, `proposal_proyek`, `laporan_proyek`, `berkas_bimbingan_id`, `surat_izin_sidang`, `tanda_tangan_digital`, `tanggal_pengumpulan`, `data_id`, `cor_id`, `dos_id`, `mhs_id`) VALUES
+(14, 'Aplikasi Informasi Bimbingan Proyek', 'Proyek 2', NULL, NULL, NULL, '1', NULL, NULL, NULL, 1, NULL, NULL, NULL),
+(15, NULL, 'Proyek 1', NULL, NULL, NULL, '2', NULL, NULL, NULL, 2, NULL, NULL, NULL),
+(16, NULL, 'Proyek 1', NULL, NULL, NULL, '3', NULL, NULL, NULL, 3, NULL, NULL, NULL),
+(17, NULL, 'Proyek 2', NULL, NULL, NULL, '5', NULL, NULL, NULL, 5, NULL, NULL, NULL),
+(21, NULL, 'Proyek 2', NULL, NULL, NULL, '6', NULL, NULL, NULL, 6, NULL, NULL, NULL),
+(22, NULL, 'Proyek 2', NULL, NULL, NULL, '7', NULL, NULL, NULL, 7, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_menu`
+-- Table structure for table `user_menu`
 --
 
 CREATE TABLE `user_menu` (
@@ -146,7 +164,7 @@ CREATE TABLE `user_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user_menu`
+-- Dumping data for table `user_menu`
 --
 
 INSERT INTO `user_menu` (`id`, `menu`) VALUES
@@ -173,7 +191,7 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_role`
+-- Table structure for table `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -182,7 +200,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user_role`
+-- Dumping data for table `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
@@ -193,7 +211,7 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_sub_menu`
+-- Table structure for table `user_sub_menu`
 --
 
 CREATE TABLE `user_sub_menu` (
@@ -206,7 +224,7 @@ CREATE TABLE `user_sub_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user_sub_menu`
+-- Dumping data for table `user_sub_menu`
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon`) VALUES
@@ -217,8 +235,8 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon
 (24, 5, 'Buku Pedoman', 'mahasiswa/buku_pedoman', 1, 'fas fa-fw fa-book'),
 (25, 6, 'Template Laporan Proyek', 'cordinator/templet_laporan_proyek', 1, 'far fa-fw fa-file-pdf'),
 (26, 7, 'Template Laporan Proyek', 'mahasiswa/templet_laporan_proyek', 1, 'far fa-fw fa-file-pdf'),
-(27, 8, 'Informasi Pembimbing ', 'dosen/informasi_bimbingan_proyek', 1, 'fa fa-fw fa-info'),
-(28, 9, 'Informasi Pembimbing ', 'mahasiswa/informasi_bimbingan_proyek', 1, 'fa fa-fw fa-info'),
+(27, 8, 'Informasi Bimbingan ', 'dosen/informasi_bimbingan_proyek', 1, 'fa fa-fw fa-info'),
+(28, 9, 'Informasi Bimbingan ', 'mahasiswa/informasi_bimbingan_proyek', 1, 'fa fa-fw fa-info'),
 (29, 8, 'Presensi Bimbingan Proyek', 'dosen/persensi_bimbingan_proyek', 1, 'far fa-fw fa-calendar-check'),
 (30, 9, 'Presensi Bimbingan Proyek', 'mahasiswa/Persensi_Bimbingan_Proyek', 1, 'far fa-fw fa-calendar-check'),
 (31, 10, 'Proposal', 'cordinator/proposal', 1, 'fas fa-fw fa-align-center'),
@@ -233,7 +251,7 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon
 (40, 16, 'Proposal', 'cordinator/Proposal_hasil', 1, 'fas fa-fw fa-align-center'),
 (41, 16, 'Laporan', 'cordinator/laporan_hasil', 1, 'fas fa-fw fa-align-justify'),
 (42, 16, 'Presensi Bimbingan', 'cordinator/persensi_bimbingan', 1, 'far fa-fw fa-calendar-check'),
-(43, 16, 'Nilai Mahasiswa', 'cordinator/nilai_mahasiswa', 1, 'fas fa-fw fa-table'),
+(43, 0, 'Nilai Mahasiswa', 'cordinator/nilai_mahasiswa', 1, 'fas fa-fw fa-table'),
 (44, 17, 'My Profile', 'cordinator/my_profile', 1, 'far fa-fw fa-user'),
 (45, 18, 'My Profile', 'dosen/my_profile', 1, 'far fa-fw fa-user'),
 (46, 19, 'My Profile', 'mahasiswa/my_profile', 1, 'far fa-fw fa-user'),
@@ -246,89 +264,89 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon
 --
 
 --
--- Indeks untuk tabel `berkas_bimbingan`
+-- Indexes for table `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user_access_menu`
+-- Indexes for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user_data`
+-- Indexes for table `user_data`
 --
 ALTER TABLE `user_data`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
--- Indeks untuk tabel `user_menu`
+-- Indexes for table `user_menu`
 --
 ALTER TABLE `user_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user_role`
+-- Indexes for table `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user_sub_menu`
+-- Indexes for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `berkas_bimbingan`
+-- AUTO_INCREMENT for table `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT untuk tabel `user_access_menu`
+-- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT untuk tabel `user_data`
+-- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT untuk tabel `user_menu`
+-- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT untuk tabel `user_role`
+-- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `user_sub_menu`
+-- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;

@@ -62,6 +62,24 @@ class dosen extends CI_Controller
 
 
 
+    public function detail_Persensi_bimbingan()
+    {
+        $data['title'] = 'Menu Dosen';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar_1', $data);
+        $this->load->view('dosen/detail_Persensi_bimbingan', $data);
+        $this->load->view('templates/footer');
+    }
+
+
+
     public function surat_izin_sidang()
     {
         $data['title'] = 'Menu Dosen';
@@ -93,6 +111,24 @@ class dosen extends CI_Controller
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar_1', $data);
         $this->load->view('dosen/form_penilayan', $data);
+        $this->load->view('templates/footer');
+    }
+
+
+
+    public function detail_nilai()
+    {
+        $data['title'] = 'Menu Dosen';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar_1', $data);
+        $this->load->view('dosen/detail_nilai', $data);
         $this->load->view('templates/footer');
     }
 

@@ -40,7 +40,7 @@
                                 <td></td>
                                 <td></td>
                                 <td width="100">
-                                    <a href="formpresensi.html" class="btn btn-primary btn-xs">Lihat Detail</a>
+                                    <a href=" <?= base_url('dosen/detail_Persensi_bimbingan') ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                 </td>
                                 <td width="150">
                                     <label class="be-checkbox custom-control custom-checkbox">
