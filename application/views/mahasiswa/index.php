@@ -83,7 +83,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <center>
-                                <h5 class="card-header">Toatal Bimbingan</h5>
+                                <h5 class="card-header">Total Bimbingan</h5>
                             </center>
                             <div class="card-body">
                                 <center>
