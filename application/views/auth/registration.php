@@ -10,26 +10,26 @@
             <form class="user" method="post" action="<?= base_url('auth/registration') ?>">
                 <div class="card-body">
                     <div class="form-group">
-                        <input class="form-control form-control-lg" type="text" name="name_mhs_1" placeholder="Nama Mahasiswa 1" autocomplete="off">
+                        <input class="form-control form-control-lg" type="text" name="name_mhs_1" value="<?=set_value('name_mhs_1') ?>" placeholder="Nama Mahasiswa 1" autocomplete="off">
                         <?= form_error('name_mhs_1', '<small class="text-danger pl-3">', '</small>'); ?>
 
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" type="text" name="npm_mhs_1" placeholder="NPM Mahasiswa 1" autocomplete="off">
+                        <input class="form-control form-control-lg" type="text" name="npm_mhs_1" value="<?=set_value('npm_mhs_1') ?>" placeholder="NPM Mahasiswa 1" autocomplete="off">
                         <?= form_error('npm_mhs_1', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" type="text" name="name_mhs_2" placeholder="Nama Mahasiswa 2" autocomplete="off">
+                        <input class="form-control form-control-lg" type="text" name="name_mhs_2" value="<?=set_value('name_mhs_2') ?>" placeholder="Nama Mahasiswa 2" autocomplete="off">
                         <?= form_error('name_mhs_2', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" type="text" name="npm_mhs_2" placeholder="NPM Mahasiswa 2" autocomplete="off">
+                        <input class="form-control form-control-lg" type="text" name="npm_mhs_2" value="<?=set_value('npm_mhs_2') ?>" placeholder="NPM Mahasiswa 2" autocomplete="off">
                         <?= form_error('npm_mhs_2', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <select class="form-control" id="kelas" name="kelas">
+                        <select class="form-control" value="<?=set_value('name_mhs_1') ?>"id="kelas" name="kelas">
                             <option disabled selected value>Kelas</option>
                             <option value="D3 Teknik Informatika 2A">D3 Teknik Informatika 2A</option>
                             <option value="D3 Teknik Informatika 2b">D3 Teknik Informatika 2B</option>
