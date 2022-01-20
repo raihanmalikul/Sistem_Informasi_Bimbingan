@@ -18,31 +18,43 @@
          <!-- ============================================================== -->
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
              <div class="card">
-                 <h5 class="card-header">Daftar Pembimbing Proyek 2 Program Studi D3 Teknik Informatika Tahun Ajaran 2021-2022</h5>
+                 <div class="card-header">
+                     <center>
+                        <h5 class="mb-0"> Pembimbing Proyek 2 Program Studi D3 Teknik Informatika Tahun Ajaran 2021-2022</h5>
+                     </center>
+                 </div>
                  <div class="card-body">
-                     <table class="table table-bordered">
-                         <thead>
-                             <tr>
-                                 <th scope="col">No</th>
-                                 <th scope="col">NPM</th>
-                                 <th scope="col">Nama</th>
-                                 <th scope="col">NPM</th>
-                                 <th scope="col">Nama</th>
-                                 <th scope="col">Kelas</th>
-                                 <th scope="col">Judul Proyek</th>
-                                 <th scope="col">Dosen Pembimbing</th>
-                             </tr>
-                         </thead>
+                     <table id="example2" class="table table-striped table-bordered" style="width: 100%;">
                          <tbody>
                              <tr>
-                                 <th scope="row">1</th>
-                                 <td><?= $user['npm_mhs_1']; ?></td>
+                                 <tr>
+                                 <td width="200px">Nama Mahasiswa 1</td>
                                  <td><?= $user['name_mhs_1']; ?></td>
-                                 <td><?= $user['npm_mhs_2']; ?></td>
+                                 </tr>
+                                 <tr>
+                                 <td width="200px">NPM</td>    
+                                 <td><?= $user['npm_mhs_1']; ?></td>
+                                 </tr>
+                                 <tr>
+                                 <td width="200px">Nama Mahasiswa 2</td>    
                                  <td><?= $user['name_mhs_2']; ?></td>
+                                 </tr>
+                                 <tr>
+                                 <td width="200px">NPM</td>
+                                 <td><?= $user['npm_mhs_2']; ?></td>
+                                 </tr>
+                                 <tr>
+                                 <td width="200px">Kelas</td>    
                                  <td><?= $user['kelas']; ?></td>
+                                 </tr>
+                                 <tr>
+                                 <td width="200px">Judul</td>
                                  <td>-</td>
+                                 </tr>
+                                 <tr>
+                                 <td width="200px">Dosen Pembimbing</td>    
                                  <td>-</td>
+                                 </tr>
                              </tr>
                          </tbody>
                      </table>
