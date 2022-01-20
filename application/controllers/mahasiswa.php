@@ -154,15 +154,6 @@ class mahasiswa extends CI_Controller
                 if ($this->upload->do_upload('proposal_proyek')) {
                     $new_file = $this->upload->data('file_name');
                     $this->db->set('proposal_proyek', $new_file);
-                    $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
-                    proposal berhasil di upload
-                    </div>');
-                    redirect('mahasiswa/proposal');
-                } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
-                    proposal gagal di upload
-                    </div>');
-                    redirect('mahasiswa/proposal');
                 }
             }
 
@@ -170,6 +161,15 @@ class mahasiswa extends CI_Controller
             $this->db->set('keterangan_judul', $keterangan_judul);
             $this->db->where('data_id', $data['user_data']['data_id']);
             $this->db->update('user_data');
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            proposal berhasil di upload
+            </div>');
+            redirect('mahasiswa/proposal');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            proposal gagal di upload
+            </div>');
+            redirect('mahasiswa/proposal');
         }
     }
 
