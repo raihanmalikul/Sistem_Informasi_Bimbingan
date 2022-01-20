@@ -10,6 +10,7 @@ class mahasiswa extends CI_Controller
         if (!$this->session->userdata('user_id')) {
             redirect('auth');
         }
+        $this->load->library('form_validation');
     }
     public function index()
     {
@@ -111,11 +112,65 @@ class mahasiswa extends CI_Controller
         $data['user']['data_id']])->row_array();
         // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('mahasiswa/proposal', $data);
-        $this->load->view('templates/footer');
+        $this->form_validation->set_rules('judul_proyek', 'Judul Proyek', 'required');
+        $this->form_validation->set_rules('laporan_proposal', 'Folder', 'required');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('mahasiswa/proposal', $data);
+            $this->load->view('templates/footer');
+        } else {
+        }
+    }
+
+
+
+    public function upload_proposal()
+    {
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // var_dump($upload_file);
+        // die;
+
+
+        if ($data) {
+            $judul_proyek = $this->input->post('judul_proyek');
+            $keterangan_judul = $this->input->post('keterangan_judul');
+
+
+            $upload_file = $_FILES['proposal_proyek']['name'];
+            if ($upload_file) {
+                $config['allowed_types']        = 'pdf|docx';
+                $config['max_size']             = 10048;
+                $config['upload_path']          = './assets/File/';
+
+                // $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+
+                if ($this->upload->do_upload('proposal_proyek')) {
+                    $new_file = $this->upload->data('file_name');
+                    $this->db->set('proposal_proyek', $new_file);
+                    $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+                    proposal berhasil di upload
+                    </div>');
+                    redirect('mahasiswa/proposal');
+                } else {
+                    $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+                    proposal gagal di upload
+                    </div>');
+                    redirect('mahasiswa/proposal');
+                }
+            }
+
+            $this->db->set('judul_proyek', $judul_proyek);
+            $this->db->set('keterangan_judul', $keterangan_judul);
+            $this->db->where('data_id', $data['user_data']['data_id']);
+            $this->db->update('user_data');
+        }
     }
 
 
@@ -129,13 +184,54 @@ class mahasiswa extends CI_Controller
         $data['user']['data_id']])->row_array();
         // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('mahasiswa/laporan', $data);
-        $this->load->view('templates/footer');
+        $this->form_validation->set_rules('laporan_proyek', 'Folder', 'required');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('mahasiswa/laporan', $data);
+            $this->load->view('templates/footer');
+        }
     }
 
+
+
+    public function upload_laporan()
+    {
+        $upload_file = $_FILES['laporan_proyek']['name'];
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // var_dump($upload_file);
+        // die;
+
+        if ($upload_file) {
+            $config['allowed_types']        = 'pdf|docx';
+            $config['max_size']             = 10048;
+            $config['upload_path']          = './assets/File/';
+
+            // $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload('laporan_proyek')) {
+                $new_file = $this->upload->data('file_name');
+                $this->db->set('laporan_proyek', $new_file);
+                $this->db->where('data_id', $data['user_data']['data_id']);
+                $this->db->update('user_data');
+                $this->session->set_flashdata('messagelaporan', '<div class="alert alert-primary" role="alert">
+                laporan berhasil di upload
+                    </div>');
+                redirect('mahasiswa/laporan');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+                laporan gagal di upload
+                    </div>');
+                redirect('mahasiswa/laporan');
+            }
+        }
+    }
 
 
     public function surat_izin_sidang()
@@ -170,6 +266,44 @@ class mahasiswa extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('mahasiswa/my_profile', $data);
         $this->load->view('templates/footer');
+    }
+
+
+
+    public function edit_my_profile()
+    {
+        $data['title'] = 'Menu Buku Pedoman';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+            $name_mhs_1 = $this->input->post('name_mhs_1');
+            $npm_mhs_1 = $this->input->post('npm_mhs_1');
+            $name_mhs_2 = $this->input->post('name_mhs_2');
+            $npm_mhs_2 = $this->input->post('npm_mhs_2');
+            $kelas = $this->input->post('kelas');
+
+            $this->db->set('name_mhs_1', $name_mhs_1);
+            $this->db->set('npm_mhs_1', $npm_mhs_1);
+            $this->db->set('name_mhs_1', $name_mhs_2);
+            $this->db->set('npm_mhs_1', $npm_mhs_2);
+            $this->db->set('kelas', $kelas);
+            $this->db->where('user_id', $data['user']['user_id']);
+            $this->db->update('user');
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data berhasil di ubah
+            </div>');
+            redirect('mahasiswa/my_profile');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data gagal di ubah
+            </div>');
+            redirect('mahasiswa/my_profile');
+        }
     }
 
 

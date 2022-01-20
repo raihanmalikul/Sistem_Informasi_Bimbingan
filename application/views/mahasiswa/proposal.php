@@ -18,6 +18,7 @@
          <!-- ============================================================== -->
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
              <div class="card">
+                 <?= $this->session->flashdata('messageproposal'); ?>
                  <div class="card-header">
                      <h5 class="mb-0">Status Pengumpulan</h5>
                  </div>
@@ -34,31 +35,33 @@
                              </tr>
                      </table>
                      <hr>
+                     <?php echo form_open_multipart('mahasiswa/upload_proposal'); ?>
                      <div class="form-group row">
                          <label class="col-12 col-sm-3 col-form-label text-sm-right">Judul Proyek</label>
                          <div class="col-12 col-sm-8 col-lg-6">
-                             <input type="text" required="" placeholder="" class="form-control">
+                             <input type="text" required="" name="judul_proyek" placeholder="" class="form-control">
                          </div>
                      </div>
                      <div class="form-group row">
                          <label class="col-12 col-sm-3 col-form-label text-sm-right">Keterangan</label>
                          <div class="col-12 col-sm-8 col-lg-6">
-                             <textarea required="" placeholder="" class="form-control"></textarea>
+                             <textarea required="" placeholder="" name="keterangan_judul" class="form-control"></textarea>
                          </div>
                      </div>
                      <div class="form-group row">
                          <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
                          <div class="col-12 col-sm-8 col-lg-6">
-                             <label for="formFile" class="form-label"></label>
-                             <input class="form-control" type="file" id="formFile">
+                             <label for="proposal_proyek" class="form-label"></label>
+                             <input class="form-control" type="file" name="proposal_proyek" id="proposal_proyek">
                          </div>
                      </div>
-                     <button type="button" class="btn btn-primary btn-xs text-white float-right margin-right"><i class="fas fa-save"></i> Simpan</button>
+                     <button type="submit" class="btn btn-primary btn-xs text-white float-right margin-right"><i class="fas fa-save"></i> Upload</button>
                  </div>
+                 <?= form_close(); ?>
              </div>
          </div>
      </div>
  </div>
- </div>
+
  <!-- ============================================================== -->
  <!-- end main wrapper -->
