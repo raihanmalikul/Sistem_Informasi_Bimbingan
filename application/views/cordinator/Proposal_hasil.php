@@ -15,6 +15,12 @@
         </div>
         <!-- ============================================================== -->
         <!-- end pageheader -->
+        <?php $mhs = $this->db->get_where('user', ['role_id' => 3])->result_Array();
+
+        // var_dump($mhs);
+        // die;
+        ?>
+
         <!-- ============================================================== -->
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
@@ -39,35 +45,31 @@
                             <thead>
                                 <tr>
                                     <th scope="col" width="50">No</th>
-                                    <th scope="col">Nama Mahasiswa</th>
-                                    <th scope="col">NPM</th>
+                                    <th scope="col">Nama Mahasiswa 1</th>
+                                    <th scope="col">NPM 1</th>
+                                    <th scope="col">Nama Mahasiswa 2</th>
+                                    <th scope="col">NPM 2</th>
                                     <th scope="col">Kelas</th>
                                     <th scope="col" width="200">Status Pengumpulan</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td width="100">
-                                        <a href=" <?= base_url('cordinator/detailproposal') ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td width="100">
-                                        <a href="detailproposal.html" class="btn btn-primary btn-xs">Lihat Detail</a>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <?php foreach ($mhs as $mhs) : ?>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td><?= $mhs['name_mhs_1']; ?></td>
+                                        <td><?= $mhs['npm_mhs_1']; ?></td>
+                                        <td><?= $mhs['name_mhs_2']; ?></td>
+                                        <td><?= $mhs['npm_mhs_2']; ?></td>
+                                        <td><?= $mhs['kelas']; ?></td>
+                                        <td></td>
+                                        <td width="100">
+                                            <a href=" <?= base_url('cordinator/detailproposal') ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
+                                        </td>
+                                    <?php endforeach; ?>
+
+                                </tbody>
                         </table>
                     </div>
                 </div>
