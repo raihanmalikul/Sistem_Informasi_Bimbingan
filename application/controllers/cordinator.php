@@ -130,11 +130,13 @@ class cordinator extends CI_Controller
 
 
         if ($data) {
-            $tanggal_pengumpulan = $this->input->post('tanggal_pengumpulan');
+            $tanggal_pengumpulan_proposal = $this->input->post('tanggal_pengumpulan_proposal');
+            $date = date_create($tanggal_pengumpulan_proposal);
+            $tas = date_format($date, "d-F-Y");
             // $format_date = date_format($tanggal_pengumpulan, d - m - Y);
             // var_dump($format_date);
             // die;
-            $this->db->set('tanggal_pengumpulan', $tanggal_pengumpulan);
+            $this->db->set('tanggal_pengumpulan_proposal', $tas);
             $this->db->where('data_id', $data['user_data']['data_id']);
             $this->db->update('user_data');
         } else {
@@ -178,6 +180,34 @@ class cordinator extends CI_Controller
         $this->load->view('cordinator/laporan_hasil', $data);
         $this->load->view('templates/footer');
     }
+
+
+
+    public function tambah_laporan()
+    {
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+            $tanggal_pengumpulan_laporan = $this->input->post('tanggal_pengumpulan_laporan');
+            $date = date_create($tanggal_pengumpulan_laporan);
+            $tas = date_format($date, "d-F-Y");
+            // $format_date = date_format($tanggal_pengumpulan, d - m - Y);
+            // var_dump($format_date);
+            // die;
+            $this->db->set('tanggal_pengumpulan_laporan', $tas);
+            $this->db->where('data_id', $data['user_data']['data_id']);
+            $this->db->update('user_data');
+        } else {
+            echo 'gagal';
+        }
+    }
+
 
 
 

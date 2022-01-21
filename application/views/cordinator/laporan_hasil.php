@@ -32,7 +32,7 @@
                         <tbody>
                             <tr>
                                 <td width="200px">Batas Waktu</td>
-                                <td>-</td>
+                                <td><?= $user_data['tanggal_pengumpulan_laporan']; ?></td>
                             </tr>
                             <tr>
                                 <td>Jumlah Pengumpul</td>
@@ -82,18 +82,18 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                <form>
+                            <form class="user" method="post" action="<?= base_url('cordinator/tambah_laporan') ?>">
+                                <div class="modal-body">
                                     <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Batas Waktu</label>
-                                        <input type="date" class="form-control" id="recipient-name">
+                                        <label for="tanggal_pengumpulan_laporan" class="col-form-label">Batas Waktu</label>
+                                        <input type="date" name="tanggal_pengumpulan_laporan" class="form-control" id="tanggal_pengumpulan_laporan">
                                     </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                <button type="button" class="btn btn-primary">Simpan</button>
-                            </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

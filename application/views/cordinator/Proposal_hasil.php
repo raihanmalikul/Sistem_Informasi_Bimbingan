@@ -33,7 +33,7 @@
                         <tbody>
                             <tr>
                                 <td width="200px">Batas Waktu</td>
-                                <td><?= $user_data['tanggal_pengumpulan']; ?></td>
+                                <td><?= $user_data['tanggal_pengumpulan_proposal']; ?></td>
                             </tr>
                             <tr>
                                 <td>Jumlah Pengumpul</td>
@@ -84,10 +84,10 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form class="user" method="post" action="<?= base_url('cordinator/tambah_proposal') ?>">
+                                <form class="user" method="post" action="<?= base_url('cordinator/tambah_laporan') ?>">
                                     <div class="form-group">
-                                        <label for="tanggal_pengumpulan" class="col-form-label">Batas Waktu</label>
-                                        <input type="date" name="tanggal_pengumpulan" class="form-control" id="tanggal_pengumpulan">
+                                        <label for="tanggal_pengumpulan_proposal" class="col-form-label">Batas Waktu</label>
+                                        <input type="date" name="tanggal_pengumpulan_proposal" class="form-control" id="tanggal_pengumpulan_proposal">
                                     </div>
                             </div>
                             <div class="modal-footer">
