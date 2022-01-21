@@ -289,8 +289,8 @@ class mahasiswa extends CI_Controller
 
             $this->db->set('name_mhs_1', $name_mhs_1);
             $this->db->set('npm_mhs_1', $npm_mhs_1);
-            $this->db->set('name_mhs_1', $name_mhs_2);
-            $this->db->set('npm_mhs_1', $npm_mhs_2);
+            $this->db->set('name_mhs_2', $name_mhs_2);
+            $this->db->set('npm_mhs_2', $npm_mhs_2);
             $this->db->set('kelas', $kelas);
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');

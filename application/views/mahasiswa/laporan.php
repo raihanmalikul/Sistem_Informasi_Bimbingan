@@ -15,6 +15,11 @@
          </div>
          <!-- ============================================================== -->
          <!-- end pageheader -->
+         <?php $mhs = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
+
+            // var_dump($mhs);
+            // die;
+            ?>
          <!-- ============================================================== -->
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
              <div class="card">
@@ -27,11 +32,12 @@
                          <tbody>
                              <tr>
                                  <td>Status Pengumpulan</td>
+                                 <td></td>
 
                              </tr>
                              <tr>
                                  <td>Batas Waktu</td>
-                                 <td>-</td>
+                                 <td> <?= $mhs['tanggal_pengumpulan_laporan']; ?></td>
                              </tr>
                      </table>
                      <hr>

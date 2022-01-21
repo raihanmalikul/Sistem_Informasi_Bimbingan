@@ -20,41 +20,41 @@
              <div class="card">
                  <div class="card-header">
                      <center>
-                        <h5 class="mb-0"> Pembimbing Proyek 2 Program Studi D3 Teknik Informatika Tahun Ajaran 2021-2022</h5>
+                         <h5 class="mb-0"> Pembimbing Proyek 2 Program Studi D3 Teknik Informatika Tahun Ajaran 2021-2022</h5>
                      </center>
                  </div>
                  <div class="card-body">
                      <table id="example2" class="table table-striped table-bordered" style="width: 100%;">
                          <tbody>
                              <tr>
-                                 <tr>
+                             <tr>
                                  <td width="200px">Nama Mahasiswa 1</td>
                                  <td><?= $user['name_mhs_1']; ?></td>
-                                 </tr>
-                                 <tr>
-                                 <td width="200px">NPM</td>    
+                             </tr>
+                             <tr>
+                                 <td width="200px">NPM</td>
                                  <td><?= $user['npm_mhs_1']; ?></td>
-                                 </tr>
-                                 <tr>
-                                 <td width="200px">Nama Mahasiswa 2</td>    
+                             </tr>
+                             <tr>
+                                 <td width="200px">Nama Mahasiswa 2</td>
                                  <td><?= $user['name_mhs_2']; ?></td>
-                                 </tr>
-                                 <tr>
+                             </tr>
+                             <tr>
                                  <td width="200px">NPM</td>
                                  <td><?= $user['npm_mhs_2']; ?></td>
-                                 </tr>
-                                 <tr>
-                                 <td width="200px">Kelas</td>    
+                             </tr>
+                             <tr>
+                                 <td width="200px">Kelas</td>
                                  <td><?= $user['kelas']; ?></td>
-                                 </tr>
-                                 <tr>
+                             </tr>
+                             <tr>
                                  <td width="200px">Judul</td>
+                                 <td><?= $user_data['judul_proyek']; ?></td>
+                             </tr>
+                             <tr>
+                                 <td width="200px">Dosen Pembimbing</td>
                                  <td>-</td>
-                                 </tr>
-                                 <tr>
-                                 <td width="200px">Dosen Pembimbing</td>    
-                                 <td>-</td>
-                                 </tr>
+                             </tr>
                              </tr>
                          </tbody>
                      </table>

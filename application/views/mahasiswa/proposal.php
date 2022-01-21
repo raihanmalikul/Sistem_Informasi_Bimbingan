@@ -14,6 +14,11 @@
              </div>
          </div>
          <!-- ============================================================== -->
+         <?php $mhs = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
+
+            // var_dump($mhs);
+            // die;
+            ?>
          <!-- end pageheader -->
          <!-- ============================================================== -->
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -27,11 +32,11 @@
                          <tbody>
                              <tr>
                                  <td>Status Pengumpulan</td>
-                                 <td>-</td>
+                                 <td></td>
                              </tr>
                              <tr>
                                  <td>Batas Waktu</td>
-                                 <td>-</td>
+                                 <td><?= $mhs['tanggal_pengumpulan_proposal']; ?></td>
                              </tr>
                      </table>
                      <hr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2022 at 07:51 AM
+-- Generation Time: Jan 21, 2022 at 04:16 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -53,7 +53,8 @@ INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `jam`, `
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
-  `user_id` varchar(11) NOT NULL,
+  `user_id` varchar(11) DEFAULT NULL,
+  `NIK` varchar(128) DEFAULT NULL,
   `data_id` int(11) DEFAULT NULL,
   `name_ds` varchar(128) DEFAULT NULL,
   `name_mhs_1` varchar(128) DEFAULT NULL,
@@ -72,14 +73,14 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `role_id`, `user_id`, `data_id`, `name_ds`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas`, `password`, `date_created`, `name_cor`, `email_ds`, `email_cor`) VALUES
-(14, 3, 'Razor01', 1, NULL, 'raihan', '1193025', 'raihan', '1193025', 'D3 Teknik Informatika 3c', '$2y$10$VsSLMUkRe2HKWwVnRdL3OOMA8K9VpFCpCxiJypoGl5.S3O.0FNWKS', 1641112954, NULL, NULL, NULL),
-(15, 3, 'Ilham01', 2, NULL, 'ilham', '1193019', 'azmi', '1193020', 'D3 Teknik Informatika 2A', '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637, NULL, NULL, NULL),
-(17, 2, '104.79.072', 3, 'Widia Resdiana, S.S., M.Pd.', NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637, NULL, 'widiaresdiana@poltekpos.ac.id', NULL),
-(18, 1, '105.76.082', 4, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637, 'Iwan Setiawan, ST., M.T.', NULL, 'iwansetiawan@poltekpos.ac.id '),
-(19, 3, 'ferdx', 5, NULL, 'Muhammad Ilham Ferdiansyah', '1193019', 'Muhammad Raihan Nur Azmii', '1193020', 'D3 Teknik Informatika 2c', '$2y$10$gOTObg4rBlKsiPa85NlK6.I.bjnxfYAC6X29QWPKjFlflRLHpqbum', 1641783718, NULL, NULL, NULL),
-(23, 3, 'RSssaa', 6, NULL, 'adadj', '424242', 'xjzcbjcb', '11131324', 'D3 Teknik Informatika 2b', '$2y$10$mqDb18UHoOy/wFCF67iVsukXet7Qfi2pZgrGHnOvpXxCxOIRQTWte', 1642163607, NULL, NULL, NULL),
-(24, 3, 'aldo01', 7, NULL, 'raihan malikul', '1193025', 'Aldo', '1193025', 'D3 Teknik Informatika 2b', '$2y$10$kHZlfnF0XHKgwXhSL.54fed4UkqIk89Hpoet5J9DQxU8ECcFaBwv2', 1642215858, NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `role_id`, `user_id`, `NIK`, `data_id`, `name_ds`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas`, `password`, `date_created`, `name_cor`, `email_ds`, `email_cor`) VALUES
+(14, 3, 'Razor01', NULL, 1, NULL, 'Aldo', '1193025', 'Razor', '1193025', 'D3 Teknik Informatika 3c', '$2y$10$VsSLMUkRe2HKWwVnRdL3OOMA8K9VpFCpCxiJypoGl5.S3O.0FNWKS', 1641112954, NULL, NULL, NULL),
+(15, 3, 'Ilham01', NULL, 2, NULL, 'ilham', '1193019', 'azmi', '1193020', 'D3 Teknik Informatika 2A', '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637, NULL, NULL, NULL),
+(17, 2, '104.79.07', '104.79.07', 3, 'Widia Resdiana, S.S., M.Pd.', NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637, NULL, 'widiaresdiana@poltekpos.ac.id', NULL),
+(18, 1, '105.76.082', '105.76.082', 4, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$PLd2ZrF5fBMvGDQ5/p38lu.zwlpAxk2PNMUVQGEBhruyBxZ/Mu3hi', 1641187637, 'Iwan Setiawan, ST., M.T.', NULL, 'iwansetiawan@poltekpos.ac.id'),
+(19, 3, 'ferdx', NULL, 5, NULL, 'Muhammad Ilham Ferdiansyah', '1193019', 'Muhammad Raihan Nur Azmii', '1193020', 'D3 Teknik Informatika 2c', '$2y$10$gOTObg4rBlKsiPa85NlK6.I.bjnxfYAC6X29QWPKjFlflRLHpqbum', 1641783718, NULL, NULL, NULL),
+(23, 3, 'RSssaa', NULL, 6, NULL, 'adadj', '424242', 'xjzcbjcb', '11131324', 'D3 Teknik Informatika 2b', '$2y$10$mqDb18UHoOy/wFCF67iVsukXet7Qfi2pZgrGHnOvpXxCxOIRQTWte', 1642163607, NULL, NULL, NULL),
+(24, 3, 'aldo01', NULL, 7, NULL, 'raihan malikul', '1193025', 'Aldo', '1193025', 'D3 Teknik Informatika 2b', '$2y$10$kHZlfnF0XHKgwXhSL.54fed4UkqIk89Hpoet5J9DQxU8ECcFaBwv2', 1642215858, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

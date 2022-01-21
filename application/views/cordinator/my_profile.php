@@ -69,40 +69,40 @@
                                  </button>
                              </div>
                              <div class="modal-body">
-                                 <form>
+                                 <form class="user" method="post" action="<?= base_url('cordinator/edit_my_profile') ?>">
                                      <div class="form-group">
-                                         <label for="inputUserName">Nama Lengkap</label>
+                                         <label for="name_cor">Nama Lengkap</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-user"></i>
                                              </span>
-                                             <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['name_cor']; ?>">
+                                             <input id="name_cor" name="name_cor" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['name_cor']; ?>">
                                          </div>
                                      </div>
                                      <div class="form-group">
-                                         <label for="inputNPM">NIK</label>
+                                         <label for="user_id">NIK</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-id-badge"></i>
                                              </span>
-                                             <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['user_id']; ?>">
+                                             <input id="user_id" name="user_id" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['user_id']; ?>">
                                          </div>
                                      </div>
                                      <div class="form-group">
-                                         <label for="inputUserName">Email</label>
+                                         <label for="email_cor">Email</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-at"></i>
                                              </span>
-                                             <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['email_cor']; ?>">
+                                             <input id="email_cor" name="email_cor" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['email_cor']; ?>">
                                          </div>
                                      </div>
-                                 </form>
                              </div>
                              <div class="modal-footer">
                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                 <button type="button" class="btn btn-primary">Simpan</button>
+                                 <button type="submit" class="btn btn-primary">Simpan</button>
                              </div>
+                             </form>
                          </div>
                      </div>
                  </div>

@@ -17,6 +17,11 @@
                 </div>
                 <!-- ============================================================== -->
                 <!-- end pageheader -->
+                <?php $mhs = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
+
+                // var_dump($mhs);
+                // die;
+                ?>
                 <!-- ============================================================== -->
 
                 <div class="col-md-12">
@@ -58,6 +63,7 @@
                             <div class="card-body">
                                 <center>
                                     <h2>
+                                        <?= $mhs['tanggal_pengumpulan_proposal']; ?>
                                     </h2>
                                 </center>
                             </div>
@@ -71,6 +77,7 @@
                             <div class="card-body">
                                 <center>
                                     <h2>
+                                        <?= $mhs['tanggal_pengumpulan_laporan']; ?>
                                     </h2>
                                 </center>
                             </div>
