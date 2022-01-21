@@ -15,6 +15,11 @@
          </div>
          <!-- ============================================================== -->
          <!-- end pageheader -->
+         <?php $mhs = $this->db->get_where('user', ['role_id' => 2])->result_Array();
+
+            // var_dump($mhs);
+            // die;
+            ?>
          <!-- ============================================================== -->
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
              <div class="card">
@@ -32,18 +37,21 @@
                                  <th scope="col">Aksi</th>
                              </tr>
                          </thead>
-                         <tbody>
-                             <tr>
-                                 <th scope="row"></th>
-                                 <td></td>
-                                 <td></td>
-                                 <td></td>
-                                 <td width="160">
-                                     <button class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i> Edit</button>
-                                     <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
-                                 </td>
-                             </tr>
-                         </tbody>
+                         <?php $no = 1; ?>
+                         <?php foreach ($mhs as $mhs) : ?>
+                             <tbody>
+                                 <tr>
+                                     <th scope="row"><?= $no++  ?></th>
+                                     <td><?= $mhs['user_id']; ?></td>
+                                     <td><?= $mhs['name_ds']; ?></td>
+                                     <td><?= $mhs['email_ds']; ?></td>
+                                     <td width="160">
+                                         <button class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i> Edit</button>
+                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
+                                     </td>
+                                 <?php endforeach; ?>
+                                 </tr>
+                             </tbody>
                      </table>
                  </div>
                  <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

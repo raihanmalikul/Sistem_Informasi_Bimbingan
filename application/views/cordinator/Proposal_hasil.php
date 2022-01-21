@@ -33,7 +33,7 @@
                         <tbody>
                             <tr>
                                 <td width="200px">Batas Waktu</td>
-                                <td>-</td>
+                                <td><?= $user_data['tanggal_pengumpulan']; ?></td>
                             </tr>
                             <tr>
                                 <td>Jumlah Pengumpul</td>
@@ -54,10 +54,11 @@
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
+                            <?php $no = 1; ?>
                             <?php foreach ($mhs as $mhs) : ?>
                                 <tbody>
                                     <tr>
-                                        <th>1</th>
+                                        <th><?= $no++  ?></th>
                                         <td><?= $mhs['name_mhs_1']; ?></td>
                                         <td><?= $mhs['npm_mhs_1']; ?></td>
                                         <td><?= $mhs['name_mhs_2']; ?></td>
@@ -83,17 +84,17 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form class="user" method="post" action="<?= base_url('cordinator/tambah_proposal') ?>">
                                     <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Batas Waktu</label>
-                                        <input type="date" class="form-control" id="recipient-name">
+                                        <label for="tanggal_pengumpulan" class="col-form-label">Batas Waktu</label>
+                                        <input type="date" name="tanggal_pengumpulan" class="form-control" id="tanggal_pengumpulan">
                                     </div>
-                                </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                <button type="button" class="btn btn-primary">Simpan</button>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>

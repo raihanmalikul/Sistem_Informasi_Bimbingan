@@ -119,6 +119,31 @@ class cordinator extends CI_Controller
 
 
 
+    public function tambah_proposal()
+    {
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+            $tanggal_pengumpulan = $this->input->post('tanggal_pengumpulan');
+            // $format_date = date_format($tanggal_pengumpulan, d - m - Y);
+            // var_dump($format_date);
+            // die;
+            $this->db->set('tanggal_pengumpulan', $tanggal_pengumpulan);
+            $this->db->where('data_id', $data['user_data']['data_id']);
+            $this->db->update('user_data');
+        } else {
+            echo 'gagal';
+        }
+    }
+
+
+
     public function detailproposal()
     {
         $data['title'] = 'Menu cordinator';

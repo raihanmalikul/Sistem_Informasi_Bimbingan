@@ -38,10 +38,11 @@
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
+                        <?php $no = 1; ?>
                         <?php foreach ($mhs as $mhs) : ?>
                             <tbody>
                                 <tr>
-                                    <th>1</th>
+                                    <th><?= $no++  ?></th>
                                     <td><?= $mhs['name_mhs_1']; ?></td>
                                     <td><?= $mhs['npm_mhs_1']; ?></td>
                                     <td><?= $mhs['name_mhs_2']; ?></td>

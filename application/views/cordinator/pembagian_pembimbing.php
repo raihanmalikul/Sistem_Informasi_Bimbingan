@@ -15,6 +15,12 @@
         </div>
         <!-- ============================================================== -->
         <!-- end pageheader -->
+        <?php $mhs = $this->db->get_where('user', ['role_id' => 3])->result_Array();
+
+
+        // var_dump($mhs);
+        // die;
+        ?>
         <!-- ============================================================== -->
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
@@ -26,28 +32,37 @@
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Nama Mahasiswa</th>
-                                <th scope="col">NPM</th>
+                                <th scope="col">Nama Mahasiswa 1</th>
+                                <th scope="col">NPM 1</th>
+                                <th scope="col">Nama Mahasiswa 2</th>
+                                <th scope="col">NPM 2</th>
                                 <th scope="col">Kelas</th>
                                 <th scope="col">Judul Proyek</th>
                                 <th scope="col">Dosen Pembimbing</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <div class="form-group">
-                                        <select class="form-control" id="kelas">
-                                            <option disabled selected value>Pilih Opsi</option>
-                                            <option>Dini Hamidin</option>
-                                            <option>Widya Resdiana</option>
-                                        </select>
-                                    </div>
+                        <?php $no = 1; ?>
+                        <?php foreach ($mhs as $mhs) : ?>
+                            <tbody>
+                                <tr>
+                                    <th><?= $no++  ?></th>
+                                    <td><?= $mhs['name_mhs_1']; ?></td>
+                                    <td><?= $mhs['npm_mhs_1']; ?></td>
+                                    <td><?= $mhs['name_mhs_2']; ?></td>
+                                    <td><?= $mhs['npm_mhs_2']; ?></td>
+                                    <td><?= $mhs['kelas']; ?></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="form-group">
+                                            <select class="form-control" id="kelas">
+                                                <option disabled selected value>Pilih Opsi</option>
+                                                <option>Dini Hamidin</option>
+                                                <option>Widya Resdiana</option>
+                                            </select>
+                                        </div>
+                                    <?php endforeach; ?>
+
+
                 </div>
                 </td>
                 </tr>
