@@ -48,14 +48,14 @@ class Auth extends CI_Controller
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                Wrong Password!
+                Password Salah!
                 </div>');
                 redirect('auth');
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            This User id has not registration !
+            User Id Ini Tidak Terdaftar !
             </div>');
             redirect('auth');
         }
@@ -76,7 +76,7 @@ class Auth extends CI_Controller
             'is_unique' => 'User id sudah ada !'
         ]);
         $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]', [
-            'min_length' => 'password too short !'
+            'min_length' => 'Password Terlalu Pendek !'
         ]);
 
 
@@ -114,7 +114,7 @@ class Auth extends CI_Controller
             $this->db->insert('user_data', $data2);
             $this->db->insert('berkas_bimbingan', $data3);
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
-            Congratulation! your account has been created. Please Login
+            Akun Telah Dibuat. Silahkan Login!
             </div>');
             redirect('auth');
         }
@@ -131,7 +131,7 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('role_id');
         $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-            You have been logged out!
+            Kamu Telah Keluar !
             </div>');
         redirect('auth');
     }

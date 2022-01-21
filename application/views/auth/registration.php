@@ -2,6 +2,7 @@
     <!-- signup form  -->
     <!-- ============================================================== -->
     <div class="splash-container">
+        <div class="row">
         <div class="card">
             <div class="card-header text-center">
                 <h3 class="mb-1">Form Registrasi</h3>
@@ -64,5 +65,6 @@
             <div class="card-footer bg-white text-center">
                 <p>Sudah Memiliki Akun? <a href="<?= base_url('auth') ?>" class="text-secondary">Login Disini!</a></p>
             </div>
+        </div>
         </div>
     </div>

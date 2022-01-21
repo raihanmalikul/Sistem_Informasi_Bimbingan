@@ -71,7 +71,7 @@
                              <div class="row">
                                  <div class="col-sm-6 pl-0">
                                      <p class="text-center">
-                                         <button type="submit" class="btn btn-space btn-primary" data-toggle="modal" data-target="#tambahModal">Ubah Profil</button>
+                                         <button type="button" class="btn btn-space btn-primary" data-toggle="modal" data-target="#tambahModal">Ubah Profil</button>
                                      </p>
                                  </div>
                              </div>
