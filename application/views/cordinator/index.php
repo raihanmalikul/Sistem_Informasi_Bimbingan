@@ -28,6 +28,32 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <center>
+                                <h5 class="card-header">Jumlah Pengumpul Proposal</h5>
+                            </center>
+                            <div class="card-body">
+                                <center>
+                                    <h3></h3>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <center>
+                                <h5 class="card-header">Jumlah Pengumpul Laporan</h5>
+                            </center>
+                            <div class="card-body">
+                                <center>
+                                    <h3></h3>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- ============================================================== -->

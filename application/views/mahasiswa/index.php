@@ -28,9 +28,9 @@
                     <div class="card">
                         <div class="card-body">
                             <center>
-                                <h2>
+                                <h3>
                                     Selamat datang Mahasiswa di Sistem Informasi Bimbingan Proyek
-                                </h2>
+                                </h3>
                             </center>
                         </div>
                     </div>
@@ -45,9 +45,9 @@
                             </center>
                             <div class="card-body">
                                 <center>
-                                    <h2>
+                                    <h3>
                                         <?= $user_data['judul_proyek']; ?>
-                                    </h2>
+                                    </h3>
                                 </center>
                             </div>
                         </div>
@@ -62,9 +62,9 @@
                             </center>
                             <div class="card-body">
                                 <center>
-                                    <h2>
+                                    <h3>
                                         <?= $mhs['tanggal_pengumpulan_proposal']; ?>
-                                    </h2>
+                                    </h3>
                                 </center>
                             </div>
                         </div>
@@ -76,9 +76,9 @@
                             </center>
                             <div class="card-body">
                                 <center>
-                                    <h2>
+                                    <h3>
                                         <?= $mhs['tanggal_pengumpulan_laporan']; ?>
-                                    </h2>
+                                    </h3>
                                 </center>
                             </div>
                         </div>
@@ -94,8 +94,8 @@
                             </center>
                             <div class="card-body">
                                 <center>
-                                    <h2>
-                                    </h2>
+                                    <h3>
+                                    </h3>
                                 </center>
                             </div>
                         </div>
@@ -107,8 +107,8 @@
                             </center>
                             <div class="card-body">
                                 <center>
-                                    <h2>
-                                    </h2>
+                                    <h3>
+                                    </h3>
                                 </center>
                             </div>
                         </div>

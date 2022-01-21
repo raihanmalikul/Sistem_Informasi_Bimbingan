@@ -18,14 +18,18 @@
         <!-- ============================================================== -->
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
+                <center>
                 <h5 class="card-header">Daftar Mahasiswa Proyek</h5>
+                </center>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Nama Mahasiswa</th>
-                                <th scope="col">NPM</th>
+                                <th scope="col">Nama Mahasiswa 1</th>
+                                <th scope="col">NPM 1</th>
+                                <th scope="col">Nama Mahasiswa 2</th>
+                                <th scope="col">NPM 2</th>
                                 <th scope="col">Kelas</th>
                                 <th scope="col">Judul Proyek</th>
                             </tr>
@@ -33,6 +37,8 @@
                         <tbody>
                             <tr>
                                 <th></th>
+                                <td></td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

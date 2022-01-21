@@ -18,18 +18,20 @@
         <!-- ============================================================== -->
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
+                <center>
                 <h5 class="card-header">Daftar Mahasiswa Proyek</h5>
+                </center>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col" width="50">No</th>
-                                <th scope="col">Nama Mahasiswa</th>
-                                <th scope="col">NPM</th>
-                                <th scope="col">Kelas</th>
-                                <th scope="col" width="150">Jumlah Bimbingan</th>
+                                <th scope="col">Nama Mahasiswa 1</th>
+                                <th scope="col">NPM 1</th>
+                                <th scope="col">Nama Mahasiswa 2</th>
+                                <th scope="col">NPM 2</th>
+                                <th scope="col">Jumlah Bimbingan</th>
                                 <th scope="col">Aksi</th>
-                                <th scope="col">Surat Izin Sidang</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,13 +41,9 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                                <td></td>
                                 <td width="100">
                                     <a href=" <?= base_url('dosen/detail_Persensi_bimbingan') ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
-                                </td>
-                                <td width="150">
-                                    <label class="be-checkbox custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Izinkan</span>
-                                    </label>
                                 </td>
                             </tr>
                         </tbody>
