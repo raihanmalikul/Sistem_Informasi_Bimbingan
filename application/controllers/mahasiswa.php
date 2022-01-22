@@ -135,9 +135,10 @@ class mahasiswa extends CI_Controller
         $data['user']['data_id']])->row_array();
         // var_dump($upload_file);
         // die;
+        $this->form_validation->set_rules('judul_proyek', 'Judul Proyek', 'required');
+        $this->form_validation->set_rules('laporan_proposal', 'Folder', 'required');
 
-
-        if ($data) {
+        if ($this->form_validation->run() == false) {
             $judul_proyek = $this->input->post('judul_proyek');
             $keterangan_judul = $this->input->post('keterangan_judul');
 

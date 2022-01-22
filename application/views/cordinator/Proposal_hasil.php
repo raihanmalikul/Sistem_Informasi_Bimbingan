@@ -17,6 +17,12 @@
         <!-- end pageheader -->
         <?php $mhs = $this->db->get_where('user', ['role_id' => 3])->result_Array();
 
+        $mhs2 = "SELECT * FROM user JOIN user_data 
+        ON user . data_id  = user_data . data_id
+            WHERE user . role_id = 3  ";
+
+        $jadimhs = $this->db->query($mhs2)->result_Array();
+
         // var_dump($mhs);
         // die;
         ?>
@@ -55,18 +61,19 @@
                                 </tr>
                             </thead>
                             <?php $no = 1; ?>
-                            <?php foreach ($mhs as $mhs) : ?>
+                            <?php foreach ($jadimhs as $mhs2) : ?>
+                                <?php $setatus = $this->db->get_where('status_proposal', ['id' => $mhs2['status_proposal_id']])->row_array() ?>
                                 <tbody>
                                     <tr>
                                         <th><?= $no++  ?></th>
-                                        <td><?= $mhs['name_mhs_1']; ?></td>
-                                        <td><?= $mhs['npm_mhs_1']; ?></td>
-                                        <td><?= $mhs['name_mhs_2']; ?></td>
-                                        <td><?= $mhs['npm_mhs_2']; ?></td>
-                                        <td><?= $mhs['kelas']; ?></td>
-                                        <td></td>
+                                        <td><?= $mhs2['name_mhs_1']; ?></td>
+                                        <td><?= $mhs2['npm_mhs_1']; ?></td>
+                                        <td><?= $mhs2['name_mhs_2']; ?></td>
+                                        <td><?= $mhs2['npm_mhs_2']; ?></td>
+                                        <td><?= $mhs2['kelas']; ?></td>
+                                        <td><?= $setatus['status']; ?></td>
                                         <td width="100">
-                                            <a href=" <?= base_url('cordinator/detailproposal') ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
+                                            <a href=" <?= base_url('cordinator/detailproposal/') . $mhs2['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                         </td>
                                     <?php endforeach; ?>
 
