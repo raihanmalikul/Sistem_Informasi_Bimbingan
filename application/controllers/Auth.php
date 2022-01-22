@@ -66,10 +66,12 @@ class Auth extends CI_Controller
     {
         $this->form_validation->set_rules('name_mhs_1', 'Name_mhs_1', 'required|trim');
         $this->form_validation->set_rules('npm_mhs_1', 'Npm_mhs_1', 'required|trim|is_unique[user.npm_mhs_1]', [
-            'is_unique' => 'NPM sudah ada !']);
+            'is_unique' => 'NPM sudah ada !'
+        ]);
         $this->form_validation->set_rules('name_mhs_2', 'Name_mhs_2', 'required|trim');
         $this->form_validation->set_rules('npm_mhs_2', 'Npm_mhs_2', 'required|trim|is_unique[user.npm_mhs_2]', [
-            'is_unique' => 'NPM sudah ada !']);
+            'is_unique' => 'NPM sudah ada !'
+        ]);
         $this->form_validation->set_rules('kelas', 'Kelas', 'required|trim');
         $this->form_validation->set_rules('katagori_proyek', 'Katagori_proyek', 'required|trim');
         $this->form_validation->set_rules('user_id', 'User_id', 'required|trim|is_unique[user.user_id]', [
@@ -100,12 +102,16 @@ class Auth extends CI_Controller
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'role_id' => 3,
                 'data_id' => $i,
-                'date_created' => time()
+                'date_created' => time(),
             ];
             $data2 = [
                 'katagori_proyek' => $this->input->post('katagori_proyek', true),
                 'data_id' => $i,
-                'berkas_bimbingan_id' => $i
+                'status_laporan_id' => 1,
+                'status_proposal_id' => 1,
+                'berkas_bimbingan_id' => $i,
+                'cor_id' => 1,
+                'mhs_id' => $i
             ];
             $data3 = [
                 'berkas_bimbingan_id' => $i
