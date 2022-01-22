@@ -323,4 +323,38 @@ class mahasiswa extends CI_Controller
         $this->load->view('mahasiswa/edit_profile', $data);
         $this->load->view('templates/footer');
     }
+
+
+
+    public function ubah_profile()
+    {
+        $data['title'] = 'Menu Buku Pedoman';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+            $user_id = $this->input->post('user_id');
+            $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+
+
+
+            $this->db->set('user_id', $user_id);
+            $this->db->set('password', $password);
+            $this->db->where('user_id', $data['user']['user_id']);
+            $this->db->update('user');
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data berhasil di ubah
+            </div>');
+            redirect('auth');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data gagal di ubah
+            </div>');
+            redirect('auth');
+        }
+    }
 }

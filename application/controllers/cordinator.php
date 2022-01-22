@@ -83,6 +83,97 @@ class cordinator extends CI_Controller
 
 
 
+    public function registration()
+    {
+
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+            $query = 'select * from user order by data_id DESC LIMIT 1';
+            $data_id = $this->db->query($query)->row_array();
+            $id = $data_id['data_id'];
+            $i = (int)$id + 1;
+            $data1 = [
+                'NIK' => $this->input->post('NIK', true),
+                'name_ds' => $this->input->post('name_ds', true),
+                'email_ds' => $this->input->post('email_ds', true),
+                'user_id' => $this->input->post('user_id', true),
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'role_id' => 2,
+                'data_id' => $i,
+                'date_created' => time()
+            ];
+            $data2 = [
+                'data_id' => $i,
+                'berkas_bimbingan_id' => $i
+            ];
+            $data3 = [
+                'berkas_bimbingan_id' => $i
+            ];
+            $this->db->insert('user', $data1);
+            $this->db->insert('user_data', $data2);
+            $this->db->insert('berkas_bimbingan', $data3);
+
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            Akun Telah Dibuat. Silahkan Login!
+            </div>');
+            redirect('cordinator/informasi_dosen_pembimbing');
+        } else {
+
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            Akun Telah Dibuat. Silahkan Login!
+            </div>');
+            redirect('cordinator/informasi_dosen_pembimbing');
+        }
+    }
+
+
+
+    public function edit()
+    {
+        $data['title'] = 'Menu Buku Pedoman';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+            $NIK = $this->input->post('NIK');
+            $name_ds = $this->input->post('name_ds');
+            $email_ds = $this->input->post('email_ds');
+            $user_id = $this->input->post('user_id');
+            $password = $this->input->post('password');
+
+
+            $this->db->set('NIK', $NIK);
+            $this->db->set('name_ds', $name_ds);
+            $this->db->set('email_ds', $email_ds);
+            $this->db->set('email_ds', $email_ds);
+            $this->db->where('user_id', $data['user']['user_id']);
+            $this->db->update('user');
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data berhasil di ubah
+            </div>');
+            redirect('cordinator/my_profile');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data gagal di ubah
+            </div>');
+            redirect('cordinator/my_profile');
+        }
+    }
+
+
+
+
     public function pembagian_pembimbing()
     {
         $data['title'] = 'Menu cordinator';
@@ -334,12 +425,12 @@ class cordinator extends CI_Controller
 
         if ($data) {
             $name_cor = $this->input->post('name_cor');
-            $user_id = $this->input->post('user_id');
+            $NIK = $this->input->post('NIK');
             $email_cor = $this->input->post('email_cor');
 
 
             $this->db->set('name_cor', $name_cor);
-            $this->db->set('user_id', $user_id);
+            $this->db->set('NIK', $NIK);
             $this->db->set('email_cor', $email_cor);
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');
@@ -372,5 +463,39 @@ class cordinator extends CI_Controller
         $this->load->view('templates/topbar_1', $data);
         $this->load->view('cordinator/edit_profile', $data);
         $this->load->view('templates/footer');
+    }
+
+
+
+    public function ubah_profile()
+    {
+        $data['title'] = 'Menu Buku Pedoman';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+            $user_id = $this->input->post('user_id');
+            $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+
+
+
+            $this->db->set('user_id', $user_id);
+            $this->db->set('password', $password);
+            $this->db->where('user_id', $data['user']['user_id']);
+            $this->db->update('user');
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data berhasil di ubah
+            </div>');
+            redirect('auth');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data gagal di ubah
+            </div>');
+            redirect('auth');
+        }
     }
 }

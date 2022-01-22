@@ -22,27 +22,27 @@
                  <div class="card-body">
                      <form action="#" id="basicform" data-parsley-validate="">
                          <div class="form-group">
-                             <label for="inputUserId">User Id</label>
+                             <label for="user_id">User Id</label>
                              <div class="input-group-prepend">
                                  <span class="input-group-text" id="inputGroupPrepend">
                                      <i class="fas fa-fw fa-user"></i>
                                  </span>
-                                 <input id="inputUserId" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                 <input id="user_id" name="user_id" type="text" data-parsley-trigger="change" readonly required="" autocomplete="off" value="<?= $user['user_id']; ?>" class="form-control">
                              </div>
                          </div>
                          <div class="form-group">
-                             <label for="inputNPM">Password</label>
+                             <label for="password">Password</label>
                              <div class="input-group-prepend">
                                  <span class="input-group-text" id="inputGroupPrepend">
                                      <i class="fas fa-fw fa-lock"></i>
                                  </span>
-                                 <input id="inputPassword" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                 <input id="password" name="password" type="password" data-parsley-trigger="change" readonly required="" value="" autocomplete="off" class="form-control">
                              </div>
                          </div>
                          <div class="row">
                              <div class="col-sm-6 pl-0">
                                  <p class="text-center">
-                                     <button type="button" class="btn btn-space btn-primary" data-toggle="modal" data-target="#tambahModal">Ubah Password</button>
+                                     <button type="button" class="btn btn-space btn-primary" data-toggle="modal" data-target="#tambahModal">Edit akun </button>
                                  </p>
                              </div>
                          </div>
@@ -60,22 +60,31 @@
                          </button>
                      </div>
                      <div class="modal-body">
-                         <form>
+                         <form class="user" method="post" action="<?= base_url('cordinator/ubah_profile') ?>">
                              <div class="form-group">
-                                 <label for="inputUserName">Masukan Password Baru</label>
+                                 <label for="user_id">User Id</label>
+                                 <div class="input-group-prepend">
+                                     <span class="input-group-text" id="inputGroupPrepend">
+                                         <i class="fas fa-fw fa-user"></i>
+                                     </span>
+                                     <input id="user_id" name="user_id" type="text" data-parsley-trigger="change" required="" value="<?= $user['user_id']; ?>" autocomplete="off" class="form-control">
+                                 </div>
+                             </div>
+                             <div class="form-group">
+                                 <label for="password">Masukan Password Baru</label>
                                  <div class="input-group-prepend">
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-lock"></i>
                                      </span>
-                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control">
+                                     <input id="password" name="password" type="password" data-parsley-trigger="change" required="" value="" autocomplete="off" class="form-control">
                                  </div>
                              </div>
-                         </form>
                      </div>
                      <div class="modal-footer">
                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                         <button type="button" class="btn btn-primary">Simpan</button>
+                         <button type="submit" class="btn btn-primary">Simpan</button>
                      </div>
+                     </form>
                  </div>
              </div>
          </div>

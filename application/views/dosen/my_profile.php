@@ -37,7 +37,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-id-badge"></i>
                                      </span>
-                                     <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $user['user_id']; ?>">
+                                     <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $user['NIK']; ?>">
                                  </div>
                              </div>
                              <div class="form-group">
@@ -80,12 +80,12 @@
                                          </div>
                                      </div>
                                      <div class="form-group">
-                                         <label for="user_id">NIK</label>
+                                         <label for="NIK">NIK</label>
                                          <div class="input-group-prepend">
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-id-badge"></i>
                                              </span>
-                                             <input id="user_id" type="text" name="user_id" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['user_id']; ?>">
+                                             <input id="NIK" type="text" name="NIK" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['NIK']; ?>">
                                          </div>
                                      </div>
                                      <div class="form-group">

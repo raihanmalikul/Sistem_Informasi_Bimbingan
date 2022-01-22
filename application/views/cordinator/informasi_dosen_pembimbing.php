@@ -64,33 +64,33 @@
                                  </button>
                              </div>
                              <div class="modal-body">
-                                 <form>
+                                 <form class="user" method="post" action="<?= base_url('cordinator/registration') ?>">
                                      <div class="form-group">
-                                         <label for="recipient-name" class="col-form-label">NIK</label>
-                                         <input type="text" class="form-control" id="recipient-name" placeholder="NIK">
+                                         <label for="NIK" class="col-form-label">NIK</label>
+                                         <input type="text" name="NIK" class="form-control" id="NIK" placeholder="NIK">
                                      </div>
                                      <div class="form-group">
-                                         <label for="recipient-name" class="col-form-label">Nama</label>
-                                         <input type="text" class="form-control" id="recipient-name" placeholder="Nama">
+                                         <label for="name_ds" class="col-form-label">Nama</label>
+                                         <input type="text" name="name_ds" class="form-control" id="name_ds" placeholder="Nama">
                                      </div>
                                      <div class="form-group">
-                                         <label for="recipient-name" class="col-form-label">Email</label>
-                                         <input type="text" class="form-control" id="recipient-name" placeholder="Email">
+                                         <label for="email_ds" class="col-form-label">Email</label>
+                                         <input type="text" name="email_ds" class="form-control" id="email_ds" placeholder="Email">
                                      </div>
                                      <div class="form-group row">
                                          <div class="col-sm-6 mb-3 mb-sm-0">
-                                             <input type="text" class="form-control form-control-user" id="exampleInputId_User" placeholder="User ID">
+                                             <input type="text" class="form-control form-control-user" name="user_id" id="user_id" placeholder="User ID">
                                          </div>
                                          <div class="col-sm-6">
-                                             <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Password">
+                                             <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password">
                                          </div>
                                      </div>
-                                 </form>
                              </div>
                              <div class="modal-footer">
                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                 <button type="button" class="btn btn-primary">Simpan</button>
+                                 <button type="submit" class="btn btn-primary">Simpan</button>
                              </div>
+                             </form>
                          </div>
                      </div>
                  </div>
@@ -104,33 +104,33 @@
                                  </button>
                              </div>
                              <div class="modal-body">
-                                 <form>
+                                 <form class="user" method="post" action="<?= base_url('cordinator/edit') ?>">
                                      <div class="form-group">
-                                         <label for="recipient-name" class="col-form-label">NIK</label>
-                                         <input type="text" class="form-control" id="recipient-name" placeholder="NIK">
+                                         <label for="NIK" class="col-form-label">NIK</label>
+                                         <input type="text" name="NIK" class="form-control" id="NIK" placeholder="NIK">
                                      </div>
                                      <div class="form-group">
-                                         <label for="recipient-name" class="col-form-label">Nama</label>
-                                         <input type="text" class="form-control" id="recipient-name" placeholder="Nama">
+                                         <label for="name_ds" class="col-form-label">Nama</label>
+                                         <input type="text" name="name_ds" class="form-control" id="name_ds" placeholder="Nama">
                                      </div>
                                      <div class="form-group">
-                                         <label for="recipient-name" class="col-form-label">Email</label>
-                                         <input type="text" class="form-control" id="recipient-name" placeholder="Email">
+                                         <label for="email_ds" class="col-form-label">Email</label>
+                                         <input type="text" name="email_ds" class="form-control" id="email_ds" placeholder="Email">
                                      </div>
                                      <div class="form-group row">
                                          <div class="col-sm-6 mb-3 mb-sm-0">
-                                             <input type="text" class="form-control form-control-user" id="exampleInputId_User" placeholder="User ID">
+                                             <input type="text" class="form-control form-control-user" name="user_id" id="user_id" placeholder="User ID">
                                          </div>
                                          <div class="col-sm-6">
-                                             <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Password">
+                                             <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password">
                                          </div>
                                      </div>
-                                 </form>
                              </div>
                              <div class="modal-footer">
                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                 <button type="button" class="btn btn-primary">Simpan</button>
+                                 <button type="submit" class="btn btn-primary">Simpan</button>
                              </div>
+                             </form>
                          </div>
                      </div>
                  </div>
