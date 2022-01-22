@@ -321,8 +321,12 @@ class cordinator extends CI_Controller
 
 
 
-    public function detaillaporan()
+    public function detaillaporan($id)
     {
+        $mhs2 = "SELECT * FROM user JOIN user_data 
+         ON user . data_id  = user_data . data_id
+         WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
+        $data['mhs'] = $this->db->query($mhs2)->row_array();
         $data['title'] = 'Menu cordinator';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -358,8 +362,12 @@ class cordinator extends CI_Controller
 
 
 
-    public function detailpresensi()
+    public function detailpresensi($id)
     {
+        $mhs2 = "SELECT * FROM user JOIN user_data 
+         ON user . data_id  = user_data . data_id
+         WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
+        $data['mhs'] = $this->db->query($mhs2)->row_array();
         $data['title'] = 'Menu cordinator';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();

@@ -28,27 +28,27 @@
                         <tbody>
                             <tr>
                                 <td width="200px">Nama Mahasiswa</td>
-                                <td>-</td>
+                                <td><?= $mhs['name_mhs_1']; ?></td>
                             </tr>
                             <tr>
                                 <td>NPM</td>
-                                <td>-</td>
+                                <td><?= $mhs['npm_mhs_1']; ?></td>
                             </tr>
                             <tr>
                                 <td>Nama Mahasiswa</td>
-                                <td>-</td>
+                                <td><?= $mhs['name_mhs_2']; ?></td>
                             </tr>
                             <tr>
                                 <td>NPM</td>
-                                <td>-</td>
+                                <td><?= $mhs['npm_mhs_2']; ?></td>
                             </tr>
                             <tr>
                                 <td>Kelas</td>
-                                <td>-</td>
+                                <td><?= $mhs['kelas']; ?></td>
                             </tr>
                             <tr>
                                 <td>Judul Proyek</td>
-                                <td>-</td>
+                                <td><?= $mhs['judul_proyek']; ?></td>
                             </tr>
                     </table>
                     <div class="card-body">

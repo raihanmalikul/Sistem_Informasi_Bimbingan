@@ -78,7 +78,7 @@
                                         <td><?= $mhs2['kelas']; ?></td>
                                         <td><?= $setatus['status']; ?></td>
                                         <td width="100">
-                                            <a href="<?= base_url('cordinator/detaillaporan/') . $mhs2['id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
+                                            <a href="<?= base_url('cordinator/detaillaporan/') . $mhs2['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                         </td>
                                     <?php endforeach; ?>
                                     </tr>

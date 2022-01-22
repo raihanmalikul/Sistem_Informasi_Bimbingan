@@ -15,16 +15,26 @@
         </div>
         <!-- ============================================================== -->
         <!-- end pageheader -->
-        <?php $mhs = $this->db->get_where('user', ['role_id' => 3])->result_Array();
+        <?php
 
-        // var_dump($mhs);
+        $mhs2 = "SELECT * FROM user JOIN user_data 
+         ON user . data_id  = user_data . data_id
+         WHERE user . role_id = 3  ";
+
+        $jadimhs = $this->db->query($mhs2)->result_Array();
+        // echo '<pre>';
+        // var_dump($jadimhs);
+        // echo '</pre>';
         // die;
+        // $role_id = $this->db->get('status_laporan_id')->result_Array();
+        // $status = $this->db->get_where('status', ['id' => $role_id])->row_array();
+
         ?>
         <!-- ============================================================== -->
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <center>
-                <h5 class="card-header">Daftar Mahasiswa Proyek</h5>
+                    <h5 class="card-header">Daftar Mahasiswa Proyek</h5>
                 </center>
                 <div class="card-body">
                     <table class="table table-bordered">
@@ -36,23 +46,23 @@
                                 <th scope="col">Nama Mahasiswa 2</th>
                                 <th scope="col">NPM 2</th>
                                 <th scope="col">Kelas</th>
-                                <th scope="col" width="200">Status Pengumpulan</th>
+                                <th scope="col" width="200">Jumlah Bimbingan</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <?php $no = 1; ?>
-                        <?php foreach ($mhs as $mhs) : ?>
+                        <?php foreach ($jadimhs as $mhs2) : ?>
                             <tbody>
                                 <tr>
                                     <th><?= $no++  ?></th>
-                                    <td><?= $mhs['name_mhs_1']; ?></td>
-                                    <td><?= $mhs['npm_mhs_1']; ?></td>
-                                    <td><?= $mhs['name_mhs_2']; ?></td>
-                                    <td><?= $mhs['npm_mhs_2']; ?></td>
-                                    <td><?= $mhs['kelas']; ?></td>
+                                    <td><?= $mhs2['name_mhs_1']; ?></td>
+                                    <td><?= $mhs2['npm_mhs_1']; ?></td>
+                                    <td><?= $mhs2['name_mhs_2']; ?></td>
+                                    <td><?= $mhs2['npm_mhs_2']; ?></td>
+                                    <td><?= $mhs2['kelas']; ?></td>
                                     <td></td>
                                     <td width="100">
-                                        <a href="<?= base_url('cordinator/detailpresensi') ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
+                                        <a href="<?= base_url('cordinator/detailpresensi/') . $mhs2['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                     </td>
                                 <?php endforeach; ?>
                                 </tr>
