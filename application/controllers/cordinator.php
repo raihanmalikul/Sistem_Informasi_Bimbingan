@@ -101,29 +101,24 @@ class cordinator extends CI_Controller
             $i = (int)$id + 1;
             $data1 = [
                 'NIK' => $this->input->post('NIK', true),
-                'name_ds' => $this->input->post('name_ds', true),
-                'email_ds' => $this->input->post('email_ds', true),
+                'name' => $this->input->post('name', true),
+                'email' => $this->input->post('email', true),
+                'dos_id' => $i
+
+            ];
+            $data2 = [
                 'user_id' => $this->input->post('user_id', true),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'role_id' => 2,
                 'data_id' => $i,
+                'dos_id' => $i,
                 'date_created' => time()
             ];
-            $data2 = [
-                'data_id' => $i,
-                'status_laporan_id' => 1,
-                'status_proposal_id' => 1,
-                'berkas_bimbingan_id' => $i,
-                'cor_id' => 1,
-                'mhs_id' => $i
-            ];
-            $data3 = [
-                'berkas_bimbingan_id' => $i
-            ];
-            $this->db->insert('user', $data1);
-            $this->db->insert('user_data', $data2);
-            $this->db->insert('berkas_bimbingan', $data3);
-            $this->db->update('user');
+
+
+
+            $this->db->insert('admin', $data1);
+            $this->db->insert('user', $data2);
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
             data berhasisl di tambahkan
             </div>');
@@ -197,6 +192,83 @@ class cordinator extends CI_Controller
         $this->load->view('templates/topbar_1', $data);
         $this->load->view('cordinator/pembagian_pembimbing', $data);
         $this->load->view('templates/footer');
+    }
+
+
+
+    public function pembagian_pembimbing_tambah()
+    {
+
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
+        $data['user']['dos_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+            $mhs = $this->input->post('mhs_id[]', true);
+            $dosen = $this->input->post('dos_id[]', true);
+            $jumlah = count($mhs);
+            for ($i = 0; $i < $jumlah; $i++) {
+                $this->db->set('dos_id', $dosen[$i]);
+                $this->db->set('mhs_id', $mhs[$i]);
+                $this->db->insert('bimbingan');
+            }
+
+            // echo 'berhasil';
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data berhasisl di tambahkan
+            </div>');
+            redirect('cordinator/pembagian_pembimbing');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data gagal di tambahkan
+            </div>');
+            redirect('cordinator/pembagian_pembimbing');
+        }
+    }
+
+
+
+    public function pembagian_pembimbing_edit()
+    {
+
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+
+
+            $mhs_id = $this->input->post('mhs_id');
+            $dos_id = $this->input->post('dos_id');
+
+
+
+
+            $this->db->set('mhs_id', $mhs_id);
+            $this->db->set('dos_id', $dos_id);
+            $this->db->where('mhs_id', $data['bimbingan']['mhs_id']);
+            $this->db->update('bimbingan');
+            // echo 'berhasil';
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data berhasisl di tambahkan
+            </div>');
+            redirect('cordinator/pembagian_pembimbing');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            data gagal di tambahkan
+            </div>');
+            redirect('cordinator/pembagian_pembimbing');
+        }
     }
 
 

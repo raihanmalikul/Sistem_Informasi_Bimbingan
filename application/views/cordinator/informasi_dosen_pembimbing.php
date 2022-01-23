@@ -15,8 +15,13 @@
          </div>
          <!-- ============================================================== -->
          <!-- end pageheader -->
-         <?php $mhs = $this->db->get_where('user', ['role_id' => 2])->result_Array();
+         <?php
 
+
+            $dos = "SELECT * FROM user JOIN admin
+                ON user . dos_id  = admin . dos_id
+                WHERE user . role_id = 2  ";
+            $jadidos = $this->db->query($dos)->result_Array();
             // var_dump($mhs);
             // die;
             ?>
@@ -38,13 +43,13 @@
                              </tr>
                          </thead>
                          <?php $no = 1; ?>
-                         <?php foreach ($mhs as $mhs) : ?>
+                         <?php foreach ($jadidos as  $dos) : ?>
                              <tbody>
                                  <tr>
                                      <th scope="row"><?= $no++  ?></th>
-                                     <td><?= $mhs['user_id']; ?></td>
-                                     <td><?= $mhs['name_ds']; ?></td>
-                                     <td><?= $mhs['email_ds']; ?></td>
+                                     <td><?= $dos['NIK']; ?></td>
+                                     <td><?= $dos['name']; ?></td>
+                                     <td><?= $dos['email']; ?></td>
                                      <td width="160">
                                          <button class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i> Edit</button>
                                          <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
@@ -70,12 +75,12 @@
                                          <input type="text" name="NIK" class="form-control" id="NIK" placeholder="NIK">
                                      </div>
                                      <div class="form-group">
-                                         <label for="name_ds" class="col-form-label">Nama</label>
-                                         <input type="text" name="name_ds" class="form-control" id="name_ds" placeholder="Nama">
+                                         <label for="name" class="col-form-label">Nama</label>
+                                         <input type="text" name="name" class="form-control" id="name" placeholder="Nama">
                                      </div>
                                      <div class="form-group">
                                          <label for="email_ds" class="col-form-label">Email</label>
-                                         <input type="text" name="email_ds" class="form-control" id="email_ds" placeholder="Email">
+                                         <input type="text" name="email" class="form-control" id="email" placeholder="Email">
                                      </div>
                                      <div class="form-group row">
                                          <div class="col-sm-6 mb-3 mb-sm-0">

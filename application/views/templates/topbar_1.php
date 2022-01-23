@@ -3,6 +3,8 @@
 <?php
 $role_id = $this->session->userdata('role_id');
 $role = $this->db->get_where('user_role', ['id' => $role_id])->row_array();
+
+
 ?>
 <div class="dashboard-header">
     <nav class="navbar navbar-expand-lg bg-white fixed-top">
@@ -16,7 +18,7 @@ $role = $this->db->get_where('user_role', ['id' => $role_id])->row_array();
 
                 <li class="nav-item dropdown nav-user">
                     <?php if ($role_id == 2) : ?>
-                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="badge bg-success mr-3 text-light">Dosen</span> <?= $user['name_ds']  ?></a>
+                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="badge bg-success mr-3 text-light">Dosen</span> <?= $admin['name']  ?></a>
                     <?php else : ?>
                         <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="badge bg-primary mr-3 text-light">Koordinator</span> <?= $user['name_cor']  ?></a>
                     <?php endif; ?>

@@ -28,7 +28,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-user"></i>
                                      </span>
-                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $user['name_ds']; ?>">
+                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $admin['name']; ?>">
                                  </div>
                              </div>
                              <div class="form-group">
@@ -37,7 +37,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-id-badge"></i>
                                      </span>
-                                     <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $user['NIK']; ?>">
+                                     <input id="inputNPM" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $admin['NIK']; ?>">
                                  </div>
                              </div>
                              <div class="form-group">
@@ -46,7 +46,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-at"></i>
                                      </span>
-                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $user['email_ds']; ?>">
+                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $admin['email']; ?>">
                                  </div>
                              </div>
                              <div class="row">
@@ -76,7 +76,7 @@
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-user"></i>
                                              </span>
-                                             <input id="name_ds" name="name_ds" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['name_ds']; ?>">
+                                             <input id="name_ds" name="name" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $admin['name']; ?>">
                                          </div>
                                      </div>
                                      <div class="form-group">
@@ -85,7 +85,7 @@
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-id-badge"></i>
                                              </span>
-                                             <input id="NIK" type="text" name="NIK" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['NIK']; ?>">
+                                             <input id="NIK" type="text" name="NIK" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $admin['NIK']; ?>">
                                          </div>
                                      </div>
                                      <div class="form-group">
@@ -94,7 +94,7 @@
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-at"></i>
                                              </span>
-                                             <input id="email_ds" type="text" name="email_ds" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['email_ds']; ?>">
+                                             <input id="email_ds" type="text" name="email" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $admin['email']; ?>">
                                          </div>
                                      </div>
                              </div>

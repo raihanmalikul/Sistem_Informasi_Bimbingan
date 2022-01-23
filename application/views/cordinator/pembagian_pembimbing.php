@@ -24,7 +24,7 @@
         $jadimhs = $this->db->query($mhs2)->result_Array();
 
 
-        // var_dump($mhs);
+        // var_dump($jadidos);
         // die;
         ?>
         <!-- ============================================================== -->
@@ -47,9 +47,10 @@
                                 <th scope="col">Dosen Pembimbing</th>
                             </tr>
                         </thead>
-                        <?php $no = 1; ?>
-                        <?php foreach ($jadimhs as $mhs2) : ?>
-                            <tbody>
+                        <form class="user" method="post" action="<?= base_url('cordinator/pembagian_pembimbing_tambah') ?>">
+                            <?php $no = 1; ?>
+                            <?php foreach ($jadimhs as $mhs2) : ?>
+
                                 <tr>
                                     <th><?= $no++  ?></th>
                                     <td><?= $mhs2['name_mhs_1']; ?></td>
@@ -58,15 +59,27 @@
                                     <td><?= $mhs2['npm_mhs_2']; ?></td>
                                     <td><?= $mhs2['kelas']; ?></td>
                                     <td><?= $mhs2['judul_proyek']; ?></td>
+                                    <input type="hidden" name="mhs_id[]" value="<?= $mhs2['mhs_id']; ?>">
                                     <td>
                                         <div class="form-group">
-                                            <select class="form-control" id="kelas">
+                                            <?php
+                                            $dos2 = "SELECT * FROM user JOIN admin
+                                            ON user . dos_id  = admin . dos_id
+                                            WHERE user . role_id = 2  ";
+
+                                            $jadidos = $this->db->query($dos2)->result_Array();
+                                            ?>
+                                            <select class="form-control" name="dos_id[]" id="kelas">
                                                 <option disabled selected value>Pilih Opsi</option>
-                                                <option>Dini Hamidin</option>
-                                                <option>Widya Resdiana</option>
+                                                <?php foreach ($jadidos as $dos2) : ?>
+                                                    <option value="<?= $dos2['dos_id']; ?>"><?= $dos2['name']; ?></option>
+                                                <?php endforeach; ?>
                                             </select>
                                         </div>
+
                                     <?php endforeach; ?>
+
+
 
 
                 </div>
@@ -75,9 +88,10 @@
                 </tbody>
                 </table>
                 <br>
-                <button type="button" class="btn btn-primary btn-xs text-white "><i class="fas fa-save"></i> Simpan</button>
-                <button type="button" class="btn btn-success btn-xs text-white "><i class="fas fa-edit"></i> Edit</button>
+                <button type="submit" class="btn btn-primary btn-xs text-white"><i class="fas fa-save"></i> Simpan</button>
+                <button type="button" class="btn btn-success btn-xs text-white"><i class="fas fa-edit"></i> Edit</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
