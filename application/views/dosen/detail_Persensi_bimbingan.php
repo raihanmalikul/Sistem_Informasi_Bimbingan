@@ -70,7 +70,7 @@
                                          <td><?= $tes['materi']; ?></td>
                                          <td><img width="10%" src="<?= base_url('assets/File/tandatangan_dosen/') . $tes['paraf_dosen'];  ?>"></td>
                                          <td width="160">
-                                             <button type="button" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i> Edit</button>
+                                             <button type="button" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal <?php $tes['user_id'] ?>"><i class="fas fa-edit"></i> Edit</button>
                                              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
                                          </td>
                                      </tr>

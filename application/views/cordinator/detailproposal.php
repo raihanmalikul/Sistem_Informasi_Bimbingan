@@ -52,7 +52,7 @@
                              </tr>
                              <tr>
                                  <td>File</td>
-                                 <td>-</td>
+                                 <td><a href="<?= base_url('assets/File/') . $mhs['proposal_proyek'] ?>" class="fas fa-download"> <?= $mhs['proposal_proyek'] ?> </a></td>
                              </tr>
                      </table>
                  </div>

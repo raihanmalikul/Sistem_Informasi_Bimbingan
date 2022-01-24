@@ -86,7 +86,7 @@ class dosen extends CI_Controller
         JOIN user_data ON user . data_id = user_data . data_id  
         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id
          WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
-        $data['mhs1'] = $this->db->query($mhs1)->row_array();
+        $data['mhs1'] = $this->db->query($mhs1)->result_Array();
         // var_dump($data);
         // die;
         $data['title'] = 'Menu Dosen';
