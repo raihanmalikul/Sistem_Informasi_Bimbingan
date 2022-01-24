@@ -76,10 +76,17 @@ class dosen extends CI_Controller
         $mhs2 = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
         JOIN user ON bimbingan . mhs_id = user . mhs_id 
         JOIN admin ON bimbingan . dos_id = admin . dos_id 
-        JOIN user_data ON user . data_id = user_data . data_id 
-        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id 
+        JOIN user_data ON user . data_id = user_data . data_id  
+        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id
          WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
         $data['mhs'] = $this->db->query($mhs2)->row_array();
+        $mhs1 = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id 
+        JOIN user_data ON user . data_id = user_data . data_id  
+        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id
+         WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
+        $data['mhs1'] = $this->db->query($mhs1)->result_Array();
         // var_dump($data);
         // die;
         $data['title'] = 'Menu Dosen';
@@ -96,6 +103,59 @@ class dosen extends CI_Controller
         $this->load->view('templates/topbar_1', $data);
         $this->load->view('dosen/detail_Persensi_bimbingan', $data);
         $this->load->view('templates/footer');
+    }
+
+
+
+    public function detail_Persensi_bimbingan_tambah()
+    {
+        $mhs2 = "SELECT bimbingan.*, user.*, admin.*, user_data.*,berkas_bimbingan.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id 
+        JOIN user_data ON user . data_id = user_data . data_id
+        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id 
+         WHERE user . role_id = 3";
+        $data['mhs'] = $this->db->query($mhs2)->result_Array();
+        // var_dump($data);
+        // die;
+        $data['title'] = 'Menu Dosen';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
+        $data['user']['dos_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+            $tanggal = $this->input->post('tanggal');
+            $date = date_create($tanggal);
+            $tas = date_format($date, "d-F-Y");
+            $data1 = [
+                'berkas_bimbingan_id' => $this->input->post('berkas_bimbingan_id'),
+                'tanggal' => $tas,
+                'materi' => $this->input->post('materi'),
+                'paraf_dosen' => $this->input->post('paraf_dosen')
+            ];
+
+            // $upload_file = $_FILES['image']['name'];
+            // if ($upload_file) {
+            //     $config['allowed_types']        = 'gif|jpg|png';
+            //     $config['max_size']             = 10048;
+            //     $config['upload_path']          = './assets/File/tandatangan_dosen';
+
+            //     // $this->load->library('upload', $config);
+            //     $this->upload->initialize($config);
+
+            //     if ($this->upload->do_upload('image')) {
+            //         $new_file = $this->upload->data('file_name');
+            //         $this->db->set('proposal_proyek', $new_file);
+            //     }
+            // }
+
+            $this->db->insert('berkas_bimbingan', $data1);
+        }
     }
 
 

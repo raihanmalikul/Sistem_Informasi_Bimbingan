@@ -15,6 +15,14 @@
          </div>
          <!-- ============================================================== -->
          <!-- end pageheader -->
+         <?php
+            $bimbingan = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
+         JOIN user ON bimbingan . mhs_id = user . mhs_id 
+         JOIN admin ON bimbingan . dos_id = admin . dos_id 
+         JOIN user_data ON user . data_id = user_data . data_id 
+         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id WHERE user . mhs_id = " . $user['mhs_id'] . " ";
+            $tes = $this->db->query($bimbingan)->row_array();
+            ?>
          <!-- ============================================================== -->
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
              <div class="card">
@@ -53,7 +61,7 @@
                              </tr>
                              <tr>
                                  <td width="200px">Dosen Pembimbing</td>
-                                 <td>-</td>
+                                 <td><?= $tes['name']; ?></td>
                              </tr>
                              </tr>
                          </tbody>

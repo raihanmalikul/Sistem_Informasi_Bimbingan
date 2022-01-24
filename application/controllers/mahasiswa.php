@@ -92,6 +92,8 @@ class mahasiswa extends CI_Controller
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
+        $data['berkas_bimbingan'] = $this->db->get_where('berkas_bimbingan', ['berkas_bimbingan_id' =>
+        $data['user_data']['berkas_bimbingan_id']])->row_array();
         // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
         $this->load->view('templates/header', $data);

@@ -13,12 +13,12 @@
         // $bimbingan = "SELECT * FROM bimbingan JOIN admin USING (dos_id,mhs_id) JOIN user USING (mhs_id,dos_id)";
         // // $admin1[$admin = ['dos_id']];
 
-        $bimbingan = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
+        $bimbingan = "SELECT bimbingan.*, user.*, admin.*, user_data.* FROM bimbingan 
         JOIN user ON bimbingan . mhs_id = user . mhs_id 
         JOIN admin ON bimbingan . dos_id = admin . dos_id 
         JOIN user_data ON user . data_id = user_data . data_id 
-        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id WHERE admin . dos_id = " . $admin['dos_id'] . " ";
-        $tes = $this->db->query($bimbingan)->result_Array();
+         WHERE admin . dos_id = " . $admin['dos_id'] . " ";
+        $tes = $this->db->query($bimbingan)->result_array();
         // var_dump($tes);
         // die;
 

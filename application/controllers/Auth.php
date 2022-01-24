@@ -113,12 +113,9 @@ class Auth extends CI_Controller
                 'cor_id' => 1,
                 'mhs_id' => $i
             ];
-            $data3 = [
-                'berkas_bimbingan_id' => $i
-            ];
+
             $this->db->insert('user', $data1);
             $this->db->insert('user_data', $data2);
-            $this->db->insert('berkas_bimbingan', $data3);
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
             Akun Telah Dibuat. Silahkan Login!
             </div>');

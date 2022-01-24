@@ -70,14 +70,16 @@
                             <?php $no = 1; ?>
 
                             <tbody>
-                                <tr>
-                                    <th scope="row"></th>
-                                    <td><?= $mhs['tanggal']; ?></td>
-                                    <td><?= $mhs['materi']; ?></td>
-                                    <td><?= $mhs['paraf_dosen']; ?></td>
-                                </tr>
+                                <?php $no = 1; ?>
+                                <?php foreach ($mhs1 as $tes) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $no++  ?></th>
+                                        <td><?= $tes['tanggal']; ?></td>
+                                        <td><?= $tes['materi']; ?></td>
+                                        <td><?= $tes['paraf_dosen']; ?></td>
+                                    </tr>
                             </tbody>
-
+                        <?php endforeach; ?>
                         </table>
                     </div>
                 </div>

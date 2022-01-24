@@ -62,16 +62,19 @@
                                  </tr>
                              </thead>
                              <tbody>
-                                 <tr>
-                                     <th scope="row"></th>
-                                     <td></td>
-                                     <td></td>
-                                     <td></td>
-                                     <td width="160">
-                                         <button type="button" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i> Edit</button>
-                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
-                                     </td>
-                                 </tr>
+                                 <?php $no = 1; ?>
+                                 <?php foreach ($mhs1 as $tes) : ?>
+                                     <tr>
+                                         <th scope="row"><?= $no++  ?></th>
+                                         <td><?= $tes['tanggal']; ?></td>
+                                         <td><?= $tes['materi']; ?></td>
+                                         <td><?= $tes['paraf_dosen']; ?></td>
+                                         <td width="160">
+                                             <button type="button" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i> Edit</button>
+                                             <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
+                                         </td>
+                                     </tr>
+                                 <?php endforeach; ?>
                              </tbody>
                          </table>
                      </div>
@@ -86,25 +89,26 @@
                                  </button>
                              </div>
                              <div class="modal-body">
-                                 <form>
+                                 <form class="user" method="post" action="<?= base_url('dosen/detail_Persensi_bimbingan_tambah') ?>">
+                                     <input type="hidden" name="berkas_bimbingan_id" value="<?= $mhs['berkas_bimbingan_id']; ?>">
                                      <div class="form-group">
                                          <label for="recipient-name" class="col-form-label">Tanggal Bimbingan</label>
-                                         <input type="date" class="form-control" id="recipient-name">
+                                         <input type="date" name="tanggal" class="form-control" id="recipient-name">
                                      </div>
                                      <div class="form-group">
                                          <label for="recipient-name" class="col-form-label">Catatan Kemajuan Materi</label>
-                                         <input type="text" class="form-control" id="recipient-name">
+                                         <input type="text" name="materi" class="form-control" id="recipient-name">
                                      </div>
                                      <div class="form-group">
                                          <label for="recipient-name" class="col-form-label">Paraf Dosen Pembimbing</label>
-                                         <input type="text" class="form-control" id="recipient-name">
+                                         <input type="text" name="paraf_dosen" value="<?= $mhs['tanda_tangan_digital']; ?>" class="form-control" id="recipient-name">
                                      </div>
-                                 </form>
                              </div>
                              <div class="modal-footer">
                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                 <button type="button" class="btn btn-primary">Simpan</button>
+                                 <button type="submit" class="btn btn-primary">Simpan</button>
                              </div>
+                             </form>
                          </div>
                      </div>
                  </div>
