@@ -15,7 +15,7 @@
          </div>
          <!-- ============================================================== -->
          <?php $mhs = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
-
+            $setatus = $this->db->get_where('status', ['id' => $user_data['status_proposal_id']])->row_array();
             // var_dump($mhs);
             // die;
             ?>
@@ -32,7 +32,7 @@
                          <tbody>
                              <tr>
                                  <td>Status Pengumpulan</td>
-                                 <td></td>
+                                 <td><?= $setatus['status']; ?></td>
                              </tr>
                              <tr>
                                  <td>Batas Waktu</td>

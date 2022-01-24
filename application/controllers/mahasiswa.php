@@ -162,6 +162,7 @@ class mahasiswa extends CI_Controller
 
             $this->db->set('judul_proyek', $judul_proyek);
             $this->db->set('keterangan_judul', $keterangan_judul);
+            $this->db->set('status_proposal_id', 2);
             $this->db->where('data_id', $data['user_data']['data_id']);
             $this->db->update('user_data');
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
@@ -202,6 +203,7 @@ class mahasiswa extends CI_Controller
 
     public function upload_laporan()
     {
+
         $upload_file = $_FILES['laporan_proyek']['name'];
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -211,6 +213,7 @@ class mahasiswa extends CI_Controller
         // die;
 
         if ($upload_file) {
+
             $config['allowed_types']        = 'pdf|docx';
             $config['max_size']             = 10048;
             $config['upload_path']          = './assets/File/';
@@ -221,6 +224,7 @@ class mahasiswa extends CI_Controller
             if ($this->upload->do_upload('laporan_proyek')) {
                 $new_file = $this->upload->data('file_name');
                 $this->db->set('laporan_proyek', $new_file);
+                $this->db->set('status_laporan_id', 2);
                 $this->db->where('data_id', $data['user_data']['data_id']);
                 $this->db->update('user_data');
                 $this->session->set_flashdata('messagelaporan', '<div class="alert alert-primary" role="alert">

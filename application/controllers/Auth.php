@@ -103,6 +103,7 @@ class Auth extends CI_Controller
                 'role_id' => 3,
                 'data_id' => $i,
                 'date_created' => time(),
+                'mhs_id' => $i
             ];
             $data2 = [
                 'katagori_proyek' => $this->input->post('katagori_proyek', true),
@@ -110,12 +111,16 @@ class Auth extends CI_Controller
                 'status_laporan_id' => 1,
                 'status_proposal_id' => 1,
                 'berkas_bimbingan_id' => $i,
-                'cor_id' => 1,
-                'mhs_id' => $i
+                'cor_id' => 1
+
+            ];
+            $data3 = [
+                'berkas_bimbingan_id' => $i,
             ];
 
             $this->db->insert('user', $data1);
             $this->db->insert('user_data', $data2);
+            $this->db->insert('berkas_bimbingan', $data3);
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
             Akun Telah Dibuat. Silahkan Login!
             </div>');
