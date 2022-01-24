@@ -44,7 +44,7 @@
                              </tr>
                              <tr>
                                  <td>Judul Proyek</td>
-                                 <td><?= $mhs['judul_proyek	']; ?></td>
+                                 <td><?= $mhs['judul_proyek']; ?></td>
                              </tr>
                      </table>
                      <div class="card-body">

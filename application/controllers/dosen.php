@@ -73,10 +73,15 @@ class dosen extends CI_Controller
 
     public function detail_Persensi_bimbingan($id)
     {
-        $mhs2 = "SELECT * FROM user JOIN user_data 
-         ON user . data_id  = user_data . data_id
+        $mhs2 = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id 
+        JOIN user_data ON user . data_id = user_data . data_id 
+        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id 
          WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
         $data['mhs'] = $this->db->query($mhs2)->row_array();
+        // var_dump($data);
+        // die;
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();

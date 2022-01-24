@@ -15,6 +15,10 @@
         </div>
         <!-- ============================================================== -->
         <!-- end pageheader -->
+        <?php
+
+
+        ?>
         <!-- ============================================================== -->
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
@@ -63,14 +67,17 @@
                                     <th scope="col">Paraf Dosen Pembimbing</th>
                                 </tr>
                             </thead>
+                            <?php $no = 1; ?>
+
                             <tbody>
                                 <tr>
                                     <th scope="row"></th>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td><?= $mhs['tanggal']; ?></td>
+                                    <td><?= $mhs['materi']; ?></td>
+                                    <td><?= $mhs['paraf_dosen']; ?></td>
                                 </tr>
                             </tbody>
+
                         </table>
                     </div>
                 </div>
