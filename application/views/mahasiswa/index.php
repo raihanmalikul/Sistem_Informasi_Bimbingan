@@ -18,11 +18,10 @@
                 <!-- ============================================================== -->
                 <!-- end pageheader -->
                 <?php $mhs = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
-                $bimbingan = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
-                JOIN user ON bimbingan . mhs_id = user . mhs_id 
-                JOIN admin ON bimbingan . dos_id = admin . dos_id 
-                JOIN user_data ON user . data_id = user_data . data_id 
-                JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id WHERE user . mhs_id = " . $user['mhs_id'] . " ";
+                $bimbingan = "SELECT bimbingan.*, user.*, admin.* FROM bimbingan 
+                    JOIN user ON bimbingan . mhs_id = user . mhs_id 
+                    JOIN admin ON bimbingan . dos_id = admin . dos_id
+                    WHERE user . mhs_id = " . $user['mhs_id'] . " ";
                 $tes = $this->db->query($bimbingan)->row_array();
 
                 // var_dump($tes);
@@ -112,6 +111,7 @@
                                 <h5 class="card-header">Dosen Pembimbing</h5>
                             </center>
                             <div class="card-body">
+
                                 <center>
                                     <h3>
                                         <?= $tes['name']; ?>

@@ -175,6 +175,31 @@ class cordinator extends CI_Controller
 
 
 
+    public function hapus($id)
+    {
+        $mhs2 = "SELECT * FROM user JOIN admin
+                ON user . dos_id  = admin . dos_id
+        WHERE user . role_id = 2 AND admin . dos_id = $id ";
+        $data['mhs'] = $this->db->query($mhs2)->row_array();
+        // var_dump($data);
+        // die;
+        $data['title'] = 'Menu Buku Pedoman';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        $m = $this->db->get_where('user', ['user_id'])->row_array();
+        if ($data) {
+
+            $this->db->where('dos_id', $id);
+            $this->db->delete('admin');
+            redirect('dosen/informasi_dosen_pembimbing');
+        }
+    }
+
+
+
 
     public function pembagian_pembimbing()
     {
@@ -210,8 +235,10 @@ class cordinator extends CI_Controller
         if ($data) {
             $mhs = $this->input->post('mhs_id[]', true);
             $dosen = $this->input->post('dos_id[]', true);
-            $jumlah = count($mhs);
-            for ($i = 0; $i < $jumlah; $i++) {
+            $jumlah = count($dosen);
+            // var_dump($jumlah);
+            // die;
+            for ($i = 0; $i <= $jumlah; $i++) {
                 $this->db->set('dos_id', $dosen[$i]);
                 $this->db->set('mhs_id', $mhs[$i]);
                 $this->db->insert('bimbingan');

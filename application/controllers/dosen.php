@@ -142,7 +142,7 @@ class dosen extends CI_Controller
 
 
             $this->db->insert('berkas_bimbingan', $data1);
-            redirect('dosen/detail_Persensi_bimbingan/' . $m["user_id"]);
+            redirect('dosen/detail_Persensi_bimbingan');
         }
     }
 
@@ -183,7 +183,7 @@ class dosen extends CI_Controller
             $this->db->set('paraf_dosen', $paraf_dosen);
             $this->db->where('id', $id);
             $this->db->update('berkas_bimbingan');
-            redirect('dosen/detail_Persensi_bimbingan/' . $m["user_id"]);
+            redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs']['user_id']);
         }
     }
 
@@ -218,12 +218,15 @@ class dosen extends CI_Controller
         $data['user']['dos_id']])->row_array();
         // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
-        $m = $this->db->get_where('user', ['user_id'])->row_array();
+        // var_dump($data['mhs']['user_id']);
+        // die;
+        // $m = $this->db->get_where('user', ['user_id' =>
+        // $data['user_id']])->row_array();
         if ($data) {
 
             $this->db->where('id', $id);
             $this->db->delete('berkas_bimbingan');
-            redirect('dosen/detail_Persensi_bimbingan/' . $m["user_id"]);
+            redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs']['user_id']);
         }
     }
 
