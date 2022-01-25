@@ -76,7 +76,7 @@
                                         <th scope="row"><?= $no++  ?></th>
                                         <td><?= $tes['tanggal']; ?></td>
                                         <td><?= $tes['materi']; ?></td>
-                                        <td><?= $tes['paraf_dosen']; ?></td>
+                                        <td><img width="10%" src="<?= base_url('assets/File/tandatangan_dosen/') . $tes['paraf_dosen'];  ?>"></td>
                                     </tr>
                             </tbody>
                         <?php endforeach; ?>

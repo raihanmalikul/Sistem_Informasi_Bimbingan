@@ -51,14 +51,16 @@
                                      <td><?= $dos['name']; ?></td>
                                      <td><?= $dos['email']; ?></td>
                                      <td width="160">
-                                         <button class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i> Edit</button>
-                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
+                                         <a href="<?= base_url('cordinator/edit/') ?><?= $dos['dos_id'] ?>" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal<?= $dos['dos_id'] ?>"><i class="fas fa-edit"></i> Edit</a>
+                                         <a href="<?= base_url('cordinator/hapus/') ?><?= $dos['dos_id'] ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
                                      </td>
                                  <?php endforeach; ?>
                                  </tr>
                              </tbody>
                      </table>
                  </div>
+
+                 <!-- modal dambah -->
                  <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                      <div class="modal-dialog">
                          <div class="modal-content">
@@ -99,46 +101,50 @@
                          </div>
                      </div>
                  </div>
-                 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                     <div class="modal-dialog">
-                         <div class="modal-content">
-                             <div class="modal-header">
-                                 <h5 class="modal-title" id="exampleModalLabel">Edit Data Dosen</h5>
-                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                     <span aria-hidden="true">&times;</span>
-                                 </button>
-                             </div>
-                             <div class="modal-body">
-                                 <form class="user" method="post" action="<?= base_url('cordinator/edit') ?>">
-                                     <div class="form-group">
-                                         <label for="NIK" class="col-form-label">NIK</label>
-                                         <input type="text" name="NIK" class="form-control" id="NIK" placeholder="NIK">
-                                     </div>
-                                     <div class="form-group">
-                                         <label for="name_ds" class="col-form-label">Nama</label>
-                                         <input type="text" name="name_ds" class="form-control" id="name_ds" placeholder="Nama">
-                                     </div>
-                                     <div class="form-group">
-                                         <label for="email_ds" class="col-form-label">Email</label>
-                                         <input type="text" name="email_ds" class="form-control" id="email_ds" placeholder="Email">
-                                     </div>
-                                     <div class="form-group row">
-                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                             <input type="text" class="form-control form-control-user" name="user_id" id="user_id" placeholder="User ID">
+
+                 <!-- modal edit -->
+                 <?php foreach ($jadidos as $ts) : ?>
+                     <div class="modal fade" id="editModal<?= $ts['dos_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                         <div class="modal-dialog">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h5 class="modal-title" id="exampleModalLabel">Edit Data Dosen</h5>
+                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                     </button>
+                                 </div>
+                                 <div class="modal-body">
+                                     <form class="user" method="post" action="<?= base_url('cordinator/edit/') ?><?= $ts['dos_id'] ?>">
+                                         <div class="form-group">
+                                             <label for="NIK" class="col-form-label">NIK</label>
+                                             <input type="text" name="NIK" class="form-control" id="NIK" placeholder="NIK" value="<?= $ts['NIK']; ?>">
                                          </div>
-                                         <div class="col-sm-6">
-                                             <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password">
+                                         <div class="form-group">
+                                             <label for="name_ds" class="col-form-label">Nama</label>
+                                             <input type="text" name="name" class="form-control" id="name_ds" placeholder="Nama" value="<?= $ts['name']; ?>">
                                          </div>
-                                     </div>
+                                         <div class="form-group">
+                                             <label for="email_ds" class="col-form-label">Email</label>
+                                             <input type="text" name="email" class="form-control" id="email_ds" placeholder="Email" value="<?= $ts['email']; ?>">
+                                         </div>
+                                         <!-- <div class="form-group row">
+                                             <div class="col-sm-6 mb-3 mb-sm-0">
+                                                 <input type="text" class="form-control form-control-user" name="user_id" id="user_id" placeholder="User ID" value="<?= $ts['user_id']; ?>">
+                                             </div>
+                                             <div class="col-sm-6">
+                                                 <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="masukan baru Password">
+                                             </div>
+                                         </div> -->
+                                 </div>
+                                 <div class="modal-footer">
+                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                     <button type="submit" class="btn btn-primary">Simpan</button>
+                                 </div>
+                                 </form>
                              </div>
-                             <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                 <button type="submit" class="btn btn-primary">Simpan</button>
-                             </div>
-                             </form>
                          </div>
                      </div>
-                 </div>
+                 <?php endforeach; ?>
              </div>
          </div>
          <!-- ============================================================== -->

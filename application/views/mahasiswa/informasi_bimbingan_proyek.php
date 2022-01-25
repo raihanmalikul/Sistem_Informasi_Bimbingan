@@ -61,7 +61,7 @@
                              </tr>
                              <tr>
                                  <td width="200px">Dosen Pembimbing</td>
-                                 <td><?= isset($tes['name']); ?></td>
+                                 <td><?= $tes['name']; ?></td>
                              </tr>
                              </tr>
                          </tbody>

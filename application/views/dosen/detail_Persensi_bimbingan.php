@@ -70,8 +70,8 @@
                                          <td><?= $tes['materi']; ?></td>
                                          <td><img width="10%" src="<?= base_url('assets/File/tandatangan_dosen/') . $tes['paraf_dosen'];  ?>"></td>
                                          <td width="160">
-                                             <button type="button" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal <?php $tes['user_id'] ?>"><i class="fas fa-edit"></i> Edit</button>
-                                             <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
+                                             <a href="<?= base_url('dosen/detail_Persensi_bimbingan_edit/'); ?><?= $tes['id']; ?>" type="button" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal<?= $tes['id'] ?>"><i class="fas fa-edit"></i> Edit</a>
+                                             <a href="<?= base_url('dosen/detail_Persensi_bimbingan_hapus/'); ?><?= $tes['id']; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
                                          </td>
                                      </tr>
                                  <?php endforeach; ?>
@@ -101,7 +101,7 @@
                                      </div>
                                      <div class="form-group">
                                          <label for="recipient-name" class="col-form-label">Paraf Dosen Pembimbing</label>
-                                         <input type="text" name="paraf_dosen" value="<?= $mhs['tanda_tangan_digital']; ?>" class="form-control" id="recipient-name">
+                                         <input type="text" name="paraf_dosen" readonly value="<?= $mhs['tanda_tangan_digital']; ?>" class="form-control" id="recipient-name">
                                      </div>
                              </div>
                              <div class="modal-footer">
@@ -112,38 +112,44 @@
                          </div>
                      </div>
                  </div>
-                 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                     <div class="modal-dialog">
-                         <div class="modal-content">
-                             <div class="modal-header">
-                                 <h5 class="modal-title" id="exampleModalLabel">Edit Bukti Bimbingan</h5>
-                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                     <span aria-hidden="true">&times;</span>
-                                 </button>
-                             </div>
-                             <div class="modal-body">
-                                 <form>
-                                     <div class="form-group">
-                                         <label for="recipient-name" class="col-form-label">Tanggal Bimbingan</label>
-                                         <input type="date" class="form-control" id="recipient-name">
-                                     </div>
-                                     <div class="form-group">
-                                         <label for="recipient-name" class="col-form-label">Catatan Kemajuan Materi</label>
-                                         <input type="text" class="form-control" id="recipient-name">
-                                     </div>
-                                     <div class="form-group">
-                                         <label for="recipient-name" class="col-form-label">Paraf Dosen Pembimbing</label>
-                                         <input type="text" class="form-control" id="recipient-name">
-                                     </div>
+
+                 <!-- MODAL EDIT -->
+
+                 <?php foreach ($mhs1 as $ts) : ?>
+                     <div class="modal fade" id="editModal<?= $ts['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                         <div class="modal-dialog">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h5 class="modal-title" id="exampleModalLabel">Edit Bukti Bimbingan</h5>
+                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                     </button>
+                                 </div>
+                                 <div class="modal-body">
+                                     <form class="user" method="post" action="<?= base_url('dosen/detail_Persensi_bimbingan_edit/') ?><?= $ts['id']; ?>">
+                                         <input type="hidden" name="berkas_bimbingan_id" value="<?= $ts['berkas_bimbingan_id']; ?>">
+                                         <div class="form-group">
+                                             <label for="recipient-name" class="col-form-label">Tanggal Bimbingan</label>
+                                             <input type="text" class="form-control" name="tanggal" id="recipient-name" value="<?= $ts['tanggal']; ?>">
+                                         </div>
+                                         <div class="form-group">
+                                             <label for="recipient-name" class="col-form-label">Catatan Kemajuan Materi</label>
+                                             <input type="text" class="form-control" name="materi" id="recipient-name" value="<?= $ts['materi']; ?>">
+                                         </div>
+                                         <div class="form-group">
+                                             <label for="recipient-name" class="col-form-label">Paraf Dosen Pembimbing</label>
+                                             <input type="text" class="form-control" name="paraf_dosen" id="recipient-name" value="<?= $ts['paraf_dosen']; ?>">
+                                         </div>
+                                 </div>
+                                 <div class="modal-footer">
+                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                     <button type="submit" class="btn btn-primary">Simpan</button>
+                                 </div>
                                  </form>
-                             </div>
-                             <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                 <button type="button" class="btn btn-primary">Simpan</button>
                              </div>
                          </div>
                      </div>
-                 </div>
+                 <?php endforeach; ?>
              </div>
          </div>
      </div>

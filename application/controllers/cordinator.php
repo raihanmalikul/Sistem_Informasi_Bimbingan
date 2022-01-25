@@ -135,9 +135,11 @@ class cordinator extends CI_Controller
 
     public function edit($id)
     {
-        $mhs2 = "SELECT * FROM user JOIN user_data 
-        ON user . data_id  = user_data . data_id
-        WHERE user . role_id = 2 AND user_data . dos_id = '" . $id . "' ";
+        $mhs2 = "SELECT * FROM user JOIN admin
+                ON user . dos_id  = admin . dos_id
+        WHERE user . role_id = 2 AND admin . dos_id = $id ";
+        // var_dump($mhs2);
+        // die;
         $data['mhs'] = $this->db->query($mhs2)->row_array();
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
@@ -145,33 +147,29 @@ class cordinator extends CI_Controller
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
         // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
-
+        $m = $this->db->get_where('user', ['user_id'])->row_array();
 
         if ($data) {
             $NIK = $this->input->post('NIK');
-            $name_ds = $this->input->post('name_ds');
-            $email_ds = $this->input->post('email_ds');
-            $user_id = $this->input->post('user_id');
-            $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+            $name = $this->input->post('name');
+            $email = $this->input->post('email');
+            // $user_id = $this->input->post('user_id');
+            // $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 
 
             $this->db->set('NIK', $NIK);
-            $this->db->set('name_ds', $name_ds);
-            $this->db->set('email_ds', $email_ds);
-            $this->db->set('email_ds', $email_ds);
-            $this->db->set('user_id', $user_id);
-            $this->db->set('password', $password);
-            $this->db->where('user_id', $data['user']['user_id']);
-            $this->db->update('user');
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
-            data berhasisl di ubah
-            </div>');
-            redirect('cordinator/Proposal_hasil');
-        } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
-            data gagal di ubah
-            </div>');
-            redirect('cordinator/my_profile');
+            $this->db->set('name', $name);
+            $this->db->set('email', $email);
+            $this->db->set('email', $email);
+            // $this->db->set('user_id', $user_id);
+            // $this->db->set('password', $password);
+            $this->db->where('dos_id', $id);
+            // $this->db->update('user');
+            $this->db->update('admin');
+            // $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            // data berhasisl di ubah
+            // </div>');
+            redirect('cordinator/informasi_dosen_pembimbing');
         }
     }
 

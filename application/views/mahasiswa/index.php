@@ -114,7 +114,7 @@
                             <div class="card-body">
                                 <center>
                                     <h3>
-                                        <?= isset($tes['name']); ?>
+                                        <?= $tes['name']; ?>
                                     </h3>
                                 </center>
                             </div>
