@@ -89,7 +89,7 @@
                 </table>
                 <br>
                 <button type="submit" class="btn btn-primary btn-xs text-white"><i class="fas fa-save"></i> Simpan</button>
-                <button type="button" class="btn btn-success btn-xs text-white"><i class="fas fa-edit"></i> Edit</button>
+                <!-- <button type="button" class="btn btn-success btn-xs text-white"><i class="fas fa-edit"></i> Edit</button> -->
             </div>
             </form>
         </div>
