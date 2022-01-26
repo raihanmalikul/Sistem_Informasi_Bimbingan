@@ -52,7 +52,7 @@
                              </tr>
                      </table>
                      <div class="card-body">
-                         <a type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i>Tambah Bukti Bimbingan</a>
+                         <a type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i> Tambah Presensi Bimbingan</a>
                          <h4 class="card-title">Presensi Bimbingan</h4>
                          <br>
                          <table class="table table-bordered">
@@ -87,7 +87,7 @@
                      <div class="modal-dialog">
                          <div class="modal-content">
                              <div class="modal-header">
-                                 <h5 class="modal-title" id="exampleModalLabel">Tambah Bukti Bimbingan</h5>
+                                 <h5 class="modal-title" id="exampleModalLabel">Tambah Presensi Bimbingan</h5>
                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                      <span aria-hidden="true">&times;</span>
                                  </button>
@@ -124,7 +124,7 @@
                          <div class="modal-dialog">
                              <div class="modal-content">
                                  <div class="modal-header">
-                                     <h5 class="modal-title" id="exampleModalLabel">Edit Bukti Bimbingan</h5>
+                                     <h5 class="modal-title" id="exampleModalLabel">Edit Presensi Bimbingan</h5>
                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                          <span aria-hidden="true">&times;</span>
                                      </button>
