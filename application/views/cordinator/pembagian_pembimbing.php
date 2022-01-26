@@ -51,6 +51,7 @@
                             <?php $no = 1; ?>
                             <?php foreach ($jadimhs as $mhs2) : ?>
 
+
                                 <tr>
                                     <th><?= $no++  ?></th>
                                     <td><?= $mhs2['name_mhs_1']; ?></td>
@@ -67,10 +68,19 @@
                                             ON user . dos_id  = admin . dos_id
                                             WHERE user . role_id = 2  ";
 
+                                            $dosid = "SELECT * FROM bimbingan
+                                            WHERE mhs_id =" . $mhs2['mhs_id'] . "";
+                                            $iddos = $this->db->query($dosid)->row_Array();
                                             $jadidos = $this->db->query($dos2)->result_Array();
                                             ?>
+
                                             <select class="form-control" name="dos_id[]" id="kelas">
-                                                <option disabled selected value>Pilih Opsi</option>
+                                                <?php if (isset($iddos['dos_id'])) : ?>
+                                                    <?php $dosen = $this->db->get_where('admin', ['dos_id' => $iddos['dos_id']])->row_array(); ?>
+                                                    <option value="<?= $iddos['dos_id']; ?>"><?= $dosen['name']; ?></option>
+                                                <?php else : ?>
+                                                    <option disabled selected value>Pilih Opsi</option>
+                                                <?php endif; ?>
                                                 <?php foreach ($jadidos as $dos2) : ?>
                                                     <option value="<?= $dos2['dos_id']; ?>"><?= $dos2['name']; ?></option>
                                                 <?php endforeach; ?>

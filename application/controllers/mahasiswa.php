@@ -185,13 +185,13 @@ class mahasiswa extends CI_Controller
             $this->db->set('status_proposal_id', 2);
             $this->db->where('data_id', $data['user_data']['data_id']);
             $this->db->update('user_data');
-            $this->session->set_flashdata('message_mhs_upload_proposal', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_upload_proposal', '<div class="alert alert-success" role="alert">
              <button type="button" class="close" data-dismiss="alert">&times;</button>
             proposal berhasil di upload
             </div>');
             redirect('mahasiswa/proposal');
         } else {
-            $this->session->set_flashdata('message_mhs_upload_proposal', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_upload_proposal', '<div class="alert alert-danger" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             proposal gagal di upload
             </div>');
@@ -247,13 +247,13 @@ class mahasiswa extends CI_Controller
                 $this->db->set('status_laporan_id', 2);
                 $this->db->where('data_id', $data['user_data']['data_id']);
                 $this->db->update('user_data');
-                $this->session->set_flashdata('message_mhs_upload_laporan', '<div class="alert alert-primary" role="alert">
+                $this->session->set_flashdata('message_mhs_upload_laporan', '<div class="alert alert-success" role="alert">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 laporan berhasil di upload
                     </div>');
                 redirect('mahasiswa/laporan');
             } else {
-                $this->session->set_flashdata('message_mhs_upload_laporan', '<div class="alert alert-primary" role="alert">
+                $this->session->set_flashdata('message_mhs_upload_laporan', '<div class="alert alert-danger" role="alert">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 laporan gagal di upload
                     </div>');
@@ -326,13 +326,13 @@ class mahasiswa extends CI_Controller
             $this->db->set('kelas', $kelas);
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');
-            $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-success" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             data berhasil di ubah
             </div>');
             redirect('mahasiswa/my_profile');
         } else {
-            $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-danger" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             data gagal di ubah
             </div>');
@@ -382,12 +382,12 @@ class mahasiswa extends CI_Controller
             $this->db->set('password', $password);
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');
-            $this->session->set_flashdata('message_mhs_ubah_profile', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_ubah_profile', '<div class="alert alert-success" role="alert">
             data berhasil di ubah
             </div>');
             redirect('auth');
         } else {
-            $this->session->set_flashdata('message_mhs_ubah_profile', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_ubah_profile', '<div class="alert alert-danger" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             data gagal di ubah
             </div>');

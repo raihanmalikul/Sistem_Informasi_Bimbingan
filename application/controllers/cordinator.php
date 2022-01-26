@@ -238,7 +238,7 @@ class cordinator extends CI_Controller
             $jumlah = count($dosen);
             // var_dump($jumlah);
             // die;
-            for ($i = 0; $i <= $jumlah; $i++) {
+            for ($i = 0; $i < $jumlah; $i++) {
                 $this->db->set('dos_id', $dosen[$i]);
                 $this->db->set('mhs_id', $mhs[$i]);
                 $this->db->insert('bimbingan');

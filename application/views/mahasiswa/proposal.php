@@ -46,14 +46,14 @@
                      <div class="form-group row">
                          <label class="col-12 col-sm-3 col-form-label text-sm-right">Keterangan</label>
                          <div class="col-12 col-sm-8 col-lg-6">
-                             <textarea required="" placeholder="" name="keterangan_judul" class="form-control" value="<?= $user_data['keterangan_judul']; ?>"> </textarea>
+                             <textarea required="" placeholder="" name="keterangan_judul" class="form-control"><?= $user_data['keterangan_judul']; ?> </textarea>
                          </div>
                      </div>
                      <div class="form-group row">
                          <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
                          <div class="col-12 col-sm-8 col-lg-6">
-                             <label for="proposal_proyek" class="form-label"></label>
-                             <input type="file" required="" name="proposal_proyek" class="form-control" id="proposal_proyek" value="<?= $user_data['proposal_proyek']; ?>">
+                             <label for="proposal_proyek" class="form-label"><?= $user_data['proposal_proyek']; ?></label>
+                             <input type="file" required="" name="proposal_proyek" class="form-control" id="proposal_proyek">
                          </div>
                      </div>
                      <button type="submit" class="btn btn-primary btn-xs text-white float-right margin-right"><i class="fas fa-save"></i> Upload</button>

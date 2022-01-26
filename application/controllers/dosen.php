@@ -13,6 +13,7 @@ class dosen extends CI_Controller
     }
     public function index()
     {
+        // backend
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -20,8 +21,8 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar_1', $data);
@@ -33,6 +34,7 @@ class dosen extends CI_Controller
 
     public function informasi_bimbingan_proyek()
     {
+        // backend
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -40,8 +42,8 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar_1', $data);
@@ -53,6 +55,7 @@ class dosen extends CI_Controller
 
     public function persensi_bimbingan_proyek()
     {
+        // backend
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -60,8 +63,8 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar_1', $data);
@@ -73,6 +76,7 @@ class dosen extends CI_Controller
 
     public function detail_Persensi_bimbingan($id)
     {
+        // backend
         $mhs2 = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
         JOIN user ON bimbingan . mhs_id = user . mhs_id 
         JOIN admin ON bimbingan . dos_id = admin . dos_id 
@@ -87,8 +91,7 @@ class dosen extends CI_Controller
         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id
          WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
         $data['mhs1'] = $this->db->query($mhs1)->result_Array();
-        // var_dump($data);
-        // die;
+
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -96,8 +99,9 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar_1', $data);
@@ -109,6 +113,7 @@ class dosen extends CI_Controller
 
     public function detail_Persensi_bimbingan_tambah($id)
     {
+        // backend
         $mhs2 = "SELECT bimbingan.*, user.*, admin.*, user_data.*,berkas_bimbingan.* FROM bimbingan 
         JOIN user ON bimbingan . mhs_id = user . mhs_id 
         JOIN admin ON bimbingan . dos_id = admin . dos_id 
@@ -124,8 +129,7 @@ class dosen extends CI_Controller
          WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
         $data['mhs2'] = $this->db->query($mhs1)->row_array();
 
-        // var_dump($data['mhs2']['user_id']);
-        // die;
+
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -133,9 +137,7 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
-        $m = $this->db->get_where('user', ['user_id'])->row_array();
         if ($data) {
             $tanggal = $this->input->post('tanggal');
             $date = date_create($tanggal);
@@ -158,6 +160,7 @@ class dosen extends CI_Controller
 
     public function detail_Persensi_bimbingan_edit($id)
     {
+        // backend
         $mhs2 = "SELECT bimbingan.*, user.*, admin.*, user_data.*,berkas_bimbingan.* FROM bimbingan 
         JOIN user ON bimbingan . mhs_id = user . mhs_id 
         JOIN admin ON bimbingan . dos_id = admin . dos_id 
@@ -172,8 +175,7 @@ class dosen extends CI_Controller
         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id 
          WHERE user . role_id = 3 AND berkas_bimbingan . id =  $id   ";
         $data['mhs'] = $this->db->query($mhs1)->row_array();
-        // var_dump($data1);
-        // die;
+
 
 
         $data['title'] = 'Menu Dosen';
@@ -183,9 +185,7 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
-        // $m = $this->db->get_where('user', ['user_id'])->row_array();
         if ($data) {
             $tanggal = $this->input->post('tanggal');
             $berkas_bimbingan_id = $this->input->post('berkas_bimbingan_id');
@@ -206,6 +206,7 @@ class dosen extends CI_Controller
 
     public function detail_Persensi_bimbingan_hapus($id)
     {
+        // backend
         $mhs2 = "SELECT bimbingan.*, user.*, admin.*, user_data.*,berkas_bimbingan.* FROM bimbingan 
         JOIN user ON bimbingan . mhs_id = user . mhs_id 
         JOIN admin ON bimbingan . dos_id = admin . dos_id 
@@ -220,8 +221,7 @@ class dosen extends CI_Controller
         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id 
          WHERE user . role_id = 3 AND berkas_bimbingan . id =  $id   ";
         $data['mhs'] = $this->db->query($mhs1)->row_array();
-        // var_dump($data1);
-        // die;
+
 
 
         $data['title'] = 'Menu Dosen';
@@ -231,12 +231,7 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
-        // var_dump($data['mhs']['user_id']);
-        // die;
-        // $m = $this->db->get_where('user', ['user_id' =>
-        // $data['user_id']])->row_array();
         if ($data) {
 
             $this->db->where('id', $id);
@@ -249,7 +244,7 @@ class dosen extends CI_Controller
 
     public function surat_izin_sidang()
     {
-
+        // backend
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -257,8 +252,8 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar_1', $data);
@@ -270,6 +265,7 @@ class dosen extends CI_Controller
 
     public function form_penilayan()
     {
+        // backend
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -277,8 +273,8 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar_1', $data);
@@ -290,6 +286,7 @@ class dosen extends CI_Controller
 
     public function detail_nilai()
     {
+        // backend
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -297,8 +294,8 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar_1', $data);
@@ -310,6 +307,7 @@ class dosen extends CI_Controller
 
     public function my_profile()
     {
+        // backend
         $data['title'] = 'Menu cordinator';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -317,8 +315,8 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar_1', $data);
@@ -330,6 +328,7 @@ class dosen extends CI_Controller
 
     public function edit_my_profile()
     {
+        //frontend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
