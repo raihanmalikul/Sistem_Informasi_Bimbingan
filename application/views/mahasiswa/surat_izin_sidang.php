@@ -1,5 +1,22 @@
-<body>
-    <div class="container d-flex justify-content-center mt-50 mb-50">
+ <!-- wrapper  -->
+ <!-- ============================================================== -->
+ <div class="dashboard-wrapper">
+     <div class="container-fluid dashboard-content">
+         <!-- ============================================================== -->
+         <!-- pageheader -->
+         <!-- ============================================================== -->
+         <div class="row">
+             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                 <div class="page-header">
+                     <h2 class="pageheader-title">Surat Izin Sidang proyek</h2>
+                     <hr>
+                 </div>
+             </div>
+         </div>
+         <!-- ============================================================== -->
+         <!-- end pageheader -->
+         <!-- ============================================================== -->
+    <!-- <div class="container d-flex justify-content-center mt-50 mb-50">
         <div class="row">
             <div class="col-md-12 mt-5  mb-3">
                 <button class="btn btn-primary" id="download"> download pdf</button>
@@ -161,5 +178,4 @@
                     html2pdf().from(invoice).set(opt).save();
                 })
         }
-    </script>
-</body>
+    </script> -->

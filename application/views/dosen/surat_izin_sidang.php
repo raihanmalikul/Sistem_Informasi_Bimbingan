@@ -73,7 +73,7 @@
                                 </a>
                         </div>
                         <div class="modal-body">
-                            <p>Yakin ingin menyetujui Surat Izin Sidang untuk mahasiswa tersebut?</p>
+                            <p>Yakin ingin menyetujui Surat Izin Sidang untuk mahasiswa dengan Nama <?= $tes['name_mhs_1']; ?> (NPM <?= $tes['npm_mhs_1']; ?>) dan juga mahasiswa dengan Nama <?= $tes['name_mhs_2']; ?> (NPM <?= $tes['npm_mhs_2']; ?>) ?</p>
                         </div>
                             <div class="modal-footer">
                                 <a href="#" class="btn btn-primary"><i class="fas fa-check"></i> Iyaa</a>
