@@ -20,6 +20,7 @@
              <div class="card">
                  <h5 class="card-header">Ganti Password</h5>
                  <div class="card-body">
+                     <?= $this->session->flashdata('message_mhs_upload_laporan'); ?>
                      <form action="#" id="basicform" data-parsley-validate="">
                          <div class="form-group">
                              <label for="inputUserId">User Id</label>

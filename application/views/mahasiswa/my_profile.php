@@ -21,7 +21,7 @@
                  <div class="card">
                      <h5 class="card-header">Data Mahasiswa</h5>
                      <div class="card-body">
-                         <?= $this->session->flashdata('message'); ?>
+                         <?= $this->session->flashdata('message_mhs_edit_my_profile'); ?>
                          <form action="#" id="basicform" data-parsley-validate="">
                              <div class="form-group">
                                  <label for="inputUserName">Nama Mahasiswa 1</label>

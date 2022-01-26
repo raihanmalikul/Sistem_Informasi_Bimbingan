@@ -122,6 +122,7 @@ class Auth extends CI_Controller
             $this->db->insert('user_data', $data2);
             $this->db->insert('berkas_bimbingan', $data3);
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             Akun Telah Dibuat. Silahkan Login!
             </div>');
             redirect('auth');

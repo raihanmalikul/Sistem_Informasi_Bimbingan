@@ -15,20 +15,14 @@
          </div>
          <!-- ============================================================== -->
          <!-- end pageheader -->
-         <?php $mhs = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
-
-            $setatus = $this->db->get_where('status', ['id' => $user_data['status_laporan_id']])->row_array();
-            // var_dump($setatus['status']);
-            // die;
-            ?>
          <!-- ============================================================== -->
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
              <div class="card">
-                 <?= $this->session->flashdata('messagelaporan'); ?>
                  <div class="card-header">
                      <h5 class="mb-0">Status Pengumpulan</h5>
                  </div>
                  <div class="card-body">
+                     <?= $this->session->flashdata('message_mhs_upload_laporan'); ?>
                      <table id="example2" class="table table-striped table-bordered" style="width:100%">
                          <tbody>
                              <tr>

@@ -107,7 +107,7 @@ class dosen extends CI_Controller
 
 
 
-    public function detail_Persensi_bimbingan_tambah()
+    public function detail_Persensi_bimbingan_tambah($id)
     {
         $mhs2 = "SELECT bimbingan.*, user.*, admin.*, user_data.*,berkas_bimbingan.* FROM bimbingan 
         JOIN user ON bimbingan . mhs_id = user . mhs_id 
@@ -116,7 +116,15 @@ class dosen extends CI_Controller
         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id 
          WHERE user . role_id = 3";
         $data['mhs'] = $this->db->query($mhs2)->result_Array();
-        // var_dump($data);
+        $mhs1 = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id 
+        JOIN user_data ON user . data_id = user_data . data_id  
+        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id
+         WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
+        $data['mhs2'] = $this->db->query($mhs1)->row_array();
+
+        // var_dump($data['mhs2']['user_id']);
         // die;
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
@@ -142,7 +150,7 @@ class dosen extends CI_Controller
 
 
             $this->db->insert('berkas_bimbingan', $data1);
-            redirect('dosen/detail_Persensi_bimbingan');
+            redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs2']['user_id']);
         }
     }
 
@@ -157,6 +165,13 @@ class dosen extends CI_Controller
         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id 
          WHERE user . role_id = 3 AND berkas_bimbingan . id =  $id   ";
         $data1['mhs'] = $this->db->query($mhs2)->result_Array();
+        $mhs1 = "SELECT bimbingan.*, user.*, admin.*, user_data.*,berkas_bimbingan.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id 
+        JOIN user_data ON user . data_id = user_data . data_id
+        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id 
+         WHERE user . role_id = 3 AND berkas_bimbingan . id =  $id   ";
+        $data['mhs'] = $this->db->query($mhs1)->row_array();
         // var_dump($data1);
         // die;
 
@@ -170,7 +185,7 @@ class dosen extends CI_Controller
         $data['user']['dos_id']])->row_array();
         // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
-        $m = $this->db->get_where('user', ['user_id'])->row_array();
+        // $m = $this->db->get_where('user', ['user_id'])->row_array();
         if ($data) {
             $tanggal = $this->input->post('tanggal');
             $berkas_bimbingan_id = $this->input->post('berkas_bimbingan_id');

@@ -14,11 +14,6 @@
              </div>
          </div>
          <!-- ============================================================== -->
-         <?php $mhs = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
-            $setatus = $this->db->get_where('status', ['id' => $user_data['status_proposal_id']])->row_array();
-            // var_dump($mhs);
-            // die;
-            ?>
          <!-- end pageheader -->
          <!-- ============================================================== -->
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -28,6 +23,7 @@
                      <h5 class="mb-0">Status Pengumpulan</h5>
                  </div>
                  <div class="card-body">
+                     <?= $this->session->flashdata('message_mhs_upload_proposal'); ?>
                      <table id="example2" class="table table-striped table-bordered" style="width:100%">
                          <tbody>
                              <tr>
@@ -57,7 +53,7 @@
                          <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
                          <div class="col-12 col-sm-8 col-lg-6">
                              <label for="proposal_proyek" class="form-label"></label>
-                             <input type="file"  name="proposal_proyek" class="form-control" id="proposal_proyek" value="<?= $user_data['proposal_proyek']; ?>">
+                             <input type="file" required="" name="proposal_proyek" class="form-control" id="proposal_proyek" value="<?= $user_data['proposal_proyek']; ?>">
                          </div>
                      </div>
                      <button type="submit" class="btn btn-primary btn-xs text-white float-right margin-right"><i class="fas fa-save"></i> Upload</button>

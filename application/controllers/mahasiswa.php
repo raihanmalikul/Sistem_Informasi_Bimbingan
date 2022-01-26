@@ -14,14 +14,21 @@ class mahasiswa extends CI_Controller
     }
     public function index()
     {
+        // backend
         $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
+        $data['mhs'] = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
+        $bimbingan = "SELECT bimbingan.*, user.*, admin.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id
+        WHERE user . mhs_id = " . $data['user']['mhs_id'] . " ";
+        $data['tes'] = $this->db->query($bimbingan)->row_array();
 
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -33,13 +40,14 @@ class mahasiswa extends CI_Controller
 
     public function buku_pedoman()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -51,13 +59,14 @@ class mahasiswa extends CI_Controller
 
     public function templet_laporan_proyek()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -69,13 +78,20 @@ class mahasiswa extends CI_Controller
 
     public function informasi_bimbingan_proyek()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        $bimbingan = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id 
+        JOIN user_data ON user . data_id = user_data . data_id 
+        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id WHERE user . mhs_id = " . $data['user']['mhs_id'] . " ";
+        $data['tes'] = $this->db->query($bimbingan)->row_array();
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -87,6 +103,7 @@ class mahasiswa extends CI_Controller
 
     public function Persensi_Bimbingan_Proyek()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -94,8 +111,14 @@ class mahasiswa extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['berkas_bimbingan'] = $this->db->get_where('berkas_bimbingan', ['berkas_bimbingan_id' =>
         $data['user_data']['berkas_bimbingan_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        $bimbingan = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
+         JOIN user ON bimbingan . mhs_id = user . mhs_id 
+         JOIN admin ON bimbingan . dos_id = admin . dos_id 
+         JOIN user_data ON user . data_id = user_data . data_id 
+         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id WHERE user . mhs_id = " .  $data['user']['mhs_id'] . " ";
+        $data['tes'] = $this->db->query($bimbingan)->result_Array();
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -107,36 +130,33 @@ class mahasiswa extends CI_Controller
 
     public function proposal()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        $data['mhs'] = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
+        $data['setatus'] = $this->db->get_where('status', ['id' => $data['user_data']['status_proposal_id']])->row_array();
 
-        $this->form_validation->set_rules('judul_proyek', 'Judul Proyek', 'required');
-        $this->form_validation->set_rules('laporan_proposal', 'Folder', 'required');
-
-        if ($this->form_validation->run() == false) {
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
-            $this->load->view('mahasiswa/proposal', $data);
-            $this->load->view('templates/footer');
-        } else {
-        }
+        //frontend
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('mahasiswa/proposal', $data);
+        $this->load->view('templates/footer');
     }
 
 
 
     public function upload_proposal()
     {
+        // backend
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // var_dump($upload_file);
-        // die;
+
         $this->form_validation->set_rules('judul_proyek', 'Judul Proyek', 'required');
         $this->form_validation->set_rules('laporan_proposal', 'Folder', 'required');
 
@@ -165,12 +185,14 @@ class mahasiswa extends CI_Controller
             $this->db->set('status_proposal_id', 2);
             $this->db->where('data_id', $data['user_data']['data_id']);
             $this->db->update('user_data');
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_upload_proposal', '<div class="alert alert-primary" role="alert">
+             <button type="button" class="close" data-dismiss="alert">&times;</button>
             proposal berhasil di upload
             </div>');
             redirect('mahasiswa/proposal');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_upload_proposal', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             proposal gagal di upload
             </div>');
             redirect('mahasiswa/proposal');
@@ -181,36 +203,34 @@ class mahasiswa extends CI_Controller
 
     public function laporan()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        $data['mhs'] = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
+        $data['setatus'] = $this->db->get_where('status', ['id' => $data['user_data']['status_proposal_id']])->row_array();
 
-        $this->form_validation->set_rules('laporan_proyek', 'Folder', 'required');
-
-        if ($this->form_validation->run() == false) {
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
-            $this->load->view('mahasiswa/laporan', $data);
-            $this->load->view('templates/footer');
-        }
+        //frontend
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('mahasiswa/laporan', $data);
+        $this->load->view('templates/footer');
     }
 
 
 
     public function upload_laporan()
     {
-
+        // backend
         $upload_file = $_FILES['laporan_proyek']['name'];
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // var_dump($upload_file);
-        // die;
+
 
         if ($upload_file) {
 
@@ -227,12 +247,14 @@ class mahasiswa extends CI_Controller
                 $this->db->set('status_laporan_id', 2);
                 $this->db->where('data_id', $data['user_data']['data_id']);
                 $this->db->update('user_data');
-                $this->session->set_flashdata('messagelaporan', '<div class="alert alert-primary" role="alert">
+                $this->session->set_flashdata('message_mhs_upload_laporan', '<div class="alert alert-primary" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
                 laporan berhasil di upload
                     </div>');
                 redirect('mahasiswa/laporan');
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+                $this->session->set_flashdata('message_mhs_upload_laporan', '<div class="alert alert-primary" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
                 laporan gagal di upload
                     </div>');
                 redirect('mahasiswa/laporan');
@@ -243,13 +265,14 @@ class mahasiswa extends CI_Controller
 
     public function surat_izin_sidang()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -261,13 +284,14 @@ class mahasiswa extends CI_Controller
 
     public function my_profile()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -279,12 +303,13 @@ class mahasiswa extends CI_Controller
 
     public function edit_my_profile()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
 
 
         if ($data) {
@@ -301,12 +326,14 @@ class mahasiswa extends CI_Controller
             $this->db->set('kelas', $kelas);
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             data berhasil di ubah
             </div>');
             redirect('mahasiswa/my_profile');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             data gagal di ubah
             </div>');
             redirect('mahasiswa/my_profile');
@@ -317,13 +344,14 @@ class mahasiswa extends CI_Controller
 
     public function edit_profile()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
+        //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -335,12 +363,13 @@ class mahasiswa extends CI_Controller
 
     public function ubah_profile()
     {
+        // backend
         $data['title'] = 'Menu Buku Pedoman';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
 
 
         if ($data) {
@@ -353,12 +382,13 @@ class mahasiswa extends CI_Controller
             $this->db->set('password', $password);
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_ubah_profile', '<div class="alert alert-primary" role="alert">
             data berhasil di ubah
             </div>');
             redirect('auth');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_mhs_ubah_profile', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             data gagal di ubah
             </div>');
             redirect('auth');

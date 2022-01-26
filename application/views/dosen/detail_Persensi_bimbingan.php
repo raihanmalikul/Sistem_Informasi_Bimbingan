@@ -48,7 +48,7 @@
                              </tr>
                      </table>
                      <div class="card-body">
-                         <button type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i>Tambah Bukti Bimbingan</button>
+                         <a type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i>Tambah Bukti Bimbingan</a>
                          <h4 class="card-title">Presensi Bimbingan</h4>
                          <br>
                          <table class="table table-bordered">
@@ -89,7 +89,7 @@
                                  </button>
                              </div>
                              <div class="modal-body">
-                                 <form class="user" method="post" action="<?= base_url('dosen/detail_Persensi_bimbingan_tambah') ?>">
+                                 <form class="user" method="post" action="<?= base_url('dosen/detail_Persensi_bimbingan_tambah/') . $mhs['user_id'] ?>">
                                      <input type="hidden" name="berkas_bimbingan_id" value="<?= $mhs['berkas_bimbingan_id']; ?>">
                                      <div class="form-group">
                                          <label for="recipient-name" class="col-form-label">Tanggal Bimbingan</label>

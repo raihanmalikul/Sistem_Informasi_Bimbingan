@@ -17,16 +17,6 @@
                 </div>
                 <!-- ============================================================== -->
                 <!-- end pageheader -->
-                <?php $mhs = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
-                $bimbingan = "SELECT bimbingan.*, user.*, admin.* FROM bimbingan 
-                    JOIN user ON bimbingan . mhs_id = user . mhs_id 
-                    JOIN admin ON bimbingan . dos_id = admin . dos_id
-                    WHERE user . mhs_id = " . $user['mhs_id'] . " ";
-                $tes = $this->db->query($bimbingan)->row_array();
-
-                // var_dump($tes);
-                // die;
-                ?>
                 <!-- ============================================================== -->
 
                 <div class="col-md-12">
