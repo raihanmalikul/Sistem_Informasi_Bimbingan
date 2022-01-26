@@ -43,6 +43,10 @@
                                  <td><?= $mhs['npm_mhs_2']; ?></td>
                              </tr>
                              <tr>
+                                 <td>Kelas</td>
+                                 <td><?= $mhs['kelas']; ?></td>
+                             </tr>
+                             <tr>
                                  <td>Judul Proyek</td>
                                  <td><?= $mhs['judul_proyek']; ?></td>
                              </tr>
