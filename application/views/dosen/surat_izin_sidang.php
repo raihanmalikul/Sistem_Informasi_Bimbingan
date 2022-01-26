@@ -52,9 +52,9 @@
                                     <td><?= $tes['npm_mhs_1']; ?></td>
                                     <td><?= $tes['name_mhs_2']; ?></td>
                                     <td><?= $tes['npm_mhs_2']; ?></td>
-                                    <td></td>
+                                    <td><?= $tes['kelas']; ?></td>
                                     <td width="100">
-                                        <a href=" <?= base_url('dosen') ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
+                                        <a type="button" class="btn btn-primary text-white" data-toggle="modal" data-target="#tambahModal">Izinkan Sidang</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -62,6 +62,27 @@
                     </table>
                 </div>
             </div>
+
+            <div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Notice!</h5>
+                                <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </a>
+                        </div>
+                        <div class="modal-body">
+                            <p>Yakin ingin menyetujui Surat Izin Sidang untuk mahasiswa tersebut?</p>
+                        </div>
+                            <div class="modal-footer">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-check"></i> Iyaa</a>
+                                <a href="#" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Tidak</a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
