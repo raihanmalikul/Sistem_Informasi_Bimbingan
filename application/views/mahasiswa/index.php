@@ -104,7 +104,9 @@
 
                                 <center>
                                     <h3>
-                                        <?= $tes['name']; ?>
+                                        <?php if (isset($tes['name'])) {
+                                            echo $tes['name'];;
+                                        } ?>
                                     </h3>
                                 </center>
                             </div>
