@@ -16,11 +16,12 @@
          <!-- ============================================================== -->
          <!-- end pageheader -->
          <!-- ============================================================== -->
-            
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <div class="card-body">
-                     <button type="button" class="btn btn-primary text-white" id="download"><i class="fas fa-download"></i> Download PDF</button>
+                     <button class="btn btn-primary text-white" id="download"><i class="fas fa-download"></i> Download PDF</button>
                      <!-- <h4 class="card-title">Surat Persetujuan dan Permohonan Sidang</h4> -->
                      <br>
                      <hr>
@@ -31,36 +32,35 @@
                             <div class="border">
                                 <div class="container" style="padding: 15px;" id="invoice">
                                     <div class="header" style="text-align: center;">
-                                    <br>
-                                        <h2><u>PERSETUJUAN DAN PERMOHONAN SIDANG PROYEK</u></h2>
+                                        <h3>PERSETUJUAN DAN PERMOHONAN SIDANG PROYEK</h3>
                                     </div>
                                     <br>
                                     <div class="name">
                                         <p>Saya sebagai Pembimbing mahasiswa tersebut dibawah ini:</p>
                                         <table style="margin-left: 10px;margin-top: -15px;">
                                             <tr>
-                                                <td>Nama Mahasiswa 1/Mahasiswa 2</td>
+                                                <td>Nama Mahasiswa 1/Mahasiswa 2:</td>
                                                 <td>:</td>
-                                                <td>...</td>
+                                                <td>Aldo Dwie Rizky</td>
                                                 <td>/</td>
-                                                <td>...</td>
+                                                <td>Raihan Malikul Milki</td>
                                             </tr>
                                             <tr>
                                                 <td>NPM 1/ NPM 2</td>
-                                                <td>:</td>
-                                                <td>...</td>
+                                                <td> :</td>
+                                                <td>1193005</td>
                                                 <td>/</td>
-                                                <td>...</td>
+                                                <td>1193025</td>
                                             </tr>
                                             <tr>
                                                 <td>Judul Proyek</td>
-                                                <td>:</td>
-                                                <td>...</td>
+                                                <td> :</td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <td>Nama Pembimbing</td>
-                                                <td>:</td>
-                                                <td>...</td>
+                                                <td> :</td>
+                                                <td>Widia Resdiana</td>
                                             </tr>
                                         </table>
                                         <br>
@@ -76,8 +76,9 @@
                                     </div>
                                     <br>
                                     <br>
+                                    <br>
                                     <div class="row">
-                                    <table style="margin-left: 20px;margin-top: -15px;">
+                                    <table style="margin-left: 50px;margin-top: -15px;">
                                     <!-- ------------------------------------------------------ -->
                                     <!-- <tr>
                                         <td>Mahasiswa 1</td>
@@ -88,10 +89,10 @@
                                     <br>
                                     <table>
                                     <tr>
-                                        <td>(................................................)</td>
+                                        <td>(............................)</td>
                                     </tr>
                                     <tr>
-                                        <td>NPM ......................................</td>
+                                        <td>NPM ..................</td>
                                     </tr>
                                     </table>
                                     <!-- ------------------------------------------------------ -->
@@ -105,10 +106,10 @@
                                     <br>
                                     <table>
                                     <tr>
-                                        <td>(................................................)</td>
+                                        <td>(............................)</td>
                                     </tr>
                                     <tr>
-                                        <td>NPM ......................................</td>
+                                        <td>NPM ..................</td>
                                     </tr>
                                     </table>
                                     <!-- ------------------------------------------------------ -->
@@ -122,10 +123,10 @@
                                     <br>
                                     <table>
                                     <tr>
-                                        <td>(................................................)</td>
+                                        <td>(............................)</td>
                                     </tr>
                                     <tr>
-                                        <td>NIK .........................................</td>
+                                        <td>NIK ..................</td>
                                     </tr>
                                     </table>
                                     </row>
@@ -150,7 +151,7 @@
                         margin: 1,
                         filename: 'myfile.pdf',
                         image: {
-                            type: 'pdf',
+                            type: 'jpeg',
                             quality: 0.98
                         },
                         html2canvas: {
@@ -158,7 +159,7 @@
                         },
                         jsPDF: {
                             unit: 'in',
-                            format: 'letter',
+                            format: 'a4',
                             orientation: 'portrait'
                         }
                     };
