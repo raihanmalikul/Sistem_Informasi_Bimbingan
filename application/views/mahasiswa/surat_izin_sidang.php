@@ -18,11 +18,16 @@
          <!-- ============================================================== -->
          <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
          <style>
-             table,
-             tr,
-             td {
-                 border: 1px solid black;
-             }
+            .card {
+            margin: 0;
+            font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: .8125rem;
+            font-weight: 400;
+            line-height: 1.5385;
+            color: #333;
+            text-align: left;
+            /* background-color: #eee */
+        }
          </style>
 
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -35,7 +40,7 @@
 
 
                      <div class="row justify-content-center mt-50 mb-50">
-                         <div class="col-md-15">
+                         <div class="col-md-8">
                              <div class="border">
                                  <div class="container" style="padding: 15px;" id="invoice">
                                      <div class="header" style="text-align: center;">
@@ -85,18 +90,14 @@
                                      <br>
                                      <br>
                                      <div class="row">
-                                         <table style="margin-top: -15px;">
-                                             <!-- ------------------------------------------------------ -->
-                                             <!-- <tr>
-                                        <td>Mahasiswa 1</td>
-                                    </tr> -->
+                                         <table style="margin-top: -15px; margin-left: 10px;">
                                          </table>
                                          <br>
                                          <br>
                                          <br>
-                                         <table>
+                                         <table class="text-center">
                                              <tr>
-                                                 <td>________________________</td>
+                                                 <td>_________________</td>
                                              </tr>
                                              <tr>
                                                  <td>(<?= $user['name_mhs_1']; ?>)</td>
@@ -106,17 +107,14 @@
                                              </tr>
                                          </table>
                                          <!-- ------------------------------------------------------ -->
-                                         <table style="margin-left: 80px;">
-                                             <!-- <tr>
-                                        <td>Mahasiswa 2</td>
-                                    </tr> -->
+                                         <table style="margin-left: 30px;">
                                          </table>
                                          <br>
                                          <br>
                                          <br>
-                                         <table>
+                                         <table class="text-center">
                                              <tr>
-                                                 <td>________________________</td>
+                                                 <td>_________________</td>
                                              </tr>
                                              <tr>
                                                  <td>(<?= $user['name_mhs_2']; ?>)</td>
@@ -126,19 +124,14 @@
                                              </tr>
                                          </table>
                                          <!-- ------------------------------------------------------ -->
-                                         <table style="margin-left: 90px;">
-                                             <!-- <tr>
-                                        <td>Dosen Pembimbing</td>
-                                    </tr> -->
+                                         <table style="margin-left: 50px;">
                                          </table>
                                          <br>
                                          <br>
                                          <br>
-                                         <table>
+                                         <table class="text-center">
                                              <tr>
-                                                 <td>
-                                                     <center><img width="100px" src="<?= base_url('assets/File/tandatangan_dosen/') . $user['tanda_tangan']; ?>"></center>
-                                                 </td>
+                                                 <td>_________________</td>
                                              </tr>
                                              <tr>
                                                  <td>(<?= $mhs2['name']; ?>)</td>
