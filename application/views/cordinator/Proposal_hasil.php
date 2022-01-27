@@ -91,7 +91,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form class="user" method="post" action="<?= base_url('cordinator/tambah_laporan') ?>">
+                                <form class="user" method="post" action="<?= base_url('cordinator/tambah_proposal') ?>">
                                     <div class="form-group">
                                         <label for="tanggal_pengumpulan_proposal" class="col-form-label">Batas Waktu</label>
                                         <input type="date" name="tanggal_pengumpulan_proposal" class="form-control" id="tanggal_pengumpulan_proposal">
