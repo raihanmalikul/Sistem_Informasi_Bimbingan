@@ -262,6 +262,49 @@ class dosen extends CI_Controller
     }
 
 
+    public function surat_izin_sidang_tambah($id)
+    {
+        // var_dump($id);
+        // die;
+        // backend
+        $mhs2 = "SELECT bimbingan.*, user.*, admin.*, user_data.*,berkas_bimbingan.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id 
+        JOIN user_data ON user . data_id = user_data . data_id
+        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id 
+         WHERE user . role_id = 3";
+        $data['mhs'] = $this->db->query($mhs2)->result_Array();
+        $mhs1 = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id 
+        JOIN user_data ON user . data_id = user_data . data_id  
+        JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id
+         WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
+        $data['mhs2'] = $this->db->query($mhs1)->row_array();
+        $data['title'] = 'Menu Dosen';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
+        $data['user']['dos_id']])->row_array();
+
+
+        if ($data) {
+
+
+            $tanda_tangan = $this->input->post('tanda_tangan');
+
+            $this->db->set('tanda_tangan', $tanda_tangan);
+            $this->db->where('user_id', $id);
+            $this->db->update('user');
+            echo 'berhasil';
+            // redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs2']['user_id']);
+
+        }
+    }
+
+
 
     public function form_penilayan()
     {

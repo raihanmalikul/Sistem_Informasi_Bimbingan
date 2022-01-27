@@ -271,6 +271,15 @@ class mahasiswa extends CI_Controller
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
+        $mhs1 = "SELECT bimbingan.*, user.*, admin.*, user_data.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id 
+        JOIN user_data ON user . data_id = user_data . data_id  
+         WHERE user . role_id = 3 AND user . user_id = '" . $data['user']['user_id'] . "'   ";
+        $data['mhs2'] = $this->db->query($mhs1)->row_array();
+        // var_dump($data['mhs2']);
+        // die;
+
 
         //frontend
         $this->load->view('templates/header', $data);

@@ -22,6 +22,7 @@
          JOIN user_data ON user . data_id = user_data . data_id 
          WHERE admin . dos_id = " . $admin['dos_id'] . " ";
         $tes = $this->db->query($bimbingan)->result_Array();
+        $tes1 = $this->db->query($bimbingan)->result_Array();
 
         ?>
         <!-- ============================================================== -->
@@ -54,7 +55,8 @@
                                     <td><?= $tes['npm_mhs_2']; ?></td>
                                     <td><?= $tes['kelas']; ?></td>
                                     <td width="100">
-                                        <a type="button" class="btn btn-primary text-white" data-toggle="modal" data-target="#tambahModal">Izinkan Sidang</a>
+
+                                        <a type="button" href="" class="btn btn-primary text-white" data-toggle="modal" data-target="#tambahModal<?= $tes['user_id']; ?>">Izinkan Sidang</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -62,27 +64,30 @@
                     </table>
                 </div>
             </div>
-
-            <div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Notice!</h5>
+            <?php foreach ($tes1 as $ts) : ?>
+                <div class="modal fade" id="tambahModal<?= $ts['user_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Notice!</h5>
                                 <a href="#" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </a>
-                        </div>
-                        <div class="modal-body">
-                            <p>Yakin ingin menyetujui Surat Izin Sidang untuk mahasiswa dengan Nama <?= $tes['name_mhs_1']; ?> (NPM <?= $tes['npm_mhs_1']; ?>) dan juga mahasiswa dengan Nama <?= $tes['name_mhs_2']; ?> (NPM <?= $tes['npm_mhs_2']; ?>) ?</p>
-                        </div>
+                            </div>
+                            <div class="modal-body">
+                                <form class="user" method="post" action="<?= base_url('dosen/surat_izin_sidang_tambah/') . $ts['user_id']; ?>">
+                                    <p>Yakin ingin menyetujui Surat Izin Sidang untuk mahasiswa dengan Nama <?= $ts['name_mhs_1']; ?> (NPM <?= $ts['npm_mhs_1']; ?>) dan juga mahasiswa dengan Nama <?= $tes['name_mhs_2']; ?> (NPM <?= $tes['npm_mhs_2']; ?>) ?</p>
+                            </div>
+                            <input type="hidden" name="tanda_tangan" value="<?= $ts['tanda_tangan_digital']; ?>">
                             <div class="modal-footer">
-                                <a href="#" class="btn btn-primary"><i class="fas fa-check"></i> Iyaa</a>
+                                <button type="submit" href="#" class="btn btn-primary"><i class="fas fa-check"></i> Iyaa</button>
                                 <a href="#" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Tidak</a>
                             </div>
+                            </form>
                         </div>
+                    </div>
                 </div>
-            </div>
-
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
