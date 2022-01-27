@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2022 at 02:46 PM
+-- Generation Time: Jan 27, 2022 at 09:01 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -43,7 +43,13 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `dos_id`, `mhs_id`, `NIK`, `name`, `email`, `tanda_tangan_digital`) VALUES
 (2, 10, 0, '102.73.041', 'Saepudin Nirwan, S.Kom., M.Kom.', 'nirwansaepudin@poltekpos.ac.id ', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png'),
-(3, 12, 0, '103.75.056', 'Dini Hamidin, S.Si.,MBA., M.T.', 'dinihamidin@poltekpos.ac.id', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png');
+(3, 12, 0, '103.75.056', 'Dini Hamidin, S.Si.,MBA., M.T.', 'dinihamidin@poltekpos.ac.id', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png'),
+(4, 13, 0, '103.82.070', 'Muhammad Ruslan Maulani, S.Kom., MT.', 'ruslanmaulani@poltekpos.ac.id', 'Tanda Tangan Muhammad Ruslan Maulani, S.Kom., MT.png'),
+(5, 14, 0, '105.76.082', 'Iwan Setiawan, ST., M.T.', 'iwansetiawan@poltekpos.ac.id', 'Tanda Tangan Iwan Setiawan, ST., M.T.png'),
+(6, 15, 0, '103.79.068', 'Marwanto Rahmatuloh, S.T., M.T.', 'mrahmatuloh@poltekpos.ac.id ', 'Tanda Tangan Marwanto Rahmatuloh, S.T., M.T.png'),
+(8, 17, 0, '102.64.040', 'Santoso, S.Kom., M.Kom.', 'santoso@poltekpos.ac.id', 'Tanda Tangan Santoso, S.Kom., M.Kom.png'),
+(9, 18, 0, '102.73.044', 'Supriady, S.T., M.T.', 'supriady@poltekpos.ac.id', 'Tanda Tangan Supriady, S.T., M.T.png'),
+(10, 19, 0, '104.79.072', 'Widia Resdiana, S.S., M.Pd.', 'widiaresdiana@poltekpos.ac.id ', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png');
 
 -- --------------------------------------------------------
 
@@ -64,18 +70,16 @@ CREATE TABLE `berkas_bimbingan` (
 --
 
 INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `materi`, `paraf_dosen`) VALUES
-(19, 11, '', '', ''),
-(21, 13, '', '', ''),
-(23, 11, '', '', ''),
-(27, 9, '26-January-2022', 'bab 3', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png'),
-(29, 9, '26-January-2022', 'Revisi Bab 2', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png'),
-(30, 9, '12-January-2022', 'bab 3', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png'),
-(31, 9, '25-January-2022', 'bab 2', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png'),
-(32, 9, '26-January-2022', 'bab 4', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png'),
-(34, 1, '27-January-2022', 'bab 5', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png'),
-(35, 1, '26-January-2022', 'Revisi Bab 2', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png'),
-(36, 1, '17-January-2022', 'Bab 2', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png'),
-(37, 1, '24-January-2022', 'Revisi Bab 2', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png');
+(43, 20, '29 Januari 2022', 'Bab 1', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png'),
+(44, 21, '28 Januari 2022', 'Bab 1', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png'),
+(45, 20, '31-January-2022', 'Bab 2', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png'),
+(46, 20, '02-February-2022', 'bab 3', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png'),
+(47, 20, '05-February-2022', 'Revisi Bab 2', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png'),
+(48, 20, '15-February-2022', 'bab 4', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png'),
+(49, 21, '01-February-2022', 'Bab 2', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png'),
+(50, 21, '05-February-2022', 'Revisi Bab 2', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png'),
+(51, 21, '10-February-2022', 'bab 3', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png'),
+(52, 21, '17-February-2022', 'bab 4', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png');
 
 -- --------------------------------------------------------
 
@@ -94,8 +98,8 @@ CREATE TABLE `bimbingan` (
 --
 
 INSERT INTO `bimbingan` (`id`, `dos_id`, `mhs_id`) VALUES
-(39, 10, 1),
-(40, 12, 9);
+(46, 10, 20),
+(47, 19, 21);
 
 -- --------------------------------------------------------
 
@@ -148,6 +152,7 @@ CREATE TABLE `user` (
   `mhs_id` int(11) NOT NULL,
   `dos_id` int(11) NOT NULL,
   `NIK` varchar(128) NOT NULL,
+  `tanda_tangan` varchar(128) NOT NULL,
   `data_id` int(11) NOT NULL,
   `name_mhs_1` varchar(128) NOT NULL,
   `npm_mhs_1` varchar(128) NOT NULL,
@@ -164,12 +169,18 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `data_id`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas`, `password`, `date_created`, `name_cor`, `email_cor`) VALUES
-(14, 3, 'Razor01', 1, 0, '', 1, 'Aldo', '1193025', 'Razor', '1193025', 'D3 Teknik Informatika 3c', '$2y$10$6lqSSKUkkJ9QfegJUKoHM.n/g/ZMvOqMnf5RK8yyxREapQkaoLWnK', 1641112954, '', ''),
-(18, 1, '105.76.082', 0, 0, '105.76.082', 4, '', '', '', '', '', '$2y$10$IADRxvZ7AM9Rx1FC6ZqHguuUJIp7I39L5QyAIeP6Njolu8Vv/G4WK', 1641187637, 'Iwan Setiawan, ST., M.T.', 'iwansetiawan@poltekpos.ac.id'),
-(26, 3, 'Ilham01', 9, 0, '', 9, 'ilham', '1193019', 'azmi', '1193020', 'D3 Teknik Informatika 2A', '$2y$10$O9WtwoC2ToQFZ.1KZKXKqO9OKu0Ll1sBXzEZAcKbR1We9/ysIwcE6', 1642904901, '', ''),
-(28, 2, '102.73.041', 0, 10, '', 10, '', '', '', '', '', '$2y$10$Co1VwnHDbPPpmc2A0sxtyuZ3fB/myaiRK8hlVAznWXbzwnPVM05DO', 1642921573, '', ''),
-(31, 2, '103.75.056', 0, 12, '', 12, '', '', '', '', '', '$2y$10$9GK.AlGuSb2OlckeqLX8m.q8wd1L2grc58I/PmSPWi.JbMnvRaUSS', 1643018246, '', '');
+INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `tanda_tangan`, `data_id`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas`, `password`, `date_created`, `name_cor`, `email_cor`) VALUES
+(18, 1, 'koordinator', 0, 0, '105.76.082', '', 4, '', '', '', '', '', '$2y$10$IADRxvZ7AM9Rx1FC6ZqHguuUJIp7I39L5QyAIeP6Njolu8Vv/G4WK', 1641187637, 'Iwan Setiawan, ST., M.T.', 'iwansetiawan@poltekpos.ac.id'),
+(28, 2, '102.73.041', 0, 10, '', '', 10, '', '', '', '', '', '$2y$10$Co1VwnHDbPPpmc2A0sxtyuZ3fB/myaiRK8hlVAznWXbzwnPVM05DO', 1642921573, '', ''),
+(31, 2, '103.75.056', 0, 12, '', '', 12, '', '', '', '', '', '$2y$10$9GK.AlGuSb2OlckeqLX8m.q8wd1L2grc58I/PmSPWi.JbMnvRaUSS', 1643018246, '', ''),
+(34, 2, '103.82.070', 0, 13, '', '', 13, '', '', '', '', '', '$2y$10$gyjgdsxFjVSm4x4AoaotkOQEG3sqxdvx4YdzSA3KCilNW.CnhJWgu', 1643294218, '', ''),
+(35, 2, '105.76.082', 0, 14, '', '', 14, '', '', '', '', '', '$2y$10$2jtTMy6JOqdjyy6VCudg7OsICpSB/gPKDJEWEsawRgyAmZeDzzQzW', 1643294367, '', ''),
+(36, 2, '103.79.068', 0, 15, '', '', 15, '', '', '', '', '', '$2y$10$m8VcldQo6gtgk5boy7iy8eBfBcun7LMYxVTUk5dYoA6U6Ug4iqXku', 1643294434, '', ''),
+(38, 2, '102.64.040', 0, 17, '', '', 17, '', '', '', '', '', '$2y$10$soTcFAdjgHjSgnUsjLz/uedIE9oa8LkyUuRn4IdIHSLXjRqdllDxe', 1643294549, '', ''),
+(39, 2, '102.73.044', 0, 18, '', '', 18, '', '', '', '', '', '$2y$10$KHG7iBebLDy0p/G6s7dFlOT19zhzK6iO23kkDTA/REZC6GrV4MO2K', 1643294695, '', ''),
+(40, 2, '104.79.072', 0, 19, '', '', 19, '', '', '', '', '', '$2y$10$r6VD0y.Ew9fbEwOhhd3Y2Oo2XazKPBCvAGM0vd5m3JS45ZMzze.s.', 1643294788, '', ''),
+(42, 3, 'Razor01', 20, 0, '', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png', 20, 'Aldo Dwie Rizky', '1193005', 'Raihan Malikul Mulki', '1193025', 'D3 Teknik Informatika 3A', '$2y$10$m99u46QemhowTcQVjuwj2.S/naADxBNwCpaSWxz5hdeKbCn8/Sbha', 1643302540, '', ''),
+(43, 3, 'Ilham01', 21, 0, '', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png', 21, 'Muhammad Ilham Ferdiansyah', '1193019', 'Muhammad Raihan Nur Azmii', '1193020', 'D3 Teknik Informatika 3A', '$2y$10$A0nDjMVabJkbFQJhK00rFuso5UHKLc/.PRkyqup30wIsMx/Xa1l7u', 1643302910, '', '');
 
 -- --------------------------------------------------------
 
@@ -215,11 +226,11 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 
 CREATE TABLE `user_data` (
   `id` int(11) NOT NULL,
-  `judul_proyek` varchar(128) NOT NULL,
+  `judul_proyek` varchar(500) NOT NULL,
   `keterangan_judul` varchar(128) NOT NULL,
   `katagori_proyek` varchar(128) NOT NULL,
-  `proposal_proyek` varchar(128) NOT NULL,
-  `laporan_proyek` varchar(128) NOT NULL,
+  `proposal_proyek` varchar(500) NOT NULL,
+  `laporan_proyek` varchar(500) NOT NULL,
   `status_laporan_id` int(2) NOT NULL,
   `status_proposal_id` int(2) NOT NULL,
   `berkas_bimbingan_id` varchar(128) NOT NULL,
@@ -235,9 +246,9 @@ CREATE TABLE `user_data` (
 --
 
 INSERT INTO `user_data` (`id`, `judul_proyek`, `keterangan_judul`, `katagori_proyek`, `proposal_proyek`, `laporan_proyek`, `status_laporan_id`, `status_proposal_id`, `berkas_bimbingan_id`, `surat_izin_sidang`, `tanggal_pengumpulan_proposal`, `data_id`, `cor_id`, `tanggal_pengumpulan_laporan`) VALUES
-(14, 'Game ', '  gg', 'Proyek 2', '20211-UTS-Sistem_Tersebar_D3TI.docx', '', 1, 2, '1', '', '', 1, 1, NULL),
-(17, '', '', '', '', '', 0, 0, '', '', '04-February-2022', 4, 1, '26-January-2022'),
-(24, '', '', 'Proyek 2', '', '', 1, 1, '9', '', '', 9, 1, NULL);
+(17, '', '', '', '', '', 0, 0, '', '', '04-February-2022', 4, 1, '06-April-2022'),
+(28, 'Rancang Bangun Aplikasi Pengumpulan Proposal dan Pembagian Dosen Pembimbing Proyek Berbasis Website', ' Pengajuan proposal proyek 2', 'Proyek 2', 'Proposal_Proyek_II_-_1193005_Aldo_Dwie_Rizky_-_1193025_Raihan_Malikul_Mulki.docx', 'PERSETUJUAN_DAN_PERMOHONAN_SIDANG_PROYEK1.docx', 2, 2, '20', '', '', 20, 1, NULL),
+(29, 'Rancang Bangun Aplikasi Pelaporan Bimbingan Proyek Berbasis Website (Studi Kasus : Program Studi D3 Jurusan Teknik Informatika P', ' Pengajuan proposal', 'Proyek 2', 'Proposal_Proyek_II_-_1193005_Aldo_Dwie_Rizky_-_1193025_Raihan_Malikul_Mulki1.docx', 'PERSETUJUAN_DAN_PERMOHONAN_SIDANG_PROYEK.docx', 2, 2, '21', '', '', 21, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -424,19 +435,19 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `bimbingan`
 --
 ALTER TABLE `bimbingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -454,7 +465,7 @@ ALTER TABLE `status_proposal`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
@@ -466,7 +477,7 @@ ALTER TABLE `user_access_menu`
 -- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
