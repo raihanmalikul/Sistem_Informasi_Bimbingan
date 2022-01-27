@@ -119,7 +119,7 @@ class dosen extends CI_Controller
         JOIN admin ON bimbingan . dos_id = admin . dos_id 
         JOIN user_data ON user . data_id = user_data . data_id
         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id 
-         WHERE user . role_id = 3";
+         WHERE user . role_id = 3 ORDER BY tanggal ASC";
         $data['mhs'] = $this->db->query($mhs2)->result_Array();
         $mhs1 = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 
         JOIN user ON bimbingan . mhs_id = user . mhs_id 
@@ -299,8 +299,7 @@ class dosen extends CI_Controller
             $this->db->where('user_id', $id);
             $this->db->update('user');
             echo 'berhasil';
-            // redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs2']['user_id']);
-
+            redirect('dosen/surat_izin_sidang');
         }
     }
 

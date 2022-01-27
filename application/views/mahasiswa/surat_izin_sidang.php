@@ -18,16 +18,16 @@
          <!-- ============================================================== -->
          <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
          <style>
-            .card {
-            margin: 0;
-            font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: .8125rem;
-            font-weight: 400;
-            line-height: 1.5385;
-            color: #333;
-            text-align: left;
-            /* background-color: #eee */
-        }
+             .card {
+                 margin: 0;
+                 font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                 font-size: .8125rem;
+                 font-weight: 400;
+                 line-height: 1.5385;
+                 color: #333;
+                 text-align: left;
+                 /* background-color: #eee */
+             }
          </style>
 
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -67,12 +67,20 @@
                                              <tr>
                                                  <td>Judul Proyek</td>
                                                  <td> :</td>
-                                                 <td><?= $user_data['judul_proyek']; ?></td>
+                                                 <td>
+                                                     <?php if (isset($user_data['judul_proyek'])) {
+                                                            echo $user_data['judul_proyek'];;
+                                                        } ?>
+                                                 </td>
                                              </tr>
                                              <tr>
                                                  <td>Nama Pembimbing</td>
                                                  <td> :</td>
-                                                 <td><?= $mhs2['name']; ?></td>
+                                                 <td>
+                                                     <?php if (isset($mhs2['name'])) {
+                                                            echo $mhs2['name'];;
+                                                        } ?>
+                                                 </td>
                                              </tr>
                                          </table>
                                          <br>
@@ -131,13 +139,19 @@
                                          <br>
                                          <table class="text-center">
                                              <tr>
-                                                 <td>_________________</td>
+                                                 <td><img width="100px" src="<?= base_url('assets/File/tandatangan_dosen/') . $user['tanda_tangan']; ?>"></td>
                                              </tr>
                                              <tr>
-                                                 <td>(<?= $mhs2['name']; ?>)</td>
+                                                 <td>(<?php if (isset($mhs2['name'])) {
+                                                            echo $mhs2['name'];;
+                                                        } ?>)</td>
                                              </tr>
                                              <tr>
-                                                 <td>NIK : <?= $mhs2['NIK']; ?></td>
+                                                 <td>NIK :
+                                                     <?php if (isset($mhs2['NIK'])) {
+                                                            echo $mhs2['NIK'];;
+                                                        } ?>
+                                                 </td>
                                              </tr>
                                          </table>
                                          </row>
