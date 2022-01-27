@@ -152,6 +152,16 @@ class dosen extends CI_Controller
 
 
             $this->db->insert('berkas_bimbingan', $data1);
+            $this->session->set_flashdata('message_dos_detail_Persensi', '<div class="alert alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                Persensi berhasil di tambahkan
+                    </div>');
+            redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs2']['user_id']);
+        } else {
+            $this->session->set_flashdata('message_dos_detail_Persensi', '<div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Persensi gagal di tambahkan
+                </div>');
             redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs2']['user_id']);
         }
     }
@@ -198,6 +208,16 @@ class dosen extends CI_Controller
             $this->db->set('paraf_dosen', $paraf_dosen);
             $this->db->where('id', $id);
             $this->db->update('berkas_bimbingan');
+            $this->session->set_flashdata('message_dos_detail_Persensi', '<div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Persensi berhasil di ubah
+                </div>');
+            redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs']['user_id']);
+        } else {
+            $this->session->set_flashdata('message_dos_detail_Persensi', '<div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Persensi gagal di ubah
+                </div>');
             redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs']['user_id']);
         }
     }
@@ -236,6 +256,16 @@ class dosen extends CI_Controller
 
             $this->db->where('id', $id);
             $this->db->delete('berkas_bimbingan');
+            $this->session->set_flashdata('message_dos_detail_Persensi', '<div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Persensi berhasil di hapus
+                </div>');
+            redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs']['user_id']);
+        } else {
+            $this->session->set_flashdata('message_dos_detail_Persensi', '<div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Persensi gagal di hapus
+                </div>');
             redirect('dosen/detail_Persensi_bimbingan/' . $data['mhs']['user_id']);
         }
     }
@@ -392,12 +422,14 @@ class dosen extends CI_Controller
             $this->db->set('email', $email);
             $this->db->where('dos_id', $data['admin']['dos_id']);
             $this->db->update('admin');
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_dos_my_profile', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             data berhasil di ubah
             </div>');
             redirect('dosen/my_profile');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('message_dos_my_profile', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             data gagal di ubah
             </div>');
             redirect('dosen/my_profile');
@@ -449,11 +481,13 @@ class dosen extends CI_Controller
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             data berhasil di ubah
             </div>');
             redirect('auth');
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             data gagal di ubah
             </div>');
             redirect('auth');

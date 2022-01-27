@@ -32,6 +32,7 @@
                      <button type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i>Tambah Dosen</button>
                      <h4 class="card-title">Data Dosen Pembimbing</h4>
                      <br>
+                     <?= $this->session->flashdata('message_cor_data_dosen'); ?>
                      <table class="table table-bordered">
                          <thead>
                              <tr>

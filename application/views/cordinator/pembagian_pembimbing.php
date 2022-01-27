@@ -34,6 +34,7 @@
                     <h5 class="card-header">Daftar Pembagian Mahasiswa dan Dosen Pembimbing Proyek</h5>
                 </center>
                 <div class="card-body">
+                    <?= $this->session->flashdata('message_cor_pembagian_pembimbing'); ?>
                     <table class="table table-bordered">
                         <thead>
                             <tr>

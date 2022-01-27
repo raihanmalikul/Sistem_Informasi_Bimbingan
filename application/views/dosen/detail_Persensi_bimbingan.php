@@ -52,6 +52,7 @@
                              </tr>
                      </table>
                      <div class="card-body">
+                         <?= $this->session->flashdata('message_dos_detail_Persensi'); ?>
                          <a type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i> Tambah Presensi Bimbingan</a>
                          <h4 class="card-title">Presensi Bimbingan</h4>
                          <br>
@@ -142,7 +143,7 @@
                                          </div>
                                          <div class="form-group">
                                              <label for="recipient-name" class="col-form-label">Paraf Dosen Pembimbing</label>
-                                             <input type="text" class="form-control" name="paraf_dosen" id="recipient-name" value="<?= $ts['paraf_dosen']; ?>">
+                                             <input type="text" class="form-control" name="paraf_dosen" id="recipient-name" value="<?= $ts['tanda_tangan_digital']; ?>">
                                          </div>
                                  </div>
                                  <div class="modal-footer">

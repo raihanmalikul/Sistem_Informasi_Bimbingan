@@ -21,6 +21,7 @@
                  <div class="card">
                      <h5 class="card-header">Data Dosen</h5>
                      <div class="card-body">
+                         <?= $this->session->flashdata('message_dos_my_profile'); ?>
                          <form action="#" id="basicform" data-parsley-validate="">
                              <div class="form-group">
                                  <label for="inputUserName">Nama Lengkap</label>

@@ -39,6 +39,7 @@
                     <button type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i>Tambah</button>
                     <h5 class="mb-0">Data Pengumpulan Laporan Proyek</h5>
                     <br>
+                    <?= $this->session->flashdata('message_cor_laporan'); ?>
                     <br>
                     <table id="example2" class="table table-striped table-bordered" style="width:100%">
                         <tbody>

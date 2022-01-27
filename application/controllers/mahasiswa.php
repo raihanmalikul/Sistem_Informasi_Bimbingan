@@ -391,12 +391,12 @@ class mahasiswa extends CI_Controller
             $this->db->set('password', $password);
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');
-            $this->session->set_flashdata('message_mhs_ubah_profile', '<div class="alert alert-success" role="alert">
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             data berhasil di ubah
             </div>');
             redirect('auth');
         } else {
-            $this->session->set_flashdata('message_mhs_ubah_profile', '<div class="alert alert-danger" role="alert">
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             data gagal di ubah
             </div>');
