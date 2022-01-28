@@ -210,13 +210,13 @@ class cordinator extends CI_Controller
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             data dosen berhasil di hapus
             </div>');
-            redirect('dosen/informasi_dosen_pembimbing');
+            redirect('cordinator/informasi_dosen_pembimbing');
         } else {
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             data dosen gagal di hapus
             </div>');
-            redirect('dosen/informasi_dosen_pembimbing');
+            redirect('cordinator/informasi_dosen_pembimbing');
         }
     }
 

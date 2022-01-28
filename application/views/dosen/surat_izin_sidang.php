@@ -41,6 +41,7 @@
                                 <th scope="col">Nama Mahasiswa 2</th>
                                 <th scope="col">NPM 2</th>
                                 <th scope="col">Kelas</th>
+                                <th scope="col" width="200">Status Pengumpulan</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -54,6 +55,7 @@
                                     <td><?= $tes['name_mhs_2']; ?></td>
                                     <td><?= $tes['npm_mhs_2']; ?></td>
                                     <td><?= $tes['kelas']; ?></td>
+                                    <td>Belum di stujui sidang</td>
                                     <td width="100">
 
                                         <a type="button" href="" class="btn btn-primary text-white" data-toggle="modal" data-target="#tambahModal<?= $tes['user_id']; ?>">Izinkan Sidang</a>
