@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2022 at 07:11 AM
+-- Generation Time: Jan 29, 2022 at 04:58 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -24,36 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `dos_id` int(11) NOT NULL,
-  `mhs_id` int(11) NOT NULL,
-  `NIK` varchar(128) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  `email` varchar(128) NOT NULL,
-  `tanda_tangan_digital` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id`, `dos_id`, `mhs_id`, `NIK`, `name`, `email`, `tanda_tangan_digital`) VALUES
-(3, 12, 0, '103.75.056', 'Dini Hamidin, S.Si.,MBA., M.T.', 'dinihamidin@poltekpos.ac.id', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png'),
-(4, 13, 0, '103.82.070', 'Muhammad Ruslan Maulani, S.Kom., MT.', 'ruslanmaulani@poltekpos.ac.id', 'Tanda Tangan Muhammad Ruslan Maulani, S.Kom., MT.png'),
-(5, 14, 0, '105.76.082', 'Iwan Setiawan, ST., M.T.', 'iwansetiawan@poltekpos.ac.id', 'Tanda Tangan Iwan Setiawan, ST., M.T.png'),
-(6, 15, 0, '103.79.068', 'Marwanto Rahmatuloh, S.T., M.T.', 'mrahmatuloh@poltekpos.ac.id ', 'Tanda Tangan Marwanto Rahmatuloh, S.T., M.T.png'),
-(8, 17, 0, '102.64.040', 'Santoso, S.Kom., M.Kom.', 'santoso@poltekpos.ac.id', 'Tanda Tangan Santoso, S.Kom., M.Kom.png'),
-(9, 18, 0, '102.73.044', 'Supriady, S.T., M.T.', 'supriady@poltekpos.ac.id', 'Tanda Tangan Supriady, S.T., M.T.png'),
-(10, 19, 0, '104.79.072', 'Widia Resdiana, S.S., M.Pd.', 'widiaresdiana@poltekpos.ac.id ', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png'),
-(13, 20, 0, '102.73.041', 'Saepudin Nirwan, S.Kom., M.Kom.', 'nirwansaepudin@poltekpos.ac.id ', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `berkas_bimbingan`
 --
 
@@ -65,55 +35,12 @@ CREATE TABLE `berkas_bimbingan` (
   `paraf_dosen` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `bimbingan`
+-- Dumping data for table `berkas_bimbingan`
 --
 
-CREATE TABLE `bimbingan` (
-  `id` int(11) NOT NULL,
-  `dos_id` int(11) NOT NULL,
-  `mhs_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `status`
---
-
-CREATE TABLE `status` (
-  `id` int(11) NOT NULL,
-  `status` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `status`
---
-
-INSERT INTO `status` (`id`, `status`) VALUES
-(1, 'Belum terkumpul'),
-(2, 'Sudah terkumpul');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `status_surat`
---
-
-CREATE TABLE `status_surat` (
-  `id` int(11) NOT NULL,
-  `status` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `status_surat`
---
-
-INSERT INTO `status_surat` (`id`, `status`) VALUES
-(1, 'Telah di setujui sidang'),
-(2, 'Belum di stujui sidang');
+INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `materi`, `paraf_dosen`) VALUES
+(56, 21, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -155,7 +82,8 @@ INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `tand
 (38, 2, '102.64.040', 0, 17, '', '', 0, 17, '', '', '', '', '', '$2y$10$soTcFAdjgHjSgnUsjLz/uedIE9oa8LkyUuRn4IdIHSLXjRqdllDxe', 1643294549, '', ''),
 (39, 2, '102.73.044', 0, 18, '', '', 0, 18, '', '', '', '', '', '$2y$10$KHG7iBebLDy0p/G6s7dFlOT19zhzK6iO23kkDTA/REZC6GrV4MO2K', 1643294695, '', ''),
 (40, 2, '104.79.072', 0, 19, '', '', 0, 19, '', '', '', '', '', '$2y$10$r6VD0y.Ew9fbEwOhhd3Y2Oo2XazKPBCvAGM0vd5m3JS45ZMzze.s.', 1643294788, '', ''),
-(44, 2, '102.73.041', 0, 20, '', '', 0, 20, '', '', '', '', '', '$2y$10$EjLzVBC0LtWFlcDGyb/RJ.z0aN33QXzE0.d9MRSS8piaKwHLvlY7.', 1643350182, '', '');
+(44, 2, '102.73.041', 0, 20, '', '', 0, 20, '', '', '', '', '', '$2y$10$EjLzVBC0LtWFlcDGyb/RJ.z0aN33QXzE0.d9MRSS8piaKwHLvlY7.', 1643350182, '', ''),
+(47, 3, 'Razor01', 21, 0, '', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png', 1, 21, 'Aldo Dwie Rizky', '1193005', 'Raihan Malikul Mulki', '1193025', 'D3 Teknik Informatika 3A', '$2y$10$2pXKB6LIpSndtOdfeUu9furIIWPg8YsaTC0HJ5ID6Xq2MGg52gpZm', 1643352173, '', '');
 
 -- --------------------------------------------------------
 
@@ -221,7 +149,8 @@ CREATE TABLE `user_data` (
 --
 
 INSERT INTO `user_data` (`id`, `judul_proyek`, `keterangan_judul`, `katagori_proyek`, `proposal_proyek`, `laporan_proyek`, `status_laporan_id`, `status_proposal_id`, `berkas_bimbingan_id`, `surat_izin_sidang`, `tanggal_pengumpulan_proposal`, `data_id`, `cor_id`, `tanggal_pengumpulan_laporan`) VALUES
-(17, '', '', '', '', '', 0, 0, '', '', '', 4, 1, '');
+(17, '', '', '', '', '', 0, 0, '', '', '04-February-2022', 4, 1, ''),
+(32, 'Rancang Bangun Aplikasi Pengumpulan Proposal dan Pembagian Dosen Pembimbing Proyek Berbasis Website', ' aplikasi informasi bimbingan ', 'Proyek 2', 'Proposal_Proyek_II_-_1193005_Aldo_Dwie_Rizky_-_1193025_Raihan_Malikul_Mulki2.docx', '', 1, 2, '21', '', '', 21, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -317,51 +246,28 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon
 (35, 12, 'Surat Izin Sidang', 'dosen/surat_izin_sidang', 1, 'far fa-fw fa-envelope'),
 (36, 13, 'Surat Izin Sidang', 'mahasiswa/surat_izin_sidang', 1, 'far fa-fw fa-envelope'),
 (37, 14, 'Informasi Dosen ', 'cordinator/informasi_dosen_pembimbing', 1, 'fa fa-fw fa-info'),
-(38, 14, 'Pembagian Pembimbing', 'cordinator/pembagian_pembimbing', 1, 'fas fa-fw fa-cubes'),
-(39, 15, 'Form Penilaian', 'dosen/form_penilayan', 1, 'fas fa-fw fa-table'),
-(40, 16, 'Proposal', 'cordinator/Proposal_hasil', 1, 'fas fa-fw fa-align-center'),
-(41, 16, 'Laporan', 'cordinator/laporan_hasil', 1, 'fas fa-fw fa-align-justify'),
-(42, 16, 'Presensi Bimbingan', 'cordinator/persensi_bimbingan', 1, 'far fa-fw fa-calendar-check'),
-(43, 0, 'Nilai Mahasiswa', 'cordinator/nilai_mahasiswa', 1, 'fas fa-fw fa-table'),
-(44, 17, 'My Profile', 'cordinator/my_profile', 1, 'far fa-fw fa-user'),
-(45, 18, 'My Profile', 'dosen/my_profile', 1, 'far fa-fw fa-user'),
-(46, 19, 'My Profile', 'mahasiswa/my_profile', 1, 'far fa-fw fa-user'),
-(47, 17, 'Edit Profile', 'cordinator/edit_profile', 1, 'far fa-fw fa-address-card'),
-(48, 18, 'Edit Profile', 'dosen/edit_profile', 1, 'far fa-fw fa-address-card'),
-(49, 19, 'Edit Profile', 'mahasiswa/edit_profile', 1, 'far fa-fw fa-address-card');
+(38, 14, 'Informasi Mahasiswa ', 'cordinator/informasi_mahasiswa_pembimbing', 1, 'far fa-fw fa-user-circle'),
+(39, 14, 'Pembagian Pembimbing', 'cordinator/pembagian_pembimbing', 1, 'fas fa-fw fa-cubes'),
+(40, 15, 'Form Penilaian', 'dosen/form_penilayan', 1, 'fas fa-fw fa-table'),
+(41, 16, 'Proposal', 'cordinator/Proposal_hasil', 1, 'fas fa-fw fa-align-center'),
+(42, 16, 'Laporan', 'cordinator/laporan_hasil', 1, 'fas fa-fw fa-align-justify'),
+(44, 16, 'Presensi Bimbingan', 'cordinator/persensi_bimbingan', 1, 'far fa-fw fa-calendar-check'),
+(45, 16, 'setujui sidang', 'cordinator/setujui_sidang', 1, 'far fa-fw fa-envelope-open'),
+(46, 17, 'My Profile', 'cordinator/my_profile', 1, 'far fa-fw fa-user'),
+(47, 18, 'My Profile', 'dosen/my_profile', 1, 'far fa-fw fa-user'),
+(48, 19, 'My Profile', 'mahasiswa/my_profile', 1, 'far fa-fw fa-user'),
+(49, 17, 'Edit Profile', 'cordinator/edit_profile', 1, 'far fa-fw fa-address-card'),
+(53, 18, 'Edit Profile', 'dosen/edit_profile', 1, 'far fa-fw fa-address-card'),
+(54, 19, 'Edit Profile', 'mahasiswa/edit_profile', 1, 'far fa-fw fa-address-card');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `bimbingan`
---
-ALTER TABLE `bimbingan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `status`
---
-ALTER TABLE `status`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `status_surat`
---
-ALTER TABLE `status_surat`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -405,40 +311,16 @@ ALTER TABLE `user_sub_menu`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
 -- AUTO_INCREMENT for table `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
-
---
--- AUTO_INCREMENT for table `bimbingan`
---
-ALTER TABLE `bimbingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
-
---
--- AUTO_INCREMENT for table `status`
---
-ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `status_surat`
---
-ALTER TABLE `status_surat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
@@ -450,7 +332,7 @@ ALTER TABLE `user_access_menu`
 -- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
@@ -468,7 +350,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
