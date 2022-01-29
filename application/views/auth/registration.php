@@ -3,6 +3,7 @@
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="row">
+        <div class="row col-xl-30 col-lg-30 col-md-30 col-sm-30 col-30">
             <div class="card">
                 <div class="card-header text-center">
                     <h3 class="mb-1">Form Registrasi</h3>
@@ -19,6 +20,15 @@
                             <input class="form-control form-control-lg" type="text" name="npm_mhs_1" value="<?= set_value('npm_mhs_1') ?>" placeholder="NPM Mahasiswa 1" autocomplete="off">
                             <?= form_error('npm_mhs_1', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
+                        <div class="form-group">
+                            <select class="form-control" value="<?= set_value('name_mhs_1') ?>" id="kelas" name="kelas">
+                                <option disabled selected value>Kelas</option>
+                                <option value="D3 Teknik Informatika 2A">D3 Teknik Informatika 2A</option>
+                                <option value="D3 Teknik Informatika 2B">D3 Teknik Informatika 2B</option>
+                                <option value="D3 Teknik Informatika 3A">D3 Teknik Informatika 3A</option>
+                            </select>
+                            <?= form_error('kelas', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
                         <hr>
                         <div class="form-group">
                             <input class="form-control form-control-lg" type="text" name="name_mhs_2" value="<?= set_value('name_mhs_2') ?>" placeholder="Nama Mahasiswa 2" autocomplete="off">
@@ -28,7 +38,6 @@
                             <input class="form-control form-control-lg" type="text" name="npm_mhs_2" value="<?= set_value('npm_mhs_2') ?>" placeholder="NPM Mahasiswa 2" autocomplete="off">
                             <?= form_error('npm_mhs_2', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
-                        <hr>
                         <div class="form-group">
                             <select class="form-control" value="<?= set_value('name_mhs_1') ?>" id="kelas" name="kelas">
                                 <option disabled selected value>Kelas</option>
@@ -68,4 +77,5 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
