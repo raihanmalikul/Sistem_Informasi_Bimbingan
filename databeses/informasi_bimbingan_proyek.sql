@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2022 at 11:53 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Waktu pembuatan: 30 Jan 2022 pada 09.29
+-- Versi server: 10.4.21-MariaDB
+-- Versi PHP: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berkas_bimbingan`
+-- Struktur dari tabel `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `dos_id` int(11) NOT NULL,
+  `mhs_id` int(11) NOT NULL,
+  `NIK` varchar(128) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `tanda_tangan_digital` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`id`, `dos_id`, `mhs_id`, `NIK`, `name`, `email`, `tanda_tangan_digital`) VALUES
+(3, 12, 0, '103.75.056', 'Dini Hamidin, S.Si.,MBA., M.T.', 'dinihamidin@poltekpos.ac.id', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png'),
+(4, 13, 0, '103.82.070', 'Muhammad Ruslan Maulani, S.Kom., MT.', 'ruslanmaulani@poltekpos.ac.id', 'Tanda Tangan Muhammad Ruslan Maulani, S.Kom., MT.png'),
+(5, 14, 0, '105.76.082', 'Iwan Setiawan, ST., M.T.', 'iwansetiawan@poltekpos.ac.id', 'Tanda Tangan Iwan Setiawan, ST., M.T.png'),
+(6, 15, 0, '103.79.068', 'Marwanto Rahmatuloh, S.T., M.T.', 'mrahmatuloh@poltekpos.ac.id ', 'Tanda Tangan Marwanto Rahmatuloh, S.T., M.T.png'),
+(8, 17, 0, '102.64.040', 'Santoso, S.Kom., M.Kom.', 'santoso@poltekpos.ac.id', 'Tanda Tangan Santoso, S.Kom., M.Kom.png'),
+(9, 18, 0, '102.73.044', 'Supriady, S.T., M.T.', 'supriady@poltekpos.ac.id', 'Tanda Tangan Supriady, S.T., M.T.png'),
+(10, 19, 0, '104.79.072', 'Widia Resdiana, S.S., M.Pd.', 'widiaresdiana@poltekpos.ac.id ', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png'),
+(13, 20, 0, '102.73.041', 'Saepudin Nirwan, S.Kom., M.Kom.', 'nirwansaepudin@poltekpos.ac.id ', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `berkas_bimbingan`
 --
 
 CREATE TABLE `berkas_bimbingan` (
@@ -36,7 +66,7 @@ CREATE TABLE `berkas_bimbingan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `berkas_bimbingan`
+-- Dumping data untuk tabel `berkas_bimbingan`
 --
 
 INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `materi`, `paraf_dosen`) VALUES
@@ -45,7 +75,83 @@ INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `materi`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `bimbingan`
+--
+
+CREATE TABLE `bimbingan` (
+  `id` int(11) NOT NULL,
+  `dos_id` int(11) NOT NULL,
+  `mhs_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `bimbingan`
+--
+
+INSERT INTO `bimbingan` (`id`, `dos_id`, `mhs_id`) VALUES
+(50, 19, 21);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `status`
+--
+
+CREATE TABLE `status` (
+  `id` int(11) NOT NULL,
+  `status` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `status`
+--
+
+INSERT INTO `status` (`id`, `status`) VALUES
+(1, 'Belum terkumpul'),
+(2, 'Sudah terkumpul');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `status_proposal`
+--
+
+CREATE TABLE `status_proposal` (
+  `id` int(11) NOT NULL,
+  `status` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `status_proposal`
+--
+
+INSERT INTO `status_proposal` (`id`, `status`) VALUES
+(1, 'Belum terkumpul'),
+(2, 'Sudah terkumpul');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `status_surat`
+--
+
+CREATE TABLE `status_surat` (
+  `id` int(11) NOT NULL,
+  `status` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `status_surat`
+--
+
+INSERT INTO `status_surat` (`id`, `status`) VALUES
+(1, 'Telah di setujui sidang'),
+(2, 'Belum di stujui sidang');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -70,7 +176,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `tanda_tangan`, `status_surat_id`, `data_id`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas`, `password`, `date_created`, `name_cor`, `email_cor`) VALUES
@@ -88,7 +194,7 @@ INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `tand
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_access_menu`
+-- Struktur dari tabel `user_access_menu`
 --
 
 CREATE TABLE `user_access_menu` (
@@ -98,7 +204,7 @@ CREATE TABLE `user_access_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_access_menu`
+-- Dumping data untuk tabel `user_access_menu`
 --
 
 INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
@@ -124,7 +230,7 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_data`
+-- Struktur dari tabel `user_data`
 --
 
 CREATE TABLE `user_data` (
@@ -145,7 +251,7 @@ CREATE TABLE `user_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_data`
+-- Dumping data untuk tabel `user_data`
 --
 
 INSERT INTO `user_data` (`id`, `judul_proyek`, `keterangan_judul`, `katagori_proyek`, `proposal_proyek`, `laporan_proyek`, `status_laporan_id`, `status_proposal_id`, `berkas_bimbingan_id`, `surat_izin_sidang`, `tanggal_pengumpulan_proposal`, `data_id`, `cor_id`, `tanggal_pengumpulan_laporan`) VALUES
@@ -155,7 +261,7 @@ INSERT INTO `user_data` (`id`, `judul_proyek`, `keterangan_judul`, `katagori_pro
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_menu`
+-- Struktur dari tabel `user_menu`
 --
 
 CREATE TABLE `user_menu` (
@@ -164,7 +270,7 @@ CREATE TABLE `user_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_menu`
+-- Dumping data untuk tabel `user_menu`
 --
 
 INSERT INTO `user_menu` (`id`, `menu`) VALUES
@@ -191,7 +297,7 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_role`
+-- Struktur dari tabel `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -200,7 +306,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_role`
+-- Dumping data untuk tabel `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
@@ -211,7 +317,7 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_sub_menu`
+-- Struktur dari tabel `user_sub_menu`
 --
 
 CREATE TABLE `user_sub_menu` (
@@ -224,7 +330,7 @@ CREATE TABLE `user_sub_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_sub_menu`
+-- Dumping data untuk tabel `user_sub_menu`
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon`) VALUES
@@ -265,89 +371,149 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon
 --
 
 --
--- Indexes for table `berkas_bimbingan`
+-- Indeks untuk tabel `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `bimbingan`
+--
+ALTER TABLE `bimbingan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `status_proposal`
+--
+ALTER TABLE `status_proposal`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `status_surat`
+--
+ALTER TABLE `status_surat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_access_menu`
+-- Indeks untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_data`
+-- Indeks untuk tabel `user_data`
 --
 ALTER TABLE `user_data`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
--- Indexes for table `user_menu`
+-- Indeks untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_role`
+-- Indeks untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_sub_menu`
+-- Indeks untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `berkas_bimbingan`
+-- AUTO_INCREMENT untuk tabel `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT untuk tabel `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `bimbingan`
+--
+ALTER TABLE `bimbingan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT untuk tabel `status`
+--
+ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `status_proposal`
+--
+ALTER TABLE `status_proposal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `status_surat`
+--
+ALTER TABLE `status_surat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT for table `user_access_menu`
+-- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `user_data`
+-- AUTO_INCREMENT untuk tabel `user_data`
 --
 ALTER TABLE `user_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `user_menu`
+-- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `user_role`
+-- AUTO_INCREMENT untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user_sub_menu`
+-- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
