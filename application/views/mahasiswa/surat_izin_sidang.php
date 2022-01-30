@@ -51,7 +51,7 @@
                                          <p>Saya sebagai Pembimbing mahasiswa tersebut dibawah ini:</p>
                                          <table style="margin-left: 10px;margin-top: -15px;">
                                              <tr>
-                                                 <td>Nama Mahasiswa 1/Mahasiswa 2:</td>
+                                                 <td width='250px'>Nama Mahasiswa 1/Mahasiswa 2</td>
                                                  <td>:</td>
                                                  <td><?= $user['name_mhs_1']; ?></td>
                                                  <td>/</td>
@@ -67,7 +67,7 @@
                                              <tr>
                                                  <td>Judul Proyek</td>
                                                  <td> :</td>
-                                                 <td>
+                                                 <td colspan="3">
                                                      <?php if (isset($user_data['judul_proyek'])) {
                                                             echo $user_data['judul_proyek'];;
                                                         } ?>
@@ -76,7 +76,7 @@
                                              <tr>
                                                  <td>Nama Pembimbing</td>
                                                  <td> :</td>
-                                                 <td>
+                                                 <td colspan="3">
                                                      <?php if (isset($mhs2['name'])) {
                                                             echo $mhs2['name'];;
                                                         } ?>
@@ -90,71 +90,46 @@
                                      <br>
                                      <br>
                                      <div class="tabel-mk signature-container">
-                                         <span class="signature">Bandung, ........... 2022</span><br>
+                                         <span class="signature">Bandung, <?= date('d F Y'); ?></span><br>
                                          <br>
                                          <br>
                                      </div>
                                      <br>
                                      <br>
                                      <br>
-                                     <div class="row">
+                                     <div class="row justify-content-center">
                                          <table style="margin-top: -15px; margin-left: 10px;">
                                          </table>
                                          <br>
                                          <br>
                                          <br>
+
                                          <table class="text-center">
                                              <tr>
-                                                 <td>_________________</td>
-                                             </tr>
-                                             <tr>
-                                                 <td>(<?= $user['name_mhs_1']; ?>)</td>
-                                             </tr>
-                                             <tr>
-                                                 <td>NPM : <?= $user['npm_mhs_1']; ?></td>
-                                             </tr>
-                                         </table>
-                                         <!-- ------------------------------------------------------ -->
-                                         <table style="margin-left: 30px;">
-                                         </table>
-                                         <br>
-                                         <br>
-                                         <br>
-                                         <table class="text-center">
-                                             <tr>
-                                                 <td>_________________</td>
-                                             </tr>
-                                             <tr>
-                                                 <td>(<?= $user['name_mhs_2']; ?>)</td>
-                                             </tr>
-                                             <tr>
-                                                 <td>NPM : <?= $user['npm_mhs_2']; ?></td>
-                                             </tr>
-                                         </table>
-                                         <!-- ------------------------------------------------------ -->
-                                         <table style="margin-left: 50px;">
-                                         </table>
-                                         <br>
-                                         <br>
-                                         <br>
-                                         <table class="text-center">
-                                             <tr>
+                                                 <td style="vertical-align: bottom;">_________________</td>
+                                                 <td rowspan="3" class="px-4"></td>
+                                                 <td style="vertical-align: bottom;">_________________</td>
+                                                 <td rowspan="3" class="px-4"></td>
                                                  <td><img width="100px" src="<?= base_url('assets/File/tandatangan_dosen/') . $user['tanda_tangan']; ?>"></td>
                                              </tr>
                                              <tr>
+                                                 <td>(<?= $user['name_mhs_1']; ?>)</td>
+                                                 <td>(<?= $user['name_mhs_2']; ?>)</td>
                                                  <td>(<?php if (isset($mhs2['name'])) {
                                                             echo $mhs2['name'];;
                                                         } ?>)</td>
                                              </tr>
                                              <tr>
+                                                 <td>NPM : <?= $user['npm_mhs_1']; ?></td>
+                                                 <td>NPM : <?= $user['npm_mhs_2']; ?></td>
                                                  <td>NIK :
                                                      <?php if (isset($mhs2['NIK'])) {
                                                             echo $mhs2['NIK'];;
                                                         } ?>
                                                  </td>
                                              </tr>
+
                                          </table>
-                                         </row>
                                      </div>
                                  </div>
                              </div>
