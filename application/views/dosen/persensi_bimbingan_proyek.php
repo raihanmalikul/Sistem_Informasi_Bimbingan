@@ -33,12 +33,11 @@
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th scope="col" width="50">No</th>
-                                <th scope="col">Nama Mahasiswa 1</th>
-                                <th scope="col">NPM 1</th>
-                                <th scope="col">Nama Mahasiswa 2</th>
-                                <th scope="col">NPM 2</th>
+                                <th scope="col">Nama Mahasiswa </th>
+                                <th scope="col">NPM </th>
+                                <th scope="col">Kelas</th>
                                 <th scope="col">Jumlah Bimbingan</th>
                                 <th scope="col">Aksi</th>
                             </tr>
@@ -46,16 +45,20 @@
                         <?php $no = 1; ?>
                         <?php foreach ($tes as $tes) : ?>
                             <tbody>
-                                <tr>
-                                    <th><?= $no++  ?></th>
+                                <tr class="text-center">
+                                    <th rowspan="2"><?= $no++  ?></th>
                                     <td><?= $tes['name_mhs_1']; ?></td>
                                     <td><?= $tes['npm_mhs_1']; ?></td>
-                                    <td><?= $tes['name_mhs_2']; ?></td>
-                                    <td><?= $tes['npm_mhs_1']; ?></td>
-                                    <td></td>
-                                    <td width="100">
+                                    <td><?= $tes['kelas']; ?></td>
+                                    <td rowspan="2">100</td>
+                                    <td width="100" rowspan="2">
                                         <a href=" <?= base_url('dosen/detail_Persensi_bimbingan/') . $tes['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                     </td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td><?= $tes['name_mhs_2']; ?></td>
+                                    <td><?= $tes['npm_mhs_1']; ?></td>
+                                    <td><?= $tes['kelas']; ?></td>
                                 </tr>
                             </tbody>
                         <?php endforeach; ?>
