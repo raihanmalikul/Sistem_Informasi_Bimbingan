@@ -53,9 +53,9 @@
 
                                 <tr>
                                     <th rowspan="2"><?= $no++  ?></th>
-                                    <td><?= $mhs2['name_mhs_1']; ?></td>
-                                    <td><?= $mhs2['npm_mhs_1']; ?></td>
-                                    <td><?= $mhs2['kelas']; ?></td>
+                                    <td class="text-center"><?= $mhs2['name_mhs_1']; ?></td>
+                                    <td class="text-center"><?= $mhs2['npm_mhs_1']; ?></td>
+                                    <td class="text-center"><?= $mhs2['kelas']; ?></td>
                                     <td rowspan="2"><?= $mhs2['judul_proyek']; ?></td>
                                     <input type="hidden" name="mhs_id[]" value="<?= $mhs2['mhs_id']; ?>">
                                     <td rowspan="2">
@@ -86,7 +86,7 @@
                                         <?php endforeach; ?>
                                         </td>
                                 </tr>
-                                <tr>
+                                <tr class="text-center">
                                     <td><?= $mhs2['name_mhs_2']; ?></td>
                                     <td><?= $mhs2['npm_mhs_2']; ?></td>
                                     <td><?= $mhs2['kelas']; ?></td>

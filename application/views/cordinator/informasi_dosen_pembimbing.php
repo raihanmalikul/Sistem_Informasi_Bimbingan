@@ -35,22 +35,24 @@
                      <?= $this->session->flashdata('message_cor_data_dosen'); ?>
                      <table class="table table-bordered">
                          <thead>
-                             <tr>
+                             <tr class="text-center">
                                  <th scope="col-lg-2">No</th>
                                  <th scope="col">NIK</th>
                                  <th scope="col">Nama</th>
                                  <th scope="col">Email</th>
+                                 <th scope="col">No. Telpon</th>
                                  <th scope="col">Aksi</th>
                              </tr>
                          </thead>
                          <?php $no = 1; ?>
                          <?php foreach ($jadidos as  $dos) : ?>
                              <tbody>
-                                 <tr>
+                                 <tr class="text-center">
                                      <th scope="row"><?= $no++  ?></th>
                                      <td><?= $dos['NIK']; ?></td>
                                      <td><?= $dos['name']; ?></td>
                                      <td><?= $dos['email']; ?></td>
+                                     <td>08xxxxx</td>
                                      <td width="160">
                                          <a href="<?= base_url('cordinator/edit/') ?><?= $dos['dos_id'] ?>" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal<?= $dos['dos_id'] ?>"><i class="fas fa-edit"></i> Edit</a>
                                          <a href="<?= base_url('cordinator/hapus/') ?><?= $dos['dos_id'] ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
@@ -84,6 +86,10 @@
                                      <div class="form-group">
                                          <label for="email_ds" class="col-form-label">Email</label>
                                          <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+                                     </div>
+                                     <div class="form-group">
+                                         <label for="notelpon" class="col-form-label">No. Telpon</label>
+                                         <input type="number" name="NoTelpon" class="form-control" id="notelpon" placeholder="08xxxxx">
                                      </div>
                                      <div class="form-group row">
                                          <div class="col-sm-6 mb-3 mb-sm-0">
@@ -127,6 +133,10 @@
                                          <div class="form-group">
                                              <label for="email_ds" class="col-form-label">Email</label>
                                              <input type="text" name="email" class="form-control" id="email_ds" placeholder="Email" value="<?= $ts['email']; ?>">
+                                         </div>
+                                         <div class="form-group">
+                                             <label for="notelpon" class="col-form-label">No. Telpon</label>
+                                             <input type="number" name="NoTelpon" class="form-control" id="notelpon" placeholder="08xxxxx" value="">
                                          </div>
                                          <!-- <div class="form-group row">
                                              <div class="col-sm-6 mb-3 mb-sm-0">
