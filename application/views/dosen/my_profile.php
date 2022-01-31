@@ -8,7 +8,7 @@
          <div class="row">
              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                  <div class="page-header">
-                     <h2 class="pageheader-title">Profil Dosen</h2>
+                     <h2 class="pageheader-title">My Profile</h2>
                      <hr>
                  </div>
              </div>
@@ -42,12 +42,21 @@
                                  </div>
                              </div>
                              <div class="form-group">
-                                 <label for="inputUserName">Email</label>
+                                 <label for="inputEmail">Email</label>
                                  <div class="input-group-prepend">
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-at"></i>
                                      </span>
-                                     <input id="inputUserName" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $admin['email']; ?>">
+                                     <input id="inputEmail" type="text" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $admin['email']; ?>">
+                                 </div>
+                             </div>
+                             <div class="form-group">
+                                 <label for="inpuNoTelpon">No. Telpon</label>
+                                 <div class="input-group-prepend">
+                                     <span class="input-group-text" id="inputGroupPrepend">
+                                         <i class="fas fa-fw fa-phone"></i>
+                                     </span>
+                                     <input id="inputNoTelpon" type="number" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="">
                                  </div>
                              </div>
                              <div class="row">
@@ -96,6 +105,15 @@
                                                  <i class="fas fa-fw fa-at"></i>
                                              </span>
                                              <input id="email_ds" type="text" name="email" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $admin['email']; ?>">
+                                         </div>
+                                     </div>
+                                     <div class="form-group">
+                                         <label for="NoTelpon">No. Telpon</label>
+                                         <div class="input-group-prepend">
+                                             <span class="input-group-text" id="inputGroupPrepend">
+                                                 <i class="fas fa-fw fa-phone"></i>
+                                             </span>
+                                             <input id="inputNoTelpon" type="number" name="notelpon" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="">
                                          </div>
                                      </div>
                              </div>

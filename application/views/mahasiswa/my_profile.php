@@ -62,7 +62,7 @@
  									<span class="input-group-text" id="inputGroupPrepend">
  										<i class="fas fa-fw fa-phone"></i>
  									</span>
- 									<input type="text" data-parsley-trigger="change" name="" required=""
+ 									<input type="number" data-parsley-trigger="change" name="" required=""
  										autocomplete="off" class="form-control" readonly
  										value="">
  								</div>
@@ -127,7 +127,7 @@
                                             <span class="input-group-text" id="inputGroupPrepend">
                                                 <i class="fas fa-fw fa-phone"></i>
                                             </span>
-                                            <input type="text" name="notelpon" required="" autocomplete="off"
+                                            <input type="number" name="notelpon" required="" autocomplete="off"
                                             class="form-control" value="">
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@
  									<span class="input-group-text" id="inputGroupPrepend">
  										<i class="fas fa-fw fa-phone"></i>
  									</span>
- 									<input type="text" data-parsley-trigger="change" name="" required=""
+ 									<input type="number" data-parsley-trigger="change" name="" required=""
  										autocomplete="off" class="form-control" readonly
  										value="">
  								</div>
@@ -216,7 +216,7 @@
  							<form class="user" method="post" action="<?= base_url('mahasiswa/edit_my_profile') ?>">
  								<div class="modal-body">
  									<div class=" form-group">
- 										<label for="inputUserName">Nama Mahasiswa 2</label>
+ 										<label for="inputUserName">Nama Mahasiswa </label>
  										<div class="input-group-prepend">
  											<span class="input-group-text" id="inputGroupPrepend">
  												<i class="fas fa-fw fa-user"></i>
@@ -251,7 +251,7 @@
                                             <span class="input-group-text" id="inputGroupPrepend">
                                                 <i class="fas fa-fw fa-phone"></i>
                                             </span>
-                                            <input type="text" name="notelpon" required="" autocomplete="off"
+                                            <input type="number" name="notelpon" required="" autocomplete="off"
                                             class="form-control" value="">
                                         </div>
                                     </div>
