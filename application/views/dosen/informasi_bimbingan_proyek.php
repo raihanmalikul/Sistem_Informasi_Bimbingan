@@ -54,10 +54,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Nama Mahasiswa 1</th>
-                                <th scope="col">NPM 1</th>
-                                <th scope="col">Nama Mahasiswa 2</th>
-                                <th scope="col">NPM 2</th>
+                                <th scope="col">Nama Mahasiswa </th>
+                                <th scope="col">NPM </th>
                                 <th scope="col">Kelas</th>
                                 <th scope="col">Judul Proyek</th>
                             </tr>
@@ -66,13 +64,16 @@
                         <?php foreach ($tes as $tes) : ?>
                             <tbody>
                                 <tr>
-                                    <th><?= $no++  ?></th>
-                                    <td><?= $tes['name_mhs_1']; ?></td>
+                                    <th rowspan="2"><?= $no++  ?></th>
+                                    <td width="200px"><?= $tes['name_mhs_1']; ?></td>
                                     <td><?= $tes['npm_mhs_1']; ?></td>
-                                    <td><?= $tes['name_mhs_2']; ?></td>
-                                    <td><?= $tes['npm_mhs_1']; ?></td>
-                                    <td><?= $tes['kelas']; ?></td>
-                                    <td><?= $tes['judul_proyek']; ?></td>
+                                    <td width="200px"><?= $tes['kelas']; ?></td>
+                                    <td rowspan="2"><?= $tes['judul_proyek']; ?></td>
+                                </tr>
+                                <tr>
+                                <td width="200px"><?= $tes['name_mhs_2']; ?></td>
+                                    <td><?= $tes['npm_mhs_2']; ?></td>
+                                    <td width="200px"><?= $tes['kelas']; ?></td>
                                 </tr>
                             </tbody>
                         <?php endforeach; ?>
