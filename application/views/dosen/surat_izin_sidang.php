@@ -34,32 +34,32 @@
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th scope="col" width="50">No</th>
-                                <th scope="col">Nama Mahasiswa 1</th>
-                                <th scope="col">NPM 1</th>
-                                <th scope="col">Nama Mahasiswa 2</th>
-                                <th scope="col">NPM 2</th>
+                                <th scope="col">Nama Mahasiswa</th>
+                                <th scope="col">NPM</th>
                                 <th scope="col">Kelas</th>
-                                <th scope="col" width="200">Status Pengumpulan</th>
+                                <th scope="col" width="200">Status</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $no = 1; ?>
                             <?php foreach ($tes as $tes) : ?>
-                                <tr>
-                                    <th><?= $no++  ?></th>
+                                <tr class="text-center">
+                                    <th rowspan="2"><?= $no++  ?></th>
                                     <td><?= $tes['name_mhs_1']; ?></td>
                                     <td><?= $tes['npm_mhs_1']; ?></td>
+                                    <td><?= $tes['kelas']; ?></td>
+                                    <td rowspan="2">Belum di stujui sidang</td>
+                                    <td width="100" rowspan="2">
+                                        <a type="button" href="" class="btn btn-primary text-white" data-toggle="modal" data-target="#tambahModal<?= $tes['user_id']; ?>">Izinkan Sidang</a>
+                                    </td>
+                                </tr>
+                                <tr class="text-center">
                                     <td><?= $tes['name_mhs_2']; ?></td>
                                     <td><?= $tes['npm_mhs_2']; ?></td>
                                     <td><?= $tes['kelas']; ?></td>
-                                    <td>Belum di stujui sidang</td>
-                                    <td width="100">
-
-                                        <a type="button" href="" class="btn btn-primary text-white" data-toggle="modal" data-target="#tambahModal<?= $tes['user_id']; ?>">Izinkan Sidang</a>
-                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

@@ -52,7 +52,7 @@
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th scope="col">No</th>
                                 <th scope="col">Nama Mahasiswa </th>
                                 <th scope="col">NPM </th>
@@ -65,15 +65,15 @@
                             <tbody>
                                 <tr>
                                     <th rowspan="2"><?= $no++  ?></th>
-                                    <td width="200px"><?= $tes['name_mhs_1']; ?></td>
-                                    <td><?= $tes['npm_mhs_1']; ?></td>
-                                    <td width="200px"><?= $tes['kelas']; ?></td>
+                                    <td width="200px" class="text-center"><?= $tes['name_mhs_1']; ?></td>
+                                    <td class="text-center"><?= $tes['npm_mhs_1']; ?></td>
+                                    <td width="200px" class="text-center"><?= $tes['kelas']; ?></td>
                                     <td rowspan="2"><?= $tes['judul_proyek']; ?></td>
                                 </tr>
                                 <tr>
-                                <td width="200px"><?= $tes['name_mhs_2']; ?></td>
-                                    <td><?= $tes['npm_mhs_2']; ?></td>
-                                    <td width="200px"><?= $tes['kelas']; ?></td>
+                                <td width="200px" class="text-center"><?= $tes['name_mhs_2']; ?></td>
+                                    <td class="text-center"><?= $tes['npm_mhs_2']; ?></td>
+                                    <td width="200px" class="text-center"><?= $tes['kelas']; ?></td>
                                 </tr>
                             </tbody>
                         <?php endforeach; ?>
