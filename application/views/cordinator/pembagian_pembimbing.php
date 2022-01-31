@@ -37,13 +37,11 @@
                     <?= $this->session->flashdata('message_cor_pembagian_pembimbing'); ?>
                     <table class="table table-bordered">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th scope="col">No</th>
-                                <th scope="col">Nama Mahasiswa 1</th>
-                                <th scope="col">NPM 1</th>
-                                <th scope="col">Nama Mahasiswa 2</th>
-                                <th scope="col">NPM 2</th>
-                                <th scope="col">Kelas</th>
+                                <th scope="col" width="200px">Nama Mahasiswa</th>
+                                <th scope="col">NPM</th>
+                                <th scope="col" width="200px">Kelas</th>
                                 <th scope="col">Judul Proyek</th>
                                 <th scope="col">Dosen Pembimbing</th>
                             </tr>
@@ -54,15 +52,13 @@
 
 
                                 <tr>
-                                    <th><?= $no++  ?></th>
+                                    <th rowspan="2"><?= $no++  ?></th>
                                     <td><?= $mhs2['name_mhs_1']; ?></td>
                                     <td><?= $mhs2['npm_mhs_1']; ?></td>
-                                    <td><?= $mhs2['name_mhs_2']; ?></td>
-                                    <td><?= $mhs2['npm_mhs_2']; ?></td>
                                     <td><?= $mhs2['kelas']; ?></td>
-                                    <td><?= $mhs2['judul_proyek']; ?></td>
+                                    <td rowspan="2"><?= $mhs2['judul_proyek']; ?></td>
                                     <input type="hidden" name="mhs_id[]" value="<?= $mhs2['mhs_id']; ?>">
-                                    <td>
+                                    <td rowspan="2">
                                         <div class="form-group">
                                             <?php
                                             $dos2 = "SELECT * FROM user JOIN admin
@@ -87,20 +83,19 @@
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
-
-                                    <?php endforeach; ?>
-
-
-
-
-                </div>
-                </td>
-                </tr>
+                                        <?php endforeach; ?>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td><?= $mhs2['name_mhs_2']; ?></td>
+                                    <td><?= $mhs2['npm_mhs_2']; ?></td>
+                                    <td><?= $mhs2['kelas']; ?></td>
+                                </tr>
                 </tbody>
                 </table>
                 <br>
                 <button type="submit" class="btn btn-primary btn-xs text-white"><i class="fas fa-save"></i> Simpan</button>
-                <!-- <button type="button" class="btn btn-success btn-xs text-white"><i class="fas fa-edit"></i> Edit</button> -->
+                <button type="button" class="btn btn-success btn-xs text-white"><i class="fas fa-edit"></i> Edit</button>
             </div>
             </form>
         </div>
