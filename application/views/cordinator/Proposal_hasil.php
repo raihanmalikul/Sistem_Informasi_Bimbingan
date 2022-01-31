@@ -50,12 +50,10 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th scope="col" width="50">No</th>
-                                    <th scope="col">Nama Mahasiswa 1</th>
-                                    <th scope="col">NPM 1</th>
-                                    <th scope="col">Nama Mahasiswa 2</th>
-                                    <th scope="col">NPM 2</th>
+                                    <th scope="col">Nama Mahasiswa</th>
+                                    <th scope="col">NPM</th>
                                     <th scope="col">Kelas</th>
                                     <th scope="col" width="200">Status Pengumpulan</th>
                                     <th scope="col">Aksi</th>
@@ -65,19 +63,22 @@
                             <?php foreach ($jadimhs as $mhs2) : ?>
                                 <?php $setatus = $this->db->get_where('status_proposal', ['id' => $mhs2['status_proposal_id']])->row_array() ?>
                                 <tbody>
-                                    <tr>
-                                        <th><?= $no++  ?></th>
+                                    <tr class="text-center">
+                                        <th rowspan="2"><?= $no++  ?></th>
                                         <td><?= $mhs2['name_mhs_1']; ?></td>
                                         <td><?= $mhs2['npm_mhs_1']; ?></td>
-                                        <td><?= $mhs2['name_mhs_2']; ?></td>
-                                        <td><?= $mhs2['npm_mhs_2']; ?></td>
                                         <td><?= $mhs2['kelas']; ?></td>
-                                        <td><?= $setatus['status']; ?></td>
-                                        <td width="100">
+                                        <td rowspan="2"><?= $setatus['status']; ?></td>
+                                        <td width="100" rowspan="2">
                                             <a href=" <?= base_url('cordinator/detailproposal/') . $mhs2['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                         </td>
                                     <?php endforeach; ?>
-
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td><?= $mhs2['name_mhs_2']; ?></td>
+                                        <td><?= $mhs2['npm_mhs_2']; ?></td>
+                                        <td><?= $mhs2['kelas']; ?></td>
+                                    </tr>
                                 </tbody>
                         </table>
                     </div>
