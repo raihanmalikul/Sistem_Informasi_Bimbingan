@@ -57,6 +57,10 @@
                                             echo $tes['name'];;
                                         } ?></td>
                              </tr>
+                             <tr>
+                                 <td width="200px">No Telpon</td>
+                                 <td></td>
+                             </tr>
                              </tr>
                          </tbody>
                      </table>
