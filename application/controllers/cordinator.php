@@ -65,6 +65,24 @@ class cordinator extends CI_Controller
 
 
 
+    public function informasi_mahasiswa_pembimbing()
+    {
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar_1', $data);
+        $this->load->view('cordinator/informasi_mahasiswa_pembimbing', $data);
+        $this->load->view('templates/footer');
+    }
+
+
+
     public function informasi_dosen_pembimbing()
     {
         $data['title'] = 'Menu cordinator';
@@ -564,6 +582,24 @@ class cordinator extends CI_Controller
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar_1', $data);
         $this->load->view('cordinator/detailnilai', $data);
+        $this->load->view('templates/footer');
+    }
+
+
+
+    public function setujui_sidang()
+    {
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar_1', $data);
+        $this->load->view('cordinator/setujui_sidang', $data);
         $this->load->view('templates/footer');
     }
 
