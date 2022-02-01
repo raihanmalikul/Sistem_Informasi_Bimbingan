@@ -31,7 +31,7 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i>Tambah</button>
+                    <button type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i> Tambah</button>
                     <h5 class="mb-0">Data Pengumpulan Proposal</h5>
                     <br>
                     <?= $this->session->flashdata('message_cor_proposal'); ?>

@@ -29,7 +29,7 @@
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
              <div class="card">
                  <div class="card-body">
-                     <button type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i>Tambah Dosen</button>
+                     <button type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i> Tambah Dosen</button>
                      <h4 class="card-title">Data Dosen Pembimbing</h4>
                      <br>
                      <?= $this->session->flashdata('message_cor_data_dosen'); ?>

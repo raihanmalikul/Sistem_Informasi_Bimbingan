@@ -19,7 +19,7 @@
  			<div class="card">
  				<div class="card-body">
  					<button type="button" class="btn btn-primary text-white float-right" data-toggle="modal"
- 						data-target="#tambahModal"><i class="fa fa-plus"></i>Tambah Mahasiswa</button>
+ 						data-target="#tambahModal"><i class="fa fa-plus"></i> Tambah Mahasiswa</button>
  					<h4 class="card-title">Data Mahasiswa</h4>
  					<br>
  					<table class="table table-bordered">
