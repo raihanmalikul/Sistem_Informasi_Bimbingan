@@ -19,6 +19,7 @@
         </div>
         <div class="card-footer bg-white text-center">
             <p>Belum Memiliki Akun? <a href="<?= base_url('auth/registration') ?>" class="text-secondary">Register Disini!</a></p>
+            <p><a href="<?= base_url('') ?>" class="text-secondary">Kembali Ke Halaman Utama</a></p>
         </div>
     </div>
 </div>
