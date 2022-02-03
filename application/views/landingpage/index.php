@@ -99,8 +99,7 @@
 						<div class="icon-box">
 							<div class="icon"><i class="bx bx-chat" style="color: #ff689b;"></i></div>
 							<h4 class="title"><a href="">Sosialisai Kegiatan Proyek</a></h4>
-							<p class="description">Kegiatan sosialisasi untuk mahasiswa
-								yang mengikuti proyek
+							<p class="description">Penyampaian informasi mengenai mata kuliah proyek yang akan dilaksanakan
 								<br>
 								<b>05 Oktober 2021</b>
 							</p>
@@ -111,7 +110,7 @@
 						<div class="icon-box">
 							<div class="icon"><i class="bx bx-file" style="color: #e9bf06;"></i></div>
 							<h4 class="title"><a href="">Pengajuan Proposal</a></h4>
-							<p class="description">Proposal diajukan kepada koordinator proyek untuk di review dan disetujui.
+							<p class="description">Mahasiswa mengajukan proposal kepada koordinator proyek untuk di review.
 								<br>
 								<b>08 Oktober – 18
 									Oktober 2021
@@ -124,7 +123,7 @@
 						<div class="icon-box">
 							<div class="icon"><i class="bx bx-user-voice" style="color: #3fcdc7;"></i></div>
 							<h4 class="title"><a href="">Pembagian Informasi Pembimbing</a></h4>
-							<p class="description">Mahasiswa mendapatkan informasi pembagian dosen pembimbing proyek
+							<p class="description">Mahasiswa mendapatkan informasi pembagian dosen pembimbing
                 <br>
                 <b>20 Oktober 2021</b>
               </p>
