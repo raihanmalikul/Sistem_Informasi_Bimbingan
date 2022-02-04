@@ -5,7 +5,11 @@ class Landingpage extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('landingpage/index');
+        $data['num_mhs'] = $this->db->get_where('user', ['role_id' => 3])->num_rows();
+        $data['num_dos'] = $this->db->get_where('user', ['role_id' => 2])->num_rows();
+        $data['num_kor'] = $this->db->get_where('user', ['role_id' => 1])->num_rows();
+        // var_dump($data); die;
+        $this->load->view('landingpage/index', $data);
     }
 
 }

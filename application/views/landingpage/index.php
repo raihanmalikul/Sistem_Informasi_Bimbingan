@@ -179,19 +179,19 @@
 				<div class="row counters position-relative">
 
 					<div class="col-lg-3 col-6 text-center">
-						<span data-purecounter-start="0" data-purecounter-end="19" data-purecounter-duration="1"
+						<span data-purecounter-start="0" data-purecounter-end="<?= $num_mhs;?>" data-purecounter-duration="1"
 							class="purecounter"></span>
 						<p>Mahasiswa yang terdaftar</p>
 					</div>
 
 					<div class="col-lg-3 col-6 text-center">
-						<span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1"
+						<span data-purecounter-start="0" data-purecounter-end="<?= $num_dos;?>" data-purecounter-duration="1"
 							class="purecounter"></span>
 						<p>Dosen Pembimbing</p>
 					</div>
 
 					<div class="col-lg-3 col-6 text-center">
-						<span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1"
+						<span data-purecounter-start="0" data-purecounter-end="<?= $num_kor;?>" data-purecounter-duration="1"
 							class="purecounter"></span>
 						<p>Koordinator</p>
 					</div>
