@@ -21,7 +21,12 @@
          ON user . data_id  = user_data . data_id
          WHERE user . role_id = 3  ";
 
+        $num = "SELECT * FROM user JOIN user_data 
+         ON user . data_id  = user_data . data_id
+         WHERE user . role_id = 3 AND user_data . status_laporan_id = 2 ";
+
         $jadimhs = $this->db->query($mhs2)->result_Array();
+        $nummhs = $this->db->query($num)->num_rows();
         // echo '<pre>';
         // var_dump($jadimhs);
         // echo '</pre>';
@@ -49,7 +54,7 @@
                             </tr>
                             <tr>
                                 <td>Jumlah Pengumpul</td>
-                                <td>-</td>
+                                <td><?=$nummhs; ?></td>
                             </tr>
                     </table>
                     <div class="card-body">
