@@ -1,9 +1,9 @@
     <!-- ============================================================== -->
     <!-- signup form  -->
     <!-- ============================================================== -->
-    <div class="splash-container">
-    	<div class="row">
-    		<div class="row col-xl-30 col-lg-30 col-md-30 col-sm-30 col-30">
+	<div class="container" style="margin-top: 230px;">
+    	<div class="row justify-content-center">
+    		<div class="col-7">
     			<div class="card">
     				<div class="card-header text-center">
     					<h3 class="mb-1">Form Registrasi</h3>
@@ -81,7 +81,7 @@
     							</div>
     						</div>
     						<div class="form-group pt-2">
-    							<button class="btn btn-block btn-primary" type="submit">Register My Account</button>
+    							<button class="btn btn-block btn-primary" type="submit">Register Account</button>
     						</div>
     					</div>
     				</form>
