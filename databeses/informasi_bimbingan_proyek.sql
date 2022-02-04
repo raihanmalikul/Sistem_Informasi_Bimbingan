@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Jan 2022 pada 09.29
+-- Waktu pembuatan: 04 Feb 2022 pada 03.07
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.3.31
 
@@ -256,7 +256,7 @@ CREATE TABLE `user_data` (
 
 INSERT INTO `user_data` (`id`, `judul_proyek`, `keterangan_judul`, `katagori_proyek`, `proposal_proyek`, `laporan_proyek`, `status_laporan_id`, `status_proposal_id`, `berkas_bimbingan_id`, `surat_izin_sidang`, `tanggal_pengumpulan_proposal`, `data_id`, `cor_id`, `tanggal_pengumpulan_laporan`) VALUES
 (17, '', '', '', '', '', 0, 0, '', '', '04-February-2022', 4, 1, ''),
-(32, 'Rancang Bangun Aplikasi Pengumpulan Proposal dan Pembagian Dosen Pembimbing Proyek Berbasis Website', ' aplikasi informasi bimbingan ', 'Proyek 2', 'Proposal_Proyek_II_-_1193005_Aldo_Dwie_Rizky_-_1193025_Raihan_Malikul_Mulki2.docx', '', 1, 2, '21', '', '', 21, 1, NULL);
+(32, 'Rancang Bangun Aplikasi Pengumpulan Proposal dan Pembagian Dosen Pembimbing Proyek Berbasis Website', ' aplikasi informasi bimbingan ', 'Proyek 2', 'Proposal_Proyek_II_-_1193005_Aldo_Dwie_Rizky_-_1193025_Raihan_Malikul_Mulki2.docx', 'new_Laporan_Proyek_1_Aplikasi_laundryBerbasis_Web_.docx', 2, 2, '21', '', '', 21, 1, NULL);
 
 -- --------------------------------------------------------
 
