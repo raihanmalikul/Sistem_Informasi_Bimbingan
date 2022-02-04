@@ -134,72 +134,72 @@
  						</div>
  					</div>
 
- 					<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
- 						<div class="modal-dialog">
- 							<div class="modal-content">
- 								<div class="modal-header">
- 									<h5 class="modal-title" id="exampleModalLabel">Edit Data Mahasiswa</h5>
- 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
- 										<span aria-hidden="true">&times;</span>
- 									</button>
- 								</div>
- 								<div class="modal-body">
- 									<form class="user" method="post"
- 										action=" ">
- 									<div class="form-group">
- 										<input class="form-control form-control-lg" type="text" name="name_mhs_1"
- 											value=""
- 											autocomplete="off">
- 										
- 									</div>
- 									<div class="form-group">
- 										<input class="form-control form-control-lg" type="text" name="npm_mhs_1"
- 											value="" placeholder="NPM Mahasiswa 1"
- 											autocomplete="off">
- 										
- 									</div>
- 									<div class="form-group">
- 										<select class="form-control" value="" id="kelas"
- 											name="kelas">
- 											<option disabled selected value>Kelas</option>
- 											<option value="D3 Teknik Informatika 2A">D3 Teknik Informatika 2A</option>
- 											<option value="D3 Teknik Informatika 2B">D3 Teknik Informatika 2B</option>
- 											<option value="D3 Teknik Informatika 3A">D3 Teknik Informatika 3A</option>
- 										</select>
- 										
- 									</div>
- 									<hr>
- 									<div class="form-group">
- 										<input class="form-control form-control-lg" type="text" name="name_mhs_2"
- 											value="" placeholder="Nama Mahasiswa 2"
- 											autocomplete="off">
- 										
- 									</div>
- 									<div class="form-group">
- 										<input class="form-control form-control-lg" type="text" name="npm_mhs_2"
- 											value="" placeholder="NPM Mahasiswa 2"
- 											autocomplete="off">
- 										
- 									</div>
- 									<div class="form-group">
- 										<select class="form-control" value="" id="kelas"
- 											name="kelas">
- 											<option disabled selected value>Kelas</option>
- 											<option value="D3 Teknik Informatika 2A">D3 Teknik Informatika 2A</option>
- 											<option value="D3 Teknik Informatika 2B">D3 Teknik Informatika 2B</option>
- 											<option value="D3 Teknik Informatika 3A">D3 Teknik Informatika 3A</option>
- 										</select>
- 										
- 									</div>
- 								</div>
- 								<div class="modal-footer">
- 									<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
- 									<button type="submit" class="btn btn-primary">Simpan</button>
- 								</div>
- 								</form>
- 							</div>
- 						</div>
- 					</div>
-
- 				</div>
- 			</div>
+					 
+				</div>
+			</div>
+			<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Edit Data Mahasiswa</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<form class="user" method="post"
+								action=" ">
+							<div class="form-group">
+								<input class="form-control form-control-lg" type="text" name="name_mhs_1"
+									value="" placeholder="Nama Mahasiswa 1"
+									autocomplete="off">
+								
+							</div>
+							<div class="form-group">
+								<input class="form-control form-control-lg" type="text" name="npm_mhs_1"
+									value="" placeholder="NPM Mahasiswa 1"
+									autocomplete="off">
+								
+							</div>
+							<div class="form-group">
+								<select class="form-control" value="" id="kelas"
+									name="kelas">
+									<option disabled selected value>Kelas</option>
+									<option value="D3 Teknik Informatika 2A">D3 Teknik Informatika 2A</option>
+									<option value="D3 Teknik Informatika 2B">D3 Teknik Informatika 2B</option>
+									<option value="D3 Teknik Informatika 3A">D3 Teknik Informatika 3A</option>
+								</select>
+								
+							</div>
+							<hr>
+							<div class="form-group">
+								<input class="form-control form-control-lg" type="text" name="name_mhs_2"
+									value="" placeholder="Nama Mahasiswa 2"
+									autocomplete="off">
+								
+							</div>
+							<div class="form-group">
+								<input class="form-control form-control-lg" type="text" name="npm_mhs_2"
+									value="" placeholder="NPM Mahasiswa 2"
+									autocomplete="off">
+								
+							</div>
+							<div class="form-group">
+								<select class="form-control" value="" id="kelas"
+									name="kelas">
+									<option disabled selected value>Kelas</option>
+									<option value="D3 Teknik Informatika 2A">D3 Teknik Informatika 2A</option>
+									<option value="D3 Teknik Informatika 2B">D3 Teknik Informatika 2B</option>
+									<option value="D3 Teknik Informatika 3A">D3 Teknik Informatika 3A</option>
+								</select>
+								
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+							<button type="submit" class="btn btn-primary">Simpan</button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
