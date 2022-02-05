@@ -69,14 +69,14 @@
                                     <td width="200px" class="text-center"><?= $tes['name_mhs_1']; ?></td>
                                     <td class="text-center"><?= $tes['npm_mhs_1']; ?></td>
                                     <td width="200px" class="text-center"><?= $tes['kelas']; ?></td>
-                                    <td>08999999999</td>
+                                    <td>08xxxxx</td>
                                     <td rowspan="2"><?= $tes['judul_proyek']; ?></td>
                                 </tr>
                                 <tr>
                                 <td width="200px" class="text-center"><?= $tes['name_mhs_2']; ?></td>
                                     <td class="text-center"><?= $tes['npm_mhs_2']; ?></td>
                                     <td width="200px" class="text-center"><?= $tes['kelas']; ?></td>
-                                    <td>08888888888</td>
+                                    <td>08xxxxx</td>
                                 </tr>
                             </tbody>
                         <?php endforeach; ?>

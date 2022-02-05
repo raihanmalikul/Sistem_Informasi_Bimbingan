@@ -56,7 +56,7 @@
                                     <td><?= $mhs2['name_mhs_1']; ?></td>
                                     <td><?= $mhs2['npm_mhs_1']; ?></td>
                                     <td><?= $mhs2['kelas']; ?></td>
-                                    <td rowspan="2">100</td>
+                                    <td rowspan="2">0</td>
                                     <td width="100" rowspan="2">
                                         <a href="<?= base_url('cordinator/detailpresensi/') . $mhs2['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                     </td>
