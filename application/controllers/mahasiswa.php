@@ -41,7 +41,7 @@ class mahasiswa extends CI_Controller
     public function buku_pedoman()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
@@ -60,7 +60,7 @@ class mahasiswa extends CI_Controller
     public function templet_laporan_proyek()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
@@ -79,7 +79,7 @@ class mahasiswa extends CI_Controller
     public function informasi_bimbingan_proyek()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
@@ -104,7 +104,7 @@ class mahasiswa extends CI_Controller
     public function Persensi_Bimbingan_Proyek()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
@@ -131,7 +131,7 @@ class mahasiswa extends CI_Controller
     public function proposal()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
@@ -204,7 +204,7 @@ class mahasiswa extends CI_Controller
     public function laporan()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
@@ -266,7 +266,7 @@ class mahasiswa extends CI_Controller
     public function surat_izin_sidang()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
@@ -294,7 +294,7 @@ class mahasiswa extends CI_Controller
     public function my_profile()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
@@ -313,7 +313,7 @@ class mahasiswa extends CI_Controller
     public function edit_my_profile()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
@@ -361,7 +361,7 @@ class mahasiswa extends CI_Controller
     public function edit_profile()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
@@ -380,7 +380,7 @@ class mahasiswa extends CI_Controller
     public function ubah_profile()
     {
         // backend
-        $data['title'] = 'Menu Buku Pedoman';
+        $data['title'] = 'Menu Mahasiswa';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
