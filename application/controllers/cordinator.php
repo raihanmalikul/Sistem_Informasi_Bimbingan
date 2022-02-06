@@ -517,6 +517,39 @@ class cordinator extends CI_Controller
 
 
 
+    public function persensi_bimbingan_tambah()
+    {
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+        if ($data) {
+            $batas_tanggal_bimbingan = $this->input->post('batas_tanggal_bimbingan');
+            $date = date_create($batas_tanggal_bimbingan);
+            $tas = date_format($date, "d-F-Y");
+
+            $this->db->set('batas_tanggal_bimbingan', $tas);
+            $this->db->where('data_id', $data['user_data']['data_id']);
+            $this->db->update('user_data');
+            $this->session->set_flashdata('message_batas_tanggal_bimbingan', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Batas waktu Bimbingan berhasil di pasang
+            </div>');
+            redirect('cordinator/persensi_bimbingan');
+        } else {
+            $this->session->set_flashdata('message_batas_tanggal_bimbingan', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Batas waktu Bimbingan gagal di pasang
+            </div>');
+            redirect('cordinator/persensi_bimbingan');
+        }
+    }
+
+
+
     public function detailpresensi($id)
     {
         $mhs2 = "SELECT bimbingan.*, user.*, admin.*, user_data.*, berkas_bimbingan.* FROM bimbingan 

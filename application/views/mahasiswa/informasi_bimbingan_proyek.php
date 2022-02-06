@@ -63,7 +63,9 @@
                              </tr>
                              <tr>
                                  <td width="200px">No Telpon</td>
-                                 <td></td>
+                                 <td><?php if (isset($tes['no_telpon'])) {
+                                            echo $tes['no_telpon'];;
+                                        } ?></td>
                              </tr>
                              </tr>
                          </tbody>

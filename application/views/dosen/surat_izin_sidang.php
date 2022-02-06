@@ -43,15 +43,16 @@
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <?php $no = 1; ?>
-                            <?php foreach ($tes as $tes) : ?>
+                        <?php $no = 1; ?>
+                        <?php foreach ($tes as $tes) : ?>
+                            <?php $setatus = $this->db->get_where('status_surat', ['id' => $tes['status_surat_id']])->row_array() ?>
+                            <tbody>
                                 <tr class="text-center">
                                     <th rowspan="2"><?= $no++  ?></th>
                                     <td><?= $tes['name_mhs_1']; ?></td>
                                     <td><?= $tes['npm_mhs_1']; ?></td>
                                     <td><?= $tes['kelas_mhs_1']; ?></td>
-                                    <td rowspan="2">Belum di stujui sidang</td>
+                                    <td rowspan="2"><?= $setatus['status']; ?></td>
                                     <td width="100" rowspan="2">
                                         <a type="button" href="" class="btn btn-primary text-white" data-toggle="modal" data-target="#tambahModal<?= $tes['user_id']; ?>">Izinkan Sidang</a>
                                     </td>
@@ -61,8 +62,8 @@
                                     <td><?= $tes['npm_mhs_2']; ?></td>
                                     <td><?= $tes['kelas_mhs_2']; ?></td>
                                 </tr>
-                            <?php endforeach; ?>
-                        </tbody>
+                            </tbody>
+                        <?php endforeach; ?>
                     </table>
                 </div>
             </div>

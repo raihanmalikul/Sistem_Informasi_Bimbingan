@@ -43,13 +43,14 @@
                             </thead>
                             <?php $no = 1; ?>
                             <?php foreach ($mhs as  $mhs) : ?>
+                                <?php $setatus = $this->db->get_where('status_surat', ['id' => $mhs['status_surat_id']])->row_array() ?>
                                 <tbody>
                                     <tr class="text-center">
                                         <th rowspan="2"><?= $no++  ?></th>
                                         <td><?= $mhs['name_mhs_1']; ?></td>
                                         <td><?= $mhs['npm_mhs_1']; ?></td>
                                         <td><?= $mhs['kelas_mhs_1']; ?></td>
-                                        <td rowspan="2">Sudah Disetujui / Belum Disetujui</td>
+                                        <td rowspan="2"><?= $setatus['status']; ?></td>
                                     </tr>
                                     <tr class="text-center">
                                         <td><?= $mhs['name_mhs_2']; ?></td>
