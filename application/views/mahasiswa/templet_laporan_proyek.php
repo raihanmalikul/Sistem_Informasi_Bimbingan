@@ -3,7 +3,7 @@
  <div class="dashboard-wrapper">
      <div class="container-fluid dashboard-content">
          <center>
-             <embed type="application/pdf" src="<?= base_url(); ?>/File/contoh 2.pdf" width="1000" height="1200"></embed>
+             <iframe type="application/pdf" src="<?= base_url(); ?>/File/Template Laporan Proyek.pdf" width="1000" height="1200"></iframe>
          </center>
      </div>
  </div>
@@ -12,4 +12,4 @@
  <!-- ============================================================== -->
  </div>
  <!-- ============================================================== -->
- <!-- end main wrapper -->x
+ <!-- end main wrapper -->

@@ -27,6 +27,32 @@
                             </center>
                         </div>
                     </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <center>
+                                <h5 class="card-header">Jumlah Mahasiswa Bimbingan</h5>
+                            </center>
+                            <div class="card-body">
+                                <center>
+                                    <h3></h3>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <center>
+                                <h5 class="card-header">Jumlah Mahasiswa Bimbingan Yang Telah Disetujui Sidang</h5>
+                            </center>
+                            <div class="card-body">
+                                <center>
+                                    <h3></h3>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
