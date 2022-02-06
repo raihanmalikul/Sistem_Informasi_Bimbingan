@@ -49,7 +49,7 @@
                             </tr>
                             <tr>
                                 <td>Jumlah Pengumpul</td>
-                                <td><?=$nummhs; ?></td>
+                                <td><?= $nummhs; ?></td>
                             </tr>
                     </table>
                     <div class="card-body">
@@ -72,19 +72,19 @@
                                         <th rowspan="2"><?= $no++  ?></th>
                                         <td><?= $mhs2['name_mhs_1']; ?></td>
                                         <td><?= $mhs2['npm_mhs_1']; ?></td>
-                                        <td><?= $mhs2['kelas']; ?></td>
+                                        <td><?= $mhs2['kelas_mhs_1']; ?></td>
                                         <td rowspan="2"><?= $setatus['status']; ?></td>
                                         <td width="100" rowspan="2">
                                             <a href=" <?= base_url('cordinator/detailproposal/') . $mhs2['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                         </td>
-                                    <?php endforeach; ?>
                                     </tr>
                                     <tr class="text-center">
                                         <td><?= $mhs2['name_mhs_2']; ?></td>
                                         <td><?= $mhs2['npm_mhs_2']; ?></td>
-                                        <td><?= $mhs2['kelas']; ?></td>
+                                        <td><?= $mhs2['kelas_mhs_2']; ?></td>
                                     </tr>
                                 </tbody>
+                            <?php endforeach; ?>
                         </table>
                     </div>
                 </div>

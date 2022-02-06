@@ -56,7 +56,7 @@
                                      <span class="input-group-text" id="inputGroupPrepend">
                                          <i class="fas fa-fw fa-phone"></i>
                                      </span>
-                                     <input id="inputNoTelpon" type="number" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="">
+                                     <input id="inputNoTelpon" type="number" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" readonly value="<?= $admin['no_telpon']; ?>">
                                  </div>
                              </div>
                              <div class="row">
@@ -113,7 +113,7 @@
                                              <span class="input-group-text" id="inputGroupPrepend">
                                                  <i class="fas fa-fw fa-phone"></i>
                                              </span>
-                                             <input id="inputNoTelpon" type="number" name="notelpon" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="">
+                                             <input id="inputNoTelpon" type="number" name="no_telpon" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $admin['no_telpon']; ?>">
                                          </div>
                                      </div>
                              </div>

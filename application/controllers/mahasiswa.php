@@ -326,13 +326,20 @@ class mahasiswa extends CI_Controller
             $npm_mhs_1 = $this->input->post('npm_mhs_1');
             $name_mhs_2 = $this->input->post('name_mhs_2');
             $npm_mhs_2 = $this->input->post('npm_mhs_2');
-            $kelas = $this->input->post('kelas');
+            $kelas_mhs_1 = $this->input->post('kelas_mhs_1');
+            $kelas_mhs_2 = $this->input->post('kelas_mhs_2');
+            $no_telpon_mhs_1 = $this->input->post('no_telpon_mhs_1');
+            $no_telpon_mhs_2 = $this->input->post('no_telpon_mhs_2');
+
 
             $this->db->set('name_mhs_1', $name_mhs_1);
             $this->db->set('npm_mhs_1', $npm_mhs_1);
             $this->db->set('name_mhs_2', $name_mhs_2);
             $this->db->set('npm_mhs_2', $npm_mhs_2);
-            $this->db->set('kelas', $kelas);
+            $this->db->set('kelas_mhs_1', $kelas_mhs_1);
+            $this->db->set('kelas_mhs_2', $kelas_mhs_2);
+            $this->db->set('no_telpon_mhs_1', $no_telpon_mhs_1);
+            $this->db->set('no_telpon_mhs_2', $no_telpon_mhs_2);
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');
             $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-success" role="alert">

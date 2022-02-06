@@ -29,9 +29,7 @@
  									<span class="input-group-text" id="inputGroupPrepend">
  										<i class="fas fa-fw fa-user"></i>
  									</span>
- 									<input type="text" data-parsley-trigger="change" name="" required=""
- 										autocomplete="off" class="form-control" readonly
- 										value="<?= $user['name_mhs_1']; ?>">
+ 									<input type="text" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['name_mhs_1']; ?>">
  								</div>
  							</div>
  							<div class="form-group">
@@ -40,9 +38,7 @@
  									<span class="input-group-text" id="inputGroupPrepend">
  										<i class="fas fa-fw fa-id-badge"></i>
  									</span>
- 									<input type="text" data-parsley-trigger="change" name="" required=""
- 										autocomplete="off" class="form-control" readonly
- 										value="<?= $user['npm_mhs_1']; ?>">
+ 									<input type="text" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['npm_mhs_1']; ?>">
  								</div>
  							</div>
  							<div class="form-group">
@@ -51,35 +47,29 @@
  									<span class="input-group-text" id="inputGroupPrepend">
  										<i class="fas fa-fw fa-id-card"></i>
  									</span>
- 									<input type="text" data-parsley-trigger="change" name="" required=""
- 										autocomplete="off" class="form-control" readonly
- 										value="<?= $user['kelas']; ?>">
+ 									<input type="text" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['kelas_mhs_1']; ?>">
  								</div>
  							</div>
-                             <div class="form-group">
+ 							<div class="form-group">
  								<label for="inputNoTelpon">No. Telpon</label>
  								<div class="input-group-prepend">
  									<span class="input-group-text" id="inputGroupPrepend">
  										<i class="fas fa-fw fa-phone"></i>
  									</span>
- 									<input type="number" data-parsley-trigger="change" name="" required=""
- 										autocomplete="off" class="form-control" readonly
- 										value="">
+ 									<input type="number" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['no_telpon_mhs_1']; ?>">
  								</div>
  							</div>
  							<div class="row">
  								<div class="col-sm-6 pl-0">
  									<p class="text-center">
- 										<button type="button" class="btn btn-space btn-primary" data-toggle="modal"
- 											data-target="#tambahModal1">Ubah Profil</button>
+ 										<button type="button" class="btn btn-space btn-primary" data-toggle="modal" data-target="#tambahModal1">Ubah Profil</button>
  									</p>
  								</div>
  							</div>
  						</form>
  					</div>
  				</div>
- 				<div class="modal fade" id="tambahModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
- 					aria-hidden="true">
+ 				<div class="modal fade" id="tambahModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
  					<div class="modal-dialog">
  						<div class="modal-content">
  							<div class="modal-header">
@@ -96,9 +86,8 @@
  											<span class="input-group-text" id="inputGroupPrepend">
  												<i class="fas fa-fw fa-user"></i>
  											</span>
- 											<input type="text" name="name_mhs_1" data-parsley-trigger="change"
- 												required="" autocomplete="off" class="form-control"
- 												value="<?= $user['name_mhs_1']; ?>">
+ 											<input type="text" name="name_mhs_1" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['name_mhs_1']; ?>">
+ 											<input type="hidden" name="name_mhs_2" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['name_mhs_2']; ?>">
  										</div>
  									</div>
  									<div class=" form-group">
@@ -107,30 +96,30 @@
  											<span class="input-group-text" id="inputGroupPrepend">
  												<i class="fas fa-fw fa-id-badge"></i>
  											</span>
- 											<input type="text" name="npm_mhs_1" required="" autocomplete="off"
- 												class="form-control" value="<?= $user['npm_mhs_1']; ?>">
+ 											<input type="text" name="npm_mhs_1" required="" autocomplete="off" class="form-control" value="<?= $user['npm_mhs_1']; ?>">
+ 											<input type="hidden" name="npm_mhs_2" required="" autocomplete="off" class="form-control" value="<?= $user['npm_mhs_2']; ?>">
  										</div>
  									</div>
-                                     <div class=" form-group">
+ 									<div class=" form-group">
  										<label for="inputKelas">Kelas</label>
  										<div class="input-group-prepend">
  											<span class="input-group-text" id="inputGroupPrepend">
  												<i class="fas fa-fw fa-id-card"></i>
  											</span>
- 											<input type="text" name="kelas" required="" autocomplete="off"
- 												class="form-control" value="<?= $user['kelas']; ?>">
+ 											<input type="text" name="kelas_mhs_1" required="" autocomplete="off" class="form-control" value="<?= $user['kelas_mhs_1']; ?>">
+ 											<input type="hidden" name="kelas_mhs_2" required="" autocomplete="off" class="form-control" value="<?= $user['kelas_mhs_2']; ?>">
  										</div>
  									</div>
  									<div class="form-group">
-                                        <label for="inputNoTelpon">No.Telpon</label>
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupPrepend">
-                                                <i class="fas fa-fw fa-phone"></i>
-                                            </span>
-                                            <input type="number" name="notelpon" required="" autocomplete="off"
-                                            class="form-control" value="">
-                                        </div>
-                                    </div>
+ 										<label for="inputNoTelpon">No.Telpon</label>
+ 										<div class="input-group-prepend">
+ 											<span class="input-group-text" id="inputGroupPrepend">
+ 												<i class="fas fa-fw fa-phone"></i>
+ 											</span>
+ 											<input type="number" name="no_telpon_mhs_1" required="" autocomplete="off" class="form-control" value="<?= $user['no_telpon_mhs_1']; ?>">
+ 											<input type="hidden" name="no_telpon_mhs_2" required="" autocomplete="off" class="form-control" value="<?= $user['no_telpon_mhs_2']; ?>">
+ 										</div>
+ 									</div>
  								</div>
  								<div class=" modal-footer">
  									<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -154,9 +143,7 @@
  									<span class="input-group-text" id="inputGroupPrepend">
  										<i class="fas fa-fw fa-user"></i>
  									</span>
- 									<input type="text" data-parsley-trigger="change" name="" required=""
- 										autocomplete="off" class="form-control" readonly
- 										value="<?= $user['name_mhs_2']; ?>">
+ 									<input type="text" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['name_mhs_2']; ?>">
  								</div>
  							</div>
  							<div class="form-group">
@@ -165,9 +152,7 @@
  									<span class="input-group-text" id="inputGroupPrepend">
  										<i class="fas fa-fw fa-id-badge"></i>
  									</span>
- 									<input type="text" data-parsley-trigger="change" name="" required=""
- 										autocomplete="off" class="form-control" readonly
- 										value="<?= $user['npm_mhs_2']; ?>">
+ 									<input type="text" data-parsley-trigger="change" name="" required="" autocomplete="off" class="form-control" readonly value="<?= $user['npm_mhs_2']; ?>">
  								</div>
  							</div>
  							<div class="form-group">
@@ -176,35 +161,29 @@
  									<span class="input-group-text" id="inputGroupPrepend">
  										<i class="fas fa-fw fa-id-card"></i>
  									</span>
- 									<input type="text" data-parsley-trigger="change" name="" required=""
- 										autocomplete="off" class="form-control" readonly
- 										value="<?= $user['kelas']; ?>">
+ 									<input type="text" data-parsley-trigger="change" name="kelas_mhs_2" required="" autocomplete="off" class="form-control" readonly value="<?= $user['kelas_mhs_2']; ?>">
  								</div>
- 							</div> 
-                             <div class="form-group">
+ 							</div>
+ 							<div class="form-group">
  								<label for="inputNoTelpon">No. Telpon</label>
  								<div class="input-group-prepend">
  									<span class="input-group-text" id="inputGroupPrepend">
  										<i class="fas fa-fw fa-phone"></i>
  									</span>
- 									<input type="number" data-parsley-trigger="change" name="" required=""
- 										autocomplete="off" class="form-control" readonly
- 										value="">
+ 									<input type="number" data-parsley-trigger="change" name="no_telpon_mhs_2" required="" autocomplete="off" class="form-control" readonly value="<?= $user['no_telpon_mhs_2']; ?>">
  								</div>
  							</div>
  							<div class="row">
  								<div class="col-sm-6 pl-0">
  									<p class="text-center">
- 										<button type="button" class="btn btn-space btn-primary" data-toggle="modal"
- 											data-target="#tambahModal2">Ubah Profil</button>
+ 										<button type="button" class="btn btn-space btn-primary" data-toggle="modal" data-target="#tambahModal2">Ubah Profil</button>
  									</p>
  								</div>
  							</div>
  						</form>
  					</div>
  				</div>
- 				<div class="modal fade" id="tambahModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
- 					aria-hidden="true">
+ 				<div class="modal fade" id="tambahModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
  					<div class="modal-dialog">
  						<div class="modal-content">
  							<div class="modal-header">
@@ -221,8 +200,8 @@
  											<span class="input-group-text" id="inputGroupPrepend">
  												<i class="fas fa-fw fa-user"></i>
  											</span>
- 											<input type="text" name="name_mhs_2" required="" autocomplete="off"
- 												class="form-control" value="<?= $user['name_mhs_2']; ?>">
+ 											<input type="text" name="name_mhs_2" required="" autocomplete="off" class="form-control" value="<?= $user['name_mhs_2']; ?>">
+ 											<input type="hidden" name="name_mhs_1" required="" autocomplete="off" class="form-control" value="<?= $user['name_mhs_1']; ?>">
  										</div>
  									</div>
  									<div class=" form-group">
@@ -231,8 +210,8 @@
  											<span class="input-group-text" id="inputGroupPrepend">
  												<i class="fas fa-fw fa-id-badge"></i>
  											</span>
- 											<input type="text" name="npm_mhs_2" required="" autocomplete="off"
- 												class="form-control" value="<?= $user['npm_mhs_2']; ?>">
+ 											<input type="text" name="npm_mhs_2" required="" autocomplete="off" class="form-control" value="<?= $user['npm_mhs_2']; ?>">
+ 											<input type="hidden" name="npm_mhs_1" required="" autocomplete="off" class="form-control" value="<?= $user['npm_mhs_1']; ?>">
  										</div>
  									</div>
  									<div class=" form-group">
@@ -241,20 +220,20 @@
  											<span class="input-group-text" id="inputGroupPrepend">
  												<i class="fas fa-fw fa-id-card"></i>
  											</span>
- 											<input type="text" name="kelas" required="" autocomplete="off"
- 												class="form-control" value="<?= $user['kelas']; ?>">
+ 											<input type="text" name="kelas_mhs_2" required="" autocomplete="off" class="form-control" value="<?= $user['kelas_mhs_2']; ?>">
+ 											<input type="hidden" name="kelas_mhs_1" required="" autocomplete="off" class="form-control" value="<?= $user['kelas_mhs_1']; ?>">
  										</div>
  									</div>
-                                    <div class="form-group">
-                                        <label for="inputNoTelpon">No.Telpon</label>
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupPrepend">
-                                                <i class="fas fa-fw fa-phone"></i>
-                                            </span>
-                                            <input type="number" name="notelpon" required="" autocomplete="off"
-                                            class="form-control" value="">
-                                        </div>
-                                    </div>
+ 									<div class="form-group">
+ 										<label for="inputNoTelpon">No.Telpon</label>
+ 										<div class="input-group-prepend">
+ 											<span class="input-group-text" id="inputGroupPrepend">
+ 												<i class="fas fa-fw fa-phone"></i>
+ 											</span>
+ 											<input type="number" name="no_telpon_mhs_2" required="" autocomplete="off" class="form-control" value="<?= $user['no_telpon_mhs_2']; ?>">
+ 											<input type="hidden" name="no_telpon_mhs_1" required="" autocomplete="off" class="form-control" value="<?= $user['no_telpon_mhs_1']; ?>">
+ 										</div>
+ 									</div>
  								</div>
  								<div class=" modal-footer">
  									<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

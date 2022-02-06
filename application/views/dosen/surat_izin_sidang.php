@@ -50,7 +50,7 @@
                                     <th rowspan="2"><?= $no++  ?></th>
                                     <td><?= $tes['name_mhs_1']; ?></td>
                                     <td><?= $tes['npm_mhs_1']; ?></td>
-                                    <td><?= $tes['kelas']; ?></td>
+                                    <td><?= $tes['kelas_mhs_1']; ?></td>
                                     <td rowspan="2">Belum di stujui sidang</td>
                                     <td width="100" rowspan="2">
                                         <a type="button" href="" class="btn btn-primary text-white" data-toggle="modal" data-target="#tambahModal<?= $tes['user_id']; ?>">Izinkan Sidang</a>
@@ -59,7 +59,7 @@
                                 <tr class="text-center">
                                     <td><?= $tes['name_mhs_2']; ?></td>
                                     <td><?= $tes['npm_mhs_2']; ?></td>
-                                    <td><?= $tes['kelas']; ?></td>
+                                    <td><?= $tes['kelas_mhs_2']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

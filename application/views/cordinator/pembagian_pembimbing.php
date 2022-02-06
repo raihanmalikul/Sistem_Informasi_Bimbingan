@@ -49,58 +49,57 @@
                         <form class="user" method="post" action="<?= base_url('cordinator/pembagian_pembimbing_tambah') ?>">
                             <?php $no = 1; ?>
                             <?php foreach ($jadimhs as $mhs2) : ?>
-
-
-                                <tr>
-                                    <th rowspan="2"><?= $no++  ?></th>
-                                    <td class="text-center"><?= $mhs2['name_mhs_1']; ?></td>
-                                    <td class="text-center"><?= $mhs2['npm_mhs_1']; ?></td>
-                                    <td class="text-center"><?= $mhs2['kelas']; ?></td>
-                                    <td rowspan="2"><?= $mhs2['judul_proyek']; ?></td>
-                                    <input type="hidden" name="mhs_id[]" value="<?= $mhs2['mhs_id']; ?>">
-                                    <td rowspan="2">
-                                        <div class="form-group">
-                                            <?php
-                                            $dos2 = "SELECT * FROM user JOIN admin
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2"><?= $no++  ?></th>
+                                        <td class="text-center"><?= $mhs2['name_mhs_1']; ?></td>
+                                        <td class="text-center"><?= $mhs2['npm_mhs_1']; ?></td>
+                                        <td class="text-center"><?= $mhs2['kelas_mhs_1']; ?></td>
+                                        <td rowspan="2"><?= $mhs2['judul_proyek']; ?></td>
+                                        <input type="hidden" name="mhs_id[]" value="<?= $mhs2['mhs_id']; ?>">
+                                        <td rowspan="2">
+                                            <div class="form-group">
+                                                <?php
+                                                $dos2 = "SELECT * FROM user JOIN admin
                                             ON user . dos_id  = admin . dos_id
                                             WHERE user . role_id = 2  ";
 
-                                            $dosid = "SELECT * FROM bimbingan
+                                                $dosid = "SELECT * FROM bimbingan
                                             WHERE mhs_id =" . $mhs2['mhs_id'] . "";
-                                            $iddos = $this->db->query($dosid)->row_Array();
-                                            $jadidos = $this->db->query($dos2)->result_Array();
-                                            ?>
+                                                $iddos = $this->db->query($dosid)->row_Array();
+                                                $jadidos = $this->db->query($dos2)->result_Array();
+                                                ?>
 
-                                            <select class="form-control" name="dos_id[]" id="kelas">
-                                                <?php if (isset($iddos['dos_id'])) : ?>
-                                                    <?php $dosen = $this->db->get_where('admin', ['dos_id' => $iddos['dos_id']])->row_array(); ?>
-                                                    <option value="<?= $iddos['dos_id']; ?>"><?= $dosen['name']; ?></option>
-                                                <?php else : ?>
-                                                    <option disabled selected value>Pilih Opsi</option>
-                                                <?php endif; ?>
-                                                <?php foreach ($jadidos as $dos2) : ?>
-                                                    <option value="<?= $dos2['dos_id']; ?>"><?= $dos2['name']; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                        <?php endforeach; ?>
+                                                <select class="form-control" name="dos_id[]" id="kelas">
+                                                    <?php if (isset($iddos['dos_id'])) : ?>
+                                                        <?php $dosen = $this->db->get_where('admin', ['dos_id' => $iddos['dos_id']])->row_array(); ?>
+                                                        <option value="<?= $iddos['dos_id']; ?>"><?= $dosen['name']; ?></option>
+                                                    <?php else : ?>
+                                                        <option disabled selected value>Pilih Opsi</option>
+                                                    <?php endif; ?>
+                                                    <?php foreach ($jadidos as $dos2) : ?>
+                                                        <option value="<?= $dos2['dos_id']; ?>"><?= $dos2['name']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
                                         </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td><?= $mhs2['name_mhs_2']; ?></td>
-                                    <td><?= $mhs2['npm_mhs_2']; ?></td>
-                                    <td><?= $mhs2['kelas']; ?></td>
-                                </tr>
-                </tbody>
-                </table>
-                <br>
-                <button type="submit" class="btn btn-primary btn-xs text-white"><i class="fas fa-save"></i> Simpan</button>
-                <button type="button" class="btn btn-success btn-xs text-white"><i class="fas fa-edit"></i> Edit</button>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td><?= $mhs2['name_mhs_2']; ?></td>
+                                        <td><?= $mhs2['npm_mhs_2']; ?></td>
+                                        <td><?= $mhs2['kelas_mhs_2']; ?></td>
+                                    </tr>
+                                </tbody>
+                            <?php endforeach; ?>
+                    </table>
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-xs text-white"><i class="fas fa-save"></i> Simpan</button>
+                    <button type="button" class="btn btn-success btn-xs text-white"><i class="fas fa-edit"></i> Edit</button>
+                </div>
+                </form>
             </div>
-            </form>
         </div>
     </div>
-</div>
 </div>
 <!-- ============================================================== -->
 <!-- end main wrapper -->

@@ -49,7 +49,7 @@
                                     <th rowspan="2"><?= $no++  ?></th>
                                     <td><?= $tes['name_mhs_1']; ?></td>
                                     <td><?= $tes['npm_mhs_1']; ?></td>
-                                    <td><?= $tes['kelas']; ?></td>
+                                    <td><?= $tes['kelas_mhs_1']; ?></td>
                                     <td rowspan="2">100</td>
                                     <td width="100" rowspan="2">
                                         <a href=" <?= base_url('dosen/detail_Persensi_bimbingan/') . $tes['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
@@ -58,7 +58,7 @@
                                 <tr class="text-center">
                                     <td><?= $tes['name_mhs_2']; ?></td>
                                     <td><?= $tes['npm_mhs_1']; ?></td>
-                                    <td><?= $tes['kelas']; ?></td>
+                                    <td><?= $tes['kelas_mhs_2']; ?></td>
                                 </tr>
                             </tbody>
                         <?php endforeach; ?>

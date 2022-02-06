@@ -36,6 +36,10 @@
                                  <td><?= $user['npm_mhs_1']; ?></td>
                              </tr>
                              <tr>
+                                 <td width="200px">Kelas</td>
+                                 <td><?= $user['kelas_mhs_1']; ?></td>
+                             </tr>
+                             <tr>
                                  <td width="200px">Nama Mahasiswa 2</td>
                                  <td><?= $user['name_mhs_2']; ?></td>
                              </tr>
@@ -45,7 +49,7 @@
                              </tr>
                              <tr>
                                  <td width="200px">Kelas</td>
-                                 <td><?= $user['kelas']; ?></td>
+                                 <td><?= $user['kelas_mhs_2']; ?></td>
                              </tr>
                              <tr>
                                  <td width="200px">Judul</td>

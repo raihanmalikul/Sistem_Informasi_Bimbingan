@@ -2,6 +2,9 @@
     <div class="container-fluid dashboard-content">
         <!-- ============================================================== -->
         <!-- pageheader -->
+        <?php
+        $mhs = $this->db->get_where('user', ['role_id' => 3])->result_Array();
+        ?>
         <!-- ============================================================== -->
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -38,20 +41,23 @@
                                     <th scope="col" width="200">Status</th>
                                 </tr>
                             </thead>
+                            <?php $no = 1; ?>
+                            <?php foreach ($mhs as  $mhs) : ?>
                                 <tbody>
                                     <tr class="text-center">
-                                        <th rowspan="2">1</th>
-                                        <td>Aldo Dwie Rizky</td>
-                                        <td>1193005</td>
-                                        <td>D3 Teknik Informatika 3A</td>
+                                        <th rowspan="2"><?= $no++  ?></th>
+                                        <td><?= $mhs['name_mhs_1']; ?></td>
+                                        <td><?= $mhs['npm_mhs_1']; ?></td>
+                                        <td><?= $mhs['kelas_mhs_1']; ?></td>
                                         <td rowspan="2">Sudah Disetujui / Belum Disetujui</td>
                                     </tr>
                                     <tr class="text-center">
-                                        <td>Raihan Malikul Mulki</td>
-                                        <td>1193025</td>
-                                        <td>D3 Teknik Informatika 3A</td>
+                                        <td><?= $mhs['name_mhs_2']; ?></td>
+                                        <td><?= $mhs['npm_mhs_2']; ?></td>
+                                        <td><?= $mhs['kelas_mhs_2']; ?></td>
                                     </tr>
                                 </tbody>
+                            <?php endforeach; ?>
                         </table>
                     </div>
                 </div>

@@ -72,7 +72,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('npm_mhs_2', 'Npm_mhs_2', 'required|trim|is_unique[user.npm_mhs_2]', [
             'is_unique' => 'NPM sudah ada !'
         ]);
-        $this->form_validation->set_rules('kelas', 'Kelas', 'required|trim');
+        // $this->form_validation->set_rules('kelas', 'Kelas', 'required|trim');
         $this->form_validation->set_rules('katagori_proyek', 'Katagori_proyek', 'required|trim');
         $this->form_validation->set_rules('user_id', 'User_id', 'required|trim|is_unique[user.user_id]', [
             'is_unique' => 'User id sudah ada !'
@@ -97,7 +97,8 @@ class Auth extends CI_Controller
                 'npm_mhs_1' => $this->input->post('npm_mhs_1', true),
                 'name_mhs_2' => $this->input->post('name_mhs_2', true),
                 'npm_mhs_2' => $this->input->post('npm_mhs_2', true),
-                'kelas' => $this->input->post('kelas', true),
+                'kelas_mhs_1' => $this->input->post('kelas_mhs_1', true),
+                'kelas_mhs_2' => $this->input->post('kelas_mhs_2', true),
                 'user_id' => $this->input->post('user_id', true),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'role_id' => 3,

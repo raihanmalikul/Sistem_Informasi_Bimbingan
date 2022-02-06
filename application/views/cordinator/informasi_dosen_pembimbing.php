@@ -57,9 +57,9 @@
                                          <a href="<?= base_url('cordinator/edit/') ?><?= $dos['dos_id'] ?>" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal<?= $dos['dos_id'] ?>"><i class="fas fa-edit"></i> Edit</a>
                                          <a href="<?= base_url('cordinator/hapus/') ?><?= $dos['dos_id'] ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
                                      </td>
-                                 <?php endforeach; ?>
                                  </tr>
                              </tbody>
+                         <?php endforeach; ?>
                      </table>
                  </div>
 

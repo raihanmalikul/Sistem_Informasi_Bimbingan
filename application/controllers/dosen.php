@@ -415,11 +415,12 @@ class dosen extends CI_Controller
             $name = $this->input->post('name');
             $NIK = $this->input->post('NIK');
             $email = $this->input->post('email');
-
+            $no_telpon = $this->input->post('no_telpon');
 
             $this->db->set('name', $name);
             $this->db->set('NIK', $NIK);
             $this->db->set('email', $email);
+            $this->db->set('no_telpon', $no_telpon);
             $this->db->where('dos_id', $data['admin']['dos_id']);
             $this->db->update('admin');
             $this->session->set_flashdata('message_dos_my_profile', '<div class="alert alert-primary" role="alert">
