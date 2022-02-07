@@ -88,8 +88,8 @@
                                          <input type="text" name="email" class="form-control" id="email" placeholder="Email">
                                      </div>
                                      <div class="form-group">
-                                         <label for="notelpon" class="col-form-label">No. Telpon</label>
-                                         <input type="number" name="NoTelpon" class="form-control" id="notelpon" placeholder="08xxxxx">
+                                         <label for="no_telpon" class="col-form-label">No. Telpon</label>
+                                         <input type="number" name="no_telpon" class="form-control" id="no_telpon" placeholder="08xxxxx">
                                      </div>
                                      <div class="form-group row">
                                          <div class="col-sm-6 mb-3 mb-sm-0">
@@ -111,6 +111,7 @@
 
                  <!-- modal edit -->
                  <?php foreach ($jadidos as $ts) : ?>
+
                      <div class="modal fade" id="editModal<?= $ts['dos_id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                          <div class="modal-dialog">
                              <div class="modal-content">
@@ -135,17 +136,17 @@
                                              <input type="text" name="email" class="form-control" id="email_ds" placeholder="Email" value="<?= $ts['email']; ?>">
                                          </div>
                                          <div class="form-group">
-                                             <label for="notelpon" class="col-form-label">No. Telpon</label>
-                                             <input type="number" name="NoTelpon" class="form-control" id="notelpon" placeholder="08xxxxx" value="">
+                                             <label for="no_telpon" class="col-form-label">No. Telpon</label>
+                                             <input type="number" name="no_telpon" class="form-control" id="no_telpon" placeholder="08xxxxx" value="">
                                          </div>
-                                         <!-- <div class="form-group row">
+                                         <div class="form-group row">
                                              <div class="col-sm-6 mb-3 mb-sm-0">
                                                  <input type="text" class="form-control form-control-user" name="user_id" id="user_id" placeholder="User ID" value="<?= $ts['user_id']; ?>">
                                              </div>
                                              <div class="col-sm-6">
                                                  <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="masukan baru Password">
                                              </div>
-                                         </div> -->
+                                         </div>
                                  </div>
                                  <div class="modal-footer">
                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

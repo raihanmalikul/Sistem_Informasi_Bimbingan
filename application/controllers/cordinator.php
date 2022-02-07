@@ -83,6 +83,79 @@ class cordinator extends CI_Controller
 
 
 
+    public function informasi_mahasiswa_pembimbing_edit($id)
+    {
+        $mhs2 = "SELECT * FROM user 
+        WHERE user . mhs_id = $id ";
+        $data['mhs'] = $this->db->query($mhs2)->row_array();
+        // var_dump($data['mhs']);
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        if ($data) {
+            $data1 = [
+                'name_mhs_1' => $this->input->post('name_mhs_1', true),
+                'npm_mhs_1' => $this->input->post('npm_mhs_1', true),
+                'kelas_mhs_1' => $this->input->post('kelas_mhs_1', true),
+                'name_mhs_2' => $this->input->post('name_mhs_2', true),
+                'npm_mhs_2' => $this->input->post('npm_mhs_2', true),
+                'kelas_mhs_2' => $this->input->post('kelas_mhs_2', true),
+                'user_id' => $this->input->post('user_id', true),
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
+            ];
+
+            $this->db->where('mhs_id', $id);
+            $this->db->update('user', $data1);
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            data Mahasiswa berhasil di ubah
+            </div>');
+            redirect('cordinator/informasi_mahasiswa_pembimbing');
+        } else {
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            data Mahasiswa gagal di ubah
+            </div>');
+            redirect('cordinator/informasi_mahasiswa_pembimbing');
+        }
+    }
+
+
+
+    public function informasi_mahasiswa_pembimbing_hapus($id)
+    {
+        $mhs2 = "SELECT * FROM user 
+        WHERE user . mhs_id = $id ";
+        $data['mhs'] = $this->db->query($mhs2)->row_array();
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        if ($data) {
+
+            $this->db->where('mhs_id', $id);
+            $this->db->delete('user');
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            data Mahasiswa berhasil di hapus
+            </div>');
+            redirect('cordinator/informasi_mahasiswa_pembimbing');
+        } else {
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            data Mahasiswa gagal di hapus
+            </div>');
+            redirect('cordinator/informasi_mahasiswa_pembimbing');
+        }
+    }
+
+
+
     public function informasi_dosen_pembimbing()
     {
         $data['title'] = 'Menu cordinator';
@@ -120,6 +193,7 @@ class cordinator extends CI_Controller
             $data1 = [
                 'NIK' => $this->input->post('NIK', true),
                 'name' => $this->input->post('name', true),
+                'email' => $this->input->post('email', true),
                 'email' => $this->input->post('email', true),
                 'dos_id' => $i
 
@@ -170,25 +244,20 @@ class cordinator extends CI_Controller
         $m = $this->db->get_where('user', ['user_id'])->row_array();
 
         if ($data) {
-            $NIK = $this->input->post('NIK');
-            $name = $this->input->post('name');
-            $email = $this->input->post('email');
-            // $user_id = $this->input->post('user_id');
-            // $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+            $data1 = [
+                'NIK' => $this->input->post('NIK', true),
+                'name' => $this->input->post('name', true),
+                'email' => $this->input->post('email', true),
+                'no_telpon' => $this->input->post('no_telpon', true)
+            ];
+            $data2 = [
+                'user_id' => $this->input->post('user_id', true),
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+            ];
 
-
-            $this->db->set('NIK', $NIK);
-            $this->db->set('name', $name);
-            $this->db->set('email', $email);
-            $this->db->set('email', $email);
-            // $this->db->set('user_id', $user_id);
-            // $this->db->set('password', $password);
             $this->db->where('dos_id', $id);
-            // $this->db->update('user');
-            $this->db->update('admin');
-            // $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
-            // data berhasisl di ubah
-            // </div>');
+            $this->db->update('user', $data2);
+            $this->db->update('admin', $data1);
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             data dosen berhasil di ubah
@@ -224,6 +293,7 @@ class cordinator extends CI_Controller
 
             $this->db->where('dos_id', $id);
             $this->db->delete('admin');
+            $this->db->delete('user');
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             data dosen berhasil di hapus
