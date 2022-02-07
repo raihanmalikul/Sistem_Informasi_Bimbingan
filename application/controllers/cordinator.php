@@ -342,17 +342,28 @@ class cordinator extends CI_Controller
         // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
 
-        if ($data) {
+        if (isset($_POST['btn_tambah'])) {
+
             $mhs = $this->input->post('mhs_id[]', true);
             $dosen = $this->input->post('dos_id[]', true);
             $jumlah = count($dosen);
             // var_dump($jumlah);
             // die;
             for ($i = 0; $i < $jumlah; $i++) {
-                $this->db->set('dos_id', $dosen[$i]);
-                $this->db->set('mhs_id', $mhs[$i]);
-                $this->db->insert('bimbingan');
+                $cek = $this->db->get_where('bimbingan', ['mhs_id' => $mhs[$i]])->num_rows();
+                if ($cek > 0) {
+
+                    // die;
+                } else {
+                    echo "$dosen[$i], $mhs[$i] <br>";
+                    $this->db->set('dos_id', $dosen[$i]);
+                    $this->db->set('mhs_id', $mhs[$i]);
+                    $this->db->insert('bimbingan');
+                    // die;
+                }
             }
+            // die;
+
 
             // echo 'berhasil';
             $this->session->set_flashdata('message_cor_pembagian_pembimbing', '<div class="alert alert-primary" role="alert">
@@ -360,10 +371,19 @@ class cordinator extends CI_Controller
             pembimbing berhasil di bagi
             </div>');
             redirect('cordinator/pembagian_pembimbing');
-        } else {
+        } else if (isset($_POST['btn_edit'])) {
+            $mhs = $this->input->post('mhs_id[]', true);
+            $dosen = $this->input->post('dos_id[]', true);
+            $jumlah = count($dosen);
+
+            for ($i = 0; $i < $jumlah; $i++) {
+                $this->db->set('dos_id', $dosen[$i]);
+                $this->db->where('mhs_id', $mhs[$i]);
+                $this->db->update('bimbingan');
+            }
             $this->session->set_flashdata('message_cor_pembagian_pembimbing', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            pembimbing gagal di bagi
+            pembimbing berhasil di edit
             </div>');
             redirect('cordinator/pembagian_pembimbing');
         }
@@ -371,9 +391,9 @@ class cordinator extends CI_Controller
 
 
 
+
     public function pembagian_pembimbing_edit()
     {
-
         $data['title'] = 'Menu cordinator';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -381,20 +401,36 @@ class cordinator extends CI_Controller
         $data['user']['data_id']])->row_array();
         // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
-
+        // echo "hai";
+        // die;
         if ($data) {
 
 
-            $mhs_id = $this->input->post('mhs_id');
-            $dos_id = $this->input->post('dos_id');
+            $mhs    = $this->input->post('mhs_id[]', true);
+            $dosen  = $this->input->post('dos_id[]', true);
+
+            if ($dosen == null) {
+                $this->session->set_flashdata('message_cor_pembagian_pembimbing', '<div class="alert alert-primary" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                pembimbing gagal di edit
+                </div>');
+                redirect('cordinator/pembagian_pembimbing');
+            } else {
+
+                $jumlah = count($dosen);
+            }
+            for ($i = 0; $i < $jumlah; $i++) {
+                $this->db->set('dos_id', $dosen[$i]);
+                // $this->db->set('mhs_id', $mhs_id[$i]);
+                $this->db->where('mhs_id', $mhs[$i]);
+                $this->db->update('bimbingan');
+            }
 
 
-
-
-            $this->db->set('mhs_id', $mhs_id);
-            $this->db->set('dos_id', $dos_id);
-            $this->db->where('mhs_id', $data['bimbingan']['mhs_id']);
-            $this->db->update('bimbingan');
+            // $this->db->set('mhs_id', $mhs_id);
+            // $this->db->set('dos_id', $dos_id);
+            // $this->db->where('mhs_id', $data['bimbingan']['mhs_id']);
+            // $this->db->update('bimbingan');
             // echo 'berhasil';
             $this->session->set_flashdata('message_cor_pembagian_pembimbing', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>

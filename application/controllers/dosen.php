@@ -56,6 +56,7 @@ class dosen extends CI_Controller
     public function persensi_bimbingan_proyek()
     {
         // backend
+
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();
@@ -91,6 +92,7 @@ class dosen extends CI_Controller
         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id
          WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
         $data['mhs1'] = $this->db->query($mhs1)->result_Array();
+        $data['count_mhs1'] = $this->db->query($mhs1)->num_rows();
 
         $data['title'] = 'Menu Dosen';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
@@ -100,6 +102,10 @@ class dosen extends CI_Controller
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
 
+        // echo '<pre>';
+        // var_dump($data['mhs1']);
+        // echo '</pre>';
+        // die;
 
         //frontend
         $this->load->view('templates/header', $data);

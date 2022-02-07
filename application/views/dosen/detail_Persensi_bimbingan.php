@@ -35,6 +35,10 @@
                                  <td><?= $mhs['npm_mhs_1']; ?></td>
                              </tr>
                              <tr>
+                                 <td>Kelas</td>
+                                 <td><?= $mhs['kelas_mhs_1']; ?></td>
+                             </tr>
+                             <tr>
                                  <td>Nama Mahasiswa</td>
                                  <td><?= $mhs['name_mhs_2']; ?></td>
                              </tr>
@@ -42,9 +46,10 @@
                                  <td>NPM</td>
                                  <td><?= $mhs['npm_mhs_2']; ?></td>
                              </tr>
+
                              <tr>
                                  <td>Kelas</td>
-                                 <td><?= $mhs['kelas']; ?></td>
+                                 <td><?= $mhs['kelas_mhs_2']; ?></td>
                              </tr>
                              <tr>
                                  <td>Judul Proyek</td>
@@ -56,32 +61,43 @@
                          <a type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i> Tambah Presensi Bimbingan</a>
                          <h4 class="card-title">Presensi Bimbingan</h4>
                          <br>
-                         <table class="table table-bordered">
-                             <thead>
-                                 <tr>
-                                     <th scope="col-lg-2">No</th>
-                                     <th scope="col">Tanggal Bimbingan</th>
-                                     <th scope="col">Catatan Kemajuan Materi</th>
-                                     <th scope="col">Paraf Dosen Pembimbing</th>
-                                     <th scope="col">Aksi</th>
-                                 </tr>
-                             </thead>
-                             <tbody>
-                                 <?php $no = 1; ?>
-                                 <?php foreach ($mhs1 as $tes) : ?>
+                         <center>
+                             <table class="table table-bordered">
+                                 <thead>
                                      <tr>
-                                         <th scope="row"><?= $no++  ?></th>
-                                         <td><?= $tes['tanggal']; ?></td>
-                                         <td><?= $tes['materi']; ?></td>
-                                         <td><img width="10%" src="<?= base_url('assets/File/tandatangan_dosen/') . $tes['paraf_dosen'];  ?>"></td>
-                                         <td width="160">
-                                             <a href="<?= base_url('dosen/detail_Persensi_bimbingan_edit/'); ?><?= $tes['id']; ?>" type="button" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal<?= $tes['id'] ?>"><i class="fas fa-edit"></i> Edit</a>
-                                             <a href="<?= base_url('dosen/detail_Persensi_bimbingan_hapus/'); ?><?= $tes['id']; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
-                                         </td>
+                                         <th scope="col-lg-2">No</th>
+                                         <th scope="col">Tanggal Bimbingan</th>
+                                         <th scope="col">Catatan Kemajuan Materi</th>
+                                         <th scope="col">Paraf Dosen Pembimbing</th>
+                                         <th scope="col">Aksi</th>
                                      </tr>
-                                 <?php endforeach; ?>
-                             </tbody>
-                         </table>
+                                 </thead>
+                                 <tbody>
+                                     <?php $no = 1; ?>
+                                     <?php foreach ($mhs1 as $tes) : ?>
+                                         <?php if ($count_mhs1 == 1) : ?>
+                                             <tr>
+                                                 <th style="text-align: center;" colspan="6" scope="row">No Data Available</th>
+                                             </tr>
+                                         <?php else : ?>
+                                             <?php if ($tes['materi'] == "") : ?>
+                                             <?php else : ?>
+                                                 <tr>
+                                                     <th scope="row"><?= $no++  ?></th>
+                                                     <td><?= $tes['tanggal']; ?></td>
+                                                     <td><?= $tes['materi']; ?></td>
+                                                     <td width="200px"><img style="width: 100px;" src="<?= base_url('assets/File/tandatangan_dosen/') . $tes['paraf_dosen'];  ?>"></td>
+                                                     <td width="160">
+                                                         <a href="<?= base_url('dosen/detail_Persensi_bimbingan_edit/'); ?><?= $tes['id']; ?>" type="button" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal<?= $tes['id'] ?>"><i class="fas fa-edit"></i> Edit</a>
+                                                         <a href="<?= base_url('dosen/detail_Persensi_bimbingan_hapus/'); ?><?= $tes['id']; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
+                                                     </td>
+                                                 </tr>
+                                             <?php endif; ?>
+                                         <?php endif; ?>
+                                     <?php endforeach; ?>
+                                 </tbody>
+                             </table>
+                         </center>
                      </div>
                  </div>
                  <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
