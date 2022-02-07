@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2022 at 08:00 AM
+-- Generation Time: Feb 08, 2022 at 12:19 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -43,14 +43,14 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `dos_id`, `mhs_id`, `NIK`, `name`, `no_telpon`, `email`, `tanda_tangan_digital`) VALUES
-(3, 12, 0, '', '', '', '', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png'),
-(4, 13, 0, '', '', '', '', 'Tanda Tangan Muhammad Ruslan Maulani, S.Kom., MT.png'),
-(5, 14, 0, '', '', '', '', 'Tanda Tangan Iwan Setiawan, ST., M.T.png'),
-(6, 15, 0, '', '', '', '', 'Tanda Tangan Marwanto Rahmatuloh, S.T., M.T.png'),
-(8, 17, 0, '', '', '', '', 'Tanda Tangan Santoso, S.Kom., M.Kom.png'),
-(9, 18, 0, '', '', '', '', 'Tanda Tangan Supriady, S.T., M.T.png'),
-(10, 19, 0, '', '', '', '', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png'),
-(13, 20, 0, '', '', '', '', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png');
+(3, 12, 0, '103.75.056', 'Dini Hamidin, S.Si.,MBA., M.T.', '6281320490787', 'dinihamidin@poltekpos.ac.id ', 'Tanda Tangan Dini Hamidin, S.Si.,MBA., M.T.png'),
+(4, 13, 0, '103.82.070', 'Muhammad Ruslan Maulani, S.Kom., MT.', '6281289065967', 'ruslanmaulani@poltekpos.ac.id', 'Tanda Tangan Muhammad Ruslan Maulani, S.Kom., MT.png'),
+(5, 14, 0, '105.76.082', 'Iwan Setiawan, ST., M.T.', '6287821164262', 'iwansetiawan@poltekpos.ac.id', 'Tanda Tangan Iwan Setiawan, ST., M.T.png'),
+(6, 15, 0, '103.79.068', 'Marwanto Rahmatuloh, S.T., M.T.', '6281221306116', 'mrahmatuloh@poltekpos.ac.id ', 'Tanda Tangan Marwanto Rahmatuloh, S.T., M.T.png'),
+(8, 17, 0, '102.64.040', 'Santoso, S.Kom., M.Kom.', '6281314550006', 'santoso@poltekpos.ac.id ', 'Tanda Tangan Santoso, S.Kom., M.Kom.png'),
+(9, 18, 0, '102.73.044', 'Supriady, S.T., M.T.', '6282120581473', 'supriady@poltekpos.ac.id ', 'Tanda Tangan Supriady, S.T., M.T.png'),
+(10, 19, 0, '104.79.072', 'Widia Resdiana, S.S., M.Pd.', '6281802279837', 'widiaresdiana@poltekpos.ac.id', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png'),
+(13, 20, 0, '102.73.041', 'Saepudin Nirwan, S.Kom., M.Kom.', '6281321977217', 'nirwansaepudin@poltekpos.ac.id', 'Tanda Tangan Saepudin Nirwan, S.Kom., M.Kom.png');
 
 -- --------------------------------------------------------
 
@@ -71,8 +71,11 @@ CREATE TABLE `berkas_bimbingan` (
 --
 
 INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `materi`, `paraf_dosen`) VALUES
-(56, 21, '', '', ''),
-(57, 22, '', '', '');
+(60, 21, '', '', ''),
+(61, 22, '', '', ''),
+(62, 23, '', '', ''),
+(63, 24, '', '', ''),
+(64, 25, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -85,13 +88,6 @@ CREATE TABLE `bimbingan` (
   `dos_id` int(11) NOT NULL,
   `mhs_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `bimbingan`
---
-
-INSERT INTO `bimbingan` (`id`, `dos_id`, `mhs_id`) VALUES
-(50, 19, 21);
 
 -- --------------------------------------------------------
 
@@ -194,8 +190,11 @@ INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `tand
 (39, 2, '102.73.044', 0, 18, '', '', 0, 18, '', '', '', '', '', '', '', '', '$2y$10$KHG7iBebLDy0p/G6s7dFlOT19zhzK6iO23kkDTA/REZC6GrV4MO2K', 1643294695, '', ''),
 (40, 2, '104.79.072', 0, 19, '', '', 0, 19, '', '', '', '', '', '', '', '', '$2y$10$r6VD0y.Ew9fbEwOhhd3Y2Oo2XazKPBCvAGM0vd5m3JS45ZMzze.s.', 1643294788, '', ''),
 (44, 2, '102.73.041', 0, 20, '', '', 0, 20, '', '', '', '', '', '', '', '', '$2y$10$EjLzVBC0LtWFlcDGyb/RJ.z0aN33QXzE0.d9MRSS8piaKwHLvlY7.', 1643350182, '', ''),
-(47, 3, 'Razor01', 21, 0, '', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png', 2, 21, 'Aldo Dwie Rizky', '1193005', 'Raihan Malikul Mulki', '1193025', 'D3 Teknik Informatika 2A', 'D3 Teknik Informatika 2A', '7242427', '2742472', '$2y$10$0LUAh8qNIG4gyQTfJ6rvNeSpDJcNOVO2iul4MyAOCc58.1o4K7Fnm', 1643352173, '', ''),
-(48, 3, '12345', 22, 0, '', '', 1, 22, 'Aldi', '1313193898', 'alid', '131313781', 'D3 Teknik InInformatika', 'D3 teknik informatika 3a', '19317481489', '294824265', '$2y$10$EEl.T/JIqTuBujZnlFJHAeB6r7NRWgODm/E6DiYeOkPvfaUt1Xff.', 1644116154, '', '');
+(49, 3, 'Razor01', 21, 0, '', '', 1, 21, 'Aldo Dwie Rizky', '1193005', 'Raihan Malikul Mulki', '1193025', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$ZNIKJZP/d/buyTKjPU798.mgu4PVZbirDrhQRzdB2GHja1skfooxe', 1644273616, '', ''),
+(50, 3, 'fiki01', 22, 0, '', '', 1, 22, 'Fiki Henizar', '1193011', 'Salsa Anisa Zakiyah Darojat', '1193027', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$8wcyV4guzcz4IFtrfybWn.12mlJq4sz9nE9xNpg05.yXdqF3D347.', 1644273682, '', ''),
+(51, 3, 'febri01', 23, 0, '', '', 1, 23, 'Febri Muhamad', '1193010', 'Nadia Rahma Rivai', '1193022', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$urBZvNP2Jvnm8Hq3jm/AwOx9lE352oPKuqVBb2EnaQqYPesIEhq22', 1644273747, '', ''),
+(52, 3, 'alisa01', 24, 0, '', '', 1, 24, 'Alissa Nina Munawaroh', '1193006', 'Mahfud Fauzi', '1193014', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$cA4XqYWS3LAQsZ0LZRjy2eWb4.z03R45ksYcrNHySOhtw3hGUoPxq', 1644273806, '', ''),
+(53, 3, 'ilahm01', 25, 0, '', '', 1, 25, 'Muhammad Ilham Ferdiansyah', '1193019', 'Muhammad Raihan Nur Azmii', '1193020', 'D3 Teknik Informatika 2A', 'D3 Teknik Informatika 2A', '', '', '$2y$10$dB8Uueh7pZ8BVP9SXfPrA.ZgdMU1BgaACcbiFnWQ2s7tF.YD9JQrK', 1644273929, '', '');
 
 -- --------------------------------------------------------
 
@@ -263,8 +262,11 @@ CREATE TABLE `user_data` (
 
 INSERT INTO `user_data` (`id`, `judul_proyek`, `keterangan_judul`, `katagori_proyek`, `proposal_proyek`, `laporan_proyek`, `status_laporan_id`, `status_proposal_id`, `berkas_bimbingan_id`, `surat_izin_sidang`, `tanggal_pengumpulan_proposal`, `data_id`, `cor_id`, `tanggal_pengumpulan_laporan`, `batas_tanggal_bimbingan`) VALUES
 (17, '', '', '', '', '', 0, 0, '', '', '04-February-2022', 4, 1, '', '24-February-2022'),
-(32, 'Rancang Bangun Aplikasi Pengumpulan Proposal dan Pembagian Dosen Pembimbing Proyek Berbasis Website', ' aplikasi informasi bimbingan ', 'Proyek 2', 'Proposal_Proyek_II_-_1193005_Aldo_Dwie_Rizky_-_1193025_Raihan_Malikul_Mulki2.docx', 'new_Laporan_Proyek_1_Aplikasi_laundryBerbasis_Web_.docx', 2, 2, '21', '', '', 21, 1, NULL, ''),
-(33, '', '', 'Proyek 2', '', '', 1, 1, '22', '', '', 22, 1, NULL, '');
+(34, '', '', 'Proyek 2', '', '', 1, 1, '21', '', '', 21, 1, NULL, ''),
+(35, '', '', 'Proyek 2', '', '', 1, 1, '22', '', '', 22, 1, NULL, ''),
+(36, '', '', 'Proyek 2', '', '', 1, 1, '23', '', '', 23, 1, NULL, ''),
+(37, '', '', 'Proyek 2', '', '', 1, 1, '24', '', '', 24, 1, NULL, ''),
+(38, '', '', 'Proyek 2', '', '', 1, 1, '25', '', '', 25, 1, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -464,13 +466,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `bimbingan`
 --
 ALTER TABLE `bimbingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -494,7 +496,7 @@ ALTER TABLE `status_surat`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
@@ -506,7 +508,7 @@ ALTER TABLE `user_access_menu`
 -- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `user_menu`

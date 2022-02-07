@@ -21,6 +21,7 @@ class dosen extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['admin'] = $this->db->get_where('admin', ['dos_id' =>
         $data['user']['dos_id']])->row_array();
+        $data['mhs'] = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
 
         //frontend
         $this->load->view('templates/header', $data);

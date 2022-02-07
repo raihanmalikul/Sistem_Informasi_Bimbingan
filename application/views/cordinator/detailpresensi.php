@@ -39,6 +39,10 @@
                                 <td><?= $mhs['npm_mhs_1']; ?></td>
                             </tr>
                             <tr>
+                                <td>Kelas</td>
+                                <td><?= $mhs['kelas_mhs_1']; ?></td>
+                            </tr>
+                            <tr>
                                 <td>Nama Mahasiswa</td>
                                 <td><?= $mhs['name_mhs_2']; ?></td>
                             </tr>
@@ -48,7 +52,7 @@
                             </tr>
                             <tr>
                                 <td>Kelas</td>
-                                <td><?= $mhs['kelas']; ?></td>
+                                <td><?= $mhs['kelas_mhs_2']; ?></td>
                             </tr>
                             <tr>
                                 <td>Judul Proyek</td>
@@ -66,20 +70,27 @@
                                     <th scope="col">Catatan Kemajuan Materi</th>
                                     <th scope="col">Paraf Dosen Pembimbing</th>
                                 </tr>
-                            </thead>
-                            <?php $no = 1; ?>
-
                             <tbody>
                                 <?php $no = 1; ?>
                                 <?php foreach ($mhs1 as $tes) : ?>
-                                    <tr>
-                                        <th scope="row"><?= $no++  ?></th>
-                                        <td><?= $tes['tanggal']; ?></td>
-                                        <td><?= $tes['materi']; ?></td>
-                                        <td><img width="10%" src="<?= base_url('assets/File/tandatangan_dosen/') . $tes['paraf_dosen'];  ?>"></td>
-                                    </tr>
+                                    <?php if ($count_mhs1 == 1) : ?>
+                                        <tr>
+                                            <th style="text-align: center;" colspan="6" scope="row">No Data Available</th>
+                                        </tr>
+                                    <?php else : ?>
+                                        <?php if ($tes['materi'] == "") : ?>
+                                        <?php else : ?>
+                                            <tr>
+                                                <th scope="row"><?= $no++  ?></th>
+                                                <td><?= $tes['tanggal']; ?></td>
+                                                <td><?= $tes['materi']; ?></td>
+                                                <td width="200px"><img style="width: 100px;" src="<?= base_url('assets/File/tandatangan_dosen/') . $tes['paraf_dosen'];  ?>"></td>
+
+                                            </tr>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
                             </tbody>
-                        <?php endforeach; ?>
                         </table>
                     </div>
                 </div>

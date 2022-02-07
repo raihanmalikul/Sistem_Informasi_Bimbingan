@@ -672,6 +672,7 @@ class cordinator extends CI_Controller
         JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id
          WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
         $data['mhs1'] = $this->db->query($mhs1)->result_Array();
+        $data['count_mhs1'] = $this->db->query($mhs1)->num_rows();
         $data['title'] = 'Menu cordinator';
         $data['user'] = $this->db->get_where('user', ['user_id' =>
         $this->session->userdata('user_id')])->row_array();

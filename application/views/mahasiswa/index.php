@@ -78,10 +78,20 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <center>
+                                <h5 class="card-header">Batas Tanggal Bimbingan</h5>
+                            </center>
+                            <div class="card-body">
+                                <center>
+                                    <h3>
+                                        <?= $mhs['batas_tanggal_bimbingan']; ?>
+                                    </h3>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="card">
                             <center>
@@ -95,6 +105,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+
+                <div class="row">
                     <div class="col-md-6">
                         <div class="card">
                             <center>

@@ -28,31 +28,43 @@
                         </div>
                     </div>
                     <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <center>
-                                <h5 class="card-header">Jumlah Mahasiswa Bimbingan</h5>
-                            </center>
-                            <div class="card-body">
+                        <div class="col-md-6">
+                            <div class="card">
                                 <center>
-                                    <h3></h3>
+                                    <h5 class="card-header">Batas Pengumpulan Laporan</h5>
                                 </center>
+                                <div class="card-body">
+                                    <center>
+                                        <h3> <?= $mhs['tanggal_pengumpulan_laporan']; ?></h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <center>
+                                    <h5 class="card-header">Batas Pengumpulan Proposal</h5>
+                                </center>
+                                <div class="card-body">
+                                    <center>
+                                        <h3> <?= $mhs['tanggal_pengumpulan_proposal']; ?></h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <center>
+                                    <h5 class="card-header">Batas Tanggal Bimbingan</h5>
+                                </center>
+                                <div class="card-body">
+                                    <center>
+                                        <h3><?= $mhs['batas_tanggal_bimbingan']; ?></h3>
+                                    </center>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <center>
-                                <h5 class="card-header">Jumlah Mahasiswa Bimbingan Yang Telah Disetujui Sidang</h5>
-                            </center>
-                            <div class="card-body">
-                                <center>
-                                    <h3></h3>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>

@@ -70,21 +70,19 @@
                                                 $iddos = $this->db->query($dosid)->row_Array();
                                                 $jadidos = $this->db->query($dos2)->result_Array();
                                                 ?>
-                                                <?php if ($mhs2['judul_proyek'] == "") : ?>
-                                                    Judul belum diinput
-                                                <?php else : ?>
-                                                    <select class="form-control" name="dos_id[]" id="kelas">
-                                                        <?php if (isset($iddos['dos_id'])) : ?>
-                                                            <?php $dosen = $this->db->get_where('admin', ['dos_id' => $iddos['dos_id']])->row_array(); ?>
-                                                            <option value="<?= $iddos['dos_id']; ?>"><?= $dosen['dos_id']; ?></option>
-                                                        <?php else : ?>
-                                                            <option disabled selected value>Pilih Opsi</option>
-                                                        <?php endif; ?>
-                                                        <?php foreach ($jadidos as $dos2) : ?>
-                                                            <option value="<?= $dos2['dos_id']; ?>"><?= $dos2['dos_id']; ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                <?php endif; ?>
+
+                                                <select class="form-control" name="dos_id[]" id="kelas">
+                                                    <?php if (isset($iddos['dos_id'])) : ?>
+                                                        <?php $dosen = $this->db->get_where('admin', ['dos_id' => $iddos['dos_id']])->row_array(); ?>
+                                                        <option value="<?= $iddos['dos_id']; ?>"><?= $dosen['name']; ?></option>
+                                                    <?php else : ?>
+                                                        <option disabled selected value>Pilih Opsi</option>
+                                                    <?php endif; ?>
+                                                    <?php foreach ($jadidos as $dos2) : ?>
+                                                        <option value="<?= $dos2['dos_id']; ?>"><?= $dos2['name']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+
                                             </div>
                                         </td>
                                     </tr>
