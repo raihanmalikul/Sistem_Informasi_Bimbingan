@@ -52,7 +52,7 @@
                                      <td><?= $dos['NIK']; ?></td>
                                      <td><?= $dos['name']; ?></td>
                                      <td><?= $dos['email']; ?></td>
-                                     <td>08xxxxx</td>
+                                     <td><?= $dos['no_telpon']; ?></td>
                                      <td width="160">
                                          <a href="<?= base_url('cordinator/edit/') ?><?= $dos['dos_id'] ?>" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal<?= $dos['dos_id'] ?>"><i class="fas fa-edit"></i> Edit</a>
                                          <a href="<?= base_url('cordinator/hapus/') ?><?= $dos['dos_id'] ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
