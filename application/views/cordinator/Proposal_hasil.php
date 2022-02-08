@@ -23,7 +23,7 @@
 
         $num = "SELECT * FROM user JOIN user_data 
         ON user . data_id  = user_data . data_id
-        WHERE user . role_id = 3 AND user_data . status_laporan_id = 2 ";
+        WHERE user . role_id = 3 AND user_data . status_proposal_id = 2 ";
 
         $jadimhs = $this->db->query($mhs2)->result_Array();
         $nummhs = $this->db->query($num)->num_rows();

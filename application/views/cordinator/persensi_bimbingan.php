@@ -79,7 +79,7 @@
                                         <?php if ($count == 1) : ?>
                                             <td rowspan="2">Belum Ada</td>
                                         <?php else : ?>
-                                            <td rowspan="2" <?= $count - 1; ?>>Belum Ada</td>
+                                            <td rowspan="2"><?= $count; ?></td>
                                         <?php endif; ?>
                                         <td width="100" rowspan="2">
                                             <a href="<?= base_url('cordinator/detailpresensi/') . $mhs2['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>

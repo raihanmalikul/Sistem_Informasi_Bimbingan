@@ -34,17 +34,23 @@
                          <tbody>
                              <?php $no = 1; ?>
                              <?php foreach ($tes as $tes) : ?>
-                                 <tr>
-                                     <th scope="row"><?= $no++  ?></th>
-                                     <td><?= $tes['tanggal']; ?></td>
-                                     <td><?= $tes['materi']; ?></td>
-                                     <td> <img width="10%" src="<?= base_url('assets/File/tandatangan_dosen/') . $tes['paraf_dosen'];  ?>" alt=""></td>
-                                 </tr>
+                                 <?php if ($count_mhs1 == 1) : ?>
+                                     <tr>
+                                         <th style="text-align: center;" colspan="6" scope="row">No Data Available</th>
+                                     </tr>
+                                 <?php else : ?>
+                                     <?php if ($tes['materi'] == "") : ?>
+                                     <?php else : ?>
+                                         <tr>
+                                             <th scope="row"><?= $no++  ?></th>
+                                             <td><?= $tes['tanggal']; ?></td>
+                                             <td><?= $tes['materi']; ?></td>
+                                             <td width="200px"><img style="width: 100px;" src="<?= base_url('assets/File/tandatangan_dosen/') . $tes['paraf_dosen'];  ?>"></td>
+
+                                         </tr>
+                                     <?php endif; ?>
+                                 <?php endif; ?>
                              <?php endforeach; ?>
-                             <tr>
-                                 <th scope="row" colspan="3">Total Bimbingan</th>
-                                 <td colspan="2">-</td>
-                             </tr>
                          </tbody>
                      </table>
                  </div>

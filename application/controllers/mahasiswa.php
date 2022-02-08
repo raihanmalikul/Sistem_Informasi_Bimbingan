@@ -117,6 +117,7 @@ class mahasiswa extends CI_Controller
          JOIN user_data ON user . data_id = user_data . data_id 
          JOIN berkas_bimbingan ON user_data . berkas_bimbingan_id = berkas_bimbingan . berkas_bimbingan_id WHERE user . mhs_id = " .  $data['user']['mhs_id'] . " ";
         $data['tes'] = $this->db->query($bimbingan)->result_Array();
+        $data['count_mhs1'] = $this->db->query($bimbingan)->num_rows();
 
         //frontend
         $this->load->view('templates/header', $data);
