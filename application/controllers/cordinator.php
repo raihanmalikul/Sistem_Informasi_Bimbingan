@@ -195,7 +195,7 @@ class cordinator extends CI_Controller
                 'NIK' => $this->input->post('NIK', true),
                 'name' => $this->input->post('name', true),
                 'email' => $this->input->post('email', true),
-                'email' => $this->input->post('email', true),
+                'no_telpon' => $this->input->post('no_telpon', true),
                 'dos_id' => $i
 
             ];
