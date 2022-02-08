@@ -68,10 +68,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('npm_mhs_1', 'Npm_mhs_1', 'required|trim|is_unique[user.npm_mhs_1]', [
             'is_unique' => 'NPM sudah ada !'
         ]);
-        $this->form_validation->set_rules('name_mhs_2', 'Name_mhs_2', 'required|trim');
-        $this->form_validation->set_rules('npm_mhs_2', 'Npm_mhs_2', 'required|trim|is_unique[user.npm_mhs_2]', [
-            'is_unique' => 'NPM sudah ada !'
-        ]);
+
         // $this->form_validation->set_rules('kelas', 'Kelas', 'required|trim');
         $this->form_validation->set_rules('katagori_proyek', 'Katagori_proyek', 'required|trim');
         $this->form_validation->set_rules('user_id', 'User_id', 'required|trim|is_unique[user.user_id]', [

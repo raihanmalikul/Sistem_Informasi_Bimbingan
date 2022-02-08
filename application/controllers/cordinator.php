@@ -256,8 +256,10 @@ class cordinator extends CI_Controller
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
             ];
 
+
             $this->db->where('dos_id', $id);
             $this->db->update('user', $data2);
+            $this->db->where('dos_id', $id);
             $this->db->update('admin', $data1);
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -294,6 +296,7 @@ class cordinator extends CI_Controller
 
             $this->db->where('dos_id', $id);
             $this->db->delete('admin');
+            $this->db->where('dos_id', $id);
             $this->db->delete('user');
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>

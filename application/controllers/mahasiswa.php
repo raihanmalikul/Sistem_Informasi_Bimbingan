@@ -311,7 +311,7 @@ class mahasiswa extends CI_Controller
 
 
 
-    public function edit_my_profile()
+    public function edit_my_profile_1()
     {
         // backend
         $data['title'] = 'Menu Mahasiswa';
@@ -325,22 +325,15 @@ class mahasiswa extends CI_Controller
         if ($data) {
             $name_mhs_1 = $this->input->post('name_mhs_1');
             $npm_mhs_1 = $this->input->post('npm_mhs_1');
-            $name_mhs_2 = $this->input->post('name_mhs_2');
-            $npm_mhs_2 = $this->input->post('npm_mhs_2');
             $kelas_mhs_1 = $this->input->post('kelas_mhs_1');
-            $kelas_mhs_2 = $this->input->post('kelas_mhs_2');
             $no_telpon_mhs_1 = $this->input->post('no_telpon_mhs_1');
-            $no_telpon_mhs_2 = $this->input->post('no_telpon_mhs_2');
+
 
 
             $this->db->set('name_mhs_1', $name_mhs_1);
             $this->db->set('npm_mhs_1', $npm_mhs_1);
-            $this->db->set('name_mhs_2', $name_mhs_2);
-            $this->db->set('npm_mhs_2', $npm_mhs_2);
             $this->db->set('kelas_mhs_1', $kelas_mhs_1);
-            $this->db->set('kelas_mhs_2', $kelas_mhs_2);
             $this->db->set('no_telpon_mhs_1', $no_telpon_mhs_1);
-            $this->db->set('no_telpon_mhs_2', $no_telpon_mhs_2);
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');
             $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-success" role="alert">
@@ -350,6 +343,47 @@ class mahasiswa extends CI_Controller
             redirect('mahasiswa/my_profile');
         } else {
             $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            data gagal di ubah
+            </div>');
+            redirect('mahasiswa/my_profile');
+        }
+    }
+
+
+
+    public function edit_my_profile_2()
+    {
+        // backend
+        $data['title'] = 'Menu Mahasiswa';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+
+
+
+        if ($data) {
+            $name_mhs_2 = $this->input->post('name_mhs_2');
+            $npm_mhs_2 = $this->input->post('npm_mhs_2');
+            $kelas_mhs_2 = $this->input->post('kelas_mhs_2');
+            $no_telpon_mhs_2 = $this->input->post('no_telpon_mhs_2');
+
+
+
+            $this->db->set('name_mhs_2', $name_mhs_2);
+            $this->db->set('npm_mhs_2', $npm_mhs_2);
+            $this->db->set('kelas_mhs_2', $kelas_mhs_2);
+            $this->db->set('no_telpon_mhs_2', $no_telpon_mhs_2);
+            $this->db->where('user_id', $data['user']['user_id']);
+            $this->db->update('user');
+            $this->session->set_flashdata('message_mhs_edit_my_profile_2', '<div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            data berhasil di ubah
+            </div>');
+            redirect('mahasiswa/my_profile');
+        } else {
+            $this->session->set_flashdata('message_mhs_edit_my_profile_2', '<div class="alert alert-danger" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             data gagal di ubah
             </div>');

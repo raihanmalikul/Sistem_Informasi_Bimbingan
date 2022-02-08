@@ -78,7 +78,7 @@
  									<span aria-hidden="true">&times;</span>
  								</button>
  							</div>
- 							<form class="user" method="post" action="<?= base_url('mahasiswa/edit_my_profile') ?>">
+ 							<form class="user" method="post" action="<?= base_url('mahasiswa/edit_my_profile_1') ?>">
  								<div class="modal-body">
  									<div class="form-group">
  										<label for="inputUserName">Nama Mahasiswa </label>
@@ -87,7 +87,7 @@
  												<i class="fas fa-fw fa-user"></i>
  											</span>
  											<input type="text" name="name_mhs_1" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['name_mhs_1']; ?>">
- 											<input type="hidden" name="name_mhs_2" data-parsley-trigger="change" required="" autocomplete="off" class="form-control" value="<?= $user['name_mhs_2']; ?>">
+
  										</div>
  									</div>
  									<div class=" form-group">
@@ -97,7 +97,7 @@
  												<i class="fas fa-fw fa-id-badge"></i>
  											</span>
  											<input type="text" name="npm_mhs_1" required="" autocomplete="off" class="form-control" value="<?= $user['npm_mhs_1']; ?>">
- 											<input type="hidden" name="npm_mhs_2" required="" autocomplete="off" class="form-control" value="<?= $user['npm_mhs_2']; ?>">
+
  										</div>
  									</div>
  									<div class=" form-group">
@@ -107,7 +107,6 @@
  												<i class="fas fa-fw fa-id-card"></i>
  											</span>
  											<input type="text" name="kelas_mhs_1" required="" autocomplete="off" class="form-control" value="<?= $user['kelas_mhs_1']; ?>">
- 											<input type="hidden" name="kelas_mhs_2" required="" autocomplete="off" class="form-control" value="<?= $user['kelas_mhs_2']; ?>">
  										</div>
  									</div>
  									<div class="form-group">
@@ -135,7 +134,7 @@
  				<div class="card">
  					<h5 class="card-header">Data Mahasiswa 2</h5>
  					<div class="card-body">
- 						<?= $this->session->flashdata('message_mhs_edit_my_profile'); ?>
+ 						<?= $this->session->flashdata('message_mhs_edit_my_profile_2'); ?>
  						<form action="#" id="basicform" data-parsley-validate="">
  							<div class="form-group">
  								<label for="inputUserName">Nama Mahasiswa </label>
@@ -192,7 +191,7 @@
  									<span aria-hidden="true">&times;</span>
  								</button>
  							</div>
- 							<form class="user" method="post" action="<?= base_url('mahasiswa/edit_my_profile') ?>">
+ 							<form class="user" method="post" action="<?= base_url('mahasiswa/edit_my_profile_2') ?>">
  								<div class="modal-body">
  									<div class=" form-group">
  										<label for="inputUserName">Nama Mahasiswa </label>
