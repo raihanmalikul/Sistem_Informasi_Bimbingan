@@ -6,6 +6,24 @@
             <div class="container-fluid dashboard-content">
                 <!-- ============================================================== -->
                 <!-- pageheader -->
+                <?php
+                $num1 = "SELECT * FROM user JOIN user_data 
+                  ON user . data_id  = user_data . data_id
+                  WHERE user . role_id = 3 AND user_data . status_laporan_id = 2 ";
+                $nummhs1 = $this->db->query($num1)->num_rows();
+
+                $num2 = "SELECT * FROM user JOIN user_data 
+                   ON user . data_id  = user_data . data_id
+                   WHERE user . role_id = 3 AND user_data . status_proposal_id = 2 ";
+                $nummhs2 = $this->db->query($num2)->num_rows();
+
+                $num3 = "SELECT * FROM user 
+                   WHERE user . role_id = 3 AND user . status_surat_id = 2 ";
+                $nummhs3 = $this->db->query($num3)->num_rows();
+
+
+
+                ?>
                 <!-- ============================================================== -->
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -36,7 +54,7 @@
                             </center>
                             <div class="card-body">
                                 <center>
-                                    <h3></h3>
+                                    <h3><?= $num_mhs; ?></h3>
                                 </center>
                             </div>
                         </div>
@@ -48,7 +66,7 @@
                             </center>
                             <div class="card-body">
                                 <center>
-                                    <h3></h3>
+                                    <h3><?= $nummhs2; ?></h3>
                                 </center>
                             </div>
                         </div>
@@ -62,7 +80,7 @@
                             </center>
                             <div class="card-body">
                                 <center>
-                                    <h3></h3>
+                                    <h3><?= $nummhs3; ?></h3>
                                 </center>
                             </div>
                         </div>
@@ -74,7 +92,7 @@
                             </center>
                             <div class="card-body">
                                 <center>
-                                    <h3></h3>
+                                    <h3><?= $nummhs1; ?></h3>
                                 </center>
                             </div>
                         </div>

@@ -4,6 +4,10 @@
         <!-- pageheader -->
         <?php
         $mhs = $this->db->get_where('user', ['role_id' => 3])->result_Array();
+
+        $num3 = "SELECT * FROM user 
+                   WHERE user . role_id = 3 AND user . status_surat_id = 2 ";
+        $nummhs3 = $this->db->query($num3)->num_rows();
         ?>
         <!-- ============================================================== -->
         <div class="row">
@@ -27,7 +31,7 @@
                         <tbody>
                             <tr>
                                 <td>Jumlah Mahasiswa Yang Telah Disetujui Sidang</td>
-                                <td>1</td>
+                                <td><?= $nummhs3; ?></td>
                             </tr>
                     </table>
                     <div class="card-body">

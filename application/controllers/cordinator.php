@@ -18,6 +18,7 @@ class cordinator extends CI_Controller
         $this->session->userdata('user_id')])->row_array();
         $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
         $data['user']['data_id']])->row_array();
+        $data['num_mhs'] = $this->db->get_where('user', ['role_id' => 3])->num_rows();
         // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
 
         $this->load->view('templates/header', $data);
