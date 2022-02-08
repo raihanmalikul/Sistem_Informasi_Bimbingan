@@ -78,8 +78,10 @@
                                         <td><?= $mhs2['kelas_mhs_1']; ?></td>
                                         <?php if ($count == 1) : ?>
                                             <td rowspan="2">Belum Ada</td>
+                                        <?php elseif ($count == 0) : ?>
+                                            <td rowspan="2">Belum Ada</td>
                                         <?php else : ?>
-                                            <td rowspan="2"><?= $count; ?></td>
+                                            <td rowspan="2"><?= $count - 1;  ?></td>
                                         <?php endif; ?>
                                         <td width="100" rowspan="2">
                                             <a href="<?= base_url('cordinator/detailpresensi/') . $mhs2['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
