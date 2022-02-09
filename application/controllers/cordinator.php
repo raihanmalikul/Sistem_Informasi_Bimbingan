@@ -84,76 +84,7 @@ class cordinator extends CI_Controller
 
 
 
-    public function informasi_mahasiswa_pembimbing_edit($id)
-    {
-        $mhs2 = "SELECT * FROM user 
-        WHERE user . mhs_id = $id ";
-        $data['mhs'] = $this->db->query($mhs2)->row_array();
-        // var_dump($data['mhs']);
-        $data['title'] = 'Menu cordinator';
-        $data['user'] = $this->db->get_where('user', ['user_id' =>
-        $this->session->userdata('user_id')])->row_array();
-        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
-        $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
-        if ($data) {
-            $data1 = [
-                'name_mhs_1' => $this->input->post('name_mhs_1', true),
-                'npm_mhs_1' => $this->input->post('npm_mhs_1', true),
-                'kelas_mhs_1' => $this->input->post('kelas_mhs_1', true),
-                'name_mhs_2' => $this->input->post('name_mhs_2', true),
-                'npm_mhs_2' => $this->input->post('npm_mhs_2', true),
-                'kelas_mhs_2' => $this->input->post('kelas_mhs_2', true),
-                'user_id' => $this->input->post('user_id', true),
-                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
-            ];
 
-            $this->db->where('mhs_id', $id);
-            $this->db->update('user', $data1);
-            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data Mahasiswa berhasil di ubah
-            </div>');
-            redirect('cordinator/informasi_mahasiswa_pembimbing');
-        } else {
-            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data Mahasiswa gagal di ubah
-            </div>');
-            redirect('cordinator/informasi_mahasiswa_pembimbing');
-        }
-    }
-
-
-
-    public function informasi_mahasiswa_pembimbing_hapus($id)
-    {
-        $mhs2 = "SELECT * FROM user 
-        WHERE user . mhs_id = $id ";
-        $data['mhs'] = $this->db->query($mhs2)->row_array();
-        $data['title'] = 'Menu cordinator';
-        $data['user'] = $this->db->get_where('user', ['user_id' =>
-        $this->session->userdata('user_id')])->row_array();
-        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
-        $data['user']['data_id']])->row_array();
-        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
-        if ($data) {
-
-            $this->db->where('mhs_id', $id);
-            $this->db->delete('user');
-            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data Mahasiswa berhasil di hapus
-            </div>');
-            redirect('cordinator/informasi_mahasiswa_pembimbing');
-        } else {
-            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data Mahasiswa gagal di hapus
-            </div>');
-            redirect('cordinator/informasi_mahasiswa_pembimbing');
-        }
-    }
 
 
 
@@ -449,6 +380,97 @@ class cordinator extends CI_Controller
             pembimbing berhasil di edit
             </div>');
             redirect('cordinator/pembagian_pembimbing');
+        }
+    }
+
+
+
+    public function akun_mahasiswa()
+    {
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar_1', $data);
+        $this->load->view('cordinator/akun_mahasiswa', $data);
+        $this->load->view('templates/footer');
+    }
+
+
+
+    public function akun_mahasiswa_edit($id)
+    {
+        $mhs2 = "SELECT * FROM user 
+        WHERE user . mhs_id = $id ";
+        $data['mhs'] = $this->db->query($mhs2)->row_array();
+        // var_dump($data['mhs']);
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        if ($data) {
+            $data1 = [
+                'name_mhs_1' => $this->input->post('name_mhs_1', true),
+                'npm_mhs_1' => $this->input->post('npm_mhs_1', true),
+                'kelas_mhs_1' => $this->input->post('kelas_mhs_1', true),
+                'name_mhs_2' => $this->input->post('name_mhs_2', true),
+                'npm_mhs_2' => $this->input->post('npm_mhs_2', true),
+                'kelas_mhs_2' => $this->input->post('kelas_mhs_2', true),
+                'user_id' => $this->input->post('user_id', true),
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
+            ];
+
+            $this->db->where('mhs_id', $id);
+            $this->db->update('user', $data1);
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            data Mahasiswa berhasil di ubah
+            </div>');
+            redirect('cordinator/akun_mahasiswa');
+        } else {
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            data Mahasiswa gagal di ubah
+            </div>');
+            redirect('cordinator/akun_mahasiswa');
+        }
+    }
+
+
+
+    public function akun_mahasiswa_hapus($id)
+    {
+        $mhs2 = "SELECT * FROM user 
+        WHERE user . mhs_id = $id ";
+        $data['mhs'] = $this->db->query($mhs2)->row_array();
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        if ($data) {
+
+            $this->db->where('mhs_id', $id);
+            $this->db->delete('user');
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            data Mahasiswa berhasil di hapus
+            </div>');
+            redirect('cordinator/akun_mahasiswa');
+        } else {
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            data Mahasiswa gagal di hapus
+            </div>');
+            redirect('cordinator/akun_mahasiswa');
         }
     }
 
