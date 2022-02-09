@@ -330,9 +330,18 @@ class dosen extends CI_Controller
         if ($data) {
 
 
+            $tanggal_surat = $this->input->post('tanggal_surat');
+            $date = date_create($tanggal_surat);
+            $tas = date_format($date, "d-F-Y");
             $tanda_tangan = $this->input->post('tanda_tangan');
+            $persentase_laporan    = $this->input->post('persentase_laporan');
+            $persentase_apliksai = $this->input->post('persentase_apliksai');
 
+            $this->db->set('status_surat_id', 2);
             $this->db->set('tanda_tangan', $tanda_tangan);
+            $this->db->set('tanggal_surat', $tas);
+            $this->db->set('persentase_laporan', $persentase_laporan);
+            $this->db->set('persentase_apliksai', $persentase_apliksai);
             $this->db->where('user_id', $id);
             $this->db->update('user');
             echo 'berhasil';

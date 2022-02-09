@@ -84,7 +84,7 @@
                                              </tr>
                                          </table>
                                          <br>
-                                         <p>Menyatakan bahwa mahasiswa tersebut telah menyelesaikan Alat/Proyek 100%. Adapun penulisan laporan proyek telah diselesaikan seluruhnya 100%</p>
+                                         <p>Menyatakan bahwa mahasiswa tersebut telah menyelesaikan Alat/Proyek <?= $user['persentase_apliksai']; ?>%. Adapun penulisan laporan proyek telah diselesaikan seluruhnya <?= $user['persentase_laporan']; ?>%</p>
                                          <p>Dengan demikian saya mengajukan mahasiswa tersebut untuk mengikuti sidang Proyek. Apabila ternyata pernyataan saya tersebut tidak benar, maka saya menyetujui penundaan sidang termasuk pembatalan sidang Proyek untuk mahasiswa bimbingan saya tersebut sesuai aturan yang berlaku.</p>
                                      </div>
                                      <br>

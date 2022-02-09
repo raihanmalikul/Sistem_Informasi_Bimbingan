@@ -196,6 +196,7 @@ class cordinator extends CI_Controller
                 'name' => $this->input->post('name', true),
                 'email' => $this->input->post('email', true),
                 'no_telpon' => $this->input->post('no_telpon', true),
+                'research_interest' => $this->input->post('research_interest', true),
                 'dos_id' => $i
 
             ];
@@ -250,6 +251,7 @@ class cordinator extends CI_Controller
                 'name' => $this->input->post('name', true),
                 'email' => $this->input->post('email', true),
                 'no_telpon' => $this->input->post('no_telpon', true)
+
             ];
             $data2 = [
                 'user_id' => $this->input->post('user_id', true),

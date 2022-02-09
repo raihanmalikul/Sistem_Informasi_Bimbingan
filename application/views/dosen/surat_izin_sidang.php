@@ -80,6 +80,18 @@
                             <div class="modal-body">
                                 <form class="user" method="post" action="<?= base_url('dosen/surat_izin_sidang_tambah/') . $ts['user_id']; ?>">
                                     <p>Yakin ingin menyetujui Surat Izin Sidang untuk mahasiswa dengan Nama <?= $ts['name_mhs_1']; ?> (NPM <?= $ts['npm_mhs_1']; ?>) dan juga mahasiswa dengan Nama <?= $tes['name_mhs_2']; ?> (NPM <?= $tes['npm_mhs_2']; ?>) ?</p>
+                                    <div class="form-group">
+                                        <label for="tanggal_pengumpulan_laporan" class="col-form-label">Persentasi Penyelesaian Laporan</label>
+                                        <input class="form-control form-control-lg" type="number" name="persentase_laporan" placeholder="Persentasi Penyelesaian Laporan">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tanggal_pengumpulan_laporan" class="col-form-label">Persentasi Penyelesaian Aplikasi</label>
+                                        <input class="form-control form-control-lg" type="number" name="persentase_apliksai" placeholder="Persentasi Penyelesaian Aplikasi">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tanggal_pengumpulan_laporan" class="col-form-label">Tanggan Persetujuan</label>
+                                        <input type="date" name="tanggal_pengumpulan_laporan" class="form-control" id="tanggal_pengumpulan_laporan">
+                                    </div>
                             </div>
                             <input type="hidden" name="tanda_tangan" value="<?= $ts['tanda_tangan_digital']; ?>">
                             <div class="modal-footer">

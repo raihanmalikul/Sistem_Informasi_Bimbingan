@@ -41,6 +41,7 @@
                                  <th scope="col">Nama</th>
                                  <th scope="col">Email</th>
                                  <th scope="col">No. Telpon</th>
+                                 <th scope="col">Research Interest</th>
                                  <th scope="col">Aksi</th>
                              </tr>
                          </thead>
@@ -53,6 +54,7 @@
                                      <td><?= $dos['name']; ?></td>
                                      <td><?= $dos['email']; ?></td>
                                      <td><?= $dos['no_telpon']; ?></td>
+                                     <td><?= $dos['research_interest']; ?></td>
                                      <td width="160">
                                          <a href="<?= base_url('cordinator/edit/') ?><?= $dos['dos_id'] ?>" class="btn btn-info btn-xs text-white" data-toggle="modal" data-target="#editModal<?= $dos['dos_id'] ?>"><i class="fas fa-edit"></i> Edit</a>
                                          <a href="<?= base_url('cordinator/hapus/') ?><?= $dos['dos_id'] ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
@@ -138,6 +140,10 @@
                                          <div class="form-group">
                                              <label for="no_telpon" class="col-form-label">No. Telpon</label>
                                              <input type="number" name="no_telpon" class="form-control" id="no_telpon" placeholder="08xxxxx" value="<?= $ts['no_telpon']; ?>">
+                                         </div>
+                                         <div class="form-group">
+                                             <label for="research_interest" class="col-form-label">Research Interest</label>
+                                             <input type="text" name="research_interest" class="form-control" id="research_interest" placeholder="Research Interest" value="<?= $ts['research_interest']; ?>">
                                          </div>
                                          <div class="form-group row">
                                              <div class="col-sm-6 mb-3 mb-sm-0">
