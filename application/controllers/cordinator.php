@@ -84,7 +84,124 @@ class cordinator extends CI_Controller
 
 
 
+    public function registration_mhs()
+    {
 
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+
+
+        if ($data) {
+            $data1 = [
+                'npm' => $this->input->post('npm', true),
+                'name' => $this->input->post('name', true),
+                'kelas' => $this->input->post('kelas', true),
+                'status' => $this->input->post('status', true)
+
+
+            ];
+
+
+
+            $this->db->insert('mhs_aktif', $data1);
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Data Mahasiswa berhasil ditambahkan
+            </div>');
+            redirect('cordinator/informasi_mahasiswa_pembimbing');
+        } else {
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Data Mahasiswa gagal ditambahkan
+            </div>');
+            redirect('cordinator/informasi_mahasiswa_pembimbing');
+        }
+    }
+
+
+
+    public function edit_mhs($id)
+    {
+        $mhs2 = "SELECT * FROM mhs_aktif
+        WHERE mhs_aktif . id = $id ";
+        // var_dump($mhs2);
+        // die;
+        $data['mhs'] = $this->db->query($mhs2)->row_array();
+        $data['title'] = 'Menu Buku Pedoman';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        $m = $this->db->get_where('user', ['user_id'])->row_array();
+
+        if ($data) {
+            $data1 = [
+                'npm' => $this->input->post('npm', true),
+                'name' => $this->input->post('name', true),
+                'kelas' => $this->input->post('kelas', true),
+                'status' => $this->input->post('status', true)
+
+
+            ];
+
+
+
+
+            $this->db->where('id', $id);
+            $this->db->update('mhs_aktif', $data1);
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Data Mahasiswa berhasil diubah
+            </div>');
+            redirect('cordinator/informasi_mahasiswa_pembimbing');
+        } else {
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Data Mahasiswa gagal diubah
+            </div>');
+            redirect('cordinator/informasi_mahasiswa_pembimbing');
+        }
+    }
+
+
+
+    public function hapus_mhs($id)
+    {
+        $mhs2 = "SELECT * FROM mhs_aktif
+        WHERE mhs_aktif . id = $id ";
+        $data['mhs'] = $this->db->query($mhs2)->row_array();
+        // var_dump($data);
+        // die;
+        $data['title'] = 'Menu Buku Pedoman';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
+        $m = $this->db->get_where('user', ['user_id'])->row_array();
+        if ($data) {
+
+
+            $this->db->where('id', $id);
+            $this->db->delete('mhs_aktif');
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Data Mahasiswa berhasil dihapus
+            </div>');
+            redirect('cordinator/informasi_mahasiswa_pembimbing');
+        } else {
+            $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Data Mahasiswa gagal dihapus
+            </div>');
+            redirect('cordinator/informasi_mahasiswa_pembimbing');
+        }
+    }
 
 
 
