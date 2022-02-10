@@ -66,9 +66,9 @@
 		<div class="container" style="margin-top: 80px;">
 			<div class="row">
 				<div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-					<h1>Sistem Informasi Bimbingan Proyek Tahun Ajaran 2021/2022</h1>
+					<h1>Aplikasi Sistem Informasi Bimbingan Proyek</h1>
 					<h2>Sistem informasi bimbingan proyek ini merupakan aplikasi yang digunakan mahasiswa Politeknik Pos Indonesia
-						khususnya pada program studi D3 Teknik Informatika untuk mempermudah proses bimbingan proyek.</h2>
+						khususnya pada program studi D3 Teknik Informatika untuk mempermudah proses bimbingan proyek Tahun Ajaran 2021/2022.</h2>
 					<div class="row">
 						<div><a href="<?= base_url('auth/registration'); ?>" class="btn-get-started scrollto">Register</a></div>
 					</div>
