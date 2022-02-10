@@ -146,13 +146,13 @@ class cordinator extends CI_Controller
             $this->db->insert('user', $data2);
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data dosen berhasil di tambahkan
+            Data dosen berhasil ditambahkan
             </div>');
             redirect('cordinator/informasi_dosen_pembimbing');
         } else {
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data dosen gagal di tambahkan
+            Data dosen gagal ditambahkan
             </div>');
             redirect('cordinator/informasi_dosen_pembimbing');
         }
@@ -196,13 +196,13 @@ class cordinator extends CI_Controller
             $this->db->update('admin', $data1);
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data dosen berhasil di ubah
+            Data dosen berhasil diubah
             </div>');
             redirect('cordinator/informasi_dosen_pembimbing');
         } else {
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data dosen gagal di ubah
+            Data dosen gagal diubah
             </div>');
             redirect('cordinator/informasi_dosen_pembimbing');
         }
@@ -233,13 +233,13 @@ class cordinator extends CI_Controller
             $this->db->delete('user');
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data dosen berhasil di hapus
+            Data dosen berhasil dihapus
             </div>');
             redirect('cordinator/informasi_dosen_pembimbing');
         } else {
             $this->session->set_flashdata('message_cor_data_dosen', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data dosen gagal di hapus
+            Data dosen gagal dihapus
             </div>');
             redirect('cordinator/informasi_dosen_pembimbing');
         }
@@ -305,7 +305,7 @@ class cordinator extends CI_Controller
             // echo 'berhasil';
             $this->session->set_flashdata('message_cor_pembagian_pembimbing', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            pembimbing berhasil di bagi
+            Pembagian dosen pembimbing berhasil
             </div>');
             redirect('cordinator/pembagian_pembimbing');
         } else if (isset($_POST['btn_edit'])) {
@@ -320,7 +320,7 @@ class cordinator extends CI_Controller
             }
             $this->session->set_flashdata('message_cor_pembagian_pembimbing', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            pembimbing berhasil di edit
+            Data pembagian dosen pembimbing berhasil diubah
             </div>');
             redirect('cordinator/pembagian_pembimbing');
         }
@@ -349,7 +349,7 @@ class cordinator extends CI_Controller
             if ($dosen == null) {
                 $this->session->set_flashdata('message_cor_pembagian_pembimbing', '<div class="alert alert-primary" role="alert">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                pembimbing gagal di edit
+                Data pembagian dosen pembimbing gagal diubah
                 </div>');
                 redirect('cordinator/pembagian_pembimbing');
             } else {
@@ -371,13 +371,13 @@ class cordinator extends CI_Controller
             // echo 'berhasil';
             $this->session->set_flashdata('message_cor_pembagian_pembimbing', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            pembimbing berhasil di edit
+            Data pembagian dosen pembimbing berhasil diubah
             </div>');
             redirect('cordinator/pembagian_pembimbing');
         } else {
             $this->session->set_flashdata('message_cor_pembagian_pembimbing', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            pembimbing berhasil di edit
+            Data pembagian dosen pembimbing berhasil diubah
             </div>');
             redirect('cordinator/pembagian_pembimbing');
         }
@@ -431,13 +431,13 @@ class cordinator extends CI_Controller
             $this->db->update('user', $data1);
             $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data Mahasiswa berhasil di ubah
+            Data Mahasiswa berhasil diubah
             </div>');
             redirect('cordinator/akun_mahasiswa');
         } else {
             $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data Mahasiswa gagal di ubah
+            Data Mahasiswa gagal diubah
             </div>');
             redirect('cordinator/akun_mahasiswa');
         }
@@ -462,13 +462,13 @@ class cordinator extends CI_Controller
             $this->db->delete('user');
             $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data Mahasiswa berhasil di hapus
+            Data Mahasiswa berhasil dihapus
             </div>');
             redirect('cordinator/akun_mahasiswa');
         } else {
             $this->session->set_flashdata('message_cor_data_mhs', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data Mahasiswa gagal di hapus
+            Data Mahasiswa gagal dihapus
             </div>');
             redirect('cordinator/akun_mahasiswa');
         }
@@ -516,13 +516,13 @@ class cordinator extends CI_Controller
             $this->db->update('user_data');
             $this->session->set_flashdata('message_cor_proposal', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            Batas waktu pengumpulan berhasil di pasang
+            Batas waktu pengumpulan berhasil ditentukan
             </div>');
             redirect('cordinator/Proposal_hasil');
         } else {
             $this->session->set_flashdata('message_cor_proposal', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            Batas waktu pengumpulan gagal di pasang
+            Batas waktu pengumpulan gagal ditentukan
             </div>');
             redirect('cordinator/Proposal_hasil');
         }
@@ -595,13 +595,13 @@ class cordinator extends CI_Controller
             $this->db->update('user_data');
             $this->session->set_flashdata('message_cor_laporan', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            Batas waktu pengumpulan berhasil di pasang
+            Batas waktu pengumpulan berhasil ditentukan
             </div>');
             redirect('cordinator/laporan_hasil');
         } else {
             $this->session->set_flashdata('message_cor_laporan', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            Batas waktu pengumpulan gagal di pasang
+            Batas waktu pengumpulan gagal ditentukan
             </div>');
             redirect('cordinator/laporan_hasil');
         }
@@ -670,13 +670,13 @@ class cordinator extends CI_Controller
             $this->db->update('user_data');
             $this->session->set_flashdata('message_batas_tanggal_bimbingan', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            Batas waktu Bimbingan berhasil di pasang
+            Batas waktu Bimbingan berhasil ditentukan
             </div>');
             redirect('cordinator/persensi_bimbingan');
         } else {
             $this->session->set_flashdata('message_batas_tanggal_bimbingan', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            Batas waktu Bimbingan gagal di pasang
+            Batas waktu Bimbingan gagal ditentukan
             </div>');
             redirect('cordinator/persensi_bimbingan');
         }
@@ -812,13 +812,13 @@ class cordinator extends CI_Controller
             $this->db->update('user');
             $this->session->set_flashdata('message_my_profile', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            Data berhasil di ubah
+            Data berhasil diubah
             </div>');
             redirect('cordinator/my_profile');
         } else {
             $this->session->set_flashdata('message_my_profile', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            Data gagal di ubah
+            Data gagal diubah
             </div>');
             redirect('cordinator/my_profile');
         }
@@ -867,13 +867,13 @@ class cordinator extends CI_Controller
             $this->db->update('user');
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data berhasil di ubah
+            Data berhasil diubah
             </div>');
             redirect('auth');
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-primary" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data gagal di ubah
+            Data gagal diubah
             </div>');
             redirect('auth');
         }

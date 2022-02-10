@@ -48,14 +48,14 @@ class Auth extends CI_Controller
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                Password Salah!
+                Password Salah
                 </div>');
                 redirect('auth');
             }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            User Id Ini Tidak Terdaftar !
+            User Id Ini Tidak Terdaftar
             </div>');
             redirect('auth');
         }
@@ -139,7 +139,7 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('role_id');
         $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-            Kamu Telah Keluar !
+            Kamu Telah Keluar
             </div>');
         redirect('auth');
     }

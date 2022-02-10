@@ -188,13 +188,13 @@ class mahasiswa extends CI_Controller
             $this->db->update('user_data');
             $this->session->set_flashdata('message_mhs_upload_proposal', '<div class="alert alert-success" role="alert">
              <button type="button" class="close" data-dismiss="alert">&times;</button>
-            proposal berhasil di upload
+            Proposal berhasil diupload
             </div>');
             redirect('mahasiswa/proposal');
         } else {
             $this->session->set_flashdata('message_mhs_upload_proposal', '<div class="alert alert-danger" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            proposal gagal di upload
+            Proposal gagal diupload
             </div>');
             redirect('mahasiswa/proposal');
         }
@@ -250,13 +250,13 @@ class mahasiswa extends CI_Controller
                 $this->db->update('user_data');
                 $this->session->set_flashdata('message_mhs_upload_laporan', '<div class="alert alert-success" role="alert">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                laporan berhasil di upload
+                Laporan berhasil diupload
                     </div>');
                 redirect('mahasiswa/laporan');
             } else {
                 $this->session->set_flashdata('message_mhs_upload_laporan', '<div class="alert alert-danger" role="alert">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                laporan gagal di upload
+                Laporan gagal diupload
                     </div>');
                 redirect('mahasiswa/laporan');
             }
@@ -338,13 +338,13 @@ class mahasiswa extends CI_Controller
             $this->db->update('user');
             $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-success" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data berhasil di ubah
+            Data berhasil diubah
             </div>');
             redirect('mahasiswa/my_profile');
         } else {
             $this->session->set_flashdata('message_mhs_edit_my_profile', '<div class="alert alert-danger" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data gagal di ubah
+            Data gagal diubah
             </div>');
             redirect('mahasiswa/my_profile');
         }
@@ -379,13 +379,13 @@ class mahasiswa extends CI_Controller
             $this->db->update('user');
             $this->session->set_flashdata('message_mhs_edit_my_profile_2', '<div class="alert alert-success" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data berhasil di ubah
+            Data berhasil diubah
             </div>');
             redirect('mahasiswa/my_profile');
         } else {
             $this->session->set_flashdata('message_mhs_edit_my_profile_2', '<div class="alert alert-danger" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data gagal di ubah
+            Data gagal diubah
             </div>');
             redirect('mahasiswa/my_profile');
         }
@@ -434,13 +434,13 @@ class mahasiswa extends CI_Controller
             $this->db->where('user_id', $data['user']['user_id']);
             $this->db->update('user');
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            data berhasil di ubah
+            Data berhasil diubah
             </div>');
             redirect('auth');
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            data gagal di ubah
+            Data gagal diubah
             </div>');
             redirect('auth');
         }

@@ -79,14 +79,19 @@
                             </div>
                             <div class="modal-body">
                                 <form class="user" method="post" action="<?= base_url('dosen/surat_izin_sidang_tambah/') . $ts['user_id']; ?>">
-                                    <p>Yakin ingin menyetujui Surat Izin Sidang untuk mahasiswa dengan Nama <?= $ts['name_mhs_1']; ?> (NPM <?= $ts['npm_mhs_1']; ?>) dan juga mahasiswa dengan Nama <?= $tes['name_mhs_2']; ?> (NPM <?= $tes['npm_mhs_2']; ?>) ?</p>
+                                    <p>Masukan Persentase Penyelesaian Proyek Dengan Data Mahasiswa:
+                                        <br> 
+                                       1. <?= $ts['name_mhs_1']; ?> (<?= $ts['npm_mhs_1']; ?>)
+                                        <br>  
+                                       2. <?= $ts['name_mhs_2']; ?> (<?= $ts['npm_mhs_2']; ?>)
+                                    </p>
                                     <div class="form-group">
-                                        <label for="tanggal_pengumpulan_laporan" class="col-form-label">Persentasi Penyelesaian Laporan</label>
-                                        <input class="form-control form-control-lg" type="number" name="persentase_laporan" placeholder="Persentasi Penyelesaian Laporan">
+                                        <label for="tanggal_pengumpulan_laporan" class="col-form-label">Persentase Penyelesaian Laporan</label>
+                                        <input class="form-control form-control-lg" type="number" name="persentase_laporan" placeholder="%">
                                     </div>
                                     <div class="form-group">
                                         <label for="tanggal_pengumpulan_laporan" class="col-form-label">Persentasi Penyelesaian Aplikasi</label>
-                                        <input class="form-control form-control-lg" type="number" name="persentase_apliksai" placeholder="Persentasi Penyelesaian Aplikasi">
+                                        <input class="form-control form-control-lg" type="number" name="persentase_apliksai" placeholder="%">
                                     </div>
                                     <div class="form-group">
                                         <label for="tanggal_pengumpulan_laporan" class="col-form-label">Tanggan Persetujuan</label>
@@ -95,7 +100,7 @@
                             </div>
                             <input type="hidden" name="tanda_tangan" value="<?= $ts['tanda_tangan_digital']; ?>">
                             <div class="modal-footer">
-                                <button type="submit" href="#" class="btn btn-primary"><i class="fas fa-check"></i> Iyaa</button>
+                                <button type="submit" href="#" class="btn btn-primary"><i class="fas fa-check"></i> Setujui</button>
                                 <a href="#" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Tidak</a>
                             </div>
                             </form>
