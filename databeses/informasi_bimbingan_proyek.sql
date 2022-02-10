@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2022 at 03:20 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Waktu pembuatan: 10 Feb 2022 pada 04.21
+-- Versi server: 10.4.21-MariaDB
+-- Versi PHP: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id`, `dos_id`, `mhs_id`, `NIK`, `name`, `no_telpon`, `email`, `tanda_tangan_digital`, `research_interest`) VALUES
@@ -56,7 +56,7 @@ INSERT INTO `admin` (`id`, `dos_id`, `mhs_id`, `NIK`, `name`, `no_telpon`, `emai
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berkas_bimbingan`
+-- Struktur dari tabel `berkas_bimbingan`
 --
 
 CREATE TABLE `berkas_bimbingan` (
@@ -68,7 +68,7 @@ CREATE TABLE `berkas_bimbingan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `berkas_bimbingan`
+-- Dumping data untuk tabel `berkas_bimbingan`
 --
 
 INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `materi`, `paraf_dosen`) VALUES
@@ -86,7 +86,7 @@ INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `materi`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bimbingan`
+-- Struktur dari tabel `bimbingan`
 --
 
 CREATE TABLE `bimbingan` (
@@ -96,7 +96,7 @@ CREATE TABLE `bimbingan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `bimbingan`
+-- Dumping data untuk tabel `bimbingan`
 --
 
 INSERT INTO `bimbingan` (`id`, `dos_id`, `mhs_id`) VALUES
@@ -112,7 +112,7 @@ INSERT INTO `bimbingan` (`id`, `dos_id`, `mhs_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `status`
+-- Struktur dari tabel `status`
 --
 
 CREATE TABLE `status` (
@@ -121,7 +121,7 @@ CREATE TABLE `status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `status`
+-- Dumping data untuk tabel `status`
 --
 
 INSERT INTO `status` (`id`, `status`) VALUES
@@ -131,7 +131,7 @@ INSERT INTO `status` (`id`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `status_proposal`
+-- Struktur dari tabel `status_proposal`
 --
 
 CREATE TABLE `status_proposal` (
@@ -140,7 +140,7 @@ CREATE TABLE `status_proposal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `status_proposal`
+-- Dumping data untuk tabel `status_proposal`
 --
 
 INSERT INTO `status_proposal` (`id`, `status`) VALUES
@@ -150,7 +150,7 @@ INSERT INTO `status_proposal` (`id`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `status_surat`
+-- Struktur dari tabel `status_surat`
 --
 
 CREATE TABLE `status_surat` (
@@ -159,17 +159,17 @@ CREATE TABLE `status_surat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `status_surat`
+-- Dumping data untuk tabel `status_surat`
 --
 
 INSERT INTO `status_surat` (`id`, `status`) VALUES
-(1, 'Belum di stujui sidang'),
-(2, 'Telah di stujui sidang');
+(1, 'Belum disetujui'),
+(2, 'Sudah disetujui');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -200,7 +200,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `tanda_tangan`, `status_surat_id`, `tanggal_surat`, `persentase_laporan`, `persentase_apliksai`, `data_id`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas_mhs_1`, `kelas_mhs_2`, `no_telpon_mhs_1`, `no_telpon_mhs_2`, `password`, `date_created`, `name_cor`, `email_cor`) VALUES
@@ -225,7 +225,7 @@ INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `tand
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_access_menu`
+-- Struktur dari tabel `user_access_menu`
 --
 
 CREATE TABLE `user_access_menu` (
@@ -235,7 +235,7 @@ CREATE TABLE `user_access_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_access_menu`
+-- Dumping data untuk tabel `user_access_menu`
 --
 
 INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
@@ -261,7 +261,7 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_data`
+-- Struktur dari tabel `user_data`
 --
 
 CREATE TABLE `user_data` (
@@ -283,7 +283,7 @@ CREATE TABLE `user_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_data`
+-- Dumping data untuk tabel `user_data`
 --
 
 INSERT INTO `user_data` (`id`, `judul_proyek`, `keterangan_judul`, `katagori_proyek`, `proposal_proyek`, `laporan_proyek`, `status_laporan_id`, `status_proposal_id`, `berkas_bimbingan_id`, `surat_izin_sidang`, `tanggal_pengumpulan_proposal`, `data_id`, `cor_id`, `tanggal_pengumpulan_laporan`, `batas_tanggal_bimbingan`) VALUES
@@ -300,7 +300,7 @@ INSERT INTO `user_data` (`id`, `judul_proyek`, `keterangan_judul`, `katagori_pro
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_menu`
+-- Struktur dari tabel `user_menu`
 --
 
 CREATE TABLE `user_menu` (
@@ -309,7 +309,7 @@ CREATE TABLE `user_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_menu`
+-- Dumping data untuk tabel `user_menu`
 --
 
 INSERT INTO `user_menu` (`id`, `menu`) VALUES
@@ -326,9 +326,9 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (11, 'Form Pengumpulan'),
 (12, 'Izin Sidang'),
 (13, 'Izin Sidang'),
-(14, 'Pembimbing'),
+(14, 'Data Master'),
 (15, 'Penilaian'),
-(16, 'Data Master'),
+(16, 'Data Sub Master'),
 (17, 'Setting'),
 (18, 'Setting'),
 (19, 'Setting');
@@ -336,7 +336,7 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_role`
+-- Struktur dari tabel `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -345,18 +345,18 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_role`
+-- Dumping data untuk tabel `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
-(1, 'Cordinator'),
+(1, 'Koordinator'),
 (2, 'Dosen'),
 (3, 'Mahasiswa');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_sub_menu`
+-- Struktur dari tabel `user_sub_menu`
 --
 
 CREATE TABLE `user_sub_menu` (
@@ -369,7 +369,7 @@ CREATE TABLE `user_sub_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_sub_menu`
+-- Dumping data untuk tabel `user_sub_menu`
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon`) VALUES
@@ -398,7 +398,7 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon
 (42, 16, 'Proposal', 'cordinator/Proposal_hasil', 1, 'fas fa-fw fa-align-center'),
 (44, 16, 'Laporan', 'cordinator/laporan_hasil', 1, 'fas fa-fw fa-align-justify'),
 (45, 16, 'Presensi Bimbingan', 'cordinator/persensi_bimbingan', 1, 'far fa-fw fa-calendar-check'),
-(46, 16, 'setujui sidang', 'cordinator/setujui_sidang', 1, 'far fa-fw fa-envelope-open'),
+(46, 16, 'Persetujuan Sidang', 'cordinator/setujui_sidang', 1, 'far fa-fw fa-envelope-open'),
 (47, 17, 'My Profile', 'cordinator/my_profile', 1, 'far fa-fw fa-user'),
 (48, 18, 'My Profile', 'dosen/my_profile', 1, 'far fa-fw fa-user'),
 (49, 19, 'My Profile', 'mahasiswa/my_profile', 1, 'far fa-fw fa-user'),
@@ -411,149 +411,149 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `berkas_bimbingan`
+-- Indeks untuk tabel `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bimbingan`
+-- Indeks untuk tabel `bimbingan`
 --
 ALTER TABLE `bimbingan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `status`
+-- Indeks untuk tabel `status`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `status_proposal`
+-- Indeks untuk tabel `status_proposal`
 --
 ALTER TABLE `status_proposal`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `status_surat`
+-- Indeks untuk tabel `status_surat`
 --
 ALTER TABLE `status_surat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_access_menu`
+-- Indeks untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_data`
+-- Indeks untuk tabel `user_data`
 --
 ALTER TABLE `user_data`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
--- Indexes for table `user_menu`
+-- Indeks untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_role`
+-- Indeks untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_sub_menu`
+-- Indeks untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `berkas_bimbingan`
+-- AUTO_INCREMENT untuk tabel `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
--- AUTO_INCREMENT for table `bimbingan`
+-- AUTO_INCREMENT untuk tabel `bimbingan`
 --
 ALTER TABLE `bimbingan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
--- AUTO_INCREMENT for table `status`
+-- AUTO_INCREMENT untuk tabel `status`
 --
 ALTER TABLE `status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `status_proposal`
+-- AUTO_INCREMENT untuk tabel `status_proposal`
 --
 ALTER TABLE `status_proposal`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `status_surat`
+-- AUTO_INCREMENT untuk tabel `status_surat`
 --
 ALTER TABLE `status_surat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT for table `user_access_menu`
+-- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `user_data`
+-- AUTO_INCREMENT untuk tabel `user_data`
 --
 ALTER TABLE `user_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- AUTO_INCREMENT for table `user_menu`
+-- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `user_role`
+-- AUTO_INCREMENT untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user_sub_menu`
+-- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
