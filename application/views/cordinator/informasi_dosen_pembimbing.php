@@ -146,8 +146,8 @@
                                              <input type="number" name="no_telpon" class="form-control" id="no_telpon" placeholder="08xxxxx" value="<?= $ts['no_telpon']; ?>">
                                          </div>
                                          <div class="form-group">
-                                             <label for="no_telpon" class="col-form-label">No. Telpon</label>
-                                             <input type="number" name="no_telpon" class="form-control" id="no_telpon" placeholder="08xxxxx" value="<?= $ts['no_telpon']; ?>">
+                                             <label for="research_interest" class="col-form-label">Research Interest</label>
+                                             <input type="text" name="research_interest" class="form-control" id="research_interest" placeholder="Research Interest">
                                          </div>
                                          <div class="form-group row">
                                              <div class="col-sm-6 mb-3 mb-sm-0">
