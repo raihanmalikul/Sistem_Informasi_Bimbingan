@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2022 at 04:40 AM
+-- Generation Time: Feb 12, 2022 at 02:00 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -108,6 +108,20 @@ INSERT INTO `bimbingan` (`id`, `dos_id`, `mhs_id`) VALUES
 (62, 14, 26),
 (63, 18, 27),
 (64, 13, 28);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mhs_aktif`
+--
+
+CREATE TABLE `mhs_aktif` (
+  `id` int(11) NOT NULL,
+  `npm` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `kelas` varchar(128) NOT NULL,
+  `status` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -429,6 +443,12 @@ ALTER TABLE `bimbingan`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `mhs_aktif`
+--
+ALTER TABLE `mhs_aktif`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `status`
 --
 ALTER TABLE `status`
@@ -503,6 +523,12 @@ ALTER TABLE `berkas_bimbingan`
 --
 ALTER TABLE `bimbingan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+
+--
+-- AUTO_INCREMENT for table `mhs_aktif`
+--
+ALTER TABLE `mhs_aktif`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `status`
