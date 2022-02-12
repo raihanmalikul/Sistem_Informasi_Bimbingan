@@ -61,7 +61,7 @@
                      </table>
                  </div>
 
-                 <!-- modal dambah -->
+                 <!-- modal tambah -->
                  <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                      <div class="modal-dialog">
                          <div class="modal-content">
@@ -82,12 +82,21 @@
                                          <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan Nama">
                                      </div>
                                      <div class="form-group">
-                                         <label for="kelas" class="col-form-label">Kelas</label>
-                                         <input type="text" name="kelas" class="form-control" id="kelas" placeholder="Masukkan Kelas">
+                                         <label for="name_ds" class="col-form-label">Kelas</label>
+                                         <select class="form-control" id="kelas" name="kelas">
+                                             <option disabled selected value>Kelas</option>
+                                             <option value="D3 Teknik Informatika 2A">D3 Teknik Informatika 2A</option>
+                                             <option value="D3 Teknik Informatika 2B">D3 Teknik Informatika 2B</option>
+                                             <option value="D3 Teknik Informatika 3A">D3 Teknik Informatika 3A</option>
+                                         </select>
                                      </div>
                                      <div class="form-group">
-                                         <label for="status" class="col-form-label">Status</label>
-                                         <input type="text" name="status" class="form-control" id="status" placeholder="Status">
+                                         <label for="name_ds" class="col-form-label">Status</label>
+                                         <select class="form-control" id="status" name="status">
+                                             <option disabled selected value>Status</option>
+                                             <option value="Mahasiswa Aktif">Mahasiswa Aktif</option>
+                                             <option value="Mahasiswa Tidak Aktif">Mahasiswa Tidak Aktif</option>
+                                         </select>
                                      </div>
                              </div>
                              <div class="modal-footer">
@@ -122,12 +131,21 @@
                                              <input type="text" name="name" class="form-control" id="name_ds" placeholder="Nama" value="<?= $ts['name']; ?>">
                                          </div>
                                          <div class="form-group">
-                                             <label for="kelas" class="col-form-label">Kelas</label>
-                                             <input type="text" name="kelas" class="form-control" id="kelas" placeholder="Kelas" value="<?= $ts['kelas']; ?>">
+                                             <label for="name_ds" class="col-form-label">Kelas</label>
+                                             <select class="form-control" id="kelas" name="kelas">
+                                                 <option value="<?= $ts['kelas']; ?>"><?= $ts['kelas']; ?></option>
+                                                 <option value="D3 Teknik Informatika 2A">D3 Teknik Informatika 2A</option>
+                                                 <option value="D3 Teknik Informatika 2B">D3 Teknik Informatika 2B</option>
+                                                 <option value="D3 Teknik Informatika 3A">D3 Teknik Informatika 3A</option>
+                                             </select>
                                          </div>
                                          <div class="form-group">
-                                             <label for="status" class="col-form-label">Status</label>
-                                             <input type="text" name="status" class="form-control" id="status" placeholder="Status" value="<?= $ts['status']; ?>">
+                                             <label for="name_ds" class="col-form-label">Status</label>
+                                             <select class="form-control" id="status" name="status">
+                                                 <option value="<?= $ts['status']; ?>"><?= $ts['status']; ?></option>
+                                                 <option value="Mahasiswa Aktif">Mahasiswa Aktif</option>
+                                                 <option value="Mahasiswa Tidak Aktif">Mahasiswa Tidak Aktif</option>
+                                             </select>
                                          </div>
                                  </div>
                                  <div class="modal-footer">
