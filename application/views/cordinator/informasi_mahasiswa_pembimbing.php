@@ -8,7 +8,7 @@
          <div class="row">
              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                  <div class="page-header">
-                     <h2 class="pageheader-title">Data Mahasiswa Pembimbing</h2>
+                     <h2 class="pageheader-title">Data Mahasiswa Aktif</h2>
                      <hr>
                  </div>
              </div>
@@ -27,17 +27,17 @@
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
              <div class="card">
                  <div class="card-body">
-                     <button type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i> Tambah Dosen</button>
-                     <h4 class="card-title">Data Mahasiswa Pembimbing</h4>
+                     <button type="button" class="btn btn-primary text-white float-right" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus"></i> Tambah Data Mahasiswa Aktif</button>
+                     <h4 class="card-title">Data Mahasiswa Aktif</h4>
                      <br>
                      <?= $this->session->flashdata('message_cor_data_mhs'); ?>
                      <table class="table table-bordered">
                          <thead>
                              <tr class="text-center">
                                  <th scope="col-lg-2">No</th>
-                                 <th scope="col">npm</th>
+                                 <th scope="col">NPM</th>
                                  <th scope="col">Nama</th>
-                                 <th scope="col">kelas</th>
+                                 <th scope="col">Kelas</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Aksi</th>
                              </tr>
@@ -75,15 +75,15 @@
                                  <form class="user" method="post" action="<?= base_url('cordinator/registration_mhs') ?>">
                                      <div class="form-group">
                                          <label for="npm" class="col-form-label">Npm</label>
-                                         <input type="number" name="npm" class="form-control" id="npm" placeholder="Npm">
+                                         <input type="number" name="npm" class="form-control" id="npm" placeholder="Masukkan Npm">
                                      </div>
                                      <div class="form-group">
                                          <label for="name" class="col-form-label">Nama</label>
-                                         <input type="text" name="name" class="form-control" id="name" placeholder="Nama">
+                                         <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan Nama">
                                      </div>
                                      <div class="form-group">
                                          <label for="kelas" class="col-form-label">Kelas</label>
-                                         <input type="text" name="kelas" class="form-control" id="kelas" placeholder="Kelas">
+                                         <input type="text" name="kelas" class="form-control" id="kelas" placeholder="Masukkan Kelas">
                                      </div>
                                      <div class="form-group">
                                          <label for="status" class="col-form-label">Status</label>
