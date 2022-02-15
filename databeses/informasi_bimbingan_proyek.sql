@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2022 at 02:00 AM
+-- Generation Time: Feb 15, 2022 at 05:36 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -76,12 +76,7 @@ INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `materi`
 (61, 22, '', '', ''),
 (62, 23, '', '', ''),
 (63, 24, '', '', ''),
-(64, 25, '', '', ''),
-(65, 26, '', '', ''),
-(66, 27, '', '', ''),
-(67, 28, '', '', ''),
-(68, 22, '11-February-2022', 'Bab 1', 'Tanda Tangan Muhammad Ruslan Maulani, S.Kom., MT.png'),
-(69, 28, '16-February-2022', 'Bab 1', 'Tanda Tangan Muhammad Ruslan Maulani, S.Kom., MT.png');
+(64, 25, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -94,20 +89,6 @@ CREATE TABLE `bimbingan` (
   `dos_id` int(11) NOT NULL,
   `mhs_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `bimbingan`
---
-
-INSERT INTO `bimbingan` (`id`, `dos_id`, `mhs_id`) VALUES
-(57, 19, 21),
-(58, 13, 22),
-(59, 15, 23),
-(60, 19, 24),
-(61, 20, 25),
-(62, 14, 26),
-(63, 18, 27),
-(64, 13, 28);
 
 -- --------------------------------------------------------
 
@@ -122,6 +103,13 @@ CREATE TABLE `mhs_aktif` (
   `kelas` varchar(128) NOT NULL,
   `status` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mhs_aktif`
+--
+
+INSERT INTO `mhs_aktif` (`id`, `npm`, `name`, `kelas`, `status`) VALUES
+(2, 1193025, 'Raihan Malikul Mulki', 'D3 Teknik Informatika 3A', 'Mahasiswa Aktif');
 
 -- --------------------------------------------------------
 
@@ -227,14 +215,11 @@ INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `tand
 (39, 2, '102.73.044', 0, 18, '', '', 0, '', '', '', 18, '', '', '', '', '', '', '', '', '$2y$10$KHG7iBebLDy0p/G6s7dFlOT19zhzK6iO23kkDTA/REZC6GrV4MO2K', 1643294695, '', ''),
 (40, 2, '104.79.072', 0, 19, '', '', 0, '', '', '', 19, '', '', '', '', '', '', '', '', '$2y$10$r6VD0y.Ew9fbEwOhhd3Y2Oo2XazKPBCvAGM0vd5m3JS45ZMzze.s.', 1643294788, '', ''),
 (44, 2, '102.73.041', 0, 20, '', '', 0, '', '', '', 20, '', '', '', '', '', '', '', '', '$2y$10$EjLzVBC0LtWFlcDGyb/RJ.z0aN33QXzE0.d9MRSS8piaKwHLvlY7.', 1643350182, '', ''),
-(49, 3, 'Razor01', 21, 0, '', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png', 2, '09-February-2022', '100', '100', 21, 'Aldo Dwie Rizky', '1193005', 'Raihan Malikul Mulki', '1193025', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '28428642', '734424', '$2y$10$ZNIKJZP/d/buyTKjPU798.mgu4PVZbirDrhQRzdB2GHja1skfooxe', 1644273616, '', ''),
+(49, 3, 'Razor01', 21, 0, '', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png', 2, '09-February-2022', '100', '100', 21, 'Aldo Dwie Rizky', '1193005', 'Raihan Malikul Mulki', '1193025', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 2A', '28428642', '734424', '$2y$10$nZS1iB9EBuoHVaKqtBTLI./Ah5PCYVj7P4PXXNmnBaXJa8Ynk4doO', 1644273616, '', ''),
 (50, 3, 'fiki01', 22, 0, '', 'Tanda Tangan Muhammad Ruslan Maulani, S.Kom., MT.png', 2, '', '', '', 22, 'Fiki Henizar', '1193011', 'Salsa Anisa Zakiyah Darojat', '1193027', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$8wcyV4guzcz4IFtrfybWn.12mlJq4sz9nE9xNpg05.yXdqF3D347.', 1644273682, '', ''),
 (51, 3, 'febri01', 23, 0, '', '', 1, '', '', '', 23, 'Febri Muhamad', '1193010', 'Nadia Rahma Rivai', '1193022', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$urBZvNP2Jvnm8Hq3jm/AwOx9lE352oPKuqVBb2EnaQqYPesIEhq22', 1644273747, '', ''),
 (52, 3, 'alisa01', 24, 0, '', '', 1, '', '', '', 24, 'Alissa Nina Munawaroh', '1193006', 'Mahfud Fauzi', '1193014', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$cA4XqYWS3LAQsZ0LZRjy2eWb4.z03R45ksYcrNHySOhtw3hGUoPxq', 1644273806, '', ''),
-(53, 3, 'ilahm01', 25, 0, '', '', 1, '', '', '', 25, 'Muhammad Ilham Ferdiansyah', '1193019', 'Muhammad Raihan Nur Azmii', '1193020', 'D3 Teknik Informatika 2A', 'D3 Teknik Informatika 2A', '', '', '$2y$10$dB8Uueh7pZ8BVP9SXfPrA.ZgdMU1BgaACcbiFnWQ2s7tF.YD9JQrK', 1644273929, '', ''),
-(54, 3, 'aldo01', 26, 0, '', '', 1, '', '', '', 26, 'aldo', '119302573', '', '', 'D3 Teknik Informatika 2A', '', '', '', '$2y$10$qa5YwVrvHBcbQgxMxLp1U./AD/KRlAcvVOR1mb6LtcseEEwj8BDaq', 1644301463, '', ''),
-(55, 3, 'raihan01', 27, 0, '', '', 1, '', '', '', 27, 'raihan malik', '11930255', '', '', 'D3 Teknik Informatika 2A', NULL, '', '', '$2y$10$VoHMthd2l9PS1quj0IeY.uxiApXnWBCCbemj/xyJKm1lZS6phXfki', 1644301881, '', ''),
-(56, 3, 'dewisanti01', 28, 0, '', 'Tanda Tangan Muhammad Ruslan Maulani, S.Kom., MT.png', 2, '', '', '', 28, 'Dewi', '1193456', 'Santi', '11934526', 'D3 Teknik Informatika 2A', 'D3 Teknik Informatika 2B', '', '', '$2y$10$IKd0HGM.4ro9cswMKeJ8Le.LGBJp7clqBYfcPZLvZvXFLIxGwU0gq', 1644306049, '', '');
+(53, 3, 'ilahm01', 25, 0, '', '', 1, '', '', '', 25, 'Muhammad Ilham Ferdiansyah', '1193019', 'Muhammad Raihan Nur Azmii', '1193020', 'D3 Teknik Informatika 2A', 'D3 Teknik Informatika 2A', '', '', '$2y$10$dB8Uueh7pZ8BVP9SXfPrA.ZgdMU1BgaACcbiFnWQ2s7tF.YD9JQrK', 1644273929, '', '');
 
 -- --------------------------------------------------------
 
@@ -306,10 +291,7 @@ INSERT INTO `user_data` (`id`, `judul_proyek`, `keterangan_judul`, `katagori_pro
 (35, '', '', 'Proyek 2', '', '', 1, 1, '22', '', '', 22, 1, NULL, ''),
 (36, '', '', 'Proyek 2', '', '', 1, 1, '23', '', '', 23, 1, NULL, ''),
 (37, '', '', 'Proyek 2', '', '', 1, 1, '24', '', '', 24, 1, NULL, ''),
-(38, '', '', 'Proyek 2', '', '', 1, 1, '25', '', '', 25, 1, NULL, ''),
-(39, '', '', 'Proyek 2', '', '', 1, 1, '26', '', '', 26, 1, NULL, ''),
-(40, '', '', 'Proyek 2', '', '', 1, 1, '27', '', '', 27, 1, NULL, ''),
-(41, 'Rancang Bangun Aplikasi Pengumpulan Proposal dan Pembagian Dosen Pembimbing Proyek Berbasis Website', ' aplikasi pengumpulan proposal dan pembagian dosen', 'Proyek 2', '006_Rekomendasi.pdf', '', 1, 2, '28', '', '', 28, 1, NULL, '');
+(38, '', '', 'Proyek 2', '', '', 1, 1, '25', '', '', 25, 1, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -528,7 +510,7 @@ ALTER TABLE `bimbingan`
 -- AUTO_INCREMENT for table `mhs_aktif`
 --
 ALTER TABLE `mhs_aktif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `status`
