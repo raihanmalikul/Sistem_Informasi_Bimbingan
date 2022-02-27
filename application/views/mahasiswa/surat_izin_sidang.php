@@ -10,6 +10,7 @@
                  <div class="page-header">
                      <h2 class="pageheader-title">Surat Izin Sidang</h2>
                      <hr>
+                     <?= $this->session->flashdata('message_mhs_tandatangan'); ?>
                  </div>
              </div>
          </div>
@@ -34,6 +35,8 @@
              <div class="card">
                  <div class="card-body">
                      <button class="btn btn-primary text-white" id="download"><i class="fas fa-download"></i> Download PDF</button>
+                     <button class="btn btn-primary text-white" data-toggle="modal" data-target="#TandatanganDigitalMahasiswa1"><i class="fas fa-download"></i> Upload Tandatangan Digital Mahasiswa 1</button>
+                     <button class="btn btn-primary text-white" data-toggle="modal" data-target="#TandatanganDigitalMahasiswa2"><i class="fas fa-download"></i> Upload Tandatangan Digital Mahasiswa 2</button>
                      <!-- <h4 class="card-title">Surat Persetujuan dan Permohonan Sidang</h4> -->
                      <br>
                      <hr>
@@ -106,9 +109,9 @@
 
                                          <table class="text-center">
                                              <tr>
-                                                 <td style="vertical-align: bottom;">_________________</td>
+                                                 <td style="vertical-align: bottom;"><img width="100px" src="<?= base_url('assets/File/Tanda_tangan_mhs/') . $user['tanda_tanga_digital_mhs_1']; ?>"></td>
                                                  <td rowspan="3" class="px-4"></td>
-                                                 <td style="vertical-align: bottom;">_________________</td>
+                                                 <td style="vertical-align: bottom;"><img width="100px" src="<?= base_url('assets/File/Tanda_tangan_mhs/') . $user['tanda_tanga_digital_mhs_2']; ?>"></td>
                                                  <td rowspan="3" class="px-4"></td>
                                                  <td><img width="100px" src="<?= base_url('assets/File/tandatangan_dosen/') . $user['tanda_tangan']; ?>"></td>
                                              </tr>
@@ -167,3 +170,53 @@
                  })
          }
      </script>
+     <div class="modal fade" id="TandatanganDigitalMahasiswa1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Upload Tandatangan Digital Mahasiswa 1</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                     </button>
+                 </div>
+                 <?php echo form_open_multipart('mahasiswa/upload_tandatangan_1'); ?>
+                 <div class="modal-body">
+                     <div class="form-group">
+                         <label for="tanda_tanga_digital_mhs_1" class="form-label"><?= $user['tanda_tanga_digital_mhs_1']; ?></label>
+                         <input type="file" name="tanda_tanga_digital_mhs_1" class="form-control" id="tanda_tanga_digital_mhs_1">
+                     </div>
+                 </div>
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                     <button type="submit" class="btn btn-primary">Simpan</button>
+                 </div>
+                 <?= form_close(); ?>
+             </div>
+         </div>
+     </div>
+ </div>
+ <div class="modal fade" id="TandatanganDigitalMahasiswa2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">Upload Tandatangan Digital Mahasiswa 2</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+             </div>
+             <?php echo form_open_multipart('mahasiswa/upload_tandatangan_2'); ?>
+             <div class="modal-body">
+                 <div class="form-group">
+                     <label for="tanda_tanga_digital_mhs_2" class="form-label"><?= $user['tanda_tanga_digital_mhs_2']; ?></label>
+                     <input type="file" name="tanda_tanga_digital_mhs_2" class="form-control" id="tanda_tanga_digital_mhs_2">
+                 </div>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                 <button type="submit" class="btn btn-primary">Simpan</button>
+             </div>
+             <?= form_close(); ?>
+         </div>
+     </div>
+ </div>
+ </div>

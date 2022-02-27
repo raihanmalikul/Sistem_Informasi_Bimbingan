@@ -202,6 +202,39 @@ class mahasiswa extends CI_Controller
 
 
 
+    public function ubah_judul()
+    {
+        // backend
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+
+        $this->form_validation->set_rules('judul_proyek', 'Judul Proyek', 'required');
+        $this->form_validation->set_rules('laporan_proposal', 'Folder', 'required');
+
+        if ($data) {
+            $judul_proyek = $this->input->post('judul_proyek');
+
+            $this->db->set('judul_proyek', $judul_proyek);
+            $this->db->where('data_id', $data['user_data']['data_id']);
+            $this->db->update('user_data');
+            $this->session->set_flashdata('message_mhs_upload_proposal', '<div class="alert alert-success" role="alert">
+             <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Judul Proyek berhasil diubah
+            </div>');
+            redirect('mahasiswa/proposal');
+        } else {
+            $this->session->set_flashdata('message_mhs_upload_proposal', '<div class="alert alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Judul Proyek gagal diubah
+            </div>');
+            redirect('mahasiswa/proposal');
+        }
+    }
+
+
+
     public function laporan()
     {
         // backend
@@ -288,6 +321,87 @@ class mahasiswa extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('mahasiswa/surat_izin_sidang', $data);
         $this->load->view('templates/footer');
+    }
+
+
+
+    public function upload_tandatangan_1()
+    {
+        // backend
+        $upload_file = $_FILES['tanda_tanga_digital_mhs_1']['name'];
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+
+
+        if ($upload_file) {
+
+            $config['allowed_types']        = 'jpg|png';
+            $config['max_size']             = 10048;
+            $config['upload_path']          = './assets/File/Tanda_tangan_mhs/';
+
+            // $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload('tanda_tanga_digital_mhs_1')) {
+                $new_file = $this->upload->data('file_name');
+                $this->db->set('tanda_tanga_digital_mhs_1', $new_file);
+                $this->db->where('user_id', $data['user']['user_id']);
+                $this->db->update('user');
+                $this->session->set_flashdata('message_mhs_tandatangan', '<div class="alert alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                Tanda tangan berhasil diupload
+                    </div>');
+                redirect('mahasiswa/surat_izin_sidang');
+            } else {
+                $this->session->set_flashdata('message_mhs_tandatangan', '<div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                Tanda tangan gagal diupload
+                    </div>');
+                redirect('mahasiswa/surat_izin_sidang');
+            }
+        }
+    }
+
+
+
+    public function upload_tandatangan_2()
+    {
+        $upload_file = $_FILES['tanda_tanga_digital_mhs_2']['name'];
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+
+
+        if ($upload_file) {
+
+            $config['allowed_types']        = 'jpg|png';
+            $config['max_size']             = 10048;
+            $config['upload_path']          = './assets/File/Tanda_tangan_mhs/';
+
+            // $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload('tanda_tanga_digital_mhs_2')) {
+                $new_file = $this->upload->data('file_name');
+                $this->db->set('tanda_tanga_digital_mhs_2', $new_file);
+                $this->db->where('user_id', $data['user']['user_id']);
+                $this->db->update('user');
+                $this->session->set_flashdata('message_mhs_tandatangan', '<div class="alert alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                Tanda tangan berhasil diupload
+                    </div>');
+                redirect('mahasiswa/surat_izin_sidang');
+            } else {
+                $this->session->set_flashdata('message_mhs_tandatangan', '<div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                Tanda tangan gagal diupload
+                    </div>');
+                redirect('mahasiswa/surat_izin_sidang');
+            }
+        }
     }
 
 

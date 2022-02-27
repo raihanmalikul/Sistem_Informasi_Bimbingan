@@ -31,12 +31,16 @@
                                  <td><?= $setatus['status']; ?></td>
                              </tr>
                              <tr>
+                                 <td>Status judul Proyek</td>
+                                 <td><?= $setatus['status']; ?> <button type="button" class="btn btn-primary btn-xs text-white float-right margin-right" data-toggle="modal" data-target="#tambahModal">Ganti judul</button></td>
+                             </tr>
+                             <tr>
                                  <td>Batas Waktu</td>
                                  <td><?= $mhs['tanggal_pengumpulan_proposal']; ?></td>
                              </tr>
                      </table>
                      <hr>
-                     <?php echo form_open_multipart('mahasiswa/upload_proposal'); ?>
+                     <?php echo form_open_multipart('mahasiswa/edit_judul'); ?>
                      <div class="form-group row">
                          <label class="col-12 col-sm-3 col-form-label text-sm-right">Judul Proyek</label>
                          <div class="col-12 col-sm-8 col-lg-6">
@@ -59,6 +63,30 @@
                      <button type="submit" class="btn btn-primary btn-xs text-white float-right margin-right"><i class="fas fa-save"></i> Upload</button>
                  </div>
                  <?= form_close(); ?>
+             </div>
+         </div>
+     </div>
+     <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Penggantian Judul Proyek</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                     </button>
+                 </div>
+                 <form class="user" method="post" action="<?= base_url('mahasiswa/ubah_judul') ?>">
+                     <div class="modal-body">
+                         <div class="form-group">
+                             <label for="judul_proyek" class="col-form-label">Judul Proyek</label>
+                             <input type="text" name="judul_proyek" class="form-control" id="judul_proyek">
+                         </div>
+                     </div>
+                     <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                         <button type="submit" class="btn btn-primary">Simpan</button>
+                     </div>
+                 </form>
              </div>
          </div>
      </div>
