@@ -99,6 +99,7 @@ class Auth extends CI_Controller
                 'user_id' => $this->input->post('user_id', true),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'role_id' => 3,
+                'status_judul' => 1,
                 'data_id' => $i,
                 'status_surat_id' => 1,
                 'date_created' => time(),

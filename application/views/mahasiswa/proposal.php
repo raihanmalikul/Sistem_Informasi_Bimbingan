@@ -32,7 +32,7 @@
                              </tr>
                              <tr>
                                  <td>Status judul Proyek</td>
-                                 <td><?= $setatus['status']; ?> <button type="button" class="btn btn-primary btn-xs text-white float-right margin-right" data-toggle="modal" data-target="#tambahModal">Ganti judul</button></td>
+                                 <td><?= $setatus1['status']; ?> <button type="button" class="btn btn-primary btn-xs text-white float-right margin-right" data-toggle="modal" data-target="#tambahModal">Ganti judul</button></td>
                              </tr>
                              <tr>
                                  <td>Batas Waktu</td>

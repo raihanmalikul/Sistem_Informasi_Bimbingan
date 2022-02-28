@@ -139,6 +139,7 @@ class mahasiswa extends CI_Controller
         $data['user']['data_id']])->row_array();
         $data['mhs'] = $this->db->get_where('user_data', ['data_id' => 4])->row_array();
         $data['setatus'] = $this->db->get_where('status', ['id' => $data['user_data']['status_proposal_id']])->row_array();
+        $data['setatus1'] = $this->db->get_where('status_judul', ['id' => $data['user']['status_judul']])->row_array();
 
         //frontend
         $this->load->view('templates/header', $data);
