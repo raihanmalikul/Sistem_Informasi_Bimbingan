@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2022 at 05:36 AM
+-- Generation Time: Feb 28, 2022 at 04:27 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -76,7 +76,9 @@ INSERT INTO `berkas_bimbingan` (`id`, `berkas_bimbingan_id`, `tanggal`, `materi`
 (61, 22, '', '', ''),
 (62, 23, '', '', ''),
 (63, 24, '', '', ''),
-(64, 25, '', '', '');
+(64, 25, '', '', ''),
+(70, 26, '', '', ''),
+(71, 26, '02-March-2022', 'Bab 2', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png');
 
 -- --------------------------------------------------------
 
@@ -89,6 +91,18 @@ CREATE TABLE `bimbingan` (
   `dos_id` int(11) NOT NULL,
   `mhs_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bimbingan`
+--
+
+INSERT INTO `bimbingan` (`id`, `dos_id`, `mhs_id`) VALUES
+(65, 17, 21),
+(66, 13, 22),
+(67, 17, 23),
+(68, 14, 24),
+(69, 15, 25),
+(70, 19, 26);
 
 -- --------------------------------------------------------
 
@@ -129,6 +143,25 @@ CREATE TABLE `status` (
 INSERT INTO `status` (`id`, `status`) VALUES
 (1, 'Belum terkumpul'),
 (2, 'Sudah terkumpul');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status_judul`
+--
+
+CREATE TABLE `status_judul` (
+  `id` int(11) NOT NULL,
+  `status` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `status_judul`
+--
+
+INSERT INTO `status_judul` (`id`, `status`) VALUES
+(1, 'Judul belum di acc'),
+(2, 'Judul telah di acc');
 
 -- --------------------------------------------------------
 
@@ -182,8 +215,11 @@ CREATE TABLE `user` (
   `dos_id` int(11) NOT NULL,
   `NIK` varchar(128) NOT NULL,
   `tanda_tangan` varchar(128) NOT NULL,
+  `tanda_tanga_digital_mhs_1` varchar(128) NOT NULL,
+  `tanda_tanga_digital_mhs_2` varchar(128) NOT NULL,
   `status_surat_id` int(2) NOT NULL,
   `tanggal_surat` varchar(128) NOT NULL,
+  `status_judul` int(11) NOT NULL,
   `persentase_laporan` varchar(128) NOT NULL,
   `persentase_apliksai` varchar(128) NOT NULL,
   `data_id` int(11) NOT NULL,
@@ -205,21 +241,22 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `tanda_tangan`, `status_surat_id`, `tanggal_surat`, `persentase_laporan`, `persentase_apliksai`, `data_id`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas_mhs_1`, `kelas_mhs_2`, `no_telpon_mhs_1`, `no_telpon_mhs_2`, `password`, `date_created`, `name_cor`, `email_cor`) VALUES
-(18, 1, 'koordinator', 0, 0, '105.76.082', '', 0, '', '', '', 4, '', '', '', '', '', '', '', '', '$2y$10$IADRxvZ7AM9Rx1FC6ZqHguuUJIp7I39L5QyAIeP6Njolu8Vv/G4WK', 1641187637, 'Marwanto Rahmatuloh, S.T., M.T.', 'mrahmatuloh@poltekpos.ac.id '),
-(31, 2, '103.75.056', 0, 12, '', '', 0, '', '', '', 12, '', '', '', '', '', '', '', '', '$2y$10$8xi.HkBHhXcA0XLjvVJkQOz74cDy99bZIEtMaxADPEmjbhjhj5Ysq', 1643018246, '', ''),
-(34, 2, '103.82.070', 0, 13, '', '', 0, '', '', '', 13, '', '', '', '', '', '', '', '', '$2y$10$gyjgdsxFjVSm4x4AoaotkOQEG3sqxdvx4YdzSA3KCilNW.CnhJWgu', 1643294218, '', ''),
-(35, 2, '105.76.082', 0, 14, '', '', 0, '', '', '', 14, '', '', '', '', '', '', '', '', '$2y$10$2jtTMy6JOqdjyy6VCudg7OsICpSB/gPKDJEWEsawRgyAmZeDzzQzW', 1643294367, '', ''),
-(36, 2, '103.79.068', 0, 15, '', '', 0, '', '', '', 15, '', '', '', '', '', '', '', '', '$2y$10$m8VcldQo6gtgk5boy7iy8eBfBcun7LMYxVTUk5dYoA6U6Ug4iqXku', 1643294434, '', ''),
-(38, 2, '102.64.040', 0, 17, '', '', 0, '', '', '', 17, '', '', '', '', '', '', '', '', '$2y$10$soTcFAdjgHjSgnUsjLz/uedIE9oa8LkyUuRn4IdIHSLXjRqdllDxe', 1643294549, '', ''),
-(39, 2, '102.73.044', 0, 18, '', '', 0, '', '', '', 18, '', '', '', '', '', '', '', '', '$2y$10$KHG7iBebLDy0p/G6s7dFlOT19zhzK6iO23kkDTA/REZC6GrV4MO2K', 1643294695, '', ''),
-(40, 2, '104.79.072', 0, 19, '', '', 0, '', '', '', 19, '', '', '', '', '', '', '', '', '$2y$10$r6VD0y.Ew9fbEwOhhd3Y2Oo2XazKPBCvAGM0vd5m3JS45ZMzze.s.', 1643294788, '', ''),
-(44, 2, '102.73.041', 0, 20, '', '', 0, '', '', '', 20, '', '', '', '', '', '', '', '', '$2y$10$EjLzVBC0LtWFlcDGyb/RJ.z0aN33QXzE0.d9MRSS8piaKwHLvlY7.', 1643350182, '', ''),
-(49, 3, 'Razor01', 21, 0, '', 'Tanda Tangan Widia Resdiana, S.S., M.Pd.png', 2, '09-February-2022', '100', '100', 21, 'Aldo Dwie Rizky', '1193005', 'Raihan Malikul Mulki', '1193025', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 2A', '28428642', '734424', '$2y$10$nZS1iB9EBuoHVaKqtBTLI./Ah5PCYVj7P4PXXNmnBaXJa8Ynk4doO', 1644273616, '', ''),
-(50, 3, 'fiki01', 22, 0, '', 'Tanda Tangan Muhammad Ruslan Maulani, S.Kom., MT.png', 2, '', '', '', 22, 'Fiki Henizar', '1193011', 'Salsa Anisa Zakiyah Darojat', '1193027', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$8wcyV4guzcz4IFtrfybWn.12mlJq4sz9nE9xNpg05.yXdqF3D347.', 1644273682, '', ''),
-(51, 3, 'febri01', 23, 0, '', '', 1, '', '', '', 23, 'Febri Muhamad', '1193010', 'Nadia Rahma Rivai', '1193022', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$urBZvNP2Jvnm8Hq3jm/AwOx9lE352oPKuqVBb2EnaQqYPesIEhq22', 1644273747, '', ''),
-(52, 3, 'alisa01', 24, 0, '', '', 1, '', '', '', 24, 'Alissa Nina Munawaroh', '1193006', 'Mahfud Fauzi', '1193014', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$cA4XqYWS3LAQsZ0LZRjy2eWb4.z03R45ksYcrNHySOhtw3hGUoPxq', 1644273806, '', ''),
-(53, 3, 'ilahm01', 25, 0, '', '', 1, '', '', '', 25, 'Muhammad Ilham Ferdiansyah', '1193019', 'Muhammad Raihan Nur Azmii', '1193020', 'D3 Teknik Informatika 2A', 'D3 Teknik Informatika 2A', '', '', '$2y$10$dB8Uueh7pZ8BVP9SXfPrA.ZgdMU1BgaACcbiFnWQ2s7tF.YD9JQrK', 1644273929, '', '');
+INSERT INTO `user` (`id`, `role_id`, `user_id`, `mhs_id`, `dos_id`, `NIK`, `tanda_tangan`, `tanda_tanga_digital_mhs_1`, `tanda_tanga_digital_mhs_2`, `status_surat_id`, `tanggal_surat`, `status_judul`, `persentase_laporan`, `persentase_apliksai`, `data_id`, `name_mhs_1`, `npm_mhs_1`, `name_mhs_2`, `npm_mhs_2`, `kelas_mhs_1`, `kelas_mhs_2`, `no_telpon_mhs_1`, `no_telpon_mhs_2`, `password`, `date_created`, `name_cor`, `email_cor`) VALUES
+(18, 1, 'koordinator', 0, 0, '105.76.082', '', '', '', 0, '', 0, '', '', 4, '', '', '', '', '', '', '', '', '$2y$10$IADRxvZ7AM9Rx1FC6ZqHguuUJIp7I39L5QyAIeP6Njolu8Vv/G4WK', 1641187637, 'Marwanto Rahmatuloh, S.T., M.T.', 'mrahmatuloh@poltekpos.ac.id '),
+(31, 2, '103.75.056', 0, 12, '', '', '', '', 0, '', 0, '', '', 12, '', '', '', '', '', '', '', '', '$2y$10$8xi.HkBHhXcA0XLjvVJkQOz74cDy99bZIEtMaxADPEmjbhjhj5Ysq', 1643018246, '', ''),
+(34, 2, '103.82.070', 0, 13, '', '', '', '', 0, '', 0, '', '', 13, '', '', '', '', '', '', '', '', '$2y$10$gyjgdsxFjVSm4x4AoaotkOQEG3sqxdvx4YdzSA3KCilNW.CnhJWgu', 1643294218, '', ''),
+(35, 2, '105.76.082', 0, 14, '', '', '', '', 0, '', 0, '', '', 14, '', '', '', '', '', '', '', '', '$2y$10$2jtTMy6JOqdjyy6VCudg7OsICpSB/gPKDJEWEsawRgyAmZeDzzQzW', 1643294367, '', ''),
+(36, 2, '103.79.068', 0, 15, '', '', '', '', 0, '', 0, '', '', 15, '', '', '', '', '', '', '', '', '$2y$10$m8VcldQo6gtgk5boy7iy8eBfBcun7LMYxVTUk5dYoA6U6Ug4iqXku', 1643294434, '', ''),
+(38, 2, '102.64.040', 0, 17, '', '', '', '', 0, '', 0, '', '', 17, '', '', '', '', '', '', '', '', '$2y$10$soTcFAdjgHjSgnUsjLz/uedIE9oa8LkyUuRn4IdIHSLXjRqdllDxe', 1643294549, '', ''),
+(39, 2, '102.73.044', 0, 18, '', '', '', '', 0, '', 0, '', '', 18, '', '', '', '', '', '', '', '', '$2y$10$KHG7iBebLDy0p/G6s7dFlOT19zhzK6iO23kkDTA/REZC6GrV4MO2K', 1643294695, '', ''),
+(40, 2, '104.79.072', 0, 19, '', '', '', '', 0, '', 0, '', '', 19, '', '', '', '', '', '', '', '', '$2y$10$r6VD0y.Ew9fbEwOhhd3Y2Oo2XazKPBCvAGM0vd5m3JS45ZMzze.s.', 1643294788, '', ''),
+(44, 2, '102.73.041', 0, 20, '', '', '', '', 0, '', 0, '', '', 20, '', '', '', '', '', '', '', '', '$2y$10$EjLzVBC0LtWFlcDGyb/RJ.z0aN33QXzE0.d9MRSS8piaKwHLvlY7.', 1643350182, '', ''),
+(49, 3, 'Razor01', 21, 0, '', '', '', '', 1, '', 0, '', '', 21, 'Aldo Dwie Rizky', '1193005', 'Raihan Malikul Mulki', '1193025', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 2A', '28428642', '734424', '$2y$10$KI6ZaTIviz0mcyMskpwHreSYjirVKEoU9GGUAzOBPKNrfgMqeXB3a', 1644273616, '', ''),
+(50, 3, 'fiki01', 22, 0, '', '', '', '', 1, '', 0, '', '', 22, 'Fiki Henizar', '1193011', 'Salsa Anisa Zakiyah Darojat', '1193027', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$8wcyV4guzcz4IFtrfybWn.12mlJq4sz9nE9xNpg05.yXdqF3D347.', 1644273682, '', ''),
+(51, 3, 'febri01', 23, 0, '', '', '', '', 1, '', 0, '', '', 23, 'Febri Muhamad', '1193010', 'Nadia Rahma Rivai', '1193022', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$urBZvNP2Jvnm8Hq3jm/AwOx9lE352oPKuqVBb2EnaQqYPesIEhq22', 1644273747, '', ''),
+(52, 3, 'alisa01', 24, 0, '', '', '', '', 1, '', 0, '', '', 24, 'Alissa Nina Munawaroh', '1193006', 'Mahfud Fauzi', '1193014', 'D3 Teknik Informatika 3A', 'D3 Teknik Informatika 3A', '', '', '$2y$10$cA4XqYWS3LAQsZ0LZRjy2eWb4.z03R45ksYcrNHySOhtw3hGUoPxq', 1644273806, '', ''),
+(53, 3, 'ilahm01', 25, 0, '', '', '', '', 1, '', 0, '', '', 25, 'Muhammad Ilham Ferdiansyah', '1193019', 'Muhammad Raihan Nur Azmii', '1193020', 'D3 Teknik Informatika 2A', 'D3 Teknik Informatika 2A', '', '', '$2y$10$dB8Uueh7pZ8BVP9SXfPrA.ZgdMU1BgaACcbiFnWQ2s7tF.YD9JQrK', 1644273929, '', ''),
+(57, 3, 'raihan01', 26, 0, '', '', 'BG_Yudisium.jpg', 'unknown.png', 1, '', 2, '', '', 26, 'Razor', '1193056', 'Andi', '1193023', 'D3 Teknik Informatika 2A', 'D3 Teknik Informatika 2B', '', '', '$2y$10$QofbO4r/groeSDqiBLfIE.QTOsvQ2JDIbsUd2hapwZOZ7DOZH0joW', 1645888506, '', '');
 
 -- --------------------------------------------------------
 
@@ -291,7 +328,8 @@ INSERT INTO `user_data` (`id`, `judul_proyek`, `keterangan_judul`, `katagori_pro
 (35, '', '', 'Proyek 2', '', '', 1, 1, '22', '', '', 22, 1, NULL, ''),
 (36, '', '', 'Proyek 2', '', '', 1, 1, '23', '', '', 23, 1, NULL, ''),
 (37, '', '', 'Proyek 2', '', '', 1, 1, '24', '', '', 24, 1, NULL, ''),
-(38, '', '', 'Proyek 2', '', '', 1, 1, '25', '', '', 25, 1, NULL, '');
+(38, '', '', 'Proyek 2', '', '', 1, 1, '25', '', '', 25, 1, NULL, ''),
+(42, 'Aplikasi bb', ' ssbfsfb', 'Proyek 2', '20211-UTSSISTER-Raihan_Malikul_Mulki.docx', '19338-01_1193019_Muhammad_Ilham_Ferdiansyah.docx', 2, 2, '26', '', '', 26, 1, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -400,7 +438,8 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `is_active`, `icon
 (49, 19, 'My Profile', 'mahasiswa/my_profile', 1, 'far fa-fw fa-user'),
 (53, 17, 'Edit Profile', 'cordinator/edit_profile', 1, 'far fa-fw fa-address-card'),
 (54, 18, 'Edit Profile', 'dosen/edit_profile', 1, 'far fa-fw fa-address-card'),
-(55, 19, 'Edit Profile', 'mahasiswa/edit_profile', 1, 'far fa-fw fa-address-card');
+(55, 19, 'Edit Profile', 'mahasiswa/edit_profile', 1, 'far fa-fw fa-address-card'),
+(57, 16, 'Rekap Proyek', 'cordinator/rekap_proyek', 1, 'fas fa-fw fa-align-justify');
 
 --
 -- Indexes for dumped tables
@@ -434,6 +473,12 @@ ALTER TABLE `mhs_aktif`
 -- Indexes for table `status`
 --
 ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `status_judul`
+--
+ALTER TABLE `status_judul`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -498,13 +543,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `berkas_bimbingan`
 --
 ALTER TABLE `berkas_bimbingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `bimbingan`
 --
 ALTER TABLE `bimbingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `mhs_aktif`
@@ -516,6 +561,12 @@ ALTER TABLE `mhs_aktif`
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `status_judul`
+--
+ALTER TABLE `status_judul`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -534,7 +585,7 @@ ALTER TABLE `status_surat`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
@@ -546,7 +597,7 @@ ALTER TABLE `user_access_menu`
 -- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
@@ -564,7 +615,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
