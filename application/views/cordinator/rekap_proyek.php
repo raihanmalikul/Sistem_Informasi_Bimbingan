@@ -58,18 +58,20 @@
                             </thead>
                             <?php $no = 1; ?>
                             <?php foreach ($jadimhs as $mhs2) : ?>
-                                <?php $setatus = $this->db->get_where('status', ['id' => $mhs2['status_laporan_id']])->row_array() ?>
+                                <?php $setatus2 = $this->db->get_where('status', ['id' => $mhs2['status_laporan_id']])->row_array() ?>
+                                <?php $setatus1 = $this->db->get_where('status_proposal', ['id' => $mhs2['status_proposal_id']])->row_array() ?>
+                                <?php $setatus3 = $this->db->get_where('status_surat', ['id' => $mhs2['status_surat_id']])->row_array() ?>
                                 <tbody>
                                     <tr class="text-center">
                                         <th rowspan="2"><?= $no++  ?></th>
                                         <td><?= $mhs2['name_mhs_1']; ?></td>
                                         <td><?= $mhs2['npm_mhs_1']; ?></td>
                                         <td><?= $mhs2['kelas_mhs_1']; ?></td>
-                                        <td rowspan="2">andi</td>
-                                        <td rowspan="2">andi2</td>
-                                        <td rowspan="2">andi3</td>
+                                        <td rowspan="2"><?= $setatus1['status']; ?></td>
+                                        <td rowspan="2"><?= $setatus2['status']; ?></td>
+                                        <td rowspan="2"><?= $setatus3['status']; ?></td>
                                         <td width="100" rowspan="2">
-                                            <a href="" class="btn btn-primary btn-xs">Lihat Detail</a>
+                                            <a href="<?= base_url('cordinator/detailrekap_proyek/') . $mhs2['user_id'] ?>" class="btn btn-primary btn-xs">Lihat Detail</a>
                                         </td>
                                     </tr>
                                     <tr class="text-center">

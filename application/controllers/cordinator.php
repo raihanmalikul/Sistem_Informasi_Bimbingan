@@ -907,6 +907,32 @@ class cordinator extends CI_Controller
 
 
 
+    public function detailrekap_proyek($id)
+    {
+        // backend
+        $data['title'] = 'Menu cordinator';
+        $data['user'] = $this->db->get_where('user', ['user_id' =>
+        $this->session->userdata('user_id')])->row_array();
+        $data['user_data'] = $this->db->get_where('user_data', ['data_id' =>
+        $data['user']['data_id']])->row_array();
+        $mhs1 = "SELECT bimbingan.*, user.*, admin.*, user_data.* FROM bimbingan 
+        JOIN user ON bimbingan . mhs_id = user . mhs_id 
+        JOIN admin ON bimbingan . dos_id = admin . dos_id 
+        JOIN user_data ON user . data_id = user_data . data_id  
+         WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
+        $data['mhs2'] = $this->db->query($mhs1)->row_array();
+
+
+        //frontend
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('cordinator/detailrekap_proyek', $data);
+        $this->load->view('templates/footer');
+    }
+
+
+
     public function my_profile()
     {
         $data['title'] = 'Menu cordinator';
