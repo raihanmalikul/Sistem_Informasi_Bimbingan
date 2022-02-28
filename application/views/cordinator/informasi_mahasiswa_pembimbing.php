@@ -31,7 +31,7 @@
                      <h4 class="card-title">Data Mahasiswa Aktif</h4>
                      <br>
                      <?= $this->session->flashdata('message_cor_data_mhs'); ?>
-                     <table class="table table-bordered">
+                     <table class="table table-bordered" id="table">
                          <thead>
                              <tr class="text-center">
                                  <th scope="col-lg-2">No</th>
@@ -42,9 +42,9 @@
                                  <th scope="col">Aksi</th>
                              </tr>
                          </thead>
-                         <?php $no = 1; ?>
-                         <?php foreach ($jadidos as  $dos) : ?>
-                             <tbody>
+                         <tbody>
+                             <?php $no = 1; ?>
+                             <?php foreach ($jadidos as  $dos) : ?>
                                  <tr class="text-center">
                                      <th scope="row"><?= $no++  ?></th>
                                      <td><?= $dos['npm']; ?></td>
@@ -56,8 +56,8 @@
                                          <a href="<?= base_url('cordinator/hapus_mhs/') ?><?= $dos['id'] ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
                                      </td>
                                  </tr>
-                             </tbody>
-                         <?php endforeach; ?>
+                             <?php endforeach; ?>
+                         </tbody>
                      </table>
                  </div>
 

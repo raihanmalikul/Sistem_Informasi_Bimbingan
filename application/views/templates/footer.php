@@ -13,6 +13,12 @@
 <script src="<?= base_url('assets/') ?>vendor/bootstrap/js/bootstrap.bundle.js"></script>
 <script src="<?= base_url('assets/') ?>vendor/slimscroll/jquery.slimscroll.js"></script>
 <script src="<?= base_url('assets/') ?>libs/js/main-js.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#table').DataTable();
+    });
+</script>
 </body>
 
 </html>

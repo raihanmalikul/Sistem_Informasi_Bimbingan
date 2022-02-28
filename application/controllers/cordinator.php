@@ -926,7 +926,7 @@ class cordinator extends CI_Controller
         //frontend
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
+        $this->load->view('templates/topbar_1', $data);
         $this->load->view('cordinator/detailrekap_proyek', $data);
         $this->load->view('templates/footer');
     }
