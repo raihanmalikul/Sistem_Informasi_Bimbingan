@@ -28,35 +28,35 @@
                         <tbody>
                             <tr>
                                 <td width="200px">Nama Mahasiswa</td>
-                                <td><?= $mhs2['name_mhs_1']; ?></td>
+                                <td><?= $mhs1['name_mhs_1']; ?></td>
                             </tr>
                             <tr>
                                 <td>NPM</td>
-                                <td><?= $mhs2['npm_mhs_1']; ?></td>
+                                <td><?= $mhs1['npm_mhs_1']; ?></td>
                             </tr>
                             <tr>
                                 <td>Nama Mahasiswa</td>
-                                <td><?= $mhs2['name_mhs_2']; ?></td>
+                                <td><?= $mhs1['name_mhs_2']; ?></td>
                             </tr>
                             <tr>
                                 <td>NPM</td>
-                                <td><?= $mhs2['npm_mhs_2']; ?></td>
+                                <td><?= $mhs1['npm_mhs_2']; ?></td>
                             </tr>
                             <tr>
                                 <td>Judul Proyek</td>
-                                <td><?= $mhs2['judul_proyek']; ?></td>
+                                <td><?= $mhs1['judul_proyek']; ?></td>
                             </tr>
                             <tr>
                                 <td>Keterangan</td>
-                                <td><?= $mhs2['keterangan_judul']; ?></td>
+                                <td><?= $mhs1['keterangan_judul']; ?></td>
                             </tr>
                             <tr>
                                 <td>File Proposal</td>
-                                <td><a href="<?= base_url('assets/File/') . $mhs2['proposal_proyek'] ?>" class="fas fa-download"> <?= $mhs2['proposal_proyek'] ?> </a></td>
+                                <td><a href="<?= base_url('assets/File/') . $mhs1['proposal_proyek'] ?>" class="fas fa-download"> <?= $mhs1['proposal_proyek'] ?> </a></td>
                             </tr>
                             <tr>
                                 <td>File Laporan</td>
-                                <td><a href="<?= base_url('assets/File/') . $mhs2['laporan_proyek'] ?>" class="fas fa-download"> <?= $mhs2['laporan_proyek'] ?> </a></td>
+                                <td><a href="<?= base_url('assets/File/') . $mhs1['laporan_proyek'] ?>" class="fas fa-download"> <?= $mhs1['laporan_proyek'] ?> </a></td>
                             </tr>
                     </table>
                 </div>
@@ -100,23 +100,23 @@
                                         <tr>
                                             <td width='250px'>Nama Mahasiswa 1/Mahasiswa 2</td>
                                             <td>:</td>
-                                            <td><?= $mhs2['name_mhs_1']; ?></td>
+                                            <td><?= $mhs1['name_mhs_1']; ?></td>
                                             <td>/</td>
-                                            <td><?= $mhs2['name_mhs_2']; ?></td>
+                                            <td><?= $mhs1['name_mhs_2']; ?></td>
                                         </tr>
                                         <tr>
                                             <td>NPM 1/ NPM 2</td>
                                             <td> :</td>
-                                            <td><?= $mhs2['npm_mhs_1']; ?></td>
+                                            <td><?= $mhs1['npm_mhs_1']; ?></td>
                                             <td>/</td>
-                                            <td><?= $mhs2['npm_mhs_2']; ?></td>
+                                            <td><?= $mhs1['npm_mhs_2']; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Judul Proyek</td>
                                             <td> :</td>
                                             <td colspan="3">
-                                                <?php if (isset($mhs2['judul_proyek'])) {
-                                                    echo $mhs2['judul_proyek'];;
+                                                <?php if (isset($mhs1['judul_proyek'])) {
+                                                    echo $mhs1['judul_proyek'];;
                                                 } ?>
                                             </td>
                                         </tr>
@@ -131,13 +131,13 @@
                                         </tr>
                                     </table>
                                     <br>
-                                    <p>Menyatakan bahwa mahasiswa tersebut telah menyelesaikan Alat/Proyek <?= $user['persentase_apliksai']; ?>%. Adapun penulisan laporan proyek telah diselesaikan seluruhnya <?= $user['persentase_laporan']; ?>%</p>
+                                    <p>Menyatakan bahwa mahasiswa tersebut telah menyelesaikan Alat/Proyek <?= $mhs1['persentase_apliksai']; ?>%. Adapun penulisan laporan proyek telah diselesaikan seluruhnya <?= $mhs1['persentase_laporan']; ?>%</p>
                                     <p>Dengan demikian saya mengajukan mahasiswa tersebut untuk mengikuti sidang Proyek. Apabila ternyata pernyataan saya tersebut tidak benar, maka saya menyetujui penundaan sidang termasuk pembatalan sidang Proyek untuk mahasiswa bimbingan saya tersebut sesuai aturan yang berlaku.</p>
                                 </div>
                                 <br>
                                 <br>
                                 <div class="tabel-mk signature-container">
-                                    <span class="signature">Bandung, <?= date('d F Y'); ?></span><br>
+                                    <span class="signature">Bandung, <?= $mhs1['tanggal_surat']; ?></span><br>
                                     <br>
                                     <br>
                                 </div>
@@ -160,15 +160,15 @@
                                             <td><img width="100px" src="<?= base_url('assets/File/tandatangan_dosen/') . $mhs2['tanda_tangan']; ?>"></td>
                                         </tr>
                                         <tr>
-                                            <td>(<?= $mhs2['name_mhs_1']; ?>)</td>
-                                            <td>(<?= $mhs2['name_mhs_2']; ?>)</td>
+                                            <td>(<?= $mhs1['name_mhs_1']; ?>)</td>
+                                            <td>(<?= $mhs1['name_mhs_2']; ?>)</td>
                                             <td>(<?php if (isset($mhs2['name'])) {
                                                         echo $mhs2['name'];;
                                                     } ?>)</td>
                                         </tr>
                                         <tr>
-                                            <td>NPM : <?= $mhs2['npm_mhs_1']; ?></td>
-                                            <td>NPM : <?= $mhs2['npm_mhs_2']; ?></td>
+                                            <td>NPM : <?= $mhs1['npm_mhs_1']; ?></td>
+                                            <td>NPM : <?= $mhs1['npm_mhs_2']; ?></td>
                                             <td>NIK :
                                                 <?php if (isset($mhs2['NIK'])) {
                                                     echo $mhs2['NIK'];;

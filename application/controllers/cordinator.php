@@ -294,9 +294,9 @@ class cordinator extends CI_Controller
         $m = $this->db->get_where('user', ['user_id'])->row_array();
         if (empty($this->input->post('password'))) {
             // echo "babi";
-           $dosen = $this->db->get_where('user', ['user_id' => $this->input->post('user_id')])->row_array(); 
-           $password = $dosen['password'];
-        } else{
+            $dosen = $this->db->get_where('user', ['user_id' => $this->input->post('user_id')])->row_array();
+            $password = $dosen['password'];
+        } else {
             // echo "anjing kao";
             $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
         }
@@ -929,6 +929,10 @@ class cordinator extends CI_Controller
         JOIN user_data ON user . data_id = user_data . data_id  
          WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
         $data['mhs2'] = $this->db->query($mhs1)->row_array();
+        $mhs2 = "SELECT user.*, user_data.* FROM user
+        JOIN user_data ON user . data_id = user_data . data_id  
+         WHERE user . role_id = 3 AND user . user_id = '" . $id . "' ";
+        $data['mhs1'] = $this->db->query($mhs2)->row_array();
 
 
         //frontend
