@@ -93,7 +93,7 @@
                                      <br>
                                      <br>
                                      <div class="tabel-mk signature-container">
-                                         <span class="signature">Bandung, <?= date('d F Y'); ?></span><br>
+                                         <span class="signature">Bandung, <?= $user['tanggal_surat']; ?></span><br>
                                          <br>
                                          <br>
                                      </div>
