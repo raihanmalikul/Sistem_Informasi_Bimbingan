@@ -153,11 +153,17 @@
 
                                     <table class="text-center">
                                         <tr>
-                                            <td style="vertical-align: bottom;"><img width="100px" src="<?= base_url('assets/File/Tanda_tangan_mhs/') . $mhs2['tanda_tanga_digital_mhs_1']; ?>"></td>
+                                            <td style="vertical-align: bottom;">
+                                                <img width="100px" src="<?= base_url('assets/File/Tanda_tangan_mhs/') . $mhs1['tanda_tanga_digital_mhs_1']; ?>">
+                                            </td>
                                             <td rowspan="3" class="px-4"></td>
-                                            <td style="vertical-align: bottom;"><img width="100px" src="<?= base_url('assets/File/Tanda_tangan_mhs/') . $mhs2['tanda_tanga_digital_mhs_2']; ?>"></td>
+                                            <td style="vertical-align: bottom;"><img width="100px" src="<?= base_url('assets/File/Tanda_tangan_mhs/') . $mhs1['tanda_tanga_digital_mhs_2']; ?>"></td>
                                             <td rowspan="3" class="px-4"></td>
-                                            <td><img width="100px" src="<?= base_url('assets/File/tandatangan_dosen/') . $mhs2['tanda_tangan']; ?>"></td>
+                                            <td>
+
+                                                <img width="100px" src="<?= base_url('assets/File/tandatangan_dosen/') . $mhs1['tanda_tangan']; ?>">
+
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>(<?= $mhs1['name_mhs_1']; ?>)</td>
