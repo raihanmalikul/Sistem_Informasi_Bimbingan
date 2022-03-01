@@ -147,14 +147,14 @@
                                          </div>
                                          <div class="form-group">
                                              <label for="research_interest" class="col-form-label">Research Interest</label>
-                                             <input type="text" name="research_interest" class="form-control" id="research_interest" placeholder="Research Interest">
+                                             <input type="text" name="research_interest" class="form-control" id="research_interest" placeholder="Research Interest" value="<?= $ts['research_interest']; ?>">
                                          </div>
                                          <div class="form-group row">
                                              <div class="col-sm-6 mb-3 mb-sm-0">
                                                  <input type="text" class="form-control form-control-user" name="user_id" id="user_id" placeholder="User ID" value="<?= $ts['user_id']; ?>">
                                              </div>
                                              <div class="col-sm-6">
-                                                 <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="masukan baru Password">
+                                                 <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Masukkan Password Baru">
                                              </div>
                                          </div>
                                  </div>

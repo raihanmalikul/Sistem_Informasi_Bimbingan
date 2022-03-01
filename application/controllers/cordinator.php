@@ -292,6 +292,14 @@ class cordinator extends CI_Controller
         $data['user']['data_id']])->row_array();
         // echo 'Selamat data mahasiswa ' . $data['user']['name_mhs_1'] . ' dan ' . $data['user']['name_mhs_2'];
         $m = $this->db->get_where('user', ['user_id'])->row_array();
+        if (empty($this->input->post('password'))) {
+            // echo "babi";
+           $dosen = $this->db->get_where('user', ['user_id' => $this->input->post('user_id')])->row_array(); 
+           $password = $dosen['password'];
+        } else{
+            // echo "anjing kao";
+            $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+        }
 
         if ($data) {
             $data1 = [
@@ -304,7 +312,7 @@ class cordinator extends CI_Controller
             ];
             $data2 = [
                 'user_id' => $this->input->post('user_id', true),
-                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'password' => $password
             ];
 
 
