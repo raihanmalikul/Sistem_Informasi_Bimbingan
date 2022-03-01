@@ -40,7 +40,7 @@
                              </tr>
                      </table>
                      <hr>
-                     <?php echo form_open_multipart('mahasiswa/edit_judul'); ?>
+                     <?php echo form_open_multipart('mahasiswa/upload_proposal'); ?>
                      <div class="form-group row">
                          <label class="col-12 col-sm-3 col-form-label text-sm-right">Judul Proyek</label>
                          <div class="col-12 col-sm-8 col-lg-6">
