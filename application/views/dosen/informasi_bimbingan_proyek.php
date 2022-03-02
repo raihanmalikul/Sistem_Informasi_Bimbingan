@@ -78,7 +78,7 @@
                             </div>
                             <div class="modal-body">
                                 <form class="user" method="post" action="<?= base_url('dosen/persetujuan_judul/') . $ts['user_id']; ?>">
-                                    <p>Masukan Persentase Penyelesaian Proyek Dengan Data Mahasiswa:
+                                    <p>Setujui pergantian judul proyek dengan data mahasiswa sebagai berikut:
                                         <br>
                                         1. <?= $ts['name_mhs_1']; ?> (<?= $ts['npm_mhs_1']; ?>)
                                         <br>

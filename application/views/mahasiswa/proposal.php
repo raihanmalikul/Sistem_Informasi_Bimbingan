@@ -57,7 +57,7 @@
                          <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
                          <div class="col-12 col-sm-8 col-lg-6">
                              <label for="proposal_proyek" class="form-label"><?= $user_data['proposal_proyek']; ?></label>
-                             <input type="file" required="" name="proposal_proyek" class="form-control" id="proposal_proyek">
+                             <input type="file" required="" name="proposal_proyek" class="form-control" id="proposal_proyek" data-toggle="tooltip" data-placement="bottom" title="Maksimal 10MB">
                          </div>
                      </div>
                      <button type="submit" class="btn btn-primary btn-xs text-white float-right margin-right"><i class="fas fa-save"></i> Upload</button>
@@ -70,7 +70,7 @@
          <div class="modal-dialog">
              <div class="modal-content">
                  <div class="modal-header">
-                     <h5 class="modal-title" id="exampleModalLabel">Penggantian Judul Proyek</h5>
+                     <h5 class="modal-title" id="exampleModalLabel">Ganti Judul Proyek</h5>
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                          <span aria-hidden="true">&times;</span>
                      </button>
@@ -79,7 +79,7 @@
                      <div class="modal-body">
                          <div class="form-group">
                              <label for="judul_proyek" class="col-form-label">Judul Proyek</label>
-                             <input type="text" name="judul_proyek" class="form-control" id="judul_proyek">
+                             <input type="text" name="judul_proyek" class="form-control" placeholder="Masukkan Judul Proyek Baru" id="judul_proyek">
                          </div>
                      </div>
                      <div class="modal-footer">

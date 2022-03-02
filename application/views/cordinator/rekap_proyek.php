@@ -46,14 +46,17 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="text-center">
-                                    <th scope="col" width="50">No</th>
-                                    <th scope="col">Nama Mahasiswa</th>
-                                    <th scope="col">NPM</th>
-                                    <th scope="col">Kelas</th>
-                                    <th scope="col" width="200">Status Pengumpulan Proposal</th>
-                                    <th scope="col" width="200">Status Pengumpulan Laporan</th>
-                                    <th scope="col" width="200">Status Pengumpulan Surat Izin Sidang</th>
-                                    <th scope="col">Aksi</th>
+                                    <th scope="col" width="50" rowspan="2" style="vertical-align: middle;">No</th>
+                                    <th scope="col" rowspan="2" style="vertical-align: middle;">Nama Mahasiswa</th>
+                                    <th scope="col" rowspan="2" style="vertical-align: middle;">NPM</th>
+                                    <th scope="col" rowspan="2" style="vertical-align: middle;">Kelas</th>
+                                    <th scope="col" colspan="3" style="vertical-align: middle;">Status</th>
+                                    <th scope="col" rowspan="2" style="vertical-align: middle;">Aksi</th>
+                                </tr>
+                                <tr class="text-center">
+                                    <th scope="col" width="200" style="vertical-align: middle;">Pengumpulan Proposal</th>
+                                    <th scope="col" width="200" style="vertical-align: middle;">Pengumpulan Laporan</th>
+                                    <th scope="col" width="200" style="vertical-align: middle;">Pengumpulan Surat Izin Sidang</th>
                                 </tr>
                             </thead>
                             <?php $no = 1; ?>

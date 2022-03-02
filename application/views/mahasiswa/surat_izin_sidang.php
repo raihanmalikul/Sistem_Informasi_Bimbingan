@@ -35,8 +35,8 @@
              <div class="card">
                  <div class="card-body">
                      <button class="btn btn-primary text-white" id="download"><i class="fas fa-download"></i> Download PDF</button>
-                     <button class="btn btn-primary text-white" data-toggle="modal" data-target="#TandatanganDigitalMahasiswa1"><i class="fas fa-download"></i> Upload Tandatangan Digital Mahasiswa 1</button>
-                     <button class="btn btn-primary text-white" data-toggle="modal" data-target="#TandatanganDigitalMahasiswa2"><i class="fas fa-download"></i> Upload Tandatangan Digital Mahasiswa 2</button>
+                     <button class="btn btn-primary text-white" data-toggle="modal" data-target="#TandatanganDigitalMahasiswa1"><i class="fas fa-upload"></i> Upload Tandatangan Mahasiswa 1</button>
+                     <button class="btn btn-primary text-white" data-toggle="modal" data-target="#TandatanganDigitalMahasiswa2"><i class="fas fa-upload"></i> Upload Tandatangan Mahasiswa 2</button>
                      <!-- <h4 class="card-title">Surat Persetujuan dan Permohonan Sidang</h4> -->
                      <br>
                      <hr>
